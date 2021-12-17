@@ -1,0 +1,19 @@
+{
+  "name": "upventrs-frontend",
+  "version": "1.0.0",
+  "description": "UpVent Website (Powered by Rust)",
+  "main": "src/App.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/UpVent/upventrs.git"
+  },
+  "author": "VentGrey",
+  "license": "AGPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/UpVent/upventrs/issues"
+  },
+  "homepage": "https://github.com/UpVent/upventrs#readme"
+}
