@@ -2,6 +2,7 @@
     import { MetaTags } from 'svelte-meta-tags';
 
     import Navbar from './Navbar.svelte';
+    import IndexJumbotron from './IndexJumbotron.svelte';
 
     export let name;
 
@@ -15,7 +16,7 @@
     openGraph = {{
         url: 'https://upvent.codes/',
         title: "UpVent - Soluciones en la nube para tu negocio. Low Cost, siempre listas.",
-        description: "UpVent es un proveedor experto de soluciones de código libre y empresarial para los pequeños y medianos negocios Mexicanos."
+        description: "UpVent es un proveedor experto de soluciones de código libre y empresarial para los pequeños y medianos negocios Mexicanos.",
          images: [
             {
                 url: 'https://www.example.ie/og-image-01.jpg',
@@ -38,8 +39,4 @@
 />
 
 <Navbar/>
-
-<main>
-	<h1>Hello {name}!</h1>
-	<p>Visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a> to learn how to build Svelte apps.</p>
-</main>
+<IndexJumbotron/>
