@@ -5,15 +5,10 @@ use rocket::serde::Serialize;
 #[serde(crate = "rocket::serde")]
 #[derive(Serialize)]
 struct Testimonial {
-    /// Obligatory field ID
     id: i32,
-    /// The name of the person giving their testimonial.
     name: String,
-    /// The testimonial itself.
     testimonial: String,
-    /// The job or title of the person giving their testimonail.
     workplace: String,
-    /// Website where the person works or shows their information.
     website: String,
 }
 
@@ -23,12 +18,85 @@ struct Testimonial {
 #[serde(crate = "rocket::serde")]
 #[derive(Serialize)]
 struct Project {
-    /// Obligatory field ID
     id: i32,
-    /// The title or name of the project
     title: String,
-    /// The web address where the project is stored
     site: String,
-    /// The project description. This is shown in a card, try to be brief.
     description: String,
+}
+
+/// Stores a single Free Software Project shown in the "services" page
+/// of this site.
+/// (Services)
+#[serde(crate = "rocket::serde")]
+#[derive(Serialize)]
+struct FSProject {
+    id: i32,
+    title: String,
+    description: String,
+    github_addr: String,
+    support_addr: String,
+    proj_license: String,
+    license_link: String,
+}
+
+/// Stores a single License text shown in the "licenses" page
+/// of this site.
+/// (Licenses)
+#[serde(crate = "rocket::serde")]
+#[derive(Serialize)]
+struct License {
+    id: i32,
+    name: String,
+    verbatim: String,
+    license_link: String,
+}
+
+/// Stores a single Hall Of Fame shown in the "licenses" page
+/// of this site.
+/// (Licenses)
+#[serde(crate = "rocket::serde")]
+#[derive(Serialize)]
+struct HOF {
+    id: i32,
+    name: String,
+}
+
+/// Stores a single team member shown in the "team" page
+/// of this site. The is_collab field is a boolean used to indicate if the
+/// team member is an outside collaborator. The status is pretty simple.
+///
+/// true = Outside Collaborator
+/// false = UpVent Member
+/// (Team)
+#[serde(crate = "rocket::serde")]
+#[derive(Serialize)]
+struct TeamMember {
+    id: i32,
+    name: String,
+    position: String,
+    is_collab: bool,
+}
+
+/// Stores a single and unique privacy policy to make this site compliant with
+/// inside / outside country privacy laws (GDPR and others).
+/// (Privacy Policy)
+#[serde(crate = "rocket::serde")]
+#[derive(Serialize)]
+struct PrivacyPolicy {
+    id: i32,
+    title: String,
+    changelog: String,
+    text: String,
+}
+
+/// Stores a single and unique terms of service + refund policy to make this
+/// site compliant with inside / outside country trade laws.
+/// (Terms Of Service)
+#[serde(crate = "rocket::serde")]
+#[derive(Serialize)]
+struct TermsOfService {
+    id: i32,
+    title: String,
+    changelog: String,
+    text: String,
 }
