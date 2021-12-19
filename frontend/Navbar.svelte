@@ -1,4 +1,15 @@
 <script>
+    import Fa from 'svelte-fa';
+    import {
+        faHome,
+        faLaptop,
+        faPen,
+        faPhone,
+        faShoppingBag,
+        faUsers,
+    } from '@fortawesome/free-solid-svg-icons';
+
+
     let logo = 'images/logo-grey.png';
 </script>
 
@@ -8,12 +19,12 @@
     </a>
 
     <ul class="nav nav-pills col-12 mx-auto col-md-auto mb-2 justify-content-center mb-md-0">
-        <li><a class="nav-link px-2 link-dark" href="/">Inicio <i class="bi bi-house"></i></a></li>
-        <li><a class="nav-link px-2 link-dark" href="/">Blog <i class="bi bi-pen"></i></a></li>
-        <li><a class="nav-link px-2 link-dark" href="/">Nosotros <i class="bi bi-people"></i></a></li>
-        <li><a class="nav-link px-2 link-dark" href="/">Servicios <i class="bi bi-laptop"></i></a></li>
-        <li><a class="nav-link px-2 link-dark" href="/">Contacto <i class="bi bi-phone"></i></a></li>
-        <li><a class="nav-link px-2 link-dark" href="/">MarketCloud <i class="bi bi-bag"></i></a></li>
+        <li><a class="nav-link px-2 link-dark" href="/">Inicio <Fa icon={faHome} /></a></li>
+        <li><a class="nav-link px-2 link-dark" href="/">Blog <Fa icon={faPen} /></a></li>
+        <li><a class="nav-link px-2 link-dark" href="/">Nosotros <Fa icon={faUsers} /></a></li>
+        <li><a class="nav-link px-2 link-dark" href="/">Servicios <Fa icon={faLaptop} /></a></li>
+        <li><a class="nav-link px-2 link-dark" href="/">Contacto <Fa icon={faPhone} /></a></li>
+        <li><a class="nav-link px-2 link-dark" href="/">MarketCloud <Fa icon={faShoppingBag} /></a></li>
     </ul>
     <div class="text-end me-auto ms-auto mx-auto">
         <button type="button" class="btn btn-light border-0" title="Modo daltonismo">👁</button>
