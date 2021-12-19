@@ -1,7 +1,3 @@
-<svelte:head>
-
-</svelte:head>
-
 <script>
     import Navbar from './Navbar.svelte';
 
