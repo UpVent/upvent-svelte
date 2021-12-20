@@ -100,3 +100,30 @@ struct TermsOfService {
     changelog: String,
     text: String,
 }
+
+/// ===== Blog page =====
+
+/// Stores a single blog post.
+#[serde(crate = "rocket::serde")]
+#[derive(Serialize)]
+struct Post {
+    id: i32,
+    published: bool,
+    title: String,
+    description: String,
+    category: String,
+    content: String,
+}
+
+/// ===== Marketcloud page =====
+struct Product {
+    id: i32,
+    name: String,
+    price: f64,
+    category: String,
+    apptype: String,
+    short_description: String,
+    description: String,
+    stripe_link: String,
+    available: bool,
+}
