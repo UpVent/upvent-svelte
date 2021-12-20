@@ -3,10 +3,16 @@
 
     import Navbar from './Navbar.svelte';
     import IndexJumbotron from './IndexJumbotron.svelte';
+    import Footer from './Footer.svelte';
 
     export let name;
 
 </script>
+
+<svelte:head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+</svelte:head>
 
 <MetaTags
     title = "UpVent - Soluciones en la nube para tu negocio. Low Cost, siempre listas."
@@ -40,3 +46,4 @@
 
 <Navbar/>
 <IndexJumbotron/>
+<Footer/>
