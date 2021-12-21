@@ -3,9 +3,13 @@
 ![GitHub issues](https://img.shields.io/github/issues/UpVent/upventrs)
 ![GitHub all releases](https://img.shields.io/github/downloads/UpVent/upventrs/total)
 ![GitHub](https://img.shields.io/github/license/UpVent/upventrs)
+
+## Build Status
 [![Node.js CI](https://github.com/UpVent/upventrs/actions/workflows/node.js.yml/badge.svg)](https://github.com/UpVent/upventrs/actions/workflows/node.js.yml)
 [![Rust + Cargo](https://github.com/UpVent/upventrs/actions/workflows/rust.yml/badge.svg)](https://github.com/UpVent/upventrs/actions/workflows/rust.yml)
-[![Mark stale issues and pull requests](https://github.com/UpVent/upventrs/actions/workflows/stale.yml/badge.svg)](https://github.com/UpVent/upventrs/actions/workflows/stale.yml)
+
+
+## Description
 
 This is the source code for the UpVent's website under upvent.codes.
 
