@@ -2,8 +2,8 @@ use rocket::serde::Serialize;
 
 /// Stores a single instance of a testimonial made by any UpVent client.
 /// (Home)
-#[serde(crate = "rocket::serde")]
 #[derive(Serialize)]
+#[serde(crate = "rocket::serde")]
 struct Testimonial {
     id: i32,
     name: String,
@@ -15,8 +15,8 @@ struct Testimonial {
 /// Stores a single instance of a project used in the portfolio section in
 /// this site.
 /// (About Us)
-#[serde(crate = "rocket::serde")]
 #[derive(Serialize)]
+#[serde(crate = "rocket::serde")]
 struct Project {
     id: i32,
     title: String,
@@ -27,8 +27,8 @@ struct Project {
 /// Stores a single Free Software Project shown in the "services" page
 /// of this site.
 /// (Services)
-#[serde(crate = "rocket::serde")]
 #[derive(Serialize)]
+#[serde(crate = "rocket::serde")]
 struct FSProject {
     id: i32,
     title: String,
@@ -42,8 +42,8 @@ struct FSProject {
 /// Stores a single License text shown in the "licenses" page
 /// of this site.
 /// (Licenses)
-#[serde(crate = "rocket::serde")]
 #[derive(Serialize)]
+#[serde(crate = "rocket::serde")]
 struct License {
     id: i32,
     name: String,
@@ -54,8 +54,8 @@ struct License {
 /// Stores a single Hall Of Fame shown in the "licenses" page
 /// of this site.
 /// (Licenses)
-#[serde(crate = "rocket::serde")]
 #[derive(Serialize)]
+#[serde(crate = "rocket::serde")]
 struct HOF {
     id: i32,
     name: String,
@@ -68,8 +68,8 @@ struct HOF {
 /// true = Outside Collaborator
 /// false = UpVent Member
 /// (Team)
-#[serde(crate = "rocket::serde")]
 #[derive(Serialize)]
+#[serde(crate = "rocket::serde")]
 struct TeamMember {
     id: i32,
     name: String,
@@ -80,8 +80,8 @@ struct TeamMember {
 /// Stores a single and unique privacy policy to make this site compliant with
 /// inside / outside country privacy laws (GDPR and others).
 /// (Privacy Policy)
-#[serde(crate = "rocket::serde")]
 #[derive(Serialize)]
+#[serde(crate = "rocket::serde")]
 struct PrivacyPolicy {
     id: i32,
     title: String,
@@ -92,8 +92,8 @@ struct PrivacyPolicy {
 /// Stores a single and unique terms of service + refund policy to make this
 /// site compliant with inside / outside country trade laws.
 /// (Terms Of Service)
-#[serde(crate = "rocket::serde")]
 #[derive(Serialize)]
+#[serde(crate = "rocket::serde")]
 struct TermsOfService {
     id: i32,
     title: String,
@@ -104,8 +104,8 @@ struct TermsOfService {
 /// ===== Blog page =====
 
 /// Stores a single blog post.
-#[serde(crate = "rocket::serde")]
 #[derive(Serialize)]
+#[serde(crate = "rocket::serde")]
 struct Post {
     id: i32,
     published: bool,
@@ -116,6 +116,8 @@ struct Post {
 }
 
 /// ===== Marketcloud page =====
+#[derive(Serialize)]
+#[serde(crate = "rocket::serde")]
 struct Product {
     id: i32,
     name: String,
