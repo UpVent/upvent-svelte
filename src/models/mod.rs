@@ -1,15 +1,41 @@
 use rocket::serde::Serialize;
+use uuid::Uuid;
 
 /// Stores a single instance of a testimonial made by any UpVent client.
 /// (Home)
 #[derive(Serialize)]
 #[serde(crate = "rocket::serde")]
 struct Testimonial {
-    id: i32,
+    id: Uuid,
     name: String,
     testimonial: String,
     workplace: String,
     website: String,
+}
+
+impl Testimonial {
+    /// Returns a Testimonial with the id given to it.
+    ///
+    /// # Arguments
+    ///
+    /// * `none` - No arguments implemented yet for this struct.
+    ///
+    /// # Examples
+    ///
+    /// ```
+    /// // Clone an existing Testimonial
+    /// let testimonial = Testimonial::clone();
+    /// ```
+
+    pub fn clone(&self) -> Testimonial {
+        Testimonial {
+            id: self.id,
+            name: self.name.clone(),
+            testimonial: self.testimonial.clone(),
+            workplace: self.workplace.clone(),
+            website: self.workplace.clone(),
+        }
+    }
 }
 
 /// Stores a single instance of a project used in the portfolio section in
@@ -18,10 +44,33 @@ struct Testimonial {
 #[derive(Serialize)]
 #[serde(crate = "rocket::serde")]
 struct Project {
-    id: i32,
+    id: Uuid,
     title: String,
     site: String,
     description: String,
+}
+
+impl Project {
+    /// Returns a Project with the id given to it.
+    ///
+    /// # Arguments
+    ///
+    /// * `none` - No arguments implemented yet for this struct.
+    ///
+    /// # Examples
+    /// ```
+    /// // Clone an existing Testimonial
+    /// let project = Project::clone();
+    /// ```
+
+    pub fn clone(&self) -> Project {
+        Project {
+            id: self.id,
+            title: self.title.clone(),
+            site: self.site.clone(),
+            description: self.description.clone(),
+        }
+    }
 }
 
 /// Stores a single Free Software Project shown in the "services" page
@@ -30,7 +79,7 @@ struct Project {
 #[derive(Serialize)]
 #[serde(crate = "rocket::serde")]
 struct FSProject {
-    id: i32,
+    id: Uuid,
     title: String,
     description: String,
     github_addr: String,
@@ -45,7 +94,7 @@ struct FSProject {
 #[derive(Serialize)]
 #[serde(crate = "rocket::serde")]
 struct License {
-    id: i32,
+    id: Uuid,
     name: String,
     verbatim: String,
     license_link: String,
@@ -57,7 +106,7 @@ struct License {
 #[derive(Serialize)]
 #[serde(crate = "rocket::serde")]
 struct HOF {
-    id: i32,
+    id: Uuid,
     name: String,
 }
 
@@ -71,7 +120,7 @@ struct HOF {
 #[derive(Serialize)]
 #[serde(crate = "rocket::serde")]
 struct TeamMember {
-    id: i32,
+    id: Uuid,
     name: String,
     position: String,
     is_collab: bool,
@@ -83,7 +132,7 @@ struct TeamMember {
 #[derive(Serialize)]
 #[serde(crate = "rocket::serde")]
 struct PrivacyPolicy {
-    id: i32,
+    id: Uuid,
     title: String,
     changelog: String,
     text: String,
@@ -95,19 +144,19 @@ struct PrivacyPolicy {
 #[derive(Serialize)]
 #[serde(crate = "rocket::serde")]
 struct TermsOfService {
-    id: i32,
+    id: Uuid,
     title: String,
     changelog: String,
     text: String,
 }
 
-/// ===== Blog page =====
+// ===== Blog page =====
 
 /// Stores a single blog post.
 #[derive(Serialize)]
 #[serde(crate = "rocket::serde")]
 struct Post {
-    id: i32,
+    id: Uuid,
     published: bool,
     title: String,
     description: String,
@@ -115,11 +164,13 @@ struct Post {
     content: String,
 }
 
-/// ===== Marketcloud page =====
+// ===== Marketcloud page =====
+
+/// Stores a single marketplace product
 #[derive(Serialize)]
 #[serde(crate = "rocket::serde")]
 struct Product {
-    id: i32,
+    id: Uuid,
     name: String,
     price: f64,
     category: String,
