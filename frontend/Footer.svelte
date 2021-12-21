@@ -23,22 +23,22 @@
                     <p class="h4 text-uppercase">Enlaces Rápidos</p>
                     <ul class="list-unstyled mb-0">
                         <li class="m-2">
-                            <a href="/" class="fs-5 text-decoration-none">Inicio <i class="bi bi-house"></i></a>
+                            <a href="/" class="fs-5 text-decoration-none">Inicio</a>
                         </li>
                         <li class="m-2">
-                            <a href="/" class="fs-5 text-decoration-none">Blog <i class="bi bi-pen"></i></a>
+                            <a href="/" class="fs-5 text-decoration-none">Blog</a>
                         </li>
                         <li class="m-2">
-                            <a href="/" class="fs-5 text-decoration-none">Nosotros <i class="bi bi-people"></i></a>
+                            <a href="/" class="fs-5 text-decoration-none">Nosotros</a>
                         </li>
                         <li class="m-2">
-                            <a href="/" class="fs-5 text-decoration-none">Servicios <i class="bi bi-laptop"></i></a>
+                            <a href="/" class="fs-5 text-decoration-none">Servicios</a>
                         </li>
                         <li class="m-2">
-                            <a href="/" class="fs-5 text-decoration-none">Contacto <i class="bi bi-phone"></i></a>
+                            <a href="/" class="fs-5 text-decoration-none">Contacto</a>
                         </li>
                         <li class="m-2">
-                            <a href="/" class="fs-5 text-decoration-none">MarketCloud <i class="bi bi-bag"></i></a>
+                            <a href="/" class="fs-5 text-decoration-none">MarketCloud</a>
                         </li>
                     </ul>
                 </div>
@@ -50,13 +50,13 @@
                             <a href="https://github.com/UpVent" class="fs-5 text-decoration-none">Repositorio de Código Libre en GitHub <i class="bi bi-github"></i></a>
                         </li>
                         <li class="m-2">
-                            <a href="/" class="fs-5 text-decoration-none">Equipo <i class="bi bi-diagram-3"></i></a>
+                            <a href="/" class="fs-5 text-decoration-none">Equipo</a>
                         </li>
                         <li class="m-2">
-                            <a href="/" class="fs-5 text-decoration-none">Licencias <i class="bi bi-journal-text"></i></a>
+                            <a href="/" class="fs-5 text-decoration-none">Licencias</a>
                         </li>
                         <li class="m-2">
-                            <a rel="nofollow" href="https://tickets.upvent.codes" class="fs-5 text-decoration-none">Sistema de Soporte <i class="bi bi-info-circle"></i></a>
+                            <a rel="nofollow" href="https://tickets.upvent.codes" class="fs-5 text-decoration-none">Sistema de Soporte</a>
                         </li>
                         <li class="m-2">
                             <a href="#!" class="text-white text-decoration-none">...Espera más contenido pronto</a>
