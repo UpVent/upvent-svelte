@@ -6,7 +6,6 @@
     import Footer from './Footer.svelte';
 
     export let name;
-
 </script>
 
 <svelte:head>
