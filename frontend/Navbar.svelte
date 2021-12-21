@@ -1,12 +1,7 @@
 <script>
     import Fa from 'svelte-fa';
     import {
-        faHome,
-        faLaptop,
-        faPen,
         faPhone,
-        faShoppingBag,
-        faUsers,
     } from '@fortawesome/free-solid-svg-icons';
 
     import { Button } from 'sveltestrap';
