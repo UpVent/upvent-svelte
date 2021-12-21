@@ -23,22 +23,22 @@
                     <p class="h4 text-uppercase">Enlaces Rápidos</p>
                     <ul class="list-unstyled mb-0">
                         <li class="m-2">
-                            <a href="/" class="fs-5 text-decoration-none">Inicio</a>
+                            <a href="/" class="text-decoration-none">Inicio</a>
                         </li>
                         <li class="m-2">
-                            <a href="/" class="fs-5 text-decoration-none">Blog</a>
+                            <a href="/" class="text-decoration-none">Blog</a>
                         </li>
                         <li class="m-2">
-                            <a href="/" class="fs-5 text-decoration-none">Nosotros</a>
+                            <a href="/" class="text-decoration-none">Nosotros</a>
                         </li>
                         <li class="m-2">
-                            <a href="/" class="fs-5 text-decoration-none">Servicios</a>
+                            <a href="/" class="text-decoration-none">Servicios</a>
                         </li>
                         <li class="m-2">
-                            <a href="/" class="fs-5 text-decoration-none">Contacto</a>
+                            <a href="/" class="text-decoration-none">Contacto</a>
                         </li>
                         <li class="m-2">
-                            <a href="/" class="fs-5 text-decoration-none">MarketCloud</a>
+                            <a href="/" class="text-decoration-none">MarketCloud</a>
                         </li>
                     </ul>
                 </div>
@@ -47,19 +47,16 @@
                     <p class="h4 text-uppercase">Enlaces Importantes</p>
                     <ul class="list-unstyled mb-0">
                         <li class="m-2">
-                            <a href="https://github.com/UpVent" class="fs-5 text-decoration-none">Repositorio de Código Libre en GitHub <i class="bi bi-github"></i></a>
+                            <a rel="nofollow" href="https://github.com/UpVent" class="fs-5 text-decoration-none">Repositorio de Código Libre en GitHub <i class="bi bi-github"></i></a>
                         </li>
                         <li class="m-2">
-                            <a href="/" class="fs-5 text-decoration-none">Equipo</a>
+                            <a href="/" class="text-decoration-none">Equipo</a>
                         </li>
                         <li class="m-2">
-                            <a href="/" class="fs-5 text-decoration-none">Licencias</a>
+                            <a href="/" class="text-decoration-none">Licencias</a>
                         </li>
                         <li class="m-2">
-                            <a rel="nofollow" href="https://tickets.upvent.codes" class="fs-5 text-decoration-none">Sistema de Soporte</a>
-                        </li>
-                        <li class="m-2">
-                            <a href="#!" class="text-white text-decoration-none">...Espera más contenido pronto</a>
+                            <a rel="nofollow" href="https://tickets.upvent.codes" class="text-decoration-none">Sistema de Soporte</a>
                         </li>
                     </ul>
                 </div>
@@ -68,7 +65,7 @@
     </div>
 
     <section class="container mt-5 mb-5 text-center-p-4">
-        <p class="fs-6">
+        <p>
             El <a href="https://github.com/UpVent/upvent.codes">código fuente</a> de esta página se encuentra bajo la <a href="https://www.gnu.org/licenses/old-licenses/gpl-2.0.html">Licencia Pública General de GNU versión 2</a>. Excepto donde se indique lo <a href="https://creativecommons.org/policies#license">contrario</a>, el trabajo escrito, blogs, opiniones y parte del contenido visual se encuentra bajo la <a href="https://creativecommons.org/licenses/by-nd/3.0/deed.es">Licencia Creative Commons Atribución-SinDerivadas 3.0 No portada (CC BY-ND 3.0)</a>
         </p>
     </section>
