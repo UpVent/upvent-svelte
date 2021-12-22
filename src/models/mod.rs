@@ -212,7 +212,7 @@ impl TeamMember {
             id: self.id,
             name: self.name.clone(),
             position: self.position.clone(),
-            is_collab: self.is_collab.clone(),
+            is_collab: self.is_collab,
         }
     }
 }
@@ -314,7 +314,7 @@ impl Post {
     pub fn clone(&self) -> Post {
         Post {
             id: self.id,
-            published: self.published.clone(),
+            published: self.published,
             title: self.title.clone(),
             description: self.description.clone(),
             category: self.category.clone(),
@@ -356,13 +356,13 @@ impl Product {
         Product {
             id: self.id,
             name: self.name.clone(),
-            price: self.price.clone(),
+            price: self.price,
             category: self.category.clone(),
             apptype: self.apptype.clone(),
             short_description: self.short_description.clone(),
             description: self.description.clone(),
             stripe_link: self.stripe_link.clone(),
-            available: self.available.clone(),
+            available: self.available,
         }
     }
 }
