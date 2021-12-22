@@ -88,6 +88,32 @@ struct FSProject {
     license_link: String,
 }
 
+impl FSProject {
+    /// Returns a Free Software Project with the id given to it.
+    ///
+    /// # Arguments
+    ///
+    /// * `none` - No arguments implemented yet for this struct.
+    ///
+    /// # Examples
+    /// ```
+    /// // Clone an existing Free Software Project
+    /// let fsproject = FSProject::clone();
+    /// ```
+
+    pub fn clone(&self) -> FSProject {
+        FSProject {
+            id: self.id,
+            title: self.title.clone(),
+            description: self.description.clone(),
+            github_addr: self.github_addr.clone(),
+            support_addr: self.support_addr.clone(),
+            proj_license: self.proj_license.clone(),
+            license_link: self.license_link.clone(),
+        }
+    }
+}
+
 /// Stores a single License text shown in the "licenses" page
 /// of this site.
 /// (Licenses)
@@ -100,6 +126,29 @@ struct License {
     license_link: String,
 }
 
+impl License {
+    /// Returns a License Text with the id given to it.
+    ///
+    /// # Arguments
+    ///
+    /// * `none` - No arguments implemented yet for this struct.
+    ///
+    /// # Examples
+    /// ```
+    /// // Clone an existing License
+    /// let license = License::clone();
+    /// ```
+
+    pub fn clone(&self) -> License {
+        License {
+            id: self.id,
+            name: self.name.clone(),
+            verbatim: self.verbatim.clone(),
+            license_link: self.license_link.clone(),
+        }
+    }
+}
+
 /// Stores a single Hall Of Fame shown in the "licenses" page
 /// of this site.
 /// (Licenses)
@@ -108,6 +157,26 @@ struct License {
 struct HOF {
     id: Uuid,
     name: String,
+}
+
+impl HOF {
+    /// Returns a Hall Of Fame item with the id given to it.
+    ///
+    /// # Arguments
+    ///
+    /// * `none` - No arguments implemented yet for this struct.
+    ///
+    /// # Examples
+    /// ```
+    /// // Clone an existing Hall Of Fame item
+    /// let famous_project = HOF::clone();
+
+    pub fn clone(&self) -> HOF {
+        HOF {
+            id: self.id,
+            name: self.name.clone(),
+        }
+    }
 }
 
 /// Stores a single team member shown in the "team" page
@@ -126,6 +195,28 @@ struct TeamMember {
     is_collab: bool,
 }
 
+impl TeamMember {
+    /// Returns a Team Member with the id given to it.
+    ///
+    /// # Arguments
+    ///
+    /// * `none` - No arguments implemented yet for this struct.
+    ///
+    /// # Examples
+    /// ```
+    /// // Clone an existing Team Member
+    /// let member = TeamMember::clone();
+
+    pub fn clone(&self) -> TeamMember {
+        TeamMember {
+            id: self.id,
+            name: self.name.clone(),
+            position: self.position.clone(),
+            is_collab: self.is_collab.clone(),
+        }
+    }
+}
+
 /// Stores a single and unique privacy policy to make this site compliant with
 /// inside / outside country privacy laws (GDPR and others).
 /// (Privacy Policy)
@@ -136,6 +227,28 @@ struct PrivacyPolicy {
     title: String,
     changelog: String,
     text: String,
+}
+
+impl PrivacyPolicy {
+    /// Returns the Privacy Policy with the id given to it.
+    ///
+    /// # Arguments
+    ///
+    /// * `none` - No arguments implemented yet for this struct.
+    ///
+    /// # Examples
+    /// ```
+    /// // Clone an existing Privacy Policy
+    /// let p_policy = PrivacyPolicy::clone();
+
+    pub fn clone(&self) -> PrivacyPolicy {
+        PrivacyPolicy {
+            id: self.id,
+            title: self.title.clone(),
+            changelog: self.changelog.clone(),
+            text: self.text.clone(),
+        }
+    }
 }
 
 /// Stores a single and unique terms of service + refund policy to make this
@@ -150,6 +263,28 @@ struct TermsOfService {
     text: String,
 }
 
+impl TermsOfService {
+    /// Returns the Terms Of Service with the id given to it.
+    ///
+    /// # Arguments
+    ///
+    /// * `none` - No arguments implemented yet for this struct.
+    ///
+    /// # Examples
+    /// ```
+    /// // Clone an existing Terms Of Service item
+    /// let tos_policy = TermsOfService::clone();
+
+    pub fn clone(&self) -> TermsOfService {
+        TermsOfService {
+            id: self.id,
+            title: self.title.clone(),
+            changelog: self.changelog.clone(),
+            text: self.text.clone(),
+        }
+    }
+}
+
 // ===== Blog page =====
 
 /// Stores a single blog post.
@@ -162,6 +297,30 @@ struct Post {
     description: String,
     category: String,
     content: String,
+}
+
+impl Post {
+    /// Returns the Post with the id given to it.
+    ///
+    /// # Arguments
+    ///
+    /// * `none` - No arguments implemented yet for this struct.
+    ///
+    /// # Examples
+    /// ```
+    /// // Clone an existing Post item
+    /// let post = Post::clone();
+
+    pub fn Post(&self) -> Post {
+        Post {
+            id: self.id,
+            published: self.published.clone(),
+            title: self.title.clone(),
+            description: self.description.clone(),
+            category: self.category.clone(),
+            content: self.content.clone(),
+        }
+    }
 }
 
 // ===== Marketcloud page =====
@@ -179,4 +338,31 @@ struct Product {
     description: String,
     stripe_link: String,
     available: bool,
+}
+
+impl Product {
+    /// Returns the Product with the id given to it.
+    ///
+    /// # Arguments
+    ///
+    /// * `none` - No arguments implemented yet for this struct.
+    ///
+    /// # Examples
+    /// ```
+    /// // Clone an existing Product item
+    /// let product = Product::clone();
+
+    pub fn clone(&self) -> Product {
+        Product {
+            id: self.id,
+            name: self.name.clone(),
+            price: self.price.clone(),
+            category: self.category.clone(),
+            apptype: self.apptype.clone(),
+            short_description: self.short_description.clone(),
+            description: self.description.clone(),
+            stripe_link: self.stripe_link.clone(),
+            available: self.available.clone(),
+        }
+    }
 }
