@@ -8,6 +8,8 @@ authors = ["Omar Jair Purata Funes <ventgrey@gmail.com>"]
 
 [dependencies]
 rocket = { version = "0.5.0-rc.1", features = ["secrets", "tls", "json"] }
+diesel = { version = "1.4.4", features = ["sqlite", "uuid"] }
+dotenv = "0.15.0"
 
 [dependencies.uuid]
 version = "1.0.0-alpha.1"
