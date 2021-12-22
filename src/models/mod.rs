@@ -3,7 +3,7 @@ use uuid::Uuid;
 
 /// Stores a single instance of a testimonial made by any UpVent client.
 /// (Home)
-#[derive(Serialize)]
+#[derive(Serialize, Queryable)]
 #[serde(crate = "rocket::serde")]
 struct Testimonial {
     id: Uuid,
@@ -41,7 +41,7 @@ impl Testimonial {
 /// Stores a single instance of a project used in the portfolio section in
 /// this site.
 /// (About Us)
-#[derive(Serialize)]
+#[derive(Serialize, Queryable)]
 #[serde(crate = "rocket::serde")]
 struct Project {
     id: Uuid,
@@ -76,7 +76,7 @@ impl Project {
 /// Stores a single Free Software Project shown in the "services" page
 /// of this site.
 /// (Services)
-#[derive(Serialize)]
+#[derive(Serialize, Queryable)]
 #[serde(crate = "rocket::serde")]
 struct FSProject {
     id: Uuid,
@@ -117,7 +117,7 @@ impl FSProject {
 /// Stores a single License text shown in the "licenses" page
 /// of this site.
 /// (Licenses)
-#[derive(Serialize)]
+#[derive(Serialize, Queryable)]
 #[serde(crate = "rocket::serde")]
 struct License {
     id: Uuid,
@@ -152,7 +152,7 @@ impl License {
 /// Stores a single Hall Of Fame shown in the "licenses" page
 /// of this site.
 /// (Licenses)
-#[derive(Serialize)]
+#[derive(Serialize, Queryable)]
 #[serde(crate = "rocket::serde")]
 struct HOF {
     id: Uuid,
@@ -186,7 +186,7 @@ impl HOF {
 /// true = Outside Collaborator
 /// false = UpVent Member
 /// (Team)
-#[derive(Serialize)]
+#[derive(Serialize, Queryable)]
 #[serde(crate = "rocket::serde")]
 struct TeamMember {
     id: Uuid,
@@ -220,7 +220,7 @@ impl TeamMember {
 /// Stores a single and unique privacy policy to make this site compliant with
 /// inside / outside country privacy laws (GDPR and others).
 /// (Privacy Policy)
-#[derive(Serialize)]
+#[derive(Serialize, Queryable)]
 #[serde(crate = "rocket::serde")]
 struct PrivacyPolicy {
     id: Uuid,
@@ -254,7 +254,7 @@ impl PrivacyPolicy {
 /// Stores a single and unique terms of service + refund policy to make this
 /// site compliant with inside / outside country trade laws.
 /// (Terms Of Service)
-#[derive(Serialize)]
+#[derive(Serialize, Queryable)]
 #[serde(crate = "rocket::serde")]
 struct TermsOfService {
     id: Uuid,
@@ -288,7 +288,7 @@ impl TermsOfService {
 // ===== Blog page =====
 
 /// Stores a single blog post.
-#[derive(Serialize)]
+#[derive(Serialize, Queryable)]
 #[serde(crate = "rocket::serde")]
 struct Post {
     id: Uuid,
@@ -326,7 +326,7 @@ impl Post {
 // ===== Marketcloud page =====
 
 /// Stores a single marketplace product
-#[derive(Serialize)]
+#[derive(Serialize, Queryable)]
 #[serde(crate = "rocket::serde")]
 struct Product {
     id: Uuid,
