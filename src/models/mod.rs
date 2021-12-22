@@ -311,7 +311,7 @@ impl Post {
     /// // Clone an existing Post item
     /// let post = Post::clone();
 
-    pub fn Post(&self) -> Post {
+    pub fn clone(&self) -> Post {
         Post {
             id: self.id,
             published: self.published.clone(),
