@@ -12,15 +12,6 @@ license = "AGPL-3.0"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-rocket = { version = "0.5.0-rc.1", features = ["secrets", "tls", "json"] }
+rocket = { version = "0.5.0-rc.1", features = ["secrets", "tls", "json", "uuid"] }
 diesel = { version = "1.4.4", features = ["sqlite", "uuid"] }
 dotenv = "0.15.0"
-
-[dependencies.uuid]
-version = "1.0.0-alpha.1"
-features = [
-    "serde",             # Serialization & Deserialization
-    "v4",                # Lets you generate random UUIDs
-    "fast-rng",          # Use a faster (but still sufficiently random) RNG
-    "macro-diagnostics", # Enable better diagnostics for compile-time UUIDs
-]

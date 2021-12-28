@@ -1,5 +1,5 @@
+use rocket::serde::uuid::Uuid;
 use rocket::serde::Serialize;
-use uuid::Uuid;
 
 /// Stores a single instance of a testimonial made by any UpVent client.
 /// (Home)
