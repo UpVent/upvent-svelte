@@ -21,3 +21,10 @@ Cargo.lock
 
 # Ignore debug database in SQLITE3
 debug.db
+
+
+# Added by cargo
+#
+# already existing elements were commented out
+
+#/target
