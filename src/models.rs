@@ -1,5 +1,6 @@
 use rocket::serde::uuid::Uuid;
 use rocket::serde::Serialize;
+use upventrs_server::connect_sqlite;
 
 /// Stores a single instance of a testimonial made by any UpVent client.
 /// (Home)
@@ -36,6 +37,12 @@ impl Testimonial {
             website: self.workplace.clone(),
         }
     }
+}
+
+/// Get all testimonials (outside of the impl struct, we want to avoid creating
+/// a new object)
+pub fn get_all_testimonials() -> Result<Vec<Testimonial>, diesel::result::Error> {
+    let connection = connect_sqlite();
 }
 
 /// Stores a single instance of a project used in the portfolio section in

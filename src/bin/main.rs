@@ -10,7 +10,6 @@ use rocket::serde::uuid::Uuid;
 use std::io;
 use std::path::{Path, PathBuf};
 use upventrs_server::connect_sqlite;
-use uuid::Uuid;
 
 mod models;
 
@@ -19,9 +18,15 @@ async fn index() -> io::Result<NamedFile> {
     NamedFile::open("public/index.html").await
 }
 
-/// Get all testimonials (defined in the testimonials model)
+/// Get ALL testimonials
+#[get("/testimonials")]
+fn all_testimonials() -> Option<Json<Vec<Testimonial>>> {
+    //TODO: Cosas
+}
+
+/// Get a specific testimonial (Providing it's corresponding UUID)
 #[get("/testimonial/<id>", format = "application/json")]
-fn get_testimonial(id: String) {
+fn get_testimonial(id: Uuid) {
     let conn: SqliteConnection = connect_sqlite();
 }
 
