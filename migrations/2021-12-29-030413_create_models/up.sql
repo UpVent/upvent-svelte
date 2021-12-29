@@ -2,7 +2,7 @@
 
 /* HOMEPAGE testimonials  */
 CREATE TABLE IF NOT EXISTS testimonials (
-    id TEXT PRIMARY KEY NOT NULL,
+    id INTEGER PRIMARY KEY NOT NULL,
     name TEXT NOT NULL,
     testimonial TEXT NOT NULL,
     workplace TEXT NOT NULL,
@@ -11,7 +11,7 @@ CREATE TABLE IF NOT EXISTS testimonials (
 
 /* Project used in the portfolio section in the ABOUT US page */
 CREATE TABLE IF NOT EXISTS projects (
-    id TEXT PRIMARY KEY NOT NULL,
+    id INTEGER PRIMARY KEY NOT NULL,
     title TEXT NOT NULL,
     site TEXT NOT NULL,
     description TEXT NOT NULL
@@ -19,7 +19,7 @@ CREATE TABLE IF NOT EXISTS projects (
 
 /* Free Software project shown in the Services page of the site */
 CREATE TABLE IF NOT EXISTS fsprojects (
-    id TEXT PRIMARY KEY NOT NULL,
+    id INTEGER PRIMARY KEY NOT NULL,
     title TEXT NOT NULL,
     description TEXT NOT NULL,
     github_addr TEXT NOT NULL,
@@ -30,7 +30,7 @@ CREATE TABLE IF NOT EXISTS fsprojects (
 
 /* License text shown in the LICENSES page */
 CREATE TABLE IF NOT EXISTS licenses (
-    id TEXT PRIMARY KEY NOT NULL,
+    id INTEGER PRIMARY KEY NOT NULL,
     name TEXT NOT NULL,
     verbatim TEXT NOT NULL,
     license_link TEXT NOT NULL
@@ -38,13 +38,13 @@ CREATE TABLE IF NOT EXISTS licenses (
 
 /* Hall Of Fame project */
 CREATE TABLE IF NOT EXISTS hofs (
-    id TEXT PRIMARY KEY NOT NULL,
+    id INTEGER PRIMARY KEY NOT NULL,
     name TEXT NOT NULL
 );
 
 /* Team member table to show on the team page */
 CREATE TABLE IF NOT EXISTS teammembers (
-    id TEXT PRIMARY KEY NOT NULL,
+    id INTEGER PRIMARY KEY NOT NULL,
     name TEXT NOT NULL,
     position TEXT NOT NULL,
     is_collab BOOLEAN NOT NULL
@@ -52,7 +52,7 @@ CREATE TABLE IF NOT EXISTS teammembers (
 
 /* Privacy policy table */
 CREATE TABLE IF NOT EXISTS privacypolicies (
-    id TEXT PRIMARY KEY NOT NULL,
+    id INTEGER PRIMARY KEY NOT NULL,
     title TEXT NOT NULL,
     changelog TEXT NOT NULL,
     text TEXT NOT NULL
@@ -60,7 +60,7 @@ CREATE TABLE IF NOT EXISTS privacypolicies (
 
 /* Terms of Service Table */
 CREATE TABLE IF NOT EXISTS termsofservices (
-    id TEXT PRIMARY KEY NOT NULL,
+    id INTEGER PRIMARY KEY NOT NULL,
     title TEXT NOT NULL,
     changelog TEXT NOT NULL,
     text TEXT NOT NULL
@@ -68,7 +68,7 @@ CREATE TABLE IF NOT EXISTS termsofservices (
 
 /* Blog Post table */
 CREATE TABLE IF NOT EXISTS posts (
-    id TEXT PRIMARY KEY NOT NULL,
+    id INTEGER PRIMARY KEY NOT NULL,
     published BOOLEAN NOT NULL,
     title TEXT NOT NULL,
     description TEXT NOT NULL,
@@ -78,7 +78,7 @@ CREATE TABLE IF NOT EXISTS posts (
 
 /* Product table */
 CREATE TABLE IF NOT EXISTS products (
-    id TEXT PRIMARY KEY NOT NULL,
+    id INTEGER PRIMARY KEY NOT NULL,
     name TEXT NOT NULL,
     price REAL NOT NULL,
     category TEXT NOT NULL,
