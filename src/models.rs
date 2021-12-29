@@ -1,11 +1,15 @@
 use rocket::serde::uuid::Uuid;
 use rocket::serde::Serialize;
 
+use diesel;
+use diesel::prelude::*;
+use diesel::sqlite::SqliteConnection;
+
 /// Stores a single instance of a testimonial made by any UpVent client.
 /// (Home)
 #[derive(Serialize, Queryable)]
 #[serde(crate = "rocket::serde")]
-struct Testimonial {
+pub struct Testimonial {
     id: Uuid,
     name: String,
     testimonial: String,
@@ -43,7 +47,7 @@ impl Testimonial {
 /// (About Us)
 #[derive(Serialize, Queryable)]
 #[serde(crate = "rocket::serde")]
-struct Project {
+pub struct Project {
     id: Uuid,
     title: String,
     site: String,
@@ -78,7 +82,7 @@ impl Project {
 /// (Services)
 #[derive(Serialize, Queryable)]
 #[serde(crate = "rocket::serde")]
-struct FSProject {
+pub struct FSProject {
     id: Uuid,
     title: String,
     description: String,
@@ -119,7 +123,7 @@ impl FSProject {
 /// (Licenses)
 #[derive(Serialize, Queryable)]
 #[serde(crate = "rocket::serde")]
-struct License {
+pub struct License {
     id: Uuid,
     name: String,
     verbatim: String,
@@ -154,7 +158,7 @@ impl License {
 /// (Licenses)
 #[derive(Serialize, Queryable)]
 #[serde(crate = "rocket::serde")]
-struct HOF {
+pub struct HOF {
     id: Uuid,
     name: String,
 }
@@ -188,7 +192,7 @@ impl HOF {
 /// (Team)
 #[derive(Serialize, Queryable)]
 #[serde(crate = "rocket::serde")]
-struct TeamMember {
+pub struct TeamMember {
     id: Uuid,
     name: String,
     position: String,
@@ -222,7 +226,7 @@ impl TeamMember {
 /// (Privacy Policy)
 #[derive(Serialize, Queryable)]
 #[serde(crate = "rocket::serde")]
-struct PrivacyPolicy {
+pub struct PrivacyPolicy {
     id: Uuid,
     title: String,
     changelog: String,
@@ -256,7 +260,7 @@ impl PrivacyPolicy {
 /// (Terms Of Service)
 #[derive(Serialize, Queryable)]
 #[serde(crate = "rocket::serde")]
-struct TermsOfService {
+pub struct TermsOfService {
     id: Uuid,
     title: String,
     changelog: String,
@@ -290,7 +294,7 @@ impl TermsOfService {
 /// Stores a single blog post.
 #[derive(Serialize, Queryable)]
 #[serde(crate = "rocket::serde")]
-struct Post {
+pub struct Post {
     id: Uuid,
     published: bool,
     title: String,
@@ -328,7 +332,7 @@ impl Post {
 /// Stores a single marketplace product
 #[derive(Serialize, Queryable)]
 #[serde(crate = "rocket::serde")]
-struct Product {
+pub struct Product {
     id: Uuid,
     name: String,
     price: f64,
