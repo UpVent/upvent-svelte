@@ -1,7 +1,7 @@
 -- Your SQL goes here
 
 /* HOMEPAGE testimonials  */
-CREATE TABLE testimonials (
+CREATE TABLE IF NOT EXISTS testimonials (
     id TEXT PRIMARY KEY NOT NULL,
     name TEXT NOT NULL,
     testimonial TEXT NOT NULL,
@@ -10,7 +10,7 @@ CREATE TABLE testimonials (
 );
 
 /* Project used in the portfolio section in the ABOUT US page */
-CREATE TABLE projects (
+CREATE TABLE IF NOT EXISTS projects (
     id TEXT PRIMARY KEY NOT NULL,
     title TEXT NOT NULL,
     site TEXT NOT NULL,
@@ -18,7 +18,7 @@ CREATE TABLE projects (
 );
 
 /* Free Software project shown in the Services page of the site */
-CREATE TABLE fsprojects (
+CREATE TABLE IF NOT EXISTS fsprojects (
     id TEXT PRIMARY KEY NOT NULL,
     title TEXT NOT NULL,
     description TEXT NOT NULL,
@@ -29,7 +29,7 @@ CREATE TABLE fsprojects (
 );
 
 /* License text shown in the LICENSES page */
-CREATE TABLE licenses (
+CREATE TABLE IF NOT EXISTS licenses (
     id TEXT PRIMARY KEY NOT NULL,
     name TEXT NOT NULL,
     verbatim TEXT NOT NULL,
@@ -37,13 +37,13 @@ CREATE TABLE licenses (
 );
 
 /* Hall Of Fame project */
-CREATE TABLE hofs (
+CREATE TABLE IF NOT EXISTS hofs (
     id TEXT PRIMARY KEY NOT NULL,
     name TEXT NOT NULL
 );
 
 /* Team member table to show on the team page */
-CREATE TABLE teammembers (
+CREATE TABLE IF NOT EXISTS teammembers (
     id TEXT PRIMARY KEY NOT NULL,
     name TEXT NOT NULL,
     position TEXT NOT NULL,
@@ -51,7 +51,7 @@ CREATE TABLE teammembers (
 );
 
 /* Privacy policy table */
-CREATE TABLE privacypolicies (
+CREATE TABLE IF NOT EXISTS privacypolicies (
     id TEXT PRIMARY KEY NOT NULL,
     title TEXT NOT NULL,
     changelog TEXT NOT NULL,
@@ -59,7 +59,7 @@ CREATE TABLE privacypolicies (
 );
 
 /* Terms of Service Table */
-CREATE TABLE termsofservices (
+CREATE TABLE IF NOT EXISTS termsofservices (
     id TEXT PRIMARY KEY NOT NULL,
     title TEXT NOT NULL,
     changelog TEXT NOT NULL,
@@ -67,7 +67,7 @@ CREATE TABLE termsofservices (
 );
 
 /* Blog Post table */
-CREATE TABLE posts (
+CREATE TABLE IF NOT EXISTS posts (
     id TEXT PRIMARY KEY NOT NULL,
     published BOOLEAN NOT NULL,
     title TEXT NOT NULL,
@@ -77,7 +77,7 @@ CREATE TABLE posts (
 );
 
 /* Product table */
-CREATE TABLE products (
+CREATE TABLE IF NOT EXISTS products (
     id TEXT PRIMARY KEY NOT NULL,
     name TEXT NOT NULL,
     price REAL NOT NULL,
