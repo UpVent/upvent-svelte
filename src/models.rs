@@ -31,11 +31,38 @@ pub struct NewTestimonial {
 }
 
 impl Testimonial {
+    /// Returns a vector consisting of a single Testimonial in the current
+    /// database.
+    ///
+    /// # Arguments
+    ///
+    /// * `id`: The testimonial ID you wish to show
+    /// * `conn`: A reference to an SQLite Connection
+    ///
+    /// # Examples
+    ///
+    /// ```
+    /// // Get the first testimonial saved in the database
+    ///
+    /// fn establish_connection() -> SqliteConnection {
+    /// dotenv().ok();
+    ///
+    ///     let database_url = env::var("DATABASE_URL").expect("DATABASE_URL must be set");
+    ///         SqliteConnection::establish(&database_url)
+    ///         .unwrap_or_else(|_| panic!("Error connecting to {}", database_url))
+    /// }
+    ///
+    /// let sqlite_connection = &mut establish_connection();
+    /// let first = Testimonial::show(1, sqlite_connection);
+    ///
+    /// println!("{:?}", first);
+    /// ```
+    ///
     pub fn show(id: i32, conn: &SqliteConnection) -> Vec<Testimonial> {
         all_testimonials
             .find(id)
             .load::<Testimonial>(conn)
-            .expect("Error loading testimonials")
+            .expect("Error loading testimonial")
     }
 
     /// Returns a Testimonial with the id given to it.
