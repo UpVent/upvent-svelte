@@ -10,7 +10,12 @@ use diesel::sqlite::SqliteConnection;
 #[derive(Serialize, Queryable)]
 #[serde(crate = "rocket::serde")]
 pub struct Testimonial {
-    id: Uuid,
+    id: i32,
+    name: String,
+    testimonial: String,
+    workplace: String,
+    website: String,
+}
     name: String,
     testimonial: String,
     workplace: String,
@@ -48,7 +53,7 @@ impl Testimonial {
 #[derive(Serialize, Queryable)]
 #[serde(crate = "rocket::serde")]
 pub struct Project {
-    id: Uuid,
+    id: i32,
     title: String,
     site: String,
     description: String,
@@ -83,7 +88,7 @@ impl Project {
 #[derive(Serialize, Queryable)]
 #[serde(crate = "rocket::serde")]
 pub struct FSProject {
-    id: Uuid,
+    id: i32,
     title: String,
     description: String,
     github_addr: String,
@@ -124,7 +129,7 @@ impl FSProject {
 #[derive(Serialize, Queryable)]
 #[serde(crate = "rocket::serde")]
 pub struct License {
-    id: Uuid,
+    id: i32,
     name: String,
     verbatim: String,
     license_link: String,
@@ -159,7 +164,7 @@ impl License {
 #[derive(Serialize, Queryable)]
 #[serde(crate = "rocket::serde")]
 pub struct HOF {
-    id: Uuid,
+    id: i32,
     name: String,
 }
 
@@ -193,7 +198,7 @@ impl HOF {
 #[derive(Serialize, Queryable)]
 #[serde(crate = "rocket::serde")]
 pub struct TeamMember {
-    id: Uuid,
+    id: i32,
     name: String,
     position: String,
     is_collab: bool,
@@ -227,7 +232,7 @@ impl TeamMember {
 #[derive(Serialize, Queryable)]
 #[serde(crate = "rocket::serde")]
 pub struct PrivacyPolicy {
-    id: Uuid,
+    id: i32,
     title: String,
     changelog: String,
     text: String,
@@ -261,7 +266,7 @@ impl PrivacyPolicy {
 #[derive(Serialize, Queryable)]
 #[serde(crate = "rocket::serde")]
 pub struct TermsOfService {
-    id: Uuid,
+    id: i32,
     title: String,
     changelog: String,
     text: String,
@@ -295,7 +300,7 @@ impl TermsOfService {
 #[derive(Serialize, Queryable)]
 #[serde(crate = "rocket::serde")]
 pub struct Post {
-    id: Uuid,
+    id: i32,
     published: bool,
     title: String,
     description: String,
@@ -333,7 +338,7 @@ impl Post {
 #[derive(Serialize, Queryable)]
 #[serde(crate = "rocket::serde")]
 pub struct Product {
-    id: Uuid,
+    id: i32,
     name: String,
     price: f64,
     category: String,
