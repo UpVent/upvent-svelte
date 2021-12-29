@@ -41,3 +41,50 @@ CREATE TABLE hofs (
     id TEXT PRIMARY KEY NOT NULL,
     name TEXT NOT NULL
 );
+
+/* Team member table to show on the team page */
+CREATE TABLE teammembers (
+    id TEXT PRIMARY KEY NOT NULL,
+    name TEXT NOT NULL,
+    position TEXT NOT NULL,
+    is_collab BOOLEAN NOT NULL
+);
+
+/* Privacy policy table */
+CREATE TABLE privacypolicies (
+    id TEXT PRIMARY KEY NOT NULL,
+    title TEXT NOT NULL,
+    changelog TEXT NOT NULL,
+    text TEXT NOT NULL
+);
+
+/* Terms of Service Table */
+CREATE TABLE termsofservices (
+    id TEXT PRIMARY KEY NOT NULL,
+    title TEXT NOT NULL,
+    changelog TEXT NOT NULL,
+    text TEXT NOT NULL
+);
+
+/* Blog Post table */
+CREATE TABLE posts (
+    id TEXT PRIMARY KEY NOT NULL,
+    published BOOLEAN NOT NULL,
+    title TEXT NOT NULL,
+    description TEXT NOT NULL,
+    category TEXT NOT NULL,
+    content TEXT NOT NULL
+);
+
+/* Product table */
+CREATE TABLE products (
+    id TEXT PRIMARY KEY NOT NULL,
+    name TEXT NOT NULL,
+    price REAL NOT NULL,
+    category TEXT NOT NULL,
+    apptype TEXT NOT NULL,
+    short_description TEXT NOT NULL,
+    description TEXT NOT NULL,
+    stripe_link TEXT NOT NULL,
+    available BOOLEAN NOT NULL
+);
