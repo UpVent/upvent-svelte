@@ -65,6 +65,23 @@ impl Testimonial {
             .expect("Error loading testimonial")
     }
 
+    /// Returns a vector of all Testimonials saved in the current database
+    ///
+    /// # Arguments
+    ///
+    /// * `conn`: A reference to an SQLite Connection
+    ///
+    /// # Examples
+    ///
+    /// TODO
+    ///
+    pub fn all(conn: &SqliteConnection) -> Vec<Testimonial> {
+        all_testimonials
+            .order(testimonials::id.desc())
+            .load::<Testimonial>(conn)
+            .expect("Error loading testimonials")
+    }
+
     /// Returns a Testimonial with the id given to it.
     ///
     /// # Arguments
