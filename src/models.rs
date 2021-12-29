@@ -5,6 +5,10 @@ use diesel;
 use diesel::prelude::*;
 use diesel::sqlite::SqliteConnection;
 
+/* Testimonial Model related imports */
+use crate::schema::testimonials;
+use crate::schema::testimonials::dsl::testimonials as all_testimonials;
+
 /// Stores a single instance of a testimonial made by any UpVent client.
 /// (Home)
 #[derive(Serialize, Queryable)]
@@ -16,6 +20,10 @@ pub struct Testimonial {
     workplace: String,
     website: String,
 }
+
+#[derive(Insertable)]
+#[table_name = "testimonials"]
+pub struct NewTestimonial {
     name: String,
     testimonial: String,
     workplace: String,
@@ -23,6 +31,13 @@ pub struct Testimonial {
 }
 
 impl Testimonial {
+    pub fn show(id: i32, conn: &SqliteConnection) -> Vec<Testimonial> {
+        all_testimonials
+            .find(id)
+            .load::<Testimonial>(conn)
+            .expect("Error loading testimonials")
+    }
+
     /// Returns a Testimonial with the id given to it.
     ///
     /// # Arguments
