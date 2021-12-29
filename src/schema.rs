@@ -1,6 +1,6 @@
 table! {
     fsprojects (id) {
-        id -> Text,
+        id -> Integer,
         title -> Text,
         description -> Text,
         github_addr -> Text,
@@ -12,14 +12,14 @@ table! {
 
 table! {
     hofs (id) {
-        id -> Text,
+        id -> Integer,
         name -> Text,
     }
 }
 
 table! {
     licenses (id) {
-        id -> Text,
+        id -> Integer,
         name -> Text,
         verbatim -> Text,
         license_link -> Text,
@@ -28,7 +28,7 @@ table! {
 
 table! {
     posts (id) {
-        id -> Text,
+        id -> Integer,
         published -> Bool,
         title -> Text,
         description -> Text,
@@ -39,7 +39,7 @@ table! {
 
 table! {
     privacypolicies (id) {
-        id -> Text,
+        id -> Integer,
         title -> Text,
         changelog -> Text,
         text -> Text,
@@ -48,7 +48,7 @@ table! {
 
 table! {
     products (id) {
-        id -> Text,
+        id -> Integer,
         name -> Text,
         price -> Float,
         category -> Text,
@@ -62,7 +62,7 @@ table! {
 
 table! {
     projects (id) {
-        id -> Text,
+        id -> Integer,
         title -> Text,
         site -> Text,
         description -> Text,
@@ -71,7 +71,7 @@ table! {
 
 table! {
     teammembers (id) {
-        id -> Text,
+        id -> Integer,
         name -> Text,
         position -> Text,
         is_collab -> Bool,
@@ -80,7 +80,7 @@ table! {
 
 table! {
     termsofservices (id) {
-        id -> Text,
+        id -> Integer,
         title -> Text,
         changelog -> Text,
         text -> Text,
@@ -89,7 +89,7 @@ table! {
 
 table! {
     testimonials (id) {
-        id -> Text,
+        id -> Integer,
         name -> Text,
         testimonial -> Text,
         workplace -> Text,
