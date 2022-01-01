@@ -139,6 +139,14 @@ impl Testimonial {
             .is_ok()
     }
 
+    /// Documentation pending
+    pub fn all_by_name(name: String, conn: &SqliteConnection) -> Vec<Testimonial> {
+        all_testimonials
+            .filter(testimonials::name.eq(name))
+            .load::<Testimonial>(conn)
+            .expect("Error loading testimonials by name")
+    }
+
     /// Returns a Testimonial with the id given to it.
     ///
     /// # Arguments
