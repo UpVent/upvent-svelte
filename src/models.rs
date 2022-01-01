@@ -1,4 +1,3 @@
-use rocket::serde::uuid::Uuid;
 use rocket::serde::Serialize;
 
 use diesel;
