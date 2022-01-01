@@ -120,7 +120,36 @@ impl Testimonial {
             .is_ok()
     }
 
-    /// Documentation pending
+    /// Returns a boolean if the resulting insert (add) operation was
+    /// excecuted successfully.
+    ///
+    /// # Arguments
+    ///
+    /// * test: A `NewTestimonial` struct to insert
+    /// * conn: A reference to an SQLite Connection
+    ///
+    /// # Examples
+    ///
+    /// ```
+    /// // Insert a record into the Testimonials table
+    ///
+    /// let db_url = env::var("DATABASE_URL").expect("set DATABASE_URL");
+    /// let conn = SqliteConnection::establish(&db_url).unwrap();
+    ///
+    /// let testimonial = models::NewTestimonial {
+    ///    name: String::from("VentGrey"),
+    ///    testimonial: String::from("This testimonial text is a test. The cake is a lie!"),
+    ///    workplace: String::from("UpVent Technologies"),
+    ///    website: String::from("https://upvent.codes/"),
+    /// };
+    ///
+    /// if models::Testimonial::insert(testimonial, &conn) {
+    ///    println!("Testimonial inserted correctly!");
+    /// } else {
+    ///    println!("Something failed while inserting the testimonial!");
+    /// }
+    /// ```
+    ///
     pub fn insert(test: NewTestimonial, conn: &SqliteConnection) -> bool {
         diesel::insert_into(testimonials::table)
             .values(&test)
