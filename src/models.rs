@@ -13,20 +13,20 @@ use crate::schema::testimonials::dsl::testimonials as all_testimonials;
 #[derive(Serialize, Queryable)]
 #[serde(crate = "rocket::serde")]
 pub struct Testimonial {
-    id: i32,
-    name: String,
-    testimonial: String,
-    workplace: String,
-    website: String,
+    pub id: i32,
+    pub name: String,
+    pub testimonial: String,
+    pub workplace: String,
+    pub website: String,
 }
 
 #[derive(Insertable)]
 #[table_name = "testimonials"]
 pub struct NewTestimonial {
-    name: String,
-    testimonial: String,
-    workplace: String,
-    website: String,
+    pub name: String,
+    pub testimonial: String,
+    pub workplace: String,
+    pub website: String,
 }
 
 impl Testimonial {
