@@ -72,13 +72,71 @@ impl Testimonial {
     ///
     /// # Examples
     ///
-    /// TODO
+    /// ```
+    /// // Get the first testimonial saved in the database
+    ///
+    /// fn establish_connection() -> SqliteConnection {
+    /// dotenv().ok();
+    ///
+    ///     let database_url = env::var("DATABASE_URL").expect("DATABASE_URL must be set");
+    ///         SqliteConnection::establish(&database_url)
+    ///         .unwrap_or_else(|_| panic!("Error connecting to {}", database_url))
+    /// }
+    ///
+    /// let sqlite_connection = &mut establish_connection();
+    /// let test_list = Testimonial::all(sqlite_connection);
+    ///
+    /// println!("{:?}", test_list);
+    /// ```
     ///
     pub fn all(conn: &SqliteConnection) -> Vec<Testimonial> {
         all_testimonials
             .order(testimonials::id.desc())
             .load::<Testimonial>(conn)
             .expect("Error loading testimonials")
+    }
+
+    /// Documentation pending
+    pub fn update_by_id(id: i32, conn: &SqliteConnection, test: NewTestimonial) -> bool {
+        use crate::schema::testimonials::dsl::{
+            name as n, testimonial as t, website as ws, workplace as w,
+        };
+
+        let NewTestimonial {
+            name,
+            testimonial,
+            workplace,
+            website,
+        } = test;
+
+        diesel::update(all_testimonials.find(id))
+            .set((
+                n.eq(name),
+                t.eq(testimonial),
+                w.eq(workplace),
+                ws.eq(website),
+            ))
+            .execute(conn)
+            .is_ok()
+    }
+
+    /// Documentation pending
+    pub fn insert(test: NewTestimonial, conn: &SqliteConnection) -> bool {
+        diesel::insert_into(testimonials::table)
+            .values(&test)
+            .execute(conn)
+            .is_ok()
+    }
+
+    /// Documentation pending
+    pub fn delete_by_id(id: i32, conn: &SqliteConnection) -> bool {
+        if Testimonial::show(id, conn).is_empty() {
+            return false;
+        };
+
+        diesel::delete(all_testimonials.find(id))
+            .execute(conn)
+            .is_ok()
     }
 
     /// Returns a Testimonial with the id given to it.
