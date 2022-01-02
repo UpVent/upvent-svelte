@@ -12,6 +12,7 @@ use std::env;
 use std::io;
 
 /* Crate modules */
+mod db;
 mod models;
 mod schema;
 
