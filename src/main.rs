@@ -4,29 +4,16 @@ extern crate rocket;
 #[macro_use]
 extern crate diesel;
 
-use diesel::prelude::*;
-use diesel::sqlite::SqliteConnection;
+use crate::routes::*;
 use dotenv::dotenv;
-use rocket::fs::NamedFile;
 use std::env;
-use std::io;
-use std::path::{Path, PathBuf};
 
 /* Crate modules */
 mod db;
 mod models;
 mod routes;
 mod schema;
-
-#[get("/")]
-async fn index() -> io::Result<NamedFile> {
-    NamedFile::open("public/index.html").await
-}
-
-#[get("/<file..>", rank = 5)]
-async fn all(file: PathBuf) -> Option<NamedFile> {
-    NamedFile::open(Path::new("public/").join(file)).await.ok()
-}
+mod static_files;
 
 #[launch]
 fn rocket() -> _ {
@@ -49,5 +36,16 @@ fn rocket() -> _ {
 
     let pool = db::init_pool(db_url);
 
-    rocket::build().manage(pool).mount("/", routes![all, index])
+    rocket::build()
+        .manage(pool)
+        .mount(
+            "/api/v1/",
+            routes![index, new, show, delete, author, update],
+        )
+        .mount(
+            "/",
+            routes![crate::static_files::all, crate::static_files::index],
+        )
+        .register("/", catchers![not_found])
+        .register("/api/v1/", catchers![not_found])
 }
