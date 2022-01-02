@@ -10,6 +10,7 @@ use dotenv::dotenv;
 use rocket::fs::NamedFile;
 use std::env;
 use std::io;
+use std::path::{Path, PathBuf};
 
 /* Crate modules */
 mod db;
@@ -19,6 +20,11 @@ mod schema;
 #[get("/")]
 async fn index() -> io::Result<NamedFile> {
     NamedFile::open("public/index.html").await
+}
+
+#[get("/<file..>", rank = 5)]
+async fn all(file: PathBuf) -> Option<NamedFile> {
+    NamedFile::open(Path::new("public/").join(file)).await.ok()
 }
 
 #[launch]
