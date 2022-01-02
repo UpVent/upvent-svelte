@@ -10,7 +10,7 @@ use crate::schema::testimonials::dsl::testimonials as all_testimonials;
 
 /// Stores a single instance of a testimonial made by any UpVent client.
 /// (Home)
-#[derive(Serialize, Queryable)]
+#[derive(Serialize, Queryable, Debug, Clone)]
 #[serde(crate = "rocket::serde")]
 pub struct Testimonial {
     pub id: i32,
@@ -174,29 +174,6 @@ impl Testimonial {
             .filter(testimonials::name.eq(name))
             .load::<Testimonial>(conn)
             .expect("Error loading testimonials by name")
-    }
-
-    /// Returns a Testimonial with the id given to it.
-    ///
-    /// # Arguments
-    ///
-    /// * `none` - No arguments implemented yet for this struct.
-    ///
-    /// # Examples
-    ///
-    /// ```
-    /// // Clone an existing Testimonial
-    /// let testimonial = Testimonial::clone();
-    /// ```
-
-    pub fn clone(&self) -> Testimonial {
-        Testimonial {
-            id: self.id,
-            name: self.name.clone(),
-            testimonial: self.testimonial.clone(),
-            workplace: self.workplace.clone(),
-            website: self.workplace.clone(),
-        }
     }
 }
 
