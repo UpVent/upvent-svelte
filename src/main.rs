@@ -15,6 +15,7 @@ use std::path::{Path, PathBuf};
 /* Crate modules */
 mod db;
 mod models;
+mod routes;
 mod schema;
 
 #[get("/")]
