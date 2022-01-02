@@ -1,3 +1,4 @@
+use rocket::serde::Deserialize;
 use rocket::serde::Serialize;
 
 use diesel;
@@ -20,7 +21,8 @@ pub struct Testimonial {
     pub website: String,
 }
 
-#[derive(Insertable)]
+#[derive(Insertable, Serialize, Deserialize)]
+#[serde(crate = "rocket::serde")]
 #[table_name = "testimonials"]
 pub struct NewTestimonial {
     pub name: String,
