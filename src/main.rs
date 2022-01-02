@@ -30,8 +30,7 @@ async fn all(file: PathBuf) -> Option<NamedFile> {
 #[launch]
 fn rocket() -> _ {
     dotenv().ok();
-
-    //    let db_url = env::var("DATABASE_URL").expect("set DATABASE_URL");
+    let db_url = env::var("DATABASE_URL").expect("set DATABASE_URL");
     //    let conn = SqliteConnection::establish(&db_url).unwrap();
     //
     //    let testimonial = models::NewTestimonial {
@@ -47,5 +46,7 @@ fn rocket() -> _ {
     //        println!("Something failed while inserting the testimonial!");
     //    }
 
-    rocket::build().mount("/", routes![all, index])
+    let pool = db::init_pool(db_url);
+
+    rocket::build().manage(pool).mount("/", routes![all, index])
 }
