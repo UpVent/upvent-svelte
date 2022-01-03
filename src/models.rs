@@ -9,6 +9,42 @@ use diesel::sqlite::SqliteConnection;
 use crate::schema::testimonials;
 use crate::schema::testimonials::dsl::testimonials as all_testimonials;
 
+/* Project Model related imports */
+use crate::schema::projects;
+use crate::schema::projects::dsl::projects as all_projects;
+
+/* Free Software Model related imports */
+use crate::schema::fsprojects;
+use crate::schema::fsprojects::dsl::fsprojects as all_fsprojects;
+
+/* License Model related imports */
+use crate::schema::licenses;
+use crate::schema::licenses::dsl::licenses as all_licenses;
+
+/* Hall Of Fame Model related imports */
+use crate::schema::hofs;
+use crate::schema::hofs::dsl::hofs as all_hofs;
+
+/* Team Member Model related imports */
+use crate::schema::teammembers;
+use crate::schema::teammembers::dsl::teammembers as all_teammembers;
+
+/* Privacy Policy Model related imports */
+use crate::schema::privacypolicies;
+use crate::schema::privacypolicies::dsl::privacypolicies as all_privacypolicies;
+
+/* Terms Of Service Model related imports */
+use crate::schema::termsofservices;
+use crate::schema::termsofservices::dsl::termsofservices as all_termsofservices;
+
+/* Blog Post Model related imports */
+use crate::schema::posts;
+use crate::schema::posts::dsl::posts as all_posts;
+
+/* Marketcloud product related imports */
+use crate::schema::products;
+use crate::schema::products::dsl::products as all_products;
+
 /// Stores a single instance of a testimonial made by any UpVent client.
 /// (Home)
 #[derive(Serialize, Queryable, Debug, Clone)]
