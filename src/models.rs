@@ -218,7 +218,7 @@ impl Testimonial {
 /// Stores a single instance of a project used in the portfolio section in
 /// this site.
 /// (About Us)
-#[derive(Serialize, Queryable)]
+#[derive(Serialize, Queryable, Debug, Clone)]
 #[serde(crate = "rocket::serde")]
 pub struct Project {
     id: i32,
