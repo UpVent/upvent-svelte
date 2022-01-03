@@ -227,26 +227,149 @@ pub struct Project {
     description: String,
 }
 
+#[derive(Insertable, Serialize, Deserialize)]
+#[serde(crate = "rocket::serde")]
+#[table_name = "projects"]
+pub struct NewProject {
+    title: String,
+    site: String,
+    description: String,
+}
+
 impl Project {
-    /// Returns a Project with the id given to it.
+    /// Returns a vector consisting of a single Project in the current
+    /// database.
     ///
     /// # Arguments
     ///
-    /// * `none` - No arguments implemented yet for this struct.
+    /// * `id`: The project ID you wish to show
+    /// * `conn`: A reference to an SQLite Connection
     ///
     /// # Examples
+    ///
     /// ```
-    /// // Clone an existing Testimonial
-    /// let project = Project::clone();
+    /// // Get the first project saved in the database
+    ///
+    /// fn establish_connection() -> SqliteConnection {
+    /// dotenv().ok();
+    ///
+    ///     let database_url = env::var("DATABASE_URL").expect("DATABASE_URL must be set");
+    ///         SqliteConnection::establish(&database_url)
+    ///         .unwrap_or_else(|_| panic!("Error connecting to {}", database_url))
+    /// }
+    ///
+    /// let sqlite_connection = &mut establish_connection();
+    /// let first = Project::show(1, sqlite_connection);
+    ///
+    /// println!("{:?}", first);
     /// ```
+    ///
+    pub fn show(id: i32, conn: &SqliteConnection) -> Vec<Project> {
+        all_projects
+            .find(id)
+            .load::<Project>(conn)
+            .expect("Error loading testimonial")
+    }
 
-    pub fn clone(&self) -> Project {
-        Project {
-            id: self.id,
-            title: self.title.clone(),
-            site: self.site.clone(),
-            description: self.description.clone(),
-        }
+    /// Returns a vector of all Projects saved in the current database
+    ///
+    /// # Arguments
+    ///
+    /// * `conn`: A reference to an SQLite Connection
+    ///
+    /// # Examples
+    ///
+    /// ```
+    /// // Get the first project saved in the database
+    ///
+    /// fn establish_connection() -> SqliteConnection {
+    /// dotenv().ok();
+    ///
+    ///     let database_url = env::var("DATABASE_URL").expect("DATABASE_URL must be set");
+    ///         SqliteConnection::establish(&database_url)
+    ///         .unwrap_or_else(|_| panic!("Error connecting to {}", database_url))
+    /// }
+    ///
+    /// let sqlite_connection = &mut establish_connection();
+    /// let test_list = Project::all(sqlite_connection);
+    ///
+    /// println!("{:?}", test_list);
+    /// ```
+    ///
+    pub fn all(conn: &SqliteConnection) -> Vec<Project> {
+        all_projects
+            .order(projects::id.desc())
+            .load::<Project>(conn)
+            .expect("Error loading testimonials")
+    }
+
+    /// Documentation pending
+    pub fn update_by_id(id: i32, conn: &SqliteConnection, proj: NewProject) -> bool {
+        use crate::schema::projects::dsl::{description as d, site as s, title as t};
+
+        let NewProject {
+            title,
+            site,
+            description,
+        } = proj;
+
+        diesel::update(all_projects.find(id))
+            .set((t.eq(title), d.eq(description), s.eq(site)))
+            .execute(conn)
+            .is_ok()
+    }
+
+    /// Returns a boolean if the resulting insert (add) operation was
+    /// excecuted successfully.
+    ///
+    /// # Arguments
+    ///
+    /// * test: A `NewProject` struct to insert
+    /// * conn: A reference to an SQLite Connection
+    ///
+    /// # Examples
+    ///
+    /// ```
+    /// // Insert a record into the Projects table
+    ///
+    /// let db_url = env::var("DATABASE_URL").expect("set DATABASE_URL");
+    /// let conn = SqliteConnection::establish(&db_url).unwrap();
+    ///
+    /// let project = models::NewProject {
+    ///    title: String::from("VentGrey"),
+    ///    site: String::from("This testimonial text is a test. The cake is a lie!"),
+    ///    description: String::from("UpVent Technologies"),
+    /// };
+    ///
+    /// if models::Project::insert(project, &conn) {
+    ///    println!("Project inserted correctly!");
+    /// } else {
+    ///    println!("Something failed while inserting the project!");
+    /// }
+    /// ```
+    ///
+    pub fn insert(proj: NewProject, conn: &SqliteConnection) -> bool {
+        diesel::insert_into(projects::table)
+            .values(&proj)
+            .execute(conn)
+            .is_ok()
+    }
+
+    /// Documentation pending
+    pub fn delete_by_id(id: i32, conn: &SqliteConnection) -> bool {
+        if Project::show(id, conn).is_empty() {
+            return false;
+        };
+
+        diesel::delete(all_projects.find(id)).execute(conn).is_ok()
+    }
+
+    /// Documentation pending
+    pub fn all_by_title(title: String, conn: &SqliteConnection) -> Vec<Project> {
+        all_projects
+            .filter(projects::title.eq(title))
+            .load::<Project>(conn)
+            .expect("Error loading projects by title")
     }
 }
 
