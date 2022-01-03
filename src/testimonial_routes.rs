@@ -4,7 +4,7 @@ use rocket::serde::json::{json, Json, Value};
 
 #[get("/testimonials", format = "application/json")]
 pub fn index(conn: DbConn) -> Json<Value> {
-    let testimonials = Testimonial::all(&conn);
+    let testimonials: Vec<Testimonial> = Testimonial::all(&conn);
 
     Json(json!({
         "status": 200,
@@ -41,7 +41,7 @@ pub fn show(conn: DbConn, id: i32) -> Json<Value> {
     data = "<testimonial>"
 )]
 pub fn update(conn: DbConn, id: i32, testimonial: Json<NewTestimonial>) -> Json<Value> {
-    let status = if Testimonial::update_by_id(id, &conn, testimonial.into_inner()) {
+    let status: i32 = if Testimonial::update_by_id(id, &conn, testimonial.into_inner()) {
         200
     } else {
         404
@@ -55,7 +55,7 @@ pub fn update(conn: DbConn, id: i32, testimonial: Json<NewTestimonial>) -> Json<
 
 #[delete("/testimonials/<id>")]
 pub fn delete(id: i32, conn: DbConn) -> Json<Value> {
-    let status = if Testimonial::delete_by_id(id, &conn) {
+    let status: i32 = if Testimonial::delete_by_id(id, &conn) {
         200
     } else {
         404

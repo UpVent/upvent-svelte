@@ -4,7 +4,7 @@ use rocket::serde::json::{json, Json, Value};
 
 #[get("/projects", format = "application/json")]
 pub fn index(conn: DbConn) -> Json<Value> {
-    let projects = Project::all(&conn);
+    let projects: Vec<Project> = Project::all(&conn);
 
     Json(json!({
         "status": 200,
@@ -22,8 +22,8 @@ pub fn new(conn: DbConn, new_project: Json<NewProject>) -> Json<Value> {
 
 #[get("/projects/<id>", format = "application/json")]
 pub fn show(conn: DbConn, id: i32) -> Json<Value> {
-    let result = Project::show(id, &conn);
-    let status = if result.is_empty() { 404 } else { 200 };
+    let result: Vec<Project> = Project::show(id, &conn);
+    let status: i32 = if result.is_empty() { 404 } else { 200 };
 
     Json(json!({
         "status": status,
@@ -33,7 +33,7 @@ pub fn show(conn: DbConn, id: i32) -> Json<Value> {
 
 #[put("/projects/<id>", format = "application/json", data = "<project>")]
 pub fn update(conn: DbConn, id: i32, project: Json<NewProject>) -> Json<Value> {
-    let status = if Project::update_by_id(id, &conn, project.into_inner()) {
+    let status: i32 = if Project::update_by_id(id, &conn, project.into_inner()) {
         200
     } else {
         404
@@ -47,7 +47,7 @@ pub fn update(conn: DbConn, id: i32, project: Json<NewProject>) -> Json<Value> {
 
 #[delete("/projects/<id>")]
 pub fn delete(id: i32, conn: DbConn) -> Json<Value> {
-    let status = if Project::delete_by_id(id, &conn) {
+    let status: i32 = if Project::delete_by_id(id, &conn) {
         200
     } else {
         404
