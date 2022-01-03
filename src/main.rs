@@ -26,6 +26,7 @@ mod static_files;
 mod testimonial_routes;
 
 // Project Routes
+mod project_routes;
 // FSProject Routes
 // License Routes
 // Hall Of Fame Routes
@@ -63,6 +64,12 @@ fn rocket() -> _ {
                 crate::testimonial_routes::author,
                 crate::testimonial_routes::update,
                 // Project Routes
+                crate::project_routes::index,
+                crate::project_routes::new,
+                crate::project_routes::show,
+                crate::project_routes::delete,
+                crate::project_routes::title,
+                crate::project_routes::update,
                 // FSProject Routes
                 // License Routes
                 // Hall Of Fame Routes
