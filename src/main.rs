@@ -27,9 +27,13 @@ mod testimonial_routes;
 
 // Project Routes
 mod project_routes;
+
 // FSProject Routes
 mod fsproject_routes;
+
 // License Routes
+mod license_routes;
+
 // Hall Of Fame Routes
 // Team Members Routes
 // Privacy Policy Routes
@@ -79,6 +83,12 @@ fn rocket() -> _ {
                 crate::fsproject_routes::title,
                 crate::fsproject_routes::update,
                 // License Routes
+                crate::license_routes::index,
+                crate::license_routes::new,
+                crate::license_routes::show,
+                crate::license_routes::delete,
+                crate::license_routes::name,
+                crate::license_routes::update,
                 // Hall Of Fame Routes
                 // Team Members Routes
                 // Privacy Policy Routes
