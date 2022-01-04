@@ -35,6 +35,8 @@ mod fsproject_routes;
 mod license_routes;
 
 // Hall Of Fame Routes
+mod hof_routes;
+
 // Team Members Routes
 // Privacy Policy Routes
 // Terms Of Service Routes
@@ -90,6 +92,12 @@ fn rocket() -> _ {
                 crate::license_routes::name,
                 crate::license_routes::update,
                 // Hall Of Fame Routes
+                crate::hof_routes::index,
+                crate::hof_routes::new,
+                crate::hof_routes::show,
+                crate::hof_routes::delete,
+                crate::hof_routes::name,
+                crate::hof_routes::update,
                 // Team Members Routes
                 // Privacy Policy Routes
                 // Terms Of Service Routes
