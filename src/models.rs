@@ -567,28 +567,7 @@ pub struct License {
     license_link: String,
 }
 
-impl License {
-    /// Returns a License Text with the id given to it.
-    ///
-    /// # Arguments
-    ///
-    /// * `none` - No arguments implemented yet for this struct.
-    ///
-    /// # Examples
-    /// ```
-    /// // Clone an existing License
-    /// let license = License::clone();
-    /// ```
-
-    pub fn clone(&self) -> License {
-        License {
-            id: self.id,
-            name: self.name.clone(),
-            verbatim: self.verbatim.clone(),
-            license_link: self.license_link.clone(),
-        }
-    }
-}
+impl License {}
 
 /// Stores a single Hall Of Fame shown in the "licenses" page
 /// of this site.
@@ -600,25 +579,7 @@ pub struct HOF {
     name: String,
 }
 
-impl HOF {
-    /// Returns a Hall Of Fame item with the id given to it.
-    ///
-    /// # Arguments
-    ///
-    /// * `none` - No arguments implemented yet for this struct.
-    ///
-    /// # Examples
-    /// ```
-    /// // Clone an existing Hall Of Fame item
-    /// let famous_project = HOF::clone();
-
-    pub fn clone(&self) -> HOF {
-        HOF {
-            id: self.id,
-            name: self.name.clone(),
-        }
-    }
-}
+impl HOF {}
 
 /// Stores a single team member shown in the "team" page
 /// of this site. The is_collab field is a boolean used to indicate if the
@@ -636,27 +597,7 @@ pub struct TeamMember {
     is_collab: bool,
 }
 
-impl TeamMember {
-    /// Returns a Team Member with the id given to it.
-    ///
-    /// # Arguments
-    ///
-    /// * `none` - No arguments implemented yet for this struct.
-    ///
-    /// # Examples
-    /// ```
-    /// // Clone an existing Team Member
-    /// let member = TeamMember::clone();
-
-    pub fn clone(&self) -> TeamMember {
-        TeamMember {
-            id: self.id,
-            name: self.name.clone(),
-            position: self.position.clone(),
-            is_collab: self.is_collab,
-        }
-    }
-}
+impl TeamMember {}
 
 /// Stores a single and unique privacy policy to make this site compliant with
 /// inside / outside country privacy laws (GDPR and others).
@@ -670,27 +611,7 @@ pub struct PrivacyPolicy {
     text: String,
 }
 
-impl PrivacyPolicy {
-    /// Returns the Privacy Policy with the id given to it.
-    ///
-    /// # Arguments
-    ///
-    /// * `none` - No arguments implemented yet for this struct.
-    ///
-    /// # Examples
-    /// ```
-    /// // Clone an existing Privacy Policy
-    /// let p_policy = PrivacyPolicy::clone();
-
-    pub fn clone(&self) -> PrivacyPolicy {
-        PrivacyPolicy {
-            id: self.id,
-            title: self.title.clone(),
-            changelog: self.changelog.clone(),
-            text: self.text.clone(),
-        }
-    }
-}
+impl PrivacyPolicy {}
 
 /// Stores a single and unique terms of service + refund policy to make this
 /// site compliant with inside / outside country trade laws.
@@ -704,27 +625,7 @@ pub struct TermsOfService {
     text: String,
 }
 
-impl TermsOfService {
-    /// Returns the Terms Of Service with the id given to it.
-    ///
-    /// # Arguments
-    ///
-    /// * `none` - No arguments implemented yet for this struct.
-    ///
-    /// # Examples
-    /// ```
-    /// // Clone an existing Terms Of Service item
-    /// let tos_policy = TermsOfService::clone();
-
-    pub fn clone(&self) -> TermsOfService {
-        TermsOfService {
-            id: self.id,
-            title: self.title.clone(),
-            changelog: self.changelog.clone(),
-            text: self.text.clone(),
-        }
-    }
-}
+impl TermsOfService {}
 
 // ===== Blog page =====
 
@@ -740,29 +641,7 @@ pub struct Post {
     content: String,
 }
 
-impl Post {
-    /// Returns the Post with the id given to it.
-    ///
-    /// # Arguments
-    ///
-    /// * `none` - No arguments implemented yet for this struct.
-    ///
-    /// # Examples
-    /// ```
-    /// // Clone an existing Post item
-    /// let post = Post::clone();
-
-    pub fn clone(&self) -> Post {
-        Post {
-            id: self.id,
-            published: self.published,
-            title: self.title.clone(),
-            description: self.description.clone(),
-            category: self.category.clone(),
-            content: self.content.clone(),
-        }
-    }
-}
+impl Post {}
 
 // ===== Marketcloud page =====
 
@@ -781,29 +660,4 @@ pub struct Product {
     available: bool,
 }
 
-impl Product {
-    /// Returns the Product with the id given to it.
-    ///
-    /// # Arguments
-    ///
-    /// * `none` - No arguments implemented yet for this struct.
-    ///
-    /// # Examples
-    /// ```
-    /// // Clone an existing Product item
-    /// let product = Product::clone();
-
-    pub fn clone(&self) -> Product {
-        Product {
-            id: self.id,
-            name: self.name.clone(),
-            price: self.price,
-            category: self.category.clone(),
-            apptype: self.apptype.clone(),
-            short_description: self.short_description.clone(),
-            description: self.description.clone(),
-            stripe_link: self.stripe_link.clone(),
-            available: self.available,
-        }
-    }
-}
+impl Product {}
