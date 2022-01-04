@@ -718,14 +718,150 @@ impl License {
 /// Stores a single Hall Of Fame shown in the "licenses" page
 /// of this site.
 /// (Licenses)
-#[derive(Serialize, Queryable)]
+#[derive(Serialize, Queryable, Debug, Clone)]
 #[serde(crate = "rocket::serde")]
 pub struct HOF {
     id: i32,
     name: String,
 }
 
-impl HOF {}
+#[derive(Insertable, Serialize, Deserialize)]
+#[serde(crate = "rocket::serde")]
+#[table_name = "hofs"]
+pub struct NewHOF {
+    name: String,
+}
+
+impl HOF {
+    /// Returns a vector consisting of a single Hall Of Fame Project in the current
+    /// database.
+    ///
+    /// # Arguments
+    ///
+    /// * `id`: The license ID you wish to show
+    /// * `conn`: A reference to an SQLite Connection
+    ///
+    /// # Examples
+    ///
+    /// ```
+    /// // Get the first hall of fame project saved in the database
+    ///
+    /// fn establish_connection() -> SqliteConnection {
+    /// dotenv().ok();
+    ///
+    ///     let database_url = env::var("DATABASE_URL").expect("DATABASE_URL must be set");
+    ///         SqliteConnection::establish(&database_url)
+    ///         .unwrap_or_else(|_| panic!("Error connecting to {}", database_url))
+    /// }
+    ///
+    /// let sqlite_connection = &mut establish_connection();
+    /// let first = HOF::show(1, sqlite_connection);
+    ///
+    /// println!("{:?}", first);
+    /// ```
+    ///
+    pub fn show(id: i32, conn: &SqliteConnection) -> Vec<HOF> {
+        all_hofs
+            .find(id)
+            .load::<HOF>(conn)
+            .expect("Error loading hall of fame project")
+    }
+
+    /// Returns a vector of all hall of fame projects saved in the current database
+    ///
+    /// # Arguments
+    ///
+    /// * `conn`: A reference to an SQLite Connection
+    ///
+    /// # Examples
+    ///
+    /// ```
+    /// // Get all hall of fame projects saved in the database
+    ///
+    /// fn establish_connection() -> SqliteConnection {
+    /// dotenv().ok();
+    ///
+    ///     let database_url = env::var("DATABASE_URL").expect("DATABASE_URL must be set");
+    ///         SqliteConnection::establish(&database_url)
+    ///         .unwrap_or_else(|_| panic!("Error connecting to {}", database_url))
+    /// }
+    ///
+    /// let sqlite_connection = &mut establish_connection();
+    /// let test_list = HOF::all(sqlite_connection);
+    ///
+    /// println!("{:?}", test_list);
+    /// ```
+    ///
+    pub fn all(conn: &SqliteConnection) -> Vec<HOF> {
+        all_hofs
+            .order(hofs::id.desc())
+            .load::<HOF>(conn)
+            .expect("Error loading hall of fame projects")
+    }
+
+    /// Documentation pending
+    pub fn update_by_id(id: i32, conn: &SqliteConnection, hof: NewHOF) -> bool {
+        use crate::schema::hofs::dsl::name as n;
+
+        let NewHOF { name } = hof;
+
+        diesel::update(all_hofs.find(id))
+            .set(n.eq(name))
+            .execute(conn)
+            .is_ok()
+    }
+
+    /// Returns a boolean if the resulting insert (add) operation was
+    /// excecuted successfully.
+    ///
+    /// # Arguments
+    ///
+    /// * lic: A `NewHOF` struct to insert
+    /// * conn: A reference to an SQLite Connection
+    ///
+    /// # Examples
+    ///
+    /// ```
+    /// // Insert a record into the HOF table
+    ///
+    /// let db_url = env::var("DATABASE_URL").expect("set DATABASE_URL");
+    /// let conn = SqliteConnection::establish(&db_url).unwrap();
+    ///
+    /// let hof = models::NewHOF {
+    ///    name: String::from("Debian"),
+    /// };
+    ///
+    /// if models::HOF::insert(hof, &conn) {
+    ///    println!("Hall Of Fame Project inserted correctly!");
+    /// } else {
+    ///    println!("Something failed while inserting the Hall Of Fame Project!");
+    /// }
+    /// ```
+    ///
+    pub fn insert(hof: NewHOF, conn: &SqliteConnection) -> bool {
+        diesel::insert_into(hofs::table)
+            .values(&hof)
+            .execute(conn)
+            .is_ok()
+    }
+
+    /// Documentation pending
+    pub fn delete_by_id(id: i32, conn: &SqliteConnection) -> bool {
+        if HOF::show(id, conn).is_empty() {
+            return false;
+        };
+
+        diesel::delete(all_hofs.find(id)).execute(conn).is_ok()
+    }
+
+    /// Documentation pending
+    pub fn all_by_name(name: String, conn: &SqliteConnection) -> Vec<HOF> {
+        all_hofs
+            .filter(hofs::name.eq(name))
+            .load::<HOF>(conn)
+            .expect("Error loading Hall Of Fame Projects by name")
+    }
+}
 
 /// Stores a single team member shown in the "team" page
 /// of this site. The is_collab field is a boolean used to indicate if the
