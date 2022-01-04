@@ -376,7 +376,7 @@ impl Project {
 /// Stores a single Free Software Project shown in the "services" page
 /// of this site.
 /// (Services)
-#[derive(Serialize, Queryable)]
+#[derive(Serialize, Queryable, Debug, Clone)]
 #[serde(crate = "rocket::serde")]
 pub struct FSProject {
     id: i32,
@@ -388,29 +388,170 @@ pub struct FSProject {
     license_link: String,
 }
 
+#[derive(Insertable, Serialize, Deserialize)]
+#[serde(crate = "rocket::serde")]
+#[table_name = "fsprojects"]
+pub struct NewFSProject {
+    title: String,
+    description: String,
+    github_addr: String,
+    support_addr: String,
+    proj_license: String,
+    license_link: String,
+}
+
 impl FSProject {
-    /// Returns a Free Software Project with the id given to it.
+    /// Returns a vector consisting of a single Free Software Project in the current
+    /// database.
     ///
     /// # Arguments
     ///
-    /// * `none` - No arguments implemented yet for this struct.
+    /// * `id`: The freee software project ID you wish to show
+    /// * `conn`: A reference to an SQLite Connection
     ///
     /// # Examples
+    ///
     /// ```
-    /// // Clone an existing Free Software Project
-    /// let fsproject = FSProject::clone();
+    /// // Get the first free software project saved in the database
+    ///
+    /// fn establish_connection() -> SqliteConnection {
+    /// dotenv().ok();
+    ///
+    ///     let database_url = env::var("DATABASE_URL").expect("DATABASE_URL must be set");
+    ///         SqliteConnection::establish(&database_url)
+    ///         .unwrap_or_else(|_| panic!("Error connecting to {}", database_url))
+    /// }
+    ///
+    /// let sqlite_connection = &mut establish_connection();
+    /// let first = FSProject::show(1, sqlite_connection);
+    ///
+    /// println!("{:?}", first);
     /// ```
+    ///
+    pub fn show(id: i32, conn: &SqliteConnection) -> Vec<FSProject> {
+        all_fsprojects
+            .find(id)
+            .load::<FSProject>(conn)
+            .expect("Error loading free software project")
+    }
 
-    pub fn clone(&self) -> FSProject {
-        FSProject {
-            id: self.id,
-            title: self.title.clone(),
-            description: self.description.clone(),
-            github_addr: self.github_addr.clone(),
-            support_addr: self.support_addr.clone(),
-            proj_license: self.proj_license.clone(),
-            license_link: self.license_link.clone(),
-        }
+    /// Returns a vector of all Free Software Projects saved in the current database
+    ///
+    /// # Arguments
+    ///
+    /// * `conn`: A reference to an SQLite Connection
+    ///
+    /// # Examples
+    ///
+    /// ```
+    /// // Get the first free software project saved in the database
+    ///
+    /// fn establish_connection() -> SqliteConnection {
+    /// dotenv().ok();
+    ///
+    ///     let database_url = env::var("DATABASE_URL").expect("DATABASE_URL must be set");
+    ///         SqliteConnection::establish(&database_url)
+    ///         .unwrap_or_else(|_| panic!("Error connecting to {}", database_url))
+    /// }
+    ///
+    /// let sqlite_connection = &mut establish_connection();
+    /// let test_list = FSProject::all(sqlite_connection);
+    ///
+    /// println!("{:?}", test_list);
+    /// ```
+    ///
+    pub fn all(conn: &SqliteConnection) -> Vec<FSProject> {
+        all_fsprojects
+            .order(fsprojects::id.desc())
+            .load::<FSProject>(conn)
+            .expect("Error loading free software projects")
+    }
+
+    /// Documentation pending
+    pub fn update_by_id(id: i32, conn: &SqliteConnection, fsproj: NewFSProject) -> bool {
+        use crate::schema::fsprojects::dsl::{
+            description as d, github_addr as ga, license_link as ll, proj_license as pl,
+            support_addr as sa, title as t,
+        };
+
+        let NewFSProject {
+            title,
+            description,
+            github_addr,
+            support_addr,
+            proj_license,
+            license_link,
+        } = fsproj;
+
+        diesel::update(all_fsprojects.find(id))
+            .set((
+                t.eq(title),
+                d.eq(description),
+                ga.eq(github_addr),
+                sa.eq(support_addr),
+                pl.eq(proj_license),
+                ll.eq(license_link),
+            ))
+            .execute(conn)
+            .is_ok()
+    }
+
+    /// Returns a boolean if the resulting insert (add) operation was
+    /// excecuted successfully.
+    ///
+    /// # Arguments
+    ///
+    /// * fsproj: A `NewFSProject` struct to insert
+    /// * conn: A reference to an SQLite Connection
+    ///
+    /// # Examples
+    ///
+    /// ```
+    /// // Insert a record into the FSProject table
+    ///
+    /// let db_url = env::var("DATABASE_URL").expect("set DATABASE_URL");
+    /// let conn = SqliteConnection::establish(&db_url).unwrap();
+    ///
+    /// let fsproject = models::NewFSProject {
+    ///    title: String::from("Orchid"),
+    ///    description: String::from("Excecute common server maintenance tasks from this script"),
+    ///    github_addr: String::from("https://github.com/upvent/orchid"),
+    ///    support_addr: String::from("https://github.com/upvent/orchid/issues"),
+    ///    proj_license: String::from("GPL-2"),
+    ///    license_link: String::from("https://gnu.org/"),
+    /// };
+    ///
+    /// if models::FSProject::insert(fsproject, &conn) {
+    ///    println!("Free Software Project inserted correctly!");
+    /// } else {
+    ///    println!("Something failed while inserting the free software project!");
+    /// }
+    /// ```
+    ///
+    pub fn insert(fsproj: NewFSProject, conn: &SqliteConnection) -> bool {
+        diesel::insert_into(fsprojects::table)
+            .values(&fsproj)
+            .execute(conn)
+            .is_ok()
+    }
+
+    /// Documentation pending
+    pub fn delete_by_id(id: i32, conn: &SqliteConnection) -> bool {
+        if FSProject::show(id, conn).is_empty() {
+            return false;
+        };
+
+        diesel::delete(all_fsprojects.find(id))
+            .execute(conn)
+            .is_ok()
+    }
+
+    /// Documentation pending
+    pub fn all_by_title(title: String, conn: &SqliteConnection) -> Vec<FSProject> {
+        all_fsprojects
+            .filter(fsprojects::title.eq(title))
+            .load::<FSProject>(conn)
+            .expect("Error loading free software projects by title")
     }
 }
 
