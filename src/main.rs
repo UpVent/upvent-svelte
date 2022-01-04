@@ -61,7 +61,7 @@ fn rocket() -> _ {
     rocket::build()
         .manage(pool)
         .mount(
-            "/api/v1/",
+            "/api/",
             routes![
                 // Testimonial Routes
                 crate::testimonial_routes::index,
