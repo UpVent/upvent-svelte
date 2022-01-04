@@ -558,7 +558,7 @@ impl FSProject {
 /// Stores a single License text shown in the "licenses" page
 /// of this site.
 /// (Licenses)
-#[derive(Serialize, Queryable)]
+#[derive(Serialize, Queryable, Debug, Clone)]
 #[serde(crate = "rocket::serde")]
 pub struct License {
     id: i32,
@@ -567,7 +567,153 @@ pub struct License {
     license_link: String,
 }
 
-impl License {}
+#[derive(Insertable, Serialize, Deserialize)]
+#[serde(crate = "rocket::serde")]
+#[table_name = "licenses"]
+pub struct NewLicense {
+    name: String,
+    verbatim: String,
+    license_link: String,
+}
+
+impl License {
+    /// Returns a vector consisting of a single License in the current
+    /// database.
+    ///
+    /// # Arguments
+    ///
+    /// * `id`: The license ID you wish to show
+    /// * `conn`: A reference to an SQLite Connection
+    ///
+    /// # Examples
+    ///
+    /// ```
+    /// // Get the first license saved in the database
+    ///
+    /// fn establish_connection() -> SqliteConnection {
+    /// dotenv().ok();
+    ///
+    ///     let database_url = env::var("DATABASE_URL").expect("DATABASE_URL must be set");
+    ///         SqliteConnection::establish(&database_url)
+    ///         .unwrap_or_else(|_| panic!("Error connecting to {}", database_url))
+    /// }
+    ///
+    /// let sqlite_connection = &mut establish_connection();
+    /// let first = License::show(1, sqlite_connection);
+    ///
+    /// println!("{:?}", first);
+    /// ```
+    ///
+    pub fn show(id: i32, conn: &SqliteConnection) -> Vec<License> {
+        all_licenses
+            .find(id)
+            .load::<License>(conn)
+            .expect("Error loading license")
+    }
+
+    /// Returns a vector of all Licenses saved in the current database
+    ///
+    /// # Arguments
+    ///
+    /// * `conn`: A reference to an SQLite Connection
+    ///
+    /// # Examples
+    ///
+    /// ```
+    /// // Get all licenses saved in the database
+    ///
+    /// fn establish_connection() -> SqliteConnection {
+    /// dotenv().ok();
+    ///
+    ///     let database_url = env::var("DATABASE_URL").expect("DATABASE_URL must be set");
+    ///         SqliteConnection::establish(&database_url)
+    ///         .unwrap_or_else(|_| panic!("Error connecting to {}", database_url))
+    /// }
+    ///
+    /// let sqlite_connection = &mut establish_connection();
+    /// let test_list = License::all(sqlite_connection);
+    ///
+    /// println!("{:?}", test_list);
+    /// ```
+    ///
+    pub fn all(conn: &SqliteConnection) -> Vec<License> {
+        all_licenses
+            .order(licenses::id.desc())
+            .load::<License>(conn)
+            .expect("Error loading licenses")
+    }
+
+    /// Documentation pending
+    pub fn update_by_id(id: i32, conn: &SqliteConnection, lic: NewLicense) -> bool {
+        use crate::schema::licenses::dsl::{license_link as l, name as n, verbatim as v};
+
+        let NewLicense {
+            name,
+            verbatim,
+            license_link,
+        } = lic;
+
+        diesel::update(all_licenses.find(id))
+            .set((n.eq(name), v.eq(verbatim), l.eq(license_link)))
+            .execute(conn)
+            .is_ok()
+    }
+
+    /// Returns a boolean if the resulting insert (add) operation was
+    /// excecuted successfully.
+    ///
+    /// # Arguments
+    ///
+    /// * lic: A `NewLicense` struct to insert
+    /// * conn: A reference to an SQLite Connection
+    ///
+    /// # Examples
+    ///
+    /// ```
+    /// // Insert a record into the Licenses table
+    ///
+    /// let db_url = env::var("DATABASE_URL").expect("set DATABASE_URL");
+    /// let conn = SqliteConnection::establish(&db_url).unwrap();
+    ///
+    /// let license = models::NewLicense {
+    ///    name: String::from("GPL-2"),
+    ///    verbatim: String::from("No proprietary sotfwaer!"),
+    ///    license_link: String::from("https://gnu.org/"),
+    /// };
+    ///
+    /// if models::License::insert(license, &conn) {
+    ///    println!("License inserted correctly!");
+    /// } else {
+    ///    println!("Something failed while inserting the License!");
+    /// }
+    /// ```
+    ///
+    pub fn insert(lic: NewLicense, conn: &SqliteConnection) -> bool {
+        diesel::insert_into(licenses::table)
+            .values(&lic)
+            .execute(conn)
+            .is_ok()
+    }
+
+    /// Documentation pending
+    pub fn delete_by_id(id: i32, conn: &SqliteConnection) -> bool {
+        if License::show(id, conn).is_empty() {
+            return false;
+        };
+
+        diesel::delete(all_testimonials.find(id))
+            .execute(conn)
+            .is_ok()
+    }
+
+    /// Documentation pending
+    pub fn all_by_name(name: String, conn: &SqliteConnection) -> Vec<License> {
+        all_licenses
+            .filter(licenses::name.eq(name))
+            .load::<License>(conn)
+            .expect("Error loading licenses by name")
+    }
+}
 
 /// Stores a single Hall Of Fame shown in the "licenses" page
 /// of this site.
