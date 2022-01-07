@@ -38,6 +38,8 @@ mod license_routes;
 mod hof_routes;
 
 // Team Members Routes
+mod teammember_routes;
+
 // Privacy Policy Routes
 // Terms Of Service Routes
 // Blog Post Routes
@@ -99,6 +101,12 @@ fn rocket() -> _ {
                 crate::hof_routes::name,
                 crate::hof_routes::update,
                 // Team Members Routes
+                crate::teammember_routes::index,
+                crate::teammember_routes::new,
+                crate::teammember_routes::show,
+                crate::teammember_routes::delete,
+                crate::teammember_routes::name,
+                crate::teammember_routes::update,
                 // Privacy Policy Routes
                 // Terms Of Service Routes
                 // Blog Post Routes
