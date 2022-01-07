@@ -41,6 +41,8 @@ mod hof_routes;
 mod teammember_routes;
 
 // Privacy Policy Routes
+mod privacypolicy_routes;
+
 // Terms Of Service Routes
 // Blog Post Routes
 // Product Routes
@@ -108,6 +110,12 @@ fn rocket() -> _ {
                 crate::teammember_routes::name,
                 crate::teammember_routes::update,
                 // Privacy Policy Routes
+                crate::privacypolicy_routes::index,
+                crate::privacypolicy_routes::new,
+                crate::privacypolicy_routes::show,
+                crate::privacypolicy_routes::delete,
+                crate::privacypolicy_routes::title,
+                crate::privacypolicy_routes::update,
                 // Terms Of Service Routes
                 // Blog Post Routes
                 // Product Routes
