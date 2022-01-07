@@ -888,7 +888,144 @@ pub struct NewTeamMember {
     is_collab: bool,
 }
 
-impl TeamMember {}
+impl TeamMember {
+    /// Returns a vector consisting of a single Team Member in the current
+    /// database.
+    ///
+    /// # Arguments
+    ///
+    /// * `id`: The license ID you wish to show
+    /// * `conn`: A reference to an SQLite Connection
+    ///
+    /// # Examples
+    ///
+    /// ```
+    /// // Get the first team member saved in the database
+    ///
+    /// fn establish_connection() -> SqliteConnection {
+    /// dotenv().ok();
+    ///
+    ///     let database_url = env::var("DATABASE_URL").expect("DATABASE_URL must be set");
+    ///         SqliteConnection::establish(&database_url)
+    ///         .unwrap_or_else(|_| panic!("Error connecting to {}", database_url))
+    /// }
+    ///
+    /// let sqlite_connection = &mut establish_connection();
+    /// let first = TeamMember::show(1, sqlite_connection);
+    ///
+    /// println!("{:?}", first);
+    /// ```
+    ///
+    pub fn show(id: i32, conn: &SqliteConnection) -> Vec<TeamMember> {
+        all_teammembers
+            .find(id)
+            .load::<TeamMember>(conn)
+            .expect("Error loading team member")
+    }
+
+    /// Returns a vector of all team members saved in the current database
+    ///
+    /// # Arguments
+    ///
+    /// * `conn`: A reference to an SQLite Connection
+    ///
+    /// # Examples
+    ///
+    /// ```
+    /// // Get all team members saved in the database
+    ///
+    /// fn establish_connection() -> SqliteConnection {
+    /// dotenv().ok();
+    ///
+    ///     let database_url = env::var("DATABASE_URL").expect("DATABASE_URL must be set");
+    ///         SqliteConnection::establish(&database_url)
+    ///         .unwrap_or_else(|_| panic!("Error connecting to {}", database_url))
+    /// }
+    ///
+    /// let sqlite_connection = &mut establish_connection();
+    /// let test_list = TeamMember::all(sqlite_connection);
+    ///
+    /// println!("{:?}", test_list);
+    /// ```
+    ///
+    pub fn all(conn: &SqliteConnection) -> Vec<TeamMember> {
+        all_teammembers
+            .order(teammembers::id.desc())
+            .load::<TeamMember>(conn)
+            .expect("Error loading team members")
+    }
+
+    /// Documentation pending
+    pub fn update_by_id(id: i32, conn: &SqliteConnection, teamm: NewTeamMember) -> bool {
+        use crate::schema::teammembers::dsl::{is_collab as c, name as n, position as p};
+
+        let NewTeamMember {
+            name,
+            position,
+            is_collab,
+        } = teamm;
+
+        diesel::update(all_teammembers.find(id))
+            .set((n.eq(name), p.eq(position), c.eq(is_collab)))
+            .execute(conn)
+            .is_ok()
+    }
+
+    /// Returns a boolean if the resulting insert (add) operation was
+    /// excecuted successfully.
+    ///
+    /// # Arguments
+    ///
+    /// * lic: A `NewHOF` struct to insert
+    /// * conn: A reference to an SQLite Connection
+    ///
+    /// # Examples
+    ///
+    /// ```
+    /// // Insert a record into the HOF table
+    ///
+    /// let db_url = env::var("DATABASE_URL").expect("set DATABASE_URL");
+    /// let conn = SqliteConnection::establish(&db_url).unwrap();
+    ///
+    /// let teamm = models::NewTeamMember {
+    ///    name: String::from("Juan Camaney"),
+    ///    position: String::from("Gum chewer & hard hitter"),
+    ///    is_collab: false
+    /// };
+    ///
+    /// if models::TeamMember::insert(teamm, &conn) {
+    ///    println!("Team Member inserted correctly!");
+    /// } else {
+    ///    println!("Something failed while inserting the team member!");
+    /// }
+    /// ```
+    ///
+    pub fn insert(teamm: NewTeamMember, conn: &SqliteConnection) -> bool {
+        diesel::insert_into(teammembers::table)
+            .values(&teamm)
+            .execute(conn)
+            .is_ok()
+    }
+
+    /// Documentation pending
+    pub fn delete_by_id(id: i32, conn: &SqliteConnection) -> bool {
+        if TeamMember::show(id, conn).is_empty() {
+            return false;
+        };
+
+        diesel::delete(all_teammembers.find(id))
+            .execute(conn)
+            .is_ok()
+    }
+
+    /// Documentation pending
+    pub fn all_by_name(name: String, conn: &SqliteConnection) -> Vec<TeamMember> {
+        all_teammembers
+            .filter(teammembers::name.eq(name))
+            .load::<TeamMember>(conn)
+            .expect("Error loading team members by name")
+    }
+}
 
 /// Stores a single and unique privacy policy to make this site compliant with
 /// inside / outside country privacy laws (GDPR and others).
@@ -911,7 +1048,144 @@ pub struct NewPrivacyPolicy {
     text: String,
 }
 
-impl PrivacyPolicy {}
+impl PrivacyPolicy {
+    /// Returns a vector consisting of a single Privacy Policy in the current
+    /// database.
+    ///
+    /// # Arguments
+    ///
+    /// * `id`: The privacy policy ID you wish to show
+    /// * `conn`: A reference to an SQLite Connection
+    ///
+    /// # Examples
+    ///
+    /// ```
+    /// // Get the first hall of fame project saved in the database
+    ///
+    /// fn establish_connection() -> SqliteConnection {
+    /// dotenv().ok();
+    ///
+    ///     let database_url = env::var("DATABASE_URL").expect("DATABASE_URL must be set");
+    ///         SqliteConnection::establish(&database_url)
+    ///         .unwrap_or_else(|_| panic!("Error connecting to {}", database_url))
+    /// }
+    ///
+    /// let sqlite_connection = &mut establish_connection();
+    /// let first = PrivacyPolicy::show(1, sqlite_connection);
+    ///
+    /// println!("{:?}", first);
+    /// ```
+    ///
+    pub fn show(id: i32, conn: &SqliteConnection) -> Vec<PrivacyPolicy> {
+        all_privacypolicies
+            .find(id)
+            .load::<PrivacyPolicy>(conn)
+            .expect("Error loading privacy policy")
+    }
+
+    /// Returns a vector of all privacy policies saved in the current database
+    ///
+    /// # Arguments
+    ///
+    /// * `conn`: A reference to an SQLite Connection
+    ///
+    /// # Examples
+    ///
+    /// ```
+    /// // Get all privacy policies saved in the database
+    ///
+    /// fn establish_connection() -> SqliteConnection {
+    /// dotenv().ok();
+    ///
+    ///     let database_url = env::var("DATABASE_URL").expect("DATABASE_URL must be set");
+    ///         SqliteConnection::establish(&database_url)
+    ///         .unwrap_or_else(|_| panic!("Error connecting to {}", database_url))
+    /// }
+    ///
+    /// let sqlite_connection = &mut establish_connection();
+    /// let test_list = PrivacyPolicy::all(sqlite_connection);
+    ///
+    /// println!("{:?}", test_list);
+    /// ```
+    ///
+    pub fn all(conn: &SqliteConnection) -> Vec<PrivacyPolicy> {
+        all_privacypolicies
+            .order(privacypolicies::id.desc())
+            .load::<PrivacyPolicy>(conn)
+            .expect("Error loading privacy policies")
+    }
+
+    /// Documentation pending
+    pub fn update_by_id(id: i32, conn: &SqliteConnection, ppol: NewPrivacyPolicy) -> bool {
+        use crate::schema::privacypolicies::dsl::{changelog as c, text as tx, title as t};
+
+        let NewPrivacyPolicy {
+            title,
+            changelog,
+            text,
+        } = ppol;
+
+        diesel::update(all_privacypolicies.find(id))
+            .set((t.eq(title), c.eq(changelog), tx.eq(text)))
+            .execute(conn)
+            .is_ok()
+    }
+
+    /// Returns a boolean if the resulting insert (add) operation was
+    /// excecuted successfully.
+    ///
+    /// # Arguments
+    ///
+    /// * ppol: A `NewPrivacyPolicy` struct to insert
+    /// * conn: A reference to an SQLite Connection
+    ///
+    /// # Examples
+    ///
+    /// ```
+    /// // Insert a record into the PrivacyPolicy table
+    ///
+    /// let db_url = env::var("DATABASE_URL").expect("set DATABASE_URL");
+    /// let conn = SqliteConnection::establish(&db_url).unwrap();
+    ///
+    /// let ppol = models::NewPrivacyPolicy {
+    ///    title: String::from("Privacy Policy - 1984"),
+    ///    changelog: String::from("This privacy policy was modified to meet the standandards of 1984"),
+    ///    text: String::from("Bottom Text"),
+    /// };
+    ///
+    /// if models::PrivacyPolicy::insert(ppol, &conn) {
+    ///    println!("Privacy policy inserted correctly!");
+    /// } else {
+    ///    println!("Something failed while inserting the Privacy Policy!");
+    /// }
+    /// ```
+    ///
+    pub fn insert(ppol: NewPrivacyPolicy, conn: &SqliteConnection) -> bool {
+        diesel::insert_into(privacypolicies::table)
+            .values(&ppol)
+            .execute(conn)
+            .is_ok()
+    }
+
+    /// Documentation pending
+    pub fn delete_by_id(id: i32, conn: &SqliteConnection) -> bool {
+        if PrivacyPolicy::show(id, conn).is_empty() {
+            return false;
+        };
+
+        diesel::delete(all_privacypolicies.find(id))
+            .execute(conn)
+            .is_ok()
+    }
+
+    /// Documentation pending
+    pub fn all_by_title(title: String, conn: &SqliteConnection) -> Vec<PrivacyPolicy> {
+        all_privacypolicies
+            .filter(privacypolicies::title.eq(title))
+            .load::<PrivacyPolicy>(conn)
+            .expect("Error loading Privacy Policies by title")
+    }
+}
 
 /// Stores a single and unique terms of service + refund policy to make this
 /// site compliant with inside / outside country trade laws.
@@ -927,14 +1201,151 @@ pub struct TermsOfService {
 
 #[derive(Insertable, Serialize, Deserialize)]
 #[serde(crate = "rocket::serde")]
-#[table_name = "privacypolicies"]
+#[table_name = "termsofservices"]
 pub struct NewTermsOfService {
     title: String,
     changelog: String,
     text: String,
 }
 
-impl TermsOfService {}
+impl TermsOfService {
+    /// Returns a vector consisting of a single Terms Of Service instance in the current
+    /// database.
+    ///
+    /// # Arguments
+    ///
+    /// * `id`: The license ID you wish to show
+    /// * `conn`: A reference to an SQLite Connection
+    ///
+    /// # Examples
+    ///
+    /// ```
+    /// // Get the first terms of service instance saved in the database
+    ///
+    /// fn establish_connection() -> SqliteConnection {
+    /// dotenv().ok();
+    ///
+    ///     let database_url = env::var("DATABASE_URL").expect("DATABASE_URL must be set");
+    ///         SqliteConnection::establish(&database_url)
+    ///         .unwrap_or_else(|_| panic!("Error connecting to {}", database_url))
+    /// }
+    ///
+    /// let sqlite_connection = &mut establish_connection();
+    /// let first = TermsOfService::show(1, sqlite_connection);
+    ///
+    /// println!("{:?}", first);
+    /// ```
+    ///
+    pub fn show(id: i32, conn: &SqliteConnection) -> Vec<TermsOfService> {
+        all_termsofservices
+            .find(id)
+            .load::<TermsOfService>(conn)
+            .expect("Error loading Terms Of Service")
+    }
+
+    /// Returns a vector of all terms of service saved in the current database
+    ///
+    /// # Arguments
+    ///
+    /// * `conn`: A reference to an SQLite Connection
+    ///
+    /// # Examples
+    ///
+    /// ```
+    /// // Get all hall of fame projects saved in the database
+    ///
+    /// fn establish_connection() -> SqliteConnection {
+    /// dotenv().ok();
+    ///
+    ///     let database_url = env::var("DATABASE_URL").expect("DATABASE_URL must be set");
+    ///         SqliteConnection::establish(&database_url)
+    ///         .unwrap_or_else(|_| panic!("Error connecting to {}", database_url))
+    /// }
+    ///
+    /// let sqlite_connection = &mut establish_connection();
+    /// let test_list = TermsOfService::all(sqlite_connection);
+    ///
+    /// println!("{:?}", test_list);
+    /// ```
+    ///
+    pub fn all(conn: &SqliteConnection) -> Vec<TermsOfService> {
+        all_termsofservices
+            .order(termsofservices::id.desc())
+            .load::<TermsOfService>(conn)
+            .expect("Error loading terms of service")
+    }
+
+    /// Documentation pending
+    pub fn update_by_id(id: i32, conn: &SqliteConnection, tos: NewTermsOfService) -> bool {
+        use crate::schema::termsofservices::dsl::{changelog as c, text as tx, title as t};
+
+        let NewTermsOfService {
+            title,
+            changelog,
+            text,
+        } = tos;
+
+        diesel::update(all_termsofservices.find(id))
+            .set((t.eq(title), c.eq(changelog), tx.eq(text)))
+            .execute(conn)
+            .is_ok()
+    }
+
+    /// Returns a boolean if the resulting insert (add) operation was
+    /// excecuted successfully.
+    ///
+    /// # Arguments
+    ///
+    /// * tos: A `NewTermsOfService` struct to insert
+    /// * conn: A reference to an SQLite Connection
+    ///
+    /// # Examples
+    ///
+    /// ```
+    /// // Insert a record into the HOF table
+    ///
+    /// let db_url = env::var("DATABASE_URL").expect("set DATABASE_URL");
+    /// let conn = SqliteConnection::establish(&db_url).unwrap();
+    ///
+    /// let tos = models::NewTermsOfService {
+    ///    title: String::from("Terms of service"),
+    ///    changelog: String::from("Changes to comply with 1984 policies"),
+    ///    text: String::from("I forgor"),
+    /// };
+    ///
+    /// if models::TermsOfService::insert(tos, &conn) {
+    ///    println!("Terms Of Service inserted correctly!");
+    /// } else {
+    ///    println!("Something failed while inserting terms of service!");
+    /// }
+    /// ```
+    ///
+    pub fn insert(tos: NewTermsOfService, conn: &SqliteConnection) -> bool {
+        diesel::insert_into(termsofservices::table)
+            .values(&tos)
+            .execute(conn)
+            .is_ok()
+    }
+
+    /// Documentation pending
+    pub fn delete_by_id(id: i32, conn: &SqliteConnection) -> bool {
+        if TermsOfService::show(id, conn).is_empty() {
+            return false;
+        };
+
+        diesel::delete(all_termsofservices.find(id))
+            .execute(conn)
+            .is_ok()
+    }
+
+    /// Documentation pending
+    pub fn all_by_title(title: String, conn: &SqliteConnection) -> Vec<TermsOfService> {
+        all_termsofservices
+            .filter(termsofservices::title.eq(title))
+            .load::<TermsOfService>(conn)
+            .expect("Error loading Terms Of Service by name")
+    }
+}
 
 // ===== Blog page =====
 
@@ -961,7 +1372,154 @@ pub struct NewPost {
     content: String,
 }
 
-impl Post {}
+impl Post {
+    /// Returns a vector consisting of a single blog post in the current
+    /// database.
+    ///
+    /// # Arguments
+    ///
+    /// * `id`: The license ID you wish to show
+    /// * `conn`: A reference to an SQLite Connection
+    ///
+    /// # Examples
+    ///
+    /// ```
+    /// // Get the first hall of fame project saved in the database
+    ///
+    /// fn establish_connection() -> SqliteConnection {
+    /// dotenv().ok();
+    ///
+    ///     let database_url = env::var("DATABASE_URL").expect("DATABASE_URL must be set");
+    ///         SqliteConnection::establish(&database_url)
+    ///         .unwrap_or_else(|_| panic!("Error connecting to {}", database_url))
+    /// }
+    ///
+    /// let sqlite_connection = &mut establish_connection();
+    /// let first = Post::show(1, sqlite_connection);
+    ///
+    /// println!("{:?}", first);
+    /// ```
+    ///
+    pub fn show(id: i32, conn: &SqliteConnection) -> Vec<Post> {
+        all_posts
+            .find(id)
+            .load::<Post>(conn)
+            .expect("Error loading blog post")
+    }
+
+    /// Returns a vector of all blog posts saved in the current database
+    ///
+    /// # Arguments
+    ///
+    /// * `conn`: A reference to an SQLite Connection
+    ///
+    /// # Examples
+    ///
+    /// ```
+    /// // Get all blog posts saved in the database
+    ///
+    /// fn establish_connection() -> SqliteConnection {
+    /// dotenv().ok();
+    ///
+    ///     let database_url = env::var("DATABASE_URL").expect("DATABASE_URL must be set");
+    ///         SqliteConnection::establish(&database_url)
+    ///         .unwrap_or_else(|_| panic!("Error connecting to {}", database_url))
+    /// }
+    ///
+    /// let sqlite_connection = &mut establish_connection();
+    /// let test_list = Post::all(sqlite_connection);
+    ///
+    /// println!("{:?}", test_list);
+    /// ```
+    ///
+    pub fn all(conn: &SqliteConnection) -> Vec<Post> {
+        all_posts
+            .order(posts::id.desc())
+            .load::<Post>(conn)
+            .expect("Error loading blog posts")
+    }
+
+    /// Documentation pending
+    pub fn update_by_id(id: i32, conn: &SqliteConnection, pos: NewPost) -> bool {
+        use crate::schema::posts::dsl::{
+            category as c, content as cn, description as d, published as p, title as t,
+        };
+
+        let NewPost {
+            published,
+            title,
+            description,
+            category,
+            content,
+        } = pos;
+
+        diesel::update(all_posts.find(id))
+            .set((
+                p.eq(published),
+                t.eq(title),
+                d.eq(description),
+                c.eq(category),
+                cn.eq(content),
+            ))
+            .execute(conn)
+            .is_ok()
+    }
+
+    /// Returns a boolean if the resulting insert (add) operation was
+    /// excecuted successfully.
+    ///
+    /// # Arguments
+    ///
+    /// * pos: A `NewPost` struct to insert
+    /// * conn: A reference to an SQLite Connection
+    ///
+    /// # Examples
+    ///
+    /// ```
+    /// // Insert a record into the HOF table
+    ///
+    /// let db_url = env::var("DATABASE_URL").expect("set DATABASE_URL");
+    /// let conn = SqliteConnection::establish(&db_url).unwrap();
+    ///
+    /// let pos = models::NewPost {
+    ///     published: true,
+    ///     title: String::from("Como crear un CRUD con Rust + Diesel"),
+    ///     description: String::from("I forgor"),
+    ///     category: String::from("Tutoriales"),
+    ///     content: String::from("...."),
+    /// };
+    ///
+    /// if models::Post::insert(pos, &conn) {
+    ///    println!("Blog Post inserted correctly!");
+    /// } else {
+    ///    println!("Something failed while inserting the Blog post!");
+    /// }
+    /// ```
+    ///
+    pub fn insert(pos: NewPost, conn: &SqliteConnection) -> bool {
+        diesel::insert_into(posts::table)
+            .values(&pos)
+            .execute(conn)
+            .is_ok()
+    }
+
+    /// Documentation pending
+    pub fn delete_by_id(id: i32, conn: &SqliteConnection) -> bool {
+        if Post::show(id, conn).is_empty() {
+            return false;
+        };
+
+        diesel::delete(all_hofs.find(id)).execute(conn).is_ok()
+    }
+
+    /// Documentation pending
+    pub fn all_by_title(title: String, conn: &SqliteConnection) -> Vec<Post> {
+        all_posts
+            .filter(posts::title.eq(title))
+            .load::<Post>(conn)
+            .expect("Error loading products by title")
+    }
+}
 
 // ===== Marketcloud page =====
 
@@ -994,4 +1552,161 @@ pub struct NewProduct {
     available: bool,
 }
 
-impl Product {}
+impl Product {
+    /// Returns a vector consisting of a single Product in the current
+    /// database.
+    ///
+    /// # Arguments
+    ///
+    /// * `id`: The license ID you wish to show
+    /// * `conn`: A reference to an SQLite Connection
+    ///
+    /// # Examples
+    ///
+    /// ```
+    /// // Get the first product saved in the database
+    ///
+    /// fn establish_connection() -> SqliteConnection {
+    /// dotenv().ok();
+    ///
+    ///     let database_url = env::var("DATABASE_URL").expect("DATABASE_URL must be set");
+    ///         SqliteConnection::establish(&database_url)
+    ///         .unwrap_or_else(|_| panic!("Error connecting to {}", database_url))
+    /// }
+    ///
+    /// let sqlite_connection = &mut establish_connection();
+    /// let first = Product::show(1, sqlite_connection);
+    ///
+    /// println!("{:?}", first);
+    /// ```
+    ///
+    pub fn show(id: i32, conn: &SqliteConnection) -> Vec<Product> {
+        all_products
+            .find(id)
+            .load::<Product>(conn)
+            .expect("Error loading product")
+    }
+
+    /// Returns a vector of all products saved in the current database
+    ///
+    /// # Arguments
+    ///
+    /// * `conn`: A reference to an SQLite Connection
+    ///
+    /// # Examples
+    ///
+    /// ```
+    /// // Get all hall of fame projects saved in the database
+    ///
+    /// fn establish_connection() -> SqliteConnection {
+    /// dotenv().ok();
+    ///
+    ///     let database_url = env::var("DATABASE_URL").expect("DATABASE_URL must be set");
+    ///         SqliteConnection::establish(&database_url)
+    ///         .unwrap_or_else(|_| panic!("Error connecting to {}", database_url))
+    /// }
+    ///
+    /// let sqlite_connection = &mut establish_connection();
+    /// let test_list = Product::all(sqlite_connection);
+    ///
+    /// println!("{:?}", test_list);
+    /// ```
+    ///
+    pub fn all(conn: &SqliteConnection) -> Vec<Product> {
+        all_products
+            .order(products::id.desc())
+            .load::<Product>(conn)
+            .expect("Error loading products")
+    }
+
+    /// Documentation pending
+    pub fn update_by_id(id: i32, conn: &SqliteConnection, prod: NewProduct) -> bool {
+        use crate::schema::products::dsl::{
+            apptype as a, available as av, category as c, description as d, name as n, price as p,
+            short_description as s, stripe_link as st,
+        };
+
+        let NewProduct {
+            name,
+            price,
+            category,
+            apptype,
+            short_description,
+            description,
+            stripe_link,
+            available,
+        } = prod;
+
+        diesel::update(all_products.find(id))
+            .set((
+                n.eq(name),
+                p.eq(price),
+                c.eq(category),
+                a.eq(apptype),
+                s.eq(short_description),
+                d.eq(description),
+                st.eq(stripe_link),
+                av.eq(available),
+            ))
+            .execute(conn)
+            .is_ok()
+    }
+
+    /// Returns a boolean if the resulting insert (add) operation was
+    /// excecuted successfully.
+    ///
+    /// # Arguments
+    ///
+    /// * prod: A `NewProduct` struct to insert
+    /// * conn: A reference to an SQLite Connection
+    ///
+    /// # Examples
+    ///
+    /// ```
+    /// // Insert a record into the Product table
+    ///
+    /// let db_url = env::var("DATABASE_URL").expect("set DATABASE_URL");
+    /// let conn = SqliteConnection::establish(&db_url).unwrap();
+    ///
+    /// let prod = models::NewProduct {
+    ///    name: String::from("UpVent RS (Rust Svelte) Server"),
+    ///    price: 0.0,
+    ///    category: String::from("Software"),
+    ///    apptype: String::from("Web"),
+    ///    short_description: String::from("A small website server written in Rust and Svelte"),
+    ///    description: String::from("I forgor 💀"),
+    ///    stripe_link: String::from("https://stripe.com/"),
+    ///    available: false, // still in early alpha xD
+    /// };
+    ///
+    /// if models::Product::insert(prod, &conn) {
+    ///    println!("Product inserted correctly!");
+    /// } else {
+    ///    println!("Something failed while inserting the Product!");
+    /// }
+    /// ```
+    ///
+    pub fn insert(prod: NewProduct, conn: &SqliteConnection) -> bool {
+        diesel::insert_into(products::table)
+            .values(&prod)
+            .execute(conn)
+            .is_ok()
+    }
+
+    /// Documentation pending
+    pub fn delete_by_id(id: i32, conn: &SqliteConnection) -> bool {
+        if HOF::show(id, conn).is_empty() {
+            return false;
+        };
+
+        diesel::delete(all_products.find(id)).execute(conn).is_ok()
+    }
+
+    /// Documentation pending
+    pub fn all_by_name(name: String, conn: &SqliteConnection) -> Vec<Product> {
+        all_products
+            .filter(products::name.eq(name))
+            .load::<Product>(conn)
+            .expect("Error loading Products by name")
+    }
+}
