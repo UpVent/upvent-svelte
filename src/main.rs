@@ -44,6 +44,7 @@ mod teammember_routes;
 mod privacypolicy_routes;
 
 // Terms Of Service Routes
+mod termsofservice_routes;
 // Blog Post Routes
 // Product Routes
 
@@ -117,6 +118,12 @@ fn rocket() -> _ {
                 crate::privacypolicy_routes::title,
                 crate::privacypolicy_routes::update,
                 // Terms Of Service Routes
+                crate::termsofservice_routes::index,
+                crate::termsofservice_routes::new,
+                crate::termsofservice_routes::show,
+                crate::termsofservice_routes::delete,
+                crate::termsofservice_routes::title,
+                crate::termsofservice_routes::update,
                 // Blog Post Routes
                 // Product Routes
             ],
