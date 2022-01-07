@@ -870,10 +870,19 @@ impl HOF {
 /// true = Outside Collaborator
 /// false = UpVent Member
 /// (Team)
-#[derive(Serialize, Queryable)]
+#[derive(Serialize, Queryable, Debug, Clone)]
 #[serde(crate = "rocket::serde")]
 pub struct TeamMember {
     id: i32,
+    name: String,
+    position: String,
+    is_collab: bool,
+}
+
+#[derive(Insertable, Serialize, Deserialize)]
+#[serde(crate = "rocket::serde")]
+#[table_name = "teammembers"]
+pub struct NewTeamMember {
     name: String,
     position: String,
     is_collab: bool,
@@ -884,10 +893,19 @@ impl TeamMember {}
 /// Stores a single and unique privacy policy to make this site compliant with
 /// inside / outside country privacy laws (GDPR and others).
 /// (Privacy Policy)
-#[derive(Serialize, Queryable)]
+#[derive(Serialize, Queryable, Debug, Clone)]
 #[serde(crate = "rocket::serde")]
 pub struct PrivacyPolicy {
     id: i32,
+    title: String,
+    changelog: String,
+    text: String,
+}
+
+#[derive(Insertable, Serialize, Deserialize)]
+#[serde(crate = "rocket::serde")]
+#[table_name = "privacypolicies"]
+pub struct NewPrivacyPolicy {
     title: String,
     changelog: String,
     text: String,
@@ -898,10 +916,19 @@ impl PrivacyPolicy {}
 /// Stores a single and unique terms of service + refund policy to make this
 /// site compliant with inside / outside country trade laws.
 /// (Terms Of Service)
-#[derive(Serialize, Queryable)]
+#[derive(Serialize, Queryable, Debug, Clone)]
 #[serde(crate = "rocket::serde")]
 pub struct TermsOfService {
     id: i32,
+    title: String,
+    changelog: String,
+    text: String,
+}
+
+#[derive(Insertable, Serialize, Deserialize)]
+#[serde(crate = "rocket::serde")]
+#[table_name = "privacypolicies"]
+pub struct NewTermsOfService {
     title: String,
     changelog: String,
     text: String,
@@ -923,17 +950,42 @@ pub struct Post {
     content: String,
 }
 
+#[derive(Insertable, Serialize, Deserialize)]
+#[serde(crate = "rocket::serde")]
+#[table_name = "posts"]
+pub struct NewPost {
+    published: bool,
+    title: String,
+    description: String,
+    category: String,
+    content: String,
+}
+
 impl Post {}
 
 // ===== Marketcloud page =====
 
 /// Stores a single marketplace product
-#[derive(Serialize, Queryable)]
+#[derive(Serialize, Queryable, Debug, Clone)]
 #[serde(crate = "rocket::serde")]
 pub struct Product {
     id: i32,
     name: String,
-    price: f64,
+    price: f32,
+    category: String,
+    apptype: String,
+    short_description: String,
+    description: String,
+    stripe_link: String,
+    available: bool,
+}
+
+#[derive(Insertable, Serialize, Deserialize)]
+#[serde(crate = "rocket::serde")]
+#[table_name = "products"]
+pub struct NewProduct {
+    name: String,
+    price: f32,
     category: String,
     apptype: String,
     short_description: String,
