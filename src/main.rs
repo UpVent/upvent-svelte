@@ -45,7 +45,10 @@ mod privacypolicy_routes;
 
 // Terms Of Service Routes
 mod termsofservice_routes;
+
 // Blog Post Routes
+mod post_routes;
+
 // Product Routes
 
 /* Universal 404 handler */
@@ -125,6 +128,12 @@ fn rocket() -> _ {
                 crate::termsofservice_routes::title,
                 crate::termsofservice_routes::update,
                 // Blog Post Routes
+                crate::post_routes::index,
+                crate::post_routes::new,
+                crate::post_routes::show,
+                crate::post_routes::delete,
+                crate::post_routes::title,
+                crate::post_routes::update,
                 // Product Routes
             ],
         )
