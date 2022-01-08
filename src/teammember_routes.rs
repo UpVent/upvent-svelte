@@ -2,7 +2,7 @@ use crate::db::Conn as DbConn;
 use crate::models::{NewTeamMember, TeamMember};
 use rocket::serde::json::{json, Json, Value};
 
-#[get("/teammebers", format = "application/json")]
+#[get("/teammembers", format = "application/json")]
 pub fn index(conn: DbConn) -> Json<Value> {
     let teammembers = TeamMember::all(&conn);
 
