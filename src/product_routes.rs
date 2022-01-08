@@ -2,7 +2,7 @@ use crate::db::Conn as DbConn;
 use crate::models::{NewProduct, Product};
 use rocket::serde::json::{json, Json, Value};
 
-#[get("/teammebers", format = "application/json")]
+#[get("/products", format = "application/json")]
 pub fn index(conn: DbConn) -> Json<Value> {
     let products = Product::all(&conn);
 
