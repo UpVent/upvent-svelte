@@ -50,6 +50,7 @@ mod termsofservice_routes;
 mod post_routes;
 
 // Product Routes
+mod product_routes;
 
 /* Universal 404 handler */
 #[catch(404)]
@@ -135,6 +136,12 @@ fn rocket() -> _ {
                 crate::post_routes::title,
                 crate::post_routes::update,
                 // Product Routes
+                crate::product_routes::index,
+                crate::product_routes::new,
+                crate::product_routes::show,
+                crate::product_routes::delete,
+                crate::product_routes::name,
+                crate::product_routes::update,
             ],
         )
         .mount(
