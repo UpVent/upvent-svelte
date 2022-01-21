@@ -1,7 +1,6 @@
 use rocket::serde::Deserialize;
 use rocket::serde::Serialize;
 
-
 use diesel::prelude::*;
 use diesel::sqlite::SqliteConnection;
 
