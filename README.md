@@ -1,5 +1,7 @@
 # UpVent Website Source
 
+> Please see the copyright part at the bottom of this file! :warning:
+
 ![GitHub issues](https://img.shields.io/github/issues/UpVent/upventrs)
 ![GitHub all releases](https://img.shields.io/github/downloads/UpVent/upventrs/total)
 ![GitHub](https://img.shields.io/github/license/UpVent/upventrs)
@@ -41,3 +43,10 @@ Instead, email them to [our issues email](mailto:upventmx@gmail.com). We provide
 If you wish to continue please look at our [ISSUES](https://github.com/UpVent/upvent.codes/issues) tab, open a new Issue to request a feature or report a bug.
 
 If this work helped you somehow, please leave us a :star: it will mean so much to us :heart:
+
+## Copyright
+The source code for this page is licensed under the Affero General Public License (GNU) version 3. Except where otherwise noted, written work, blogs, opinions, and some visual content is licensed under the Creative Commons Attribution-NonCommercial-NoDerivatives License. 4.0 International (CC BY-NC-ND 4.0)
+
+The AGPL differs from the other GNU licenses in that it was created for network software. You can modified versions if you keep track of the changes and the date they were made. As usual with the GNU licenses, you must license derivatives under the AGPL. It provides the same restrictions and freedoms as GPLv3 but with an additional clause that the source code must be distributed together with the web publication. Since websites and services are never distributed in the traditional sense, the AGPL is the GPL of the web.
+
+With the CC BY-NC-ND 4.0 license you must give proper credit, provide a link to the license, and indicate if changes have been made. You may do so in any reasonable way, but not in any way that suggests that you or your use is endorsed by Licensor. You may not use the material for commercial purposes. If you remix, transform, or build on the material, you will not be able to separate the modified material.
