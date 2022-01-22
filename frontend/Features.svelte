@@ -1,5 +1,8 @@
 <script>
     let universals = 'images/universal.svg';
+    let secure = 'images/secure.svg';
+    let scalable = 'images/escalable.svg';
+    let fast = 'images/rapido.svg';
 </script>
 
 <style>
@@ -40,7 +43,7 @@
 
                 <div class="row align-items-center mb-8">
                     <div class="col-4 col-lg-5">
-                        <img src="" alt="..." class="mt-1 img-fluid" loading="lazy">
+                        <img src={secure} alt="..." class="mt-1 img-fluid">
                     </div>
                     <div class="col-8 col-lg-7 mt-2 mb-2">
                         <h3 class="fw-bold mb-2">
@@ -56,7 +59,7 @@
             <div class="col-12 col-lg-6">
                 <div class="row align-items-center mb-8">
                     <div class="col-4 col-lg-5 mt-2 mb-2">
-                        <img src="" alt="..." class="mb-1 img-fluid" loading="lazy">
+                        <img src={scalable} alt="..." class="mb-1 img-fluid">
                     </div>
                     <div class="col-8 col-lg-7">
                         <h3 class="fw-bold mb-2">
@@ -70,7 +73,7 @@
 
                 <div class="row align-items-center mb-8">
                     <div class="col-4 col-lg-5 mt-2 mb-2">
-                        <img src="" alt="..." class="mt-1 img-fluid" loading="lazy">
+                        <img src={fast} alt="..." class="mt-1 img-fluid">
                     </div>
                     <div class="col-8 col-lg-7">
                         <h3 class="fw-bold mb-2">
