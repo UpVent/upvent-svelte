@@ -31,7 +31,7 @@
         <div class="row align-items-center">
             <div class="col-12 col-md-5 col-lg-6 order-md-2">
                 {#if logo_visible}
-                    <img transition:slide="{{delay: 250, duration: 200, easing: sineIn }}" src={logo_section} height="350" width="350" class="img-fluid shadow rounded-circle mb-6 mb-md-0" alt="logo">
+                    <img transition:slide="{{delay: 250, duration: 200, easing: sineIn }}" src={logo_section} height="200" width="200" class="img-fluid shadow rounded-circle mb-6 mb-md-0" alt="logo">
                 {/if}
             </div>
             <div class="col-12 col-md-7 col-lg-6 order-md-1">
