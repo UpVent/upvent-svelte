@@ -1,5 +1,10 @@
 <script>
     import House from 'svelte-bootstrap-icons/lib/House';
+    import Pen from 'svelte-bootstrap-icons/lib/Pen';
+    import People from 'svelte-bootstrap-icons/lib/People';
+    import Laptop from 'svelte-bootstrap-icons/lib/Laptop';
+    import Bag from 'svelte-bootstrap-icons/lib/Bag';
+    import Phone from 'svelte-bootstrap-icons/lib/Phone';
 
     import { Button } from 'sveltestrap';
 
@@ -13,13 +18,13 @@
 
     <ul class="nav nav-pills col-12 mx-auto col-md-auto mb-2 justify-content-center mb-md-0">
         <li><a class="nav-link px-2 text-muted" href="/">Inicio <House/></a></li>
-        <li><a class="nav-link px-2 text-muted" href="/">Blog</a></li>
-        <li><a class="nav-link px-2 text-muted" href="/">Nosotros</a></li>
-        <li><a class="nav-link px-2 text-muted" href="/">Servicios</a></li>
-        <li><a class="nav-link px-2 text-muted" href="/">MarketCloud</a></li>
+        <li><a class="nav-link px-2 text-muted" href="/">Blog <Pen/></a></li>
+        <li><a class="nav-link px-2 text-muted" href="/">Nosotros <People/></a></li>
+        <li><a class="nav-link px-2 text-muted" href="/">Servicios <Laptop/></a></li>
+        <li><a class="nav-link px-2 text-muted" href="/">MarketCloud <Bag/></a></li>
     </ul>
 
     <div class="text-end me-auto ms-auto mx-auto">
-        <Button size="lg" color="primary">Contacto</Button>
+        <Button size="lg" color="primary">Contacto <Phone/></Button>
     </div>
 </header>
