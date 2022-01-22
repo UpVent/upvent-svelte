@@ -24,6 +24,10 @@
     .bg-light-grey {
         background-color: rgb(249, 250, 251);
     }
+
+    .text-glow {
+        text-shadow: 1px 1px 1px #007BFC;
+    }
 </style>
 
 <section class="pt-4 mt-4 mb-4 pt-md-11">
@@ -36,7 +40,7 @@
             </div>
             <div class="col-12 col-md-7 col-lg-6 order-md-1">
                 <h1 class="display-4 fw-bold text-center text-md-start">
-                    Nube inteligente.
+                    Nube <span class="text-primary text-glow">inteligente.</span>
                     <br>
                     Para negocios inteligentes.
                 </h1>
