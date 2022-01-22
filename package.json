@@ -19,9 +19,8 @@
     "rollup-plugin-terser": "^7.0.0",
     "sirv-cli": "^1.0.0",
     "svelte": "^3.0.0",
-    "sveltestrap": "^5.6.3"
-  },
-  "dependencies": {
+    "svelte-bootstrap-icons": "^1.7.2",
+    "sveltestrap": "^5.6.3",
     "visualfx": "^0.6.5"
   }
 }
