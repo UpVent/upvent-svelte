@@ -1,8 +1,5 @@
 <script>
-    import Fa from 'svelte-fa';
-    import {
-        faPhone,
-    } from '@fortawesome/free-solid-svg-icons';
+    import House from 'svelte-bootstrap-icons/lib/House';
 
     import { Button } from 'sveltestrap';
 
@@ -15,7 +12,7 @@
     </a>
 
     <ul class="nav nav-pills col-12 mx-auto col-md-auto mb-2 justify-content-center mb-md-0">
-        <li><a class="nav-link px-2 text-muted" href="/">Inicio</a></li>
+        <li><a class="nav-link px-2 text-muted" href="/">Inicio <House/></a></li>
         <li><a class="nav-link px-2 text-muted" href="/">Blog</a></li>
         <li><a class="nav-link px-2 text-muted" href="/">Nosotros</a></li>
         <li><a class="nav-link px-2 text-muted" href="/">Servicios</a></li>
@@ -23,6 +20,6 @@
     </ul>
 
     <div class="text-end me-auto ms-auto mx-auto">
-        <Button size="lg" color="primary">Contacto <Fa icon={faPhone} /></Button>
+        <Button size="lg" color="primary">Contacto</Button>
     </div>
 </header>
