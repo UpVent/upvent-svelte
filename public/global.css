@@ -11,6 +11,10 @@ body {
 	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
 }
 
+.btn-primary {
+    box-shadow: 1px 1px 5px 0px #007BFC;
+}
+
 :root {
     --bs-blue: #0d6efd;
     --bs-indigo: #6610f2;
