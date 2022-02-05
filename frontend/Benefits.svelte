@@ -1,9 +1,9 @@
 <script>
     import ArrowRight from 'svelte-bootstrap-icons/lib/ArrowRight';
 
-    let brain = 'images/brain.jpg';
-    let coins = 'images/coins.jpg';
-    let education = 'images/education.jpg';
+    const brain = 'images/brain.jpg';
+    const coins = 'images/coins.jpg';
+    const education = 'images/education.jpg';
 </script>
 
 <style>

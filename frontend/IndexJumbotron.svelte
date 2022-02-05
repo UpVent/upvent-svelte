@@ -13,7 +13,7 @@
     import ArrowRight from 'svelte-bootstrap-icons/lib/ArrowRight';
 
     // Component variables
-    let logo_section = 'images/upvent-logo-new.png';
+    const logo_section = 'images/upvent-logo-new.png';
     let logo_visible = false;
 
     // Component functions

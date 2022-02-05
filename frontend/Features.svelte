@@ -1,8 +1,8 @@
 <script>
-    let universals = 'images/universal.svg';
-    let secure = 'images/secure.svg';
-    let scalable = 'images/escalable.svg';
-    let fast = 'images/rapido.svg';
+    const universals = 'images/universal.svg';
+    const secure = 'images/secure.svg';
+    const scalable = 'images/escalable.svg';
+    const fast = 'images/rapido.svg';
 </script>
 
 <style>

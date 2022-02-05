@@ -1,7 +1,7 @@
 <script>
     import ArrowRight from 'svelte-bootstrap-icons/lib/ArrowRight';
 
-    let gnu = 'images/gnu.png';
+    const gnu = 'images/gnu.png';
 </script>
 
 <style>

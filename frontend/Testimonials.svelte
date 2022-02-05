@@ -49,7 +49,7 @@
                 {/each}
             </Carousel>
         {:catch error}
-            <p class="text-danger">Error getting testimonials</p>
+            <p class="text-danger">Error getting testimonials. The API might be down or there is a problem with your connection.</p>
         {/await}
     </div>
 </section>
