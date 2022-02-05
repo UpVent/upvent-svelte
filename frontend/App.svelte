@@ -5,6 +5,7 @@
     import Testimonials from './Testimonials.svelte';
     import Libre from './Libre.svelte';
     import Benefits from './Benefits.svelte';
+    import StartNow from './StartNow.svelte';
     import Footer from './Footer.svelte';
 </script>
 
@@ -27,6 +28,7 @@
 <Benefits/>
 
 <!-- StartNow component -->
+<StartNow/>
 
 <!-- Footer component -->
 <Footer/>
