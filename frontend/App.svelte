@@ -4,6 +4,7 @@
     import Features from './Features.svelte';
     import Testimonials from './Testimonials.svelte';
     import Libre from './Libre.svelte';
+    import Benefits from './Benefits.svelte';
     import Footer from './Footer.svelte';
 </script>
 
@@ -21,6 +22,11 @@
 
 <!-- Libre Software component -->
 <Libre/>
+
+<!-- Benefits component -->
+<Benefits/>
+
+<!-- StartNow component -->
 
 <!-- Footer component -->
 <Footer/>
