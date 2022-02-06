@@ -24,6 +24,7 @@
     "svelte-bootstrap-icons": "^1.7.2",
     "svelte-carousel": "^1.0.17-rc4",
     "sveltestrap": "^5.6.3",
+    "tinro": "^0.6.12",
     "visualfx": "^0.6.5"
   }
 }
