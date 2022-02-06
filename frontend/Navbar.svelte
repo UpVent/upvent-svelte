@@ -1,11 +1,11 @@
 <script>
+    import Bag from 'svelte-bootstrap-icons/lib/Bag';
+    import Envelope from 'svelte-bootstrap-icons/lib/Envelope';
     import House from 'svelte-bootstrap-icons/lib/House';
+    import Laptop from 'svelte-bootstrap-icons/lib/Laptop';
     import Pen from 'svelte-bootstrap-icons/lib/Pen';
     import People from 'svelte-bootstrap-icons/lib/People';
-    import Laptop from 'svelte-bootstrap-icons/lib/Laptop';
-    import Bag from 'svelte-bootstrap-icons/lib/Bag';
     import Phone from 'svelte-bootstrap-icons/lib/Phone';
-    import Envelope from 'svelte-bootstrap-icons/lib/Envelope';
 
 
     import { Button, Modal } from 'sveltestrap';
