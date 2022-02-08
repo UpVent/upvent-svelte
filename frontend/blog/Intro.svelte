@@ -12,10 +12,6 @@
     })()
 </script>
 
-<style>
-    
-</style>
-
 <section class="container">
     <h1 class="text-center">Blog</h1>
     <p class="text-center text-muted">Visite el blog de UpVent y aprenda algo nuevo junto a nosotros.</p>
