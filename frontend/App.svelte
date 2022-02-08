@@ -6,6 +6,7 @@
     // Page Imports
     import Home from './home/Home.svelte';
     import Blog from './blog/Blog.svelte';
+    import About from './about/About.svelte';
 
     // Component imports
     import Footer from './Footer.svelte';
@@ -37,7 +38,7 @@
     <ul class="nav nav-pills col-12 mx-auto col-md-auto mb-2 justify-content-center mb-md-0">
         <li><a class="nav-link px-2 text-muted" href="/">Inicio <House/></a></li>
         <li><a class="nav-link px-2 text-muted" href="/blog">Blog <Pen/></a></li>
-        <li><a class="nav-link px-2 text-muted" href="/">Nosotros <People/></a></li>
+        <li><a class="nav-link px-2 text-muted" href="/about">Nosotros <People/></a></li>
         <li><a class="nav-link px-2 text-muted" href="/">Servicios <Laptop/></a></li>
         <li><a class="nav-link px-2 text-muted" href="/">MarketCloud <Bag/></a></li>
     </ul>
@@ -66,6 +67,7 @@
 <!-- Home Page -->
 <Route path="/"><Home/></Route>
 <Route path="/blog"><Blog/></Route>
+<Route path="/about"><About/></Route>
 
 <!-- Footer component -->
 <Footer/>
