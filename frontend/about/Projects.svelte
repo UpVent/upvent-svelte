@@ -44,7 +44,7 @@
                 </div>
             {/each}
             {:catch error}
-                <p>Error al obtener las últimas publicaciones del blog.</p>
+                <p class="text-danger">Error al obtener los proyectos. Si ves este mensaje reportalo por favor con el siguiente código de error: Error No55: {error}</p>
             {/await}
         </div>
     </div>

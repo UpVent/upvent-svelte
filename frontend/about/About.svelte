@@ -3,6 +3,7 @@
     import Tools from './Tools.svelte';
     import Reasons from './Reasons.svelte';
     import Projects from './Projects.svelte';
+    import FreeTech from './FreeTech.svelte';
 </script>
 
 <!-- Jumbotron About -->
@@ -10,3 +11,4 @@
 <Tools/>
 <Reasons/>
 <Projects/>
+<FreeTech/>
