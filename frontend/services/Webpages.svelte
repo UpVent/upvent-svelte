@@ -1,5 +1,6 @@
-<script charset="utf-8">
-    
+<script>
+    const bolt = '/images/bolt.svg';
+    const responsive = '/images/responsive.svg';
 </script>
 
 <style>
@@ -34,13 +35,13 @@
                         </p>
                     </div>
                     <div class="col-3">
-                        <img alt="Ícono de un rayo" class="img-fluid" src="{% static 'core/img/bolt.svg' %}" loading="lazy">
+                        <img alt="Ícono de un rayo" class="img-fluid" src={bolt}>
                     </div>
                 </div>
             </div>
 
             <div class="col-7 col-sm-4 m-auto pt-5 pt-md-0">
-                <img alt="Imágen mostrando una computadora" class="img-fluid" src="{% static 'core/img/responsive.svg' %}" loading="lazy">
+                <img alt="Imágen mostrando una computadora" class="img-fluid" src={responsive}>
             </div>
         </div>
-    </section>
+</section>
