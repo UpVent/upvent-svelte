@@ -1,5 +1,4 @@
 <script>
-
     // Import Icons
     import Envelope from 'svelte-bootstrap-icons/lib/Envelope';
     import ArrowRight from 'svelte-bootstrap-icons/lib/ArrowRight';
