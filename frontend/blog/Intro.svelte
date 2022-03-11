@@ -2,9 +2,6 @@
     // Svelte imports
     import { onMount } from 'svelte';
 
-    // External imports
-    import Book from 'svelte-bootstrap-icons/lib/Book';
-
     // Get API blog posts
     const api_url = "https://wpapi.upvent.codes/wp-json/wp/v2/posts";
 
