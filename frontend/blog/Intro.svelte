@@ -1,15 +1,24 @@
 <script>
+    // Svelte imports
+    import { onMount } from 'svelte';
 
     // External imports
     import Book from 'svelte-bootstrap-icons/lib/Book';
 
     // Get API blog posts
-    const api_url = 'http://127.0.0.1:8000/api/posts';
-    // Get api info
-    const fetchPosts = (async () => {
-        const response = await fetch(api_url)
-        return await response.json()
-    })()
+    const api_url = "https://wpapi.upvent.codes/wp-json/wp/v2/posts";
+
+    // Arreglo de posts de blog
+    let posts = [];
+
+    // Obtener los posts del blog de wordpress cuando se monte el componente
+    onMount(async () => {
+        const res = await fetch(api_url);
+        const json = await res.json();
+        posts = json;
+        console.log(posts);
+    })
+
 </script>
 
 <section class="container">
@@ -18,21 +27,18 @@
     <hr>
 
     <div id="posts" class="container">
-        {#await fetchPosts}
+        {#await onMount}
             <p class="text-muted lead">Cargando publicaciones del blog...</p>
         {:then data}
-
-            {#each data.result as post}
+            {#each posts as post}
                 <div class="container">
                     <div class="card border-0 rounded-3 shadow-sm mt-5 mb-5">
                         <div class="card-body border-0">
-                            <a class="fs-2 fw-bold text-primary text-decoration-none" href="#">{post.title}</a>
+                            <a class="fs-2 fw-bold text-primary text-decoration-none" href="#">{post.title.rendered}</a>
                         </div>
-                        <div class="card-footer border-0">
-                            <p class="text-muted small">{post.description}</p>
+                        <div class="card-footer border-top">
+                            <p class="text-muted small">{@html post.excerpt.rendered}</p>
                             <hr>
-                            <span class="text-center text-wrap text-break align-middle badge rounded-pill bg-primary shadow-sm"><Book/> Tiempo de lectura: x minutos.</span>
-                            <span class="badge rounded-pill bg-secondary shadow-sm">Categoría: {post.category}</span>
                         </div>
                     </div>
                 </div>
