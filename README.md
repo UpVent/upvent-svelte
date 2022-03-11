@@ -2,13 +2,12 @@
 
 > Please see the copyright part at the bottom of this file! :warning:
 
-![GitHub issues](https://img.shields.io/github/issues/UpVent/upventrs)
-![GitHub all releases](https://img.shields.io/github/downloads/UpVent/upventrs/total)
-![GitHub](https://img.shields.io/github/license/UpVent/upventrs)
+![GitHub issues](https://img.shields.io/github/issues/UpVent/upvent-svelte)
+![GitHub all releases](https://img.shields.io/github/downloads/UpVent/upvent-svelte/total)
+![GitHub](https://img.shields.io/github/license/UpVent/upvent-svelte)
 
 ## Build Status
-[![Node.js CI](https://github.com/UpVent/upventrs/actions/workflows/node.js.yml/badge.svg)](https://github.com/UpVent/upventrs/actions/workflows/node.js.yml)
-[![Rust + Cargo](https://github.com/UpVent/upventrs/actions/workflows/rust.yml/badge.svg)](https://github.com/UpVent/upventrs/actions/workflows/rust.yml)
+[![Node.js CI](https://github.com/UpVent/upvent-svelte/actions/workflows/node.js.yml/badge.svg)](https://github.com/UpVent/upvent-svelte/actions/workflows/node.js.yml)
 
 
 ## Description
@@ -24,7 +23,6 @@ Development occurs on the master branch and new branches are only opened when ad
 2- There's dummy content in master branch, if you cannot afford to have experimental features in production, please use the release tags.
 
 ## Development Stack
-- Rust :crab: (latest stable) + Rocket :rocket: (v0.5) powered backend.
 - Svelte powered frontend.
 
 ## Philosophies
