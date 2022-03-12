@@ -2,19 +2,45 @@
     // Svelte imports
     import { onMount } from 'svelte';
 
+    // Sveltestrap imports
+    import {
+        Button,
+        Modal,
+        ModalBody,
+        ModalFooter,
+        ModalHeader
+    } from 'sveltestrap';
+
+    // Icons import
+    import XCircle from 'svelte-bootstrap-icons/lib/XCircle';
+
+    // Modal handlers
+    let open = false;
+    let size;
+
+    // Handle size from modal
+    const toggleXl = () => {
+        size = 'xl';
+        open = !open;
+    };
+
     // Get API blog posts
     const api_url = "https://wpapi.upvent.codes/wp-json/wp/v2/posts";
+    const medias_url = "https://wpapi.upvent.codes/wp-json/wp/v2/media";
+
 
     // Arreglo de posts de blog
     let posts = [];
 
     // Obtener los posts del blog de wordpress cuando se monte el componente
     onMount(async () => {
-        const res = await fetch(api_url);
-        const json = await res.json();
-        posts = json;
+        // Posts request
+        const posts_res = await fetch(api_url);
+        const posts_json = await posts_res.json();
+        posts = posts_json;
         console.log(posts);
-    })
+    });
+
 
 </script>
 
@@ -31,7 +57,7 @@
                 <div class="container">
                     <div class="card border-0 rounded-3 shadow-sm mt-5 mb-5">
                         <div class="card-body border-0">
-                            <a class="fs-2 fw-bold text-primary text-decoration-none" href="#">{post.title.rendered}</a>
+                            <a class="fs-2 fw-bold text-primary text-decoration-none" on:click={toggleXl}>{post.title.rendered}</a>
                         </div>
                         <div class="card-footer border-top">
                             <p class="text-muted small">{@html post.excerpt.rendered}</p>
@@ -39,8 +65,19 @@
                         </div>
                     </div>
                 </div>
-            {/each}
 
+                <!-- Modal With Blog Text -->
+                <Modal isOpen={open} {toggleXl} {size} scrollable>
+                    <ModalBody>
+                        <h2 class="display-5">{@html post.title.rendered}</h2>
+                        {@html post.content.rendered}
+                    </ModalBody>
+                    <ModalFooter>
+                        <Button color="danger" on:click={toggleXl}>Cerrar <XCircle/></Button>
+                    </ModalFooter>
+                </Modal>
+
+            {/each}
         {:catch error}
             <p>Error al obtener las últimas publicaciones del blog.</p>
         {/await}
