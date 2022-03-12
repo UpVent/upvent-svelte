@@ -45,6 +45,5 @@
             <p>Error al obtener las últimas publicaciones del blog.</p>
         {/await}
     </div>
-
 </section>
 
