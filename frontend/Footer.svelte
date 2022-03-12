@@ -16,7 +16,7 @@
                     <div class="container">
                         <img class="img-fluid mb-1" width="116" height="47" src="images/logo-grey.png" alt="UpVent Logo"/>
                     </div>
-                    <p>Todos los derechos reservados © - UpVent {year} . Todos los logos son marcas registradas de sus respectivos dueños.</p>
+                    <p>Todos los derechos reservados © - UpVent Technologies 2020 - {year} . Todos los logos son marcas registradas de sus respectivos dueños.</p>
                 </div>
 
                 <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
@@ -71,7 +71,7 @@
     </section>
 
     <section class="text-center border-top p-3">
-        © {year} Copyright:
+        © 2020 - {year} Copyright:
         <a href="https://upvent.codes/">UpVent Technologies</a> -
         <a href="/"> Política de privacidad</a> -
         <a href="/">Términos y Condiciones del servicio</a> -
