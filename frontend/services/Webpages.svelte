@@ -2,6 +2,7 @@
     const bolt = '/images/bolt.svg';
     const brush = '/images/brush.svg';
     const responsive = '/images/responsive.svg';
+    const ecommerce = '/images/ecommerce.svg';
 </script>
 
 <section class="container mt-5 mb-5">
@@ -39,6 +40,18 @@
 
         <div class="col-7 col-sm-4 m-auto pt-5 pt-md-0">
             <img alt="Imágen mostrando una computadora" class="img-fluid" src={responsive}>
+        </div>
+    </div>
+</section>
+
+<section class="container mt-5 mb-5">
+    <div class="row align-items-center">
+        <div class="col-12 col-md-6 mb-4 mb-md-0">
+            <img alt="Imágen mostrando un e-commerce en funcionamiento" class="img-fluid" src="{ecommerce}">
+        </div>
+        <div class="col-12 col-md-6 col-lg-5 ml-md-auto text-left">
+            <h1 class="fw-bold display-3">Ecommerce</h1>
+            <p class="lead">Si necesita iniciar su negocio en línea tenemos la solución ideal para usted. Con UpVent podrá elegir entre múltiples opciones de e-commerce, desde <i>SpeedCommerce</i> propio de UpVent o sus motores favoritos como <i>Prestashop</i>, <i>WooCommerce</i> y muchos más.</p>
         </div>
     </div>
 </section>
