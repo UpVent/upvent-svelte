@@ -41,7 +41,6 @@
         <li><a class="nav-link px-2 text-muted" href="/blog">Blog <Pen/></a></li>
         <li><a class="nav-link px-2 text-muted" href="/about">Nosotros <People/></a></li>
         <li><a class="nav-link px-2 text-muted" href="/services">Servicios <Laptop/></a></li>
-        <li><a class="nav-link px-2 text-muted" href="/">MarketCloud <Bag/></a></li>
     </ul>
 
     <div class="text-end me-auto ms-auto mx-auto">
