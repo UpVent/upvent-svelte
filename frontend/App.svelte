@@ -12,7 +12,6 @@
     // Component imports
     import Footer from './Footer.svelte';
 
-
     // Icon imports
     import Bag from 'svelte-bootstrap-icons/lib/Bag';
     import Envelope from 'svelte-bootstrap-icons/lib/Envelope';
@@ -30,8 +29,14 @@
     const toggle = () => (open = !open);
 </script>
 
+<style>
+    .navbar-upvent {
+        backdrop-filter: saturate(200%) blur(30px);
+    }
+</style>
+
 <!-- Navbar component -->
-<header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-0">
+<header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-0 sticky-top navbar-upvent">
     <a href="/" class="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none navbar-brand">
     <img class="mx-auto"  width="148" height="48" src="{logo}" alt="UpVent Logo">
     </a>
