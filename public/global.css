@@ -1,6 +1,13 @@
 html, body {
 	width: auto;
 	height: auto;
+    font-family: 'Poppins-Regular' !important;
+}
+
+
+@font-face {
+    font-family: 'Poppins-Regular';
+    src: url('/fonts/Poppins-Regular.ttf');
 }
 
 body {
