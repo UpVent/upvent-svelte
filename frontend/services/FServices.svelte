@@ -33,12 +33,6 @@
 
 </script>
 
-<style>
-    .text-glow {
-        text-shadow: 1px 1px 1px #007BFC;
-    }
-</style>
-
 <section class="container">
     <div class="container text-center mt-5 mb-5">
         <h2 class="fw-bold display-3">Software <span class="text-primary text-glow">libre</span> al alcance de su mano.</h2>

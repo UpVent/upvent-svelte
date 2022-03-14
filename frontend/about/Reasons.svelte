@@ -6,7 +6,6 @@
     import PhoneFill from 'svelte-bootstrap-icons/lib/PhoneFill';
     import Stack from 'svelte-bootstrap-icons/lib/Stack';
 
-
     const construction = '/images/construction.svg';
 </script>
 

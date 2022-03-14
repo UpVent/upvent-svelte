@@ -6,9 +6,6 @@
     const education = 'images/education.jpg';
 </script>
 
-<style>
-</style>
-
 <section>
     <div class="container text-center mt5 mb-5">
         <p class="h1">Beneficios</p>

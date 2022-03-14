@@ -24,10 +24,6 @@
     .bg-light-grey {
         background-color: rgb(249, 250, 251);
     }
-
-    .text-glow {
-        text-shadow: 1px 1px 1px #007BFC;
-    }
 </style>
 
 <section class="pt-4 mt-4 mb-4 pt-md-11">

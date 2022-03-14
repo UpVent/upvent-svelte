@@ -4,12 +4,6 @@
     const gnu = 'images/gnu.png';
 </script>
 
-<style>
-    .text-glow {
-        text-shadow: 1px 1px 1px #007BFC;
-    }
-</style>
-
 <section class="container mt-5 mb-5">
     <div class="container text-center">
         <img class="d-block mx-auto mb-4" src={gnu} alt="Logo de UpVent circular" width="150" height="150"/>

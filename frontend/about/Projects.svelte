@@ -10,10 +10,6 @@
     const placeholder = 'images/avatar.png';
 </script>
 
-<style>
-
-</style>
-
 <section class="container mt-5 mb-5">
     <div class="container text-center">
         <h1>Portafolio de Trabajo</h1>

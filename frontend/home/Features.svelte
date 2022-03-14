@@ -5,12 +5,6 @@
     const fast = 'images/rapido.svg';
 </script>
 
-<style>
-    .text-glow {
-        text-shadow: 1px 1px 1px #007BFC;
-    }
-</style>
-
 <section class="pt-8 pt-md-10">
     <div class="container mt-5 mb-5">
         <div class="row justify-content-center">

@@ -2,12 +2,6 @@
     let work = 'images/work.svg';
 </script>
 
-<style>
-    .text-glow {
-        text-shadow: 1px 1px 1px #007BFC;
-    }
-</style>
-
 <section class="pt-12 pt-md-14 mt-5 mb-5">
       <div class="container">
         <div class="row align-items-center text-center text-md-left">
