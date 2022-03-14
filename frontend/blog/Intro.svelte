@@ -25,9 +25,7 @@
     };
 
     // Get API blog posts
-    const api_url = "https://wpapi.upvent.codes/wp-json/wp/v2/posts";
-    const medias_url = "https://wpapi.upvent.codes/wp-json/wp/v2/media";
-
+    const api_url = "https://wpapi.upvent.codes/wp-json/wp/v2/posts?_embed";
 
     // Arreglo de posts de blog
     let posts = [];
@@ -53,15 +51,15 @@
         {#await onMount}
             <p class="text-muted lead">Cargando publicaciones del blog...</p>
         {:then data}
-            {#each posts as post}
+            {#each posts as post, i}
                 <div class="container">
                     <div class="card border-0 rounded-3 shadow-sm mt-5 mb-5">
+                        <img src={post._embedded['wp:featuredmedia'][i].media_details.sizes.full.source_url} class="card-img-top" alt="">
                         <div class="card-body border-0">
                             <a class="fs-2 fw-bold text-primary text-decoration-none" on:click={toggleXl}>{post.title.rendered}</a>
                         </div>
                         <div class="card-footer border-top">
                             <p class="text-muted small">{@html post.excerpt.rendered}</p>
-                            <hr>
                         </div>
                     </div>
                 </div>
@@ -76,7 +74,6 @@
                         <Button color="danger" on:click={toggleXl}>Cerrar <XCircle/></Button>
                     </ModalFooter>
                 </Modal>
-
             {/each}
         {:catch error}
             <p>Error al obtener las últimas publicaciones del blog.</p>
