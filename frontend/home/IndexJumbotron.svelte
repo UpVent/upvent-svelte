@@ -26,6 +26,10 @@
         background-size: contain;
         background-repeat: repeat-x;
     }
+
+    .text-glow-white {
+        text-shadow: 1px 1px 1px #010101;
+    }
 </style>
 
 <section class="pt-4 mt-4 mb-4 pt-md-11 waves">
@@ -38,7 +42,7 @@
             </div>
             <div class="col-12 col-md-7 col-lg-6 order-md-1">
                 <h1 class="display-4 fw-bold text-center text-md-start">
-                    Nube <span class="text-primary text-glow">inteligente.</span>
+                    Nube <span class="text-light text-glow-white">inteligente.</span>
                     <br>
                     Para negocios inteligentes.
                 </h1>
