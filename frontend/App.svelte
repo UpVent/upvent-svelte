@@ -31,7 +31,7 @@
 
 <style>
     .navbar-upvent {
-        backdrop-filter: saturate(200%) blur(100px);
+        backdrop-filter: saturate(100%) blur(100px);
     }
 </style>
 
