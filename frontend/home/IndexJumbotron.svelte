@@ -21,12 +21,14 @@
 </script>
 
 <style>
-    .bg-light-grey {
-        background-color: rgb(249, 250, 251);
+    .waves {
+        background: url('/images/waves.png');
+        background-size: contain;
+        background-repeat: repeat-x;
     }
 </style>
 
-<section class="pt-4 mt-4 mb-4 pt-md-11">
+<section class="pt-4 mt-4 mb-4 pt-md-11 waves">
     <div class="container">
         <div class="row">
             <div class="col-12 col-md-5 col-lg-6 order-md-2">
