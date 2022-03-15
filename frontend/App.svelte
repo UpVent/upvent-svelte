@@ -32,13 +32,14 @@
 <style>
     .navbar-upvent {
         backdrop-filter: saturate(100%) blur(100px);
+        -webkit-backdrop-filter: saturate(100%) blur(100px);
     }
 </style>
 
 <!-- Navbar component -->
-<header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-0 sticky-top navbar-upvent">
+<header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-0 sticky-md-top navbar-upvent">
     <a href="/" class="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none navbar-brand">
-    <img class="mx-auto"  width="148" height="48" src="{logo}" alt="UpVent Logo">
+    <img class="mx-auto"  width="138" height="40" src="{logo}" alt="UpVent Logo">
     </a>
 
     <ul class="nav nav-pills col-12 mx-auto col-md-auto mb-2 justify-content-center mb-md-0">
