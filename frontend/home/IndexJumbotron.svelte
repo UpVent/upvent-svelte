@@ -47,7 +47,7 @@
                     Impulse la innovación en su negocio con soluciones sencillas, accesibles y éticas de software libre. Conozca por que las micro, pequeñas y medianas empresas Mexicanas confían en UpVent.
                 </p>
             <div class="text-center text-md-start">
-              <a href="#" class="btn btn-primary mx-auto my-2 btn-lg me-1">
+              <a href="/about" class="btn btn-primary mx-auto my-2 btn-lg me-1">
                   Conocer más <ArrowRight/>
               </a>
             </div>
