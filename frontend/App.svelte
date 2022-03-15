@@ -28,9 +28,18 @@
 </script>
 
 <style>
-    .navbar-upvent {
-        backdrop-filter: saturate(100%) blur(100px);
-        -webkit-backdrop-filter: saturate(100%) blur(100px);
+
+    @supports (backdrop-filter: none) {
+	    .navbar-upvent {
+            backdrop-filter: saturate(100%) blur(100px);
+            -webkit-backdrop-filter: saturate(100%) blur(100px);
+	    }
+    }
+
+    @supports not (backdrop-filter: none) {
+        .background {
+            background-color: #FAFAFA;
+        }
     }
 </style>
 
