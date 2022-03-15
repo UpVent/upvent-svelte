@@ -42,10 +42,10 @@
     </a>
 
     <ul class="nav nav-pills col-12 mx-auto col-md-auto mb-2 justify-content-center mb-md-0">
-        <li><a class="nav-link px-2 text-muted" href="/">Inicio <House/></a></li>
-        <li><a class="nav-link px-2 text-muted" href="/blog">Blog <Pen/></a></li>
-        <li><a class="nav-link px-2 text-muted" href="/about">Nosotros <People/></a></li>
-        <li><a class="nav-link px-2 text-muted" href="/services">Servicios <Laptop/></a></li>
+        <li><a class="fs-5 nav-link px-2 text-muted" href="/">Inicio <House/></a></li>
+        <li><a class="fs-5 nav-link px-2 text-muted" href="/blog">Blog <Pen/></a></li>
+        <li><a class="fs-5 nav-link px-2 text-muted" href="/about">Nosotros <People/></a></li>
+        <li><a class="fs-5 nav-link px-2 text-muted" href="/services">Servicios <Laptop/></a></li>
     </ul>
 
     <div class="text-end me-auto ms-auto mx-auto">
