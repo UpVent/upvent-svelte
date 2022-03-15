@@ -31,9 +31,7 @@ Development occurs on the master branch and new branches are only opened when ad
 - Keep breaking changes to a minimum. Take more time if needed.
 
 ## Security
-
 For any serious security related issues, please **do not open a public GitHub issue**. 
-
 Instead, email them to [our issues email](mailto:upventmx@gmail.com). We provide a quick response of security reports within 24 hours and should apply patches ASAP (also, feel free to contribute a fix for the issue).
 
 ## Contributing
@@ -41,6 +39,14 @@ Instead, email them to [our issues email](mailto:upventmx@gmail.com). We provide
 If you wish to continue please look at our [ISSUES](https://github.com/UpVent/upvent.codes/issues) tab, open a new Issue to request a feature or report a bug.
 
 If this work helped you somehow, please leave us a :star: it will mean so much to us :heart:
+
+### :star: Contributors
+These people have helped in the development of this frontend repo, some with code, others with ideas, feedback and testing.
+We strongly encourage you to give them a Follow or :star: their repositories to show some love to them. We know that will help them a lot:
+
+- [DaiBW](https://github.com/Dai-BW)
+- [sandyCortes](https://github.com/sandyCortes)
+
 
 ## Copyright
 The source code for this page is licensed under the Affero General Public License (GNU) version 3. Except where otherwise noted, written work, blogs, opinions, and some visual content is licensed under the Creative Commons Attribution-NonCommercial-NoDerivatives License. 4.0 International (CC BY-NC-ND 4.0)
