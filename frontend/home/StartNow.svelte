@@ -1,7 +1,7 @@
 <script>
-
+    // Svelte Icons import
     import Laptop from 'svelte-bootstrap-icons/lib/Laptop';
-    import Headset from 'svelte-bootstrap-icons/lib/Headset';
+    import Book from 'svelte-bootstrap-icons/lib/Book';
 
     let logo = 'images/upvent-logo-new.png';
 </script>
@@ -12,8 +12,8 @@
     <div class="col-lg-6 mx-auto">
         <p class="lead mb-4">Visite nuestra página de servicios para explorar nuestras ofertas prediseñadas para su empresa o contacte directo con ventas.</p>
         <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
-            <a href="#" class="btn btn-primary btn-lg px-4 me-sm-3">Ir a Servicios <Laptop/></a>
-            <a href="#" class="btn btn-outline-primary btn-lg px-4">Contactar con ventas <Headset/></a>
+            <a href="/services" class="btn btn-primary btn-lg px-4 me-sm-3">Ir a Servicios <Laptop/></a>
+            <a href="/blog" class="btn btn-outline-primary btn-lg px-4">Leer nuestro blog <Book/></a>
         </div>
     </div>
 </section>
