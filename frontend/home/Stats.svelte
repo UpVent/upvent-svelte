@@ -1,5 +1,5 @@
 <script>
- 
+    const chart = '/images/chart.svg';
 </script>
 
 <style>
