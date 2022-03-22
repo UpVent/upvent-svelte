@@ -14,6 +14,6 @@
             <br />
             Además, colaboramos de manera activa con el ecosistema de software libre en México para mejorar dichas tecnologías para todos.
         </p>
-        <a href="#">Explore las tecnologías usadas en UpVent <ArrowRight/></a>
+        <a href="#startnowtechs">Explore las tecnologías usadas en UpVent <ArrowRight/></a>
     </div>
 </section>
