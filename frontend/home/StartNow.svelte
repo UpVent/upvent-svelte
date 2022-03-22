@@ -1,9 +1,28 @@
 <script>
+    // Svelte imports
+    import { onMount } from 'svelte';
+
     // Svelte Icons import
     import Laptop from 'svelte-bootstrap-icons/lib/Laptop';
     import Book from 'svelte-bootstrap-icons/lib/Book';
 
+    // UpVent Logo
     let logo = 'images/upvent-logo-new.png';
+
+    // Grid logos for technology showcasing
+    let technologies = [];
+
+    // Get API technologies
+    const api_url = "https://wpapi.upvent.codes/wp-json/wp/v2/tecnologa";
+
+    // Get Projects from Wordpress API
+    onMount(async () => {
+        // Projects request
+        const technologies_res = await fetch(api_url);
+        const technologies_json = await technologies_res.json();
+        technologies = technologies_json;
+        console.log(technologies);
+    });
 </script>
 
 <section class="px-4 py-5 my-5 text-center">
@@ -19,5 +38,27 @@
 </section>
 
 <section class="text-center">
-    <p class="lead fw-bold">La tecnología detrás de UpVent</p>
+    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="currentColor" class="bi bi-wrench-adjustable-circle text-primary" viewBox="0 0 16 16">
+        <path d="M12.496 8a4.491 4.491 0 0 1-1.703 3.526L9.497 8.5l2.959-1.11c.027.2.04.403.04.61Z"/>
+        <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0Zm-1 0a7 7 0 1 0-13.202 3.249l1.988-1.657a4.5 4.5 0 0 1 7.537-4.623L7.497 6.5l1 2.5 1.333 3.11c-.56.251-1.18.39-1.833.39a4.49 4.49 0 0 1-1.592-.29L4.747 14.2A7 7 0 0 0 15 8Zm-8.295.139a.25.25 0 0 0-.288-.376l-1.5.5.159.474.808-.27-.595.894a.25.25 0 0 0 .287.376l.808-.27-.595.894a.25.25 0 0 0 .287.376l1.5-.5-.159-.474-.808.27.596-.894a.25.25 0 0 0-.288-.376l-.808.27.596-.894Z"/>
+    </svg>
+    <p class="h2 fw-bold m-2">Tecnología que nos inspira.</p>
+    <small class="small text-muted">Tecnologías que utilizamos</small>
+
+    <div class="container mt-3 mb-2">
+        <div class="container">
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4">
+                {#await onMount}
+                    <p class="text-muted lead">Cargando las tecnologías usadas por UpVent...</p>
+                {:then data}
+                    {#each technologies as technology}
+                        <div class="col"><a href="http://www.url.com" target="_blank">Anchor Text</a></div>
+                    {/each}
+                {:catch error}
+                    <p class="text-danger">Error al obtener las tecnoologias usadas. Si ves este mensaje reportalo por favor con el siguiente código de error: Error No55: {error}</p>
+                {/await}
+            </div>
+        </div>
+    </div>
+
 </section>
