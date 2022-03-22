@@ -17,3 +17,7 @@
         </div>
     </div>
 </section>
+
+<section class="text-center">
+    <p class="lead fw-bold">La tecnología detrás de UpVent</p>
+</section>
