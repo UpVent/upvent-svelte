@@ -46,7 +46,7 @@
     <small class="small text-muted">Tecnologías que utilizamos</small>
 
     <div class="container mt-3 mb-2">
-        <div class="container">
+        <div class="container" id="startnowtechs">
             <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4">
                 {#await onMount}
                     <p class="text-muted lead">Cargando las tecnologías usadas por UpVent...</p>

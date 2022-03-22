@@ -64,7 +64,7 @@
 </header>
 
 <!-- Modal de contacto -->
-<Modal body header="¡Gracias por contactarnos!" isOpen={open} {toggle}>
+<Modal id="contactform" body header="¡Gracias por contactarnos!" isOpen={open} {toggle}>
     <form class="form" id="fs-frm" name="simple-contact-form" accept-charset="utf-8" action="https://formspree.io/f/{form_id}" method="post">
         <fieldset id="fs-frm-inputs">
         <label class="form-label" for="full-name">Nombre Completo</label>

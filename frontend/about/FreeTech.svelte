@@ -20,8 +20,8 @@
             <h1 class="display-5 fw-normal lh-1 mb-3">Tecnología libre para las mentes libres</h1>
             <p class="lead">UpVent entrega soluciones de código libre que logran hacer que las empresas trabajen de forma eficiente en entornos conectados. Todos nuestros servicios operan de forma transparente y ética en el mercado laboral, sin telemetría, letra pequeña o restricciones sobre licencias.</p>
             <div class="d-grid gap-2 d-md-flex justify-content-md-start">
-                <button type="button" class="btn btn-primary btn-lg px-4 me-md-2"><a class="text-white text-decoration-none" href="#">Licencias</a></button>
-                <button type="button" class="btn btn-outline-primary btn-lg px-4"><a class="text-decoration-none" href="#">Contacto <Envelope/></a></button>
+                <button type="button" class="btn btn-primary btn-lg px-4 me-md-2"><a class="text-white text-decoration-none" href="/">Tecnologías</a></button>
+                <button type="button" class="btn btn-outline-primary btn-lg px-4"><a class="text-decoration-none" href="#contactform">Contacto <Envelope/></a></button>
             </div>
         </div>
     </div>
@@ -42,7 +42,7 @@
     <div class="col-12 col-md-5 m-md-auto">
         <h2><strong>Siempre libres</strong></h2>
             <p class="lead">UpVent mantendrá siempre la libertad en sus productos, siguiendo los lineamientos éticos que vienen desde la raíz del software libre, entregaremos productos y servicios que preserven la ética y estabilidad del software en la industria.</p>
-            <p><a class="text-decoration-none" href="#">Explorar nuestros servicios <ArrowRight/></a></p>
+            <p><a class="text-decoration-none" href="/services">Explorar nuestros servicios <ArrowRight/></a></p>
         </div>
     </div>
 
@@ -54,7 +54,7 @@
         <div class="col-12 col-md-5">
             <h2><strong>Clientes beneficiados.</strong></h2>
             <p class="lead">Nuestros clientes llevan productos al mundo todos los días utilizando la tecnología libre de UpVent. Estas organizaciones son la prueba de que el software libre y la innovación van de la mano en el mundo tecnológico.</p>
-            <p><a class="text-decoration-none" href="#">Ver casos de éxito <ArrowRight/></a></p>
+            <p><a class="text-decoration-none" href="https://www.instagram.com/UpVentMX/">Ver casos de éxito <ArrowRight/></a></p>
         </div>
     </div>
 
@@ -67,7 +67,7 @@
             <h2><strong>Líderes en Seguridad</strong></h2>
             <p class="lead">El equipo de UpVent siempre estará al pendiente de las actualizaciones, parches y mejoras de seguridad de sus productos. Olvide el software viejo y el riesgo de ataques informáticos, nosotros le tenemos cubierto.
             </p>
-            <p><a class="text-decoration-none" href="#">Consultoría <ArrowRight/></a></p>
+            <p><a class="text-decoration-none" href="#contactform">Consultoría <ArrowRight/></a></p>
         </div>
     </div>
 </section>
@@ -77,7 +77,7 @@
         <div class="col-12 col-md-6 col-lg-5">
             <p class="mb-5 mt-5"><img alt="Logo de UpVent" height="35" width="98" src={logo_grey}></p>
             <h1>Permítanos solucionar sus problemas con software libre...</h1>
-            <p class="mt-4"><a href="#" class="btn btn-primary fw-bold">Explorar nuestras soluciones</a></p>
+            <p class="mt-4"><a href="/services" class="btn btn-primary fw-bold">Explorar nuestras soluciones</a></p>
         </div>
 
         <div class="col-12 col-sm-4 col-md-6 col-lg-4 m-auto pt-5">
