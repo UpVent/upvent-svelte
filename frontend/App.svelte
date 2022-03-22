@@ -30,7 +30,6 @@
 </script>
 
 <style>
-
     @supports (backdrop-filter: none) {
 	    .navbar-upvent {
             backdrop-filter: saturate(100%) blur(100px);
