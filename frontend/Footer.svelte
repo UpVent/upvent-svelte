@@ -26,19 +26,13 @@
                             <a href="/" class="text-decoration-none text-muted">Inicio</a>
                         </li>
                         <li class="m-2">
-                            <a href="/" class="text-decoration-none text-muted">Blog</a>
+                            <a href="/blog" class="text-decoration-none text-muted">Blog</a>
                         </li>
                         <li class="m-2">
-                            <a href="/" class="text-decoration-none text-muted">Nosotros</a>
+                            <a href="/about" class="text-decoration-none text-muted">Nosotros</a>
                         </li>
                         <li class="m-2">
-                            <a href="/" class="text-decoration-none text-muted">Servicios</a>
-                        </li>
-                        <li class="m-2">
-                            <a href="/" class="text-decoration-none text-muted">Contacto</a>
-                        </li>
-                        <li class="m-2">
-                            <a href="/" class="text-decoration-none text-muted">MarketCloud</a>
+                            <a href="/services" class="text-decoration-none text-muted">Servicios</a>
                         </li>
                     </ul>
                 </div>
@@ -49,15 +43,6 @@
                         <li class="m-2">
                             <a rel="nofollow" href="https://github.com/UpVent" class="text-decoration-none text-muted">Repositorio de Código Libre en GitHub <i class="bi bi-github"></i></a>
                         </li>
-                        <li class="m-2">
-                            <a href="/" class="text-decoration-none text-muted">Equipo</a>
-                        </li>
-                        <li class="m-2">
-                            <a href="/" class="text-decoration-none text-muted">Licencias</a>
-                        </li>
-                        <li class="m-2">
-                            <a rel="nofollow" href="https://tickets.upvent.codes" class="text-decoration-none text-muted">Sistema de Soporte</a>
-                        </li>
                     </ul>
                 </div>
             </div>
@@ -66,15 +51,14 @@
 
     <section class="container mt-5 mb-5 text-center-p-4">
         <p>
-            El <a href="https://github.com/UpVent/upvent.codes">código fuente</a> de esta página se encuentra bajo la <a href="https://www.gnu.org/licenses/old-licenses/gpl-2.0.html">Licencia Pública General de GNU versión 2</a>. Excepto donde se indique lo <a href="https://creativecommons.org/policies#license">contrario</a>, el trabajo escrito, blogs, opiniones y parte del contenido visual se encuentra bajo la <a href="https://creativecommons.org/licenses/by-nd/3.0/deed.es">Licencia Creative Commons Atribución-SinDerivadas 3.0 No portada (CC BY-ND 3.0)</a>
+            El <a href="https://github.com/UpVent/upvent.codes">código fuente</a> de esta página se encuentra bajo la <a href="https://www.gnu.org/licenses/agpl-3.0.html">Licencia Pública General de Affero (GNU) versión 3</a>. Excepto donde se indique lo <a href="https://creativecommons.org/policies#license">contrario</a>, el trabajo escrito, blogs, opiniones y parte del contenido visual se encuentra bajo la <a href="https://creativecommons.org/licenses/by-nd/3.0/deed.es">Licencia Creative Commons Atribución-SinDerivadas 3.0 No portada (CC BY-ND 3.0)</a>
         </p>
     </section>
 
     <section class="text-center border-top p-3">
         © 2020 - {year} Copyright:
         <a href="https://upvent.codes/">UpVent Technologies</a> -
-        <a href="/"> Política de privacidad</a> -
-        <a href="/">Términos y Condiciones del servicio</a> -
+        <a href="/privacy-policy"> Política de privacidad</a> -
         <a href="https://github.com/UpVent/upventrs/issues/new">Reportar un problema con este sitio</a>
     </section>
 </footer>

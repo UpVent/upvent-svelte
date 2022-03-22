@@ -8,6 +8,8 @@
     import Blog from './blog/Blog.svelte';
     import About from './about/About.svelte';
     import Services from './services/Services.svelte';
+    // Additional Pages
+    import PrivacyPolicy from './home/PrivacyPolicy.svelte';
 
     // Component imports
     import Footer from './Footer.svelte';
@@ -82,6 +84,9 @@
 <Route path="/blog"><Blog/></Route>
 <Route path="/about"><About/></Route>
 <Route path="/services"><Services/></Route>
+
+<!-- Footer links -->
+<Route path="/privacy-policy"><PrivacyPolicy/></Route>
 
 <!-- Footer component -->
 <Footer/>
