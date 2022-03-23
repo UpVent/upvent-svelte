@@ -1,7 +1,10 @@
 <script>
     // External imports
     import { Button, Modal } from 'sveltestrap';
-    import { Route } from 'tinro';
+    import {
+        Route,
+        router
+    } from 'tinro';
 
     // CSR MetaTags
     import { JsonLd } from 'svelte-meta-tags';
@@ -30,6 +33,10 @@
     // Modal variable
     let open = false;
     const toggle = () => (open = !open);
+
+    // Scroll to top after navigation
+    router.subscribe(_ => window.scrollTo(0, 0));
+
 </script>
 
 <style>
