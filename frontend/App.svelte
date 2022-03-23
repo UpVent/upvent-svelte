@@ -3,6 +3,9 @@
     import { Button, Modal } from 'sveltestrap';
     import { Route } from 'tinro';
 
+    // CSR MetaTags
+    import { MetaTags, JsonLd } from 'svelte-meta-tags';
+
     // Page Imports
     import Home from './home/Home.svelte';
     import Blog from './blog/Blog.svelte';
@@ -43,6 +46,18 @@
         }
     }
 </style>
+
+<!-- Meta Tags -->
+<JsonLd
+    schema = {{
+    '@type': 'Organization',
+    name: 'UpVent Technologies',
+    url: 'https://upvent.codes',
+    address: 'Guanajuato, Guanajuato',
+    sameAs: ["https://facebook.com/UpVentMX","https://twitter.com/UpVentMX","https://www.linkedin.com/company/upvent-technologies/","https://www.instagram.com/UpVentMX/"]
+    }}
+/>
+
 
 <!-- Navbar component -->
 <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-0 sticky-md-top navbar-upvent">
