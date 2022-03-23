@@ -4,7 +4,7 @@
     import { Route } from 'tinro';
 
     // CSR MetaTags
-    import { MetaTags, JsonLd } from 'svelte-meta-tags';
+    import { JsonLd } from 'svelte-meta-tags';
 
     // Page Imports
     import Home from './home/Home.svelte';
