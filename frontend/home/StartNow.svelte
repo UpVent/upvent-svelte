@@ -51,7 +51,7 @@
                     <p class="text-muted lead">Cargando las tecnologías usadas por UpVent...</p>
                 {:then data}
                     {#each technologies as technology}
-                        <div class="col"><a href="{technology.link_de_la_tecnologia}" target="_blank"><img height="50" width="50" class="img-fluid" src="{technology.logo.guid}" alt="{technology.slug}"></a></div>
+                        <div class="col"><a href="{technology.link_de_la_tecnologia}" target="_blank"><img height="50" width="60" class="img-fluid" src="{technology.logo.guid}" alt="{technology.slug}"></a></div>
                     {/each}
                 {:catch error}
                     <p class="text-danger">Error al obtener las tecnoologias usadas. Si ves este mensaje reportalo por favor con el siguiente código de error: Error No55: {error}</p>
