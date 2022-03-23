@@ -34,7 +34,6 @@
         const projects_res = await fetch(api_url);
         const projects_json = await projects_res.json();
         projects = projects_json;
-        console.log(projects);
     });
 </script>
 

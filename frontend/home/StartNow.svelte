@@ -21,7 +21,6 @@
         const technologies_res = await fetch(api_url);
         const technologies_json = await technologies_res.json();
         technologies = technologies_json;
-        console.log(technologies);
     });
 </script>
 

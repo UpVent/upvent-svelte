@@ -36,7 +36,6 @@
         const posts_res = await fetch(api_url);
         const posts_json = await posts_res.json();
         posts = posts_json;
-        console.log(posts);
     });
 
 
