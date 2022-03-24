@@ -19,7 +19,6 @@
 
     // Component imports
     import Footer from './Footer.svelte';
-    import Lazy from './Lazy.svelte';
 
     // Icon imports
     import House from 'svelte-bootstrap-icons/lib/House';
@@ -103,24 +102,24 @@
 
 <!-- Home Page -->
 <Route path="/">
-    <Lazy component={() => import('./home/Home.svelte')} />
+    <Home/>
 </Route>
 
 <Route path="/blog">
-    <Lazy component={() => import('./blog/Blog.svelte')} />
+    <Blog/>
 </Route>
 
 <Route path="/about">
-    <Lazy component={() => import('./about/About.svelte')} />
+    <About/>
 </Route>
 
 <Route path="/services">
-    <Lazy component={() => import('./services/Services.svelte')} />
+    <Services/>
 </Route>
 
 <!-- Footer links -->
 <Route path="/privacy-policy">
-    <Lazy component={() => import('./home/PrivacyPolicy.svelte')} />
+    <PrivacyPolicy/>
 </Route>
 
 <!-- Footer component -->
