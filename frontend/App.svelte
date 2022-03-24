@@ -108,7 +108,7 @@
         <Home/>
     </Route>
 
-    <Route path="/blog/*">
+    <Route path="/blog">
         <Blog/>
     </Route>
 
