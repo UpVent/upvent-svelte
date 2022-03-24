@@ -13,7 +13,7 @@
     let technologies = [];
 
     // Get API technologies
-    const api_url = "https://wpapi.upvent.codes/wp-json/wp/v2/tecnologa";
+    const api_url = "https://wpapi.upvent.codes/wp-json/wp/v2/tecnologa/";
 
     // Get Projects from Wordpress API
     onMount(async () => {
