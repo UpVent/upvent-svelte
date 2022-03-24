@@ -27,10 +27,10 @@
     // Get API blog posts
     const api_url = "https://wpapi.upvent.codes/wp-json/wp/v2/posts?_embed";
 
-    // Arreglo de posts de blog
+    // Blog Posts array
     let posts = [];
 
-    // Obtener los posts del blog de wordpress cuando se monte el componente
+    // Get blog posts on component mount
     onMount(async () => {
         // Posts request
         const posts_res = await fetch(api_url);
