@@ -19,6 +19,7 @@
 
     // Component imports
     import Footer from './Footer.svelte';
+    import Transition from './Transition.svelte';
 
     // Icon imports
     import House from 'svelte-bootstrap-icons/lib/House';
@@ -101,26 +102,29 @@
 </Modal>
 
 <!-- Home Page -->
-<Route path="/">
-    <Home/>
-</Route>
 
-<Route path="/blog">
-    <Blog/>
-</Route>
+<Transition>
+    <Route path="/">
+        <Home/>
+    </Route>
 
-<Route path="/about">
-    <About/>
-</Route>
+    <Route path="/blog">
+        <Blog/>
+    </Route>
 
-<Route path="/services">
-    <Services/>
-</Route>
+    <Route path="/about">
+        <About/>
+    </Route>
 
-<!-- Footer links -->
-<Route path="/privacy-policy">
-    <PrivacyPolicy/>
-</Route>
+    <Route path="/services">
+        <Services/>
+    </Route>
+
+    <!-- Footer links -->
+    <Route path="/privacy-policy">
+        <PrivacyPolicy/>
+    </Route>
+</Transition>
 
 <!-- Footer component -->
 <Footer/>
