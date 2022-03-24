@@ -53,7 +53,7 @@
             {#each posts as post, i}
                 <div class="container">
                     <div class="card border-0 rounded-3 mt-5 mb-5 text-center">
-                        <img width="500" class="mx-auto rounded-3" src={post._embedded['wp:featuredmedia'][i].media_details.sizes.full.source_url} alt="{post._embedded['wp:featuredmedia'][i].alt_text}">
+                        <img class="img-fluid mx-auto rounded-3" src={post._embedded['wp:featuredmedia'][i].media_details.sizes.full.source_url} alt="{post._embedded['wp:featuredmedia'][i].alt_text}">
                         <div class="card-body border-0">
                             <a class="fs-2 fw-bold text-primary text-decoration-none" href={null} on:click={toggleXl}>{post.title.rendered}</a>
                         </div>
