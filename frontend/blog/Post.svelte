@@ -3,7 +3,9 @@
     import { onMount } from 'svelte';
 
     // slug to get post
-    export let slug;
+    import { meta } from 'tinro';
+    const route = meta();
+    const slug = route.params.slug;
 
     let data = [];
 
@@ -14,6 +16,9 @@
     onMount(async () => {
         const response = await fetch(api_url);
         const data_array = await response.json();
+        console.log(data_array);
         data = data_array[0];
     });
 </script>
+
+<h1>Test</h1>

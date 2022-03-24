@@ -2,9 +2,6 @@
     // Svelte imports
     import { onMount } from 'svelte';
 
-    // Blog component imports
-    import Post from './Post.svelte';
-
     // Tinro imports
     import { Route } from 'tinro';
 
@@ -38,7 +35,7 @@
                     <div class="card border-0 rounded-3 mt-5 mb-5 text-center">
                         <img class="img-fluid mx-auto rounded-3" src={post._embedded['wp:featuredmedia'][i].media_details.sizes.full.source_url} alt="{post._embedded['wp:featuredmedia'][i].alt_text}">
                         <div class="card-body border-0">
-                            <a class="fs-2 fw-bold text-primary text-decoration-none" href="/blog/post/{post.slug}">{post.title.rendered}</a>
+                            <a class="fs-2 fw-bold text-primary text-decoration-none" href="/blog/{post.slug}">{post.title.rendered}</a>
                         </div>
                         <div class="card-footer border-top">
                             <p class="text-muted small">{@html post.excerpt.rendered}</p>
@@ -51,8 +48,3 @@
         {/await}
     </div>
 </section>
-
-
-<Route path="/post/*" firstmatch let:meta>
-    <Post id=${meta.id}/>
-</Route>
