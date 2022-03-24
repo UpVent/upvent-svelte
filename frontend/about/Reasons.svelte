@@ -1,5 +1,4 @@
 <script>
-
     // Icon Imports
     import LightningChargeFill from 'svelte-bootstrap-icons/lib/LightningChargeFill';
     import CloudArrowUpFill from 'svelte-bootstrap-icons/lib/CloudArrowUpFill';

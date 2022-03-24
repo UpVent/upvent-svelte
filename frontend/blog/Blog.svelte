@@ -8,7 +8,6 @@
         Modal,
         ModalBody,
         ModalFooter,
-        ModalHeader
     } from 'sveltestrap';
 
     // Icons import

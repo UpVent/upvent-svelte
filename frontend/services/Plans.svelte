@@ -1,7 +1,5 @@
 <script>
     // Bootstrap Icons Imports
-    import BagFill from 'svelte-bootstrap-icons/lib/BagFill';
-    import PhoneFill from 'svelte-bootstrap-icons/lib/PhoneFill';
     import CheckCircle from 'svelte-bootstrap-icons/lib/CheckCircle';
     import StarFill from 'svelte-bootstrap-icons/lib/StarFill';
 </script>
