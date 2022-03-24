@@ -12,7 +12,6 @@
     // Page Imports
     import Home from './home/Home.svelte';
     import Blog from './blog/Blog.svelte';
-    import Post from './blog/Post.svelte';
     import About from './about/About.svelte';
     import Services from './services/Services.svelte';
     // Additional Pages
@@ -109,12 +108,8 @@
         <Home/>
     </Route>
 
-    <Route path="/blog/*" firstmatch>
+    <Route path="/blog">
         <Blog/>
-    </Route>
-
-    <Route path="/blog/:slug" let:meta>
-        <Post/>
     </Route>
 
     <Route path="/about">
