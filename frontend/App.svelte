@@ -12,6 +12,7 @@
     // Page Imports
     import Home from './home/Home.svelte';
     import Blog from './blog/Blog.svelte';
+    import Post from './blog/Post.svelte';
     import About from './about/About.svelte';
     import Services from './services/Services.svelte';
     // Additional Pages
@@ -28,8 +29,7 @@
     import People from 'svelte-bootstrap-icons/lib/People';
     import Phone from 'svelte-bootstrap-icons/lib/Phone';
 
-    const logo = 'images/logo-grey.png';
-    const form_id = 'moqrekzb';
+    const form_id = 'mdoblozk';
 
     // Modal variable
     let open = false;
@@ -70,7 +70,7 @@
 <!-- Navbar component -->
 <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-0 sticky-md-top navbar-upvent">
     <a href="/" class="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none navbar-brand">
-        <img class="mx-auto img-fluid" width="148" height="51" src="{logo}" alt="UpVent Logo">
+        <img class="mx-auto img-fluid" width="148" height="51" src="/images/logo-grey.png" alt="UpVent Logo">
     </a>
 
     <ul class="nav nav-pills col-12 mx-auto col-md-auto mb-2 justify-content-center mb-md-0">
@@ -108,8 +108,16 @@
         <Home/>
     </Route>
 
-    <Route path="/blog">
-        <Blog/>
+    <!-- Blog Routes -->
+    <Route path="/blog/*">
+        <Route path="/">
+            <Blog/>
+        </Route>
+
+        <Route path="/post/:slug" let:meta>
+            <Post/>
+        </Route>
+
     </Route>
 
     <Route path="/about">
