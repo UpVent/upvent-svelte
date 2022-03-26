@@ -17,6 +17,7 @@
     import Services from './services/Services.svelte';
     // Additional Pages
     import PrivacyPolicy from './home/PrivacyPolicy.svelte';
+    import NotFound from './NotFound.svelte';
 
     // Component imports
     import Footer from './Footer.svelte';
@@ -133,7 +134,7 @@
         <PrivacyPolicy/>
     </Route>
 
-    <Route fallback>No page found</Route>
+    <Route fallback><NotFound/></Route>
 </Transition>
 
 <!-- Footer component -->
