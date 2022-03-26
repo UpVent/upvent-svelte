@@ -1,7 +1,7 @@
 <script>
     import ArrowRight from 'svelte-bootstrap-icons/lib/ArrowRight';
 
-    const gnu = 'images/gnu.png';
+    const gnu = 'images/gnu.webp';
 </script>
 
 <section class="container mt-5 mb-5">

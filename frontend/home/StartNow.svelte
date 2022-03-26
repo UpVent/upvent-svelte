@@ -7,7 +7,7 @@
     import Book from 'svelte-bootstrap-icons/lib/Book';
 
     // UpVent Logo
-    let logo = 'images/upvent-logo-new.png';
+    let logo = 'images/upvent-logo-new.webp';
 
     // Grid logos for technology showcasing
     let technologies = [];

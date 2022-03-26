@@ -29,7 +29,7 @@
         },
     ];
 
-    const oneplace = '/images/oneplace.png';
+    const oneplace = '/images/oneplace.webp';
 
 </script>
 

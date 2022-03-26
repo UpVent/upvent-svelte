@@ -8,7 +8,7 @@
     import ArrowRight from 'svelte-bootstrap-icons/lib/ArrowRight';
 
     // Component variables
-    const logo_section = 'images/upvent-logo-new.png';
+    const logo_section = 'images/upvent-logo-new.webp';
     let logo_visible = false;
 
     // Component functions
@@ -17,7 +17,7 @@
 
 <style>
     .waves {
-        background: url('/images/waves.png');
+        background: url('/images/waves.webp');
         background-size: contain;
         background-repeat: repeat-x;
     }

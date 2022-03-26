@@ -1,6 +1,6 @@
 <style>
     .jumbotron {
-        background-image: url('/images/core-services.jpg');
+        background-image: url('/images/core-services.webp');
         background-size: cover;
         height: 500px;
 }
