@@ -43,13 +43,13 @@
 <style>
     @supports (backdrop-filter: none) {
 	    .navbar-upvent {
-            backdrop-filter: saturate(100%) blur(100px);
-            -webkit-backdrop-filter: saturate(100%) blur(100px);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
 	    }
     }
 
     @supports not (backdrop-filter: none) {
-        .background {
+        .navbar-upvent {
             background-color: #FAFAFA;
         }
     }
@@ -132,6 +132,8 @@
     <Route path="/privacy-policy">
         <PrivacyPolicy/>
     </Route>
+
+    <Route fallback>No page found</Route>
 </Transition>
 
 <!-- Footer component -->
