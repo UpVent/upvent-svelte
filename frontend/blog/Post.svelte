@@ -2,6 +2,9 @@
     // Svelte imports
     import { onMount } from 'svelte';
 
+    // Meta tags import
+    import { MetaTags } from 'svelte-meta-tags';
+
     // Svelte icons
     import Facebook from 'svelte-bootstrap-icons/lib/Facebook';
     import Twitter from 'svelte-bootstrap-icons/lib/Twitter';
@@ -19,7 +22,6 @@
 
     // Post API URL
     const api_url = "https://wpapi.upvent.codes/wp-json/wp/v2/posts?slug=" + route.params.slug;
-    console.log("Blog API URL + slug: " + api_url);
 
     // Fetch current post info
     onMount(async () => {
@@ -27,6 +29,7 @@
         const post_res = await fetch(api_url);
         const post_json = await post_res.json();
         post = post_json;
+        console.log(post);
     });
 </script>
 
@@ -35,6 +38,13 @@
         <p class="lead">Cargando post...</p>
     {:then data}
         {#each post as post}
+
+        <MetaTags
+            title="UpVent - {post.title.rendered}"
+            description="Conozca la amplia variedad de servicios que UpVent puede ofrecerle a usted y a su empresa."
+            canonical="https://upvent.codes/blog/post/{post.slug}"
+        />
+
             <p class="display-6">{post.title.rendered}</p>
             <hr>
 
