@@ -17,13 +17,13 @@
         },
         {
             name: 'Weeping Moon',
-            image: '/images/weepingmoon.png',
+            image: '/images/weepingmoon.webp',
             description: 'Pequeño script bash para fortalecer las nuevas instalaciones del servidor Ubuntu.',
             link: 'https://github.com/UpVent/weeping-moon',
         },
         {
             name: 'Orchid EPEL',
-            image: '/images/orchidepel.png',
+            image: '/images/orchidepel.webp',
             description: 'Orchid es un script de navaja suiza de Red Hat Enterprise Linux para automatizar las tareas del servidor.',
             link: 'https://github.com/UpVent/orchid-EPEL',
         },
