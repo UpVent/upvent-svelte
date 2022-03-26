@@ -7,7 +7,7 @@
     const desk = 'images/desk.svg';
     const partners = 'images/partners.svg';
     const security = 'images/security.svg';
-    const logo_grey = 'images/logo-grey.png';
+    const logo_grey = 'images/logo-grey.webp';
     const app = 'images/app.svg';
 </script>
 
