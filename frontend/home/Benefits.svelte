@@ -1,9 +1,5 @@
 <script>
     import ArrowRight from 'svelte-bootstrap-icons/lib/ArrowRight';
-
-    const brain = 'images/brain.svg';
-    const coins = 'images/coins.svg';
-    const education = 'images/education.svg';
 </script>
 
 <section>
@@ -27,7 +23,7 @@
             </div>
         </div>
         <div class="col-md-5">
-            <img class="img-fluid" src={coins} alt="Foto mostrando unas monedas y un bolígrafo">
+            <img width="276" height="202" class="img-fluid" src="/images/coins.svg" alt="Foto mostrando unas monedas y un bolígrafo">
         </div>
     </div>
 
@@ -40,7 +36,7 @@
             <a href="/blog">Visite nuestro blog <ArrowRight/></a>
         </div>
         <div class="col-md-5 order-md-1">
-            <img class="img-fluid" src={education} alt="Imágen mostrando a una persona leyendo un libro, sentada debajo de un árbol">
+            <img width="276" height="193" class="img-fluid" src="/images/education.svg" alt="Imágen mostrando a una persona leyendo un libro, sentada debajo de un árbol">
         </div>
     </div>
 
@@ -54,7 +50,7 @@
             <a href="/about">Conozca nuestro ciclo de desarrollo <ArrowRight/></a>
         </div>
         <div class="col-md-5">
-            <img class="img-fluid" src={brain} alt="Imágen mostrando un cerebro y una bombilla de fondo">
+            <img width="276" height="182" class="img-fluid" src="/images/brain.svg" alt="Imágen mostrando un cerebro y una bombilla de fondo">
         </div>
     </div>
 </section>
