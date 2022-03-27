@@ -1,4 +1,7 @@
 <script>
+    // import lazy loading component
+    import Lazy from 'svelte-lazy';
+
     import ArrowRight from 'svelte-bootstrap-icons/lib/ArrowRight';
 </script>
 
@@ -23,7 +26,9 @@
             </div>
         </div>
         <div class="col-md-5">
-            <img width="276" height="202" class="img-fluid" src="/images/coins.svg" alt="Foto mostrando unas monedas y un bolígrafo">
+            <Lazy height={202}>
+                <img width="276" height="202" class="img-fluid" src="/images/coins.svg" alt="Foto mostrando unas monedas y un bolígrafo">
+            </Lazy>
         </div>
     </div>
 
@@ -36,7 +41,9 @@
             <a href="/blog">Visite nuestro blog <ArrowRight/></a>
         </div>
         <div class="col-md-5 order-md-1">
-            <img width="276" height="193" class="img-fluid" src="/images/education.svg" alt="Imágen mostrando a una persona leyendo un libro, sentada debajo de un árbol">
+            <Lazy height={193}>
+                <img width="276" height="193" class="img-fluid" src="/images/education.svg" alt="Imágen mostrando a una persona leyendo un libro, sentada debajo de un árbol">
+            </Lazy>
         </div>
     </div>
 
@@ -50,7 +57,9 @@
             <a href="/about">Conozca nuestro ciclo de desarrollo <ArrowRight/></a>
         </div>
         <div class="col-md-5">
-            <img width="276" height="182" class="img-fluid" src="/images/brain.svg" alt="Imágen mostrando un cerebro y una bombilla de fondo">
+            <Lazy height={182}>
+                <img width="276" height="182" class="img-fluid" src="/images/brain.svg" alt="Imágen mostrando un cerebro y una bombilla de fondo">
+            </Lazy>
         </div>
     </div>
 </section>

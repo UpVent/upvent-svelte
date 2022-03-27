@@ -1,3 +1,7 @@
+<script>
+    import Lazy from 'svelte-lazy';
+</script>
+
 <section class="pt-8 pt-md-10">
     <div class="container mt-5 mb-5">
         <div class="row justify-content-center">
@@ -16,7 +20,9 @@
             <div class="col-12 col-lg-6">
                 <div class="row align-items-center mb-8">
                     <div class="col-4 col-lg-5 mt-2 mb-2">
-                        <img width="216" height="189" src="/images/universal.svg" alt="Gráfico mostrando a una persona junto a un teléfono celular enorme" class="mt-1 img-fluid">
+                        <Lazy height={189}>
+                            <img width="216" height="189" src="/images/universal.svg" alt="Gráfico mostrando a una persona junto a un teléfono celular enorme" class="mt-1 img-fluid">
+                        </Lazy>
                     </div>
                     <div class="col-8 col-lg-7">
                         <h3 class="fw-bold mb-2">
@@ -30,7 +36,9 @@
 
                 <div class="row align-items-center mb-8">
                     <div class="col-4 col-lg-5">
-                        <img width="216" height="154" src="/images/secure.svg" alt="..." class="mt-1 img-fluid">
+                        <Lazy height={154}>
+                            <img width="216" height="154" src="/images/secure.svg" alt="..." class="mt-1 img-fluid">
+                        </Lazy>
                     </div>
                     <div class="col-8 col-lg-7 mt-2 mb-2">
                         <h3 class="fw-bold mb-2">
@@ -46,7 +54,9 @@
             <div class="col-12 col-lg-6">
                 <div class="row align-items-center mb-8">
                     <div class="col-4 col-lg-5 mt-2 mb-2">
-                        <img width="216" height="137" src="/images/escalable.svg" alt="..." class="mb-1 img-fluid">
+                        <Lazy height={137}>
+                            <img width="216" height="137" src="/images/escalable.svg" alt="..." class="mb-1 img-fluid">
+                        </Lazy>
                     </div>
                     <div class="col-8 col-lg-7">
                         <h3 class="fw-bold mb-2">
@@ -60,7 +70,9 @@
 
                 <div class="row align-items-center mb-8">
                     <div class="col-4 col-lg-5 mt-2 mb-2">
-                        <img width="216" height="169" src="/images/rapido.svg" alt="..." class="mt-1 img-fluid">
+                        <Lazy height{169}>
+                            <img width="216" height="169" src="/images/rapido.svg" alt="..." class="mt-1 img-fluid">
+                        </Lazy>
                     </div>
                     <div class="col-8 col-lg-7">
                         <h3 class="fw-bold mb-2">

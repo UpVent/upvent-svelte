@@ -1,4 +1,7 @@
 <script>
+    // Lazy load images
+    import Lazy from 'svelte-lazy';
+
     // Svelte bootstrap icons
     import Envelope from 'svelte-bootstrap-icons/lib/Envelope';
     import ArrowRight from 'svelte-bootstrap-icons/lib/ArrowRight';
@@ -7,7 +10,9 @@
 <section class="container col-xxl-8 px-4 py-5">
     <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
         <div class="col-10 col-sm-8 col-lg-6">
-            <img src="/images/programmer.svg" class="d-block mx-lg-auto img-fluid" alt="Imágen mostrando una persona programando" width="700" height="500">
+            <Lazy height={500}>
+                <img src="/images/programmer.svg" class="d-block mx-lg-auto img-fluid" alt="Imágen mostrando una persona programando" width="700" height="500">
+            </Lazy>
         </div>
         <div class="col-lg-6">
             <h1 class="display-5 fw-normal lh-1 mb-3">Tecnología libre para las mentes libres</h1>
@@ -29,7 +34,9 @@
 
     <div class="row text-left align-items-center pt-5 pb-md-5">
         <div class="col-4 col-md-5">
-            <img alt="Imágen de una persona sentada en un escritorio junto a una computadora" class="img-fluid" src="/images/desk.svg">
+            <Lazy height={260}>
+                <img width="276" height="260" alt="Imágen de una persona sentada en un escritorio junto a una computadora" class="img-fluid" src="/images/desk.svg">
+            </Lazy>
         </div>
 
     <div class="col-12 col-md-5 m-md-auto">

@@ -8,6 +8,9 @@
     // Blog Posts array
     let posts = [];
 
+    // Lazy load post images
+    import Lazy from 'svelte-lazy';
+
     // Get blog posts on component mount
     onMount(async () => {
         // Posts request
@@ -29,7 +32,9 @@
             {#each posts as post, i}
                 <div class="container">
                     <div class="card border-0 rounded-3 mt-5 mb-5 text-center">
-                        <img class="img-fluid mx-auto rounded-3" src={post._embedded['wp:featuredmedia'][i].media_details.sizes.full.source_url} alt="{post._embedded['wp:featuredmedia'][i].alt_text}">
+                        <Lazy height={315}>
+                            <img class="img-fluid mx-auto rounded-3" src={post._embedded['wp:featuredmedia'][i].media_details.sizes.full.source_url} alt="{post._embedded['wp:featuredmedia'][i].alt_text}">
+                        </Lazy>
                         <div class="card-body border-0">
                             <a class="fs-2 fw-bold text-primary text-decoration-none" href="/blog/post/{post.slug}">{post.title.rendered}</a>
                         </div>

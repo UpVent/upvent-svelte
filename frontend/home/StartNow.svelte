@@ -2,12 +2,12 @@
     // Svelte imports
     import { onMount } from 'svelte';
 
+    // Lazy Load Import
+    import Lazy from 'svelte-lazy';
+
     // Svelte Icons import
     import Laptop from 'svelte-bootstrap-icons/lib/Laptop';
     import Book from 'svelte-bootstrap-icons/lib/Book';
-
-    // UpVent Logo
-    let logo = 'images/upvent-logo-new.webp';
 
     // Grid logos for technology showcasing
     let technologies = [];
@@ -25,7 +25,9 @@
 </script>
 
 <section class="px-4 py-5 my-5 text-center">
-    <img class="d-block mx-auto mb-4 rounded-circle shadow" src={logo} alt="Logo de UpVent circular" width="100" height="100"/>
+    <Lazy height={100}>
+        <img class="d-block mx-auto mb-4 rounded-circle shadow" src="/images/upvent-logo-new.webp" alt="Logo de UpVent circular" width="100" height="100"/>
+    </Lazy>
     <p class="h1 display-5 fw-bold">Comenzar a trabajar con <span class="h1 display-5 fw-bold text-primary text-glow">UpVent.</span></p>
     <div class="col-lg-6 mx-auto">
         <p class="lead mb-4">Visite nuestra página de servicios para explorar nuestras ofertas prediseñadas para su empresa o contacte directo con ventas.</p>
@@ -51,7 +53,13 @@
                     <p class="text-muted lead">Cargando las tecnologías usadas por UpVent...</p>
                 {:then data}
                     {#each technologies as technology}
-                        <div class="col"><a href="{technology.link_de_la_tecnologia}" target="_blank"><img height="50" width="60" class="img-fluid" src="{technology.logo.guid}" alt="{technology.slug}"></a></div>
+                        <div class="col">
+                            <a href="{technology.link_de_la_tecnologia}" target="_blank">
+                                <Lazy height={50}>
+                                    <img height="50" width="60" class="img-fluid" src="{technology.logo.guid}" alt="{technology.slug}"/>
+                                </Lazy>
+                            </a>
+                        </div>
                     {/each}
                 {:catch error}
                     <p class="text-danger">Error al obtener las tecnoologias usadas. Si ves este mensaje reportalo por favor con el siguiente código de error: Error No55: {error}</p>
