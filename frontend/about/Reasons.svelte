@@ -4,8 +4,6 @@
     import CloudArrowUpFill from 'svelte-bootstrap-icons/lib/CloudArrowUpFill';
     import PhoneFill from 'svelte-bootstrap-icons/lib/PhoneFill';
     import Stack from 'svelte-bootstrap-icons/lib/Stack';
-
-    const construction = '/images/construction.svg';
 </script>
 
  <section class="container mt-5 mb-5">
@@ -18,7 +16,7 @@
                 </p>
             </div>
             <div class="col-12 col-sm-6 col-md-4 m-sm-auto mr-md-0 ml-md-auto pt-4 pt-md-0">
-                <img alt="Imágen mostrando a tres personas construyendo un sitio web" class="img-fluid" src={construction}>
+                <img alt="Imágen mostrando a tres personas construyendo un sitio web" class="img-fluid" src="/images/construction.svg">
             </div>
         </div>
 

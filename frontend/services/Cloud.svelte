@@ -1,7 +1,3 @@
-<script>
-    const nube = '/images/nube-automanejada.svg';
-</script>
-
 <section class="container mt-5 mb-5">
     <div class="row align-items-center">
         <div class="col-12 col-md-6 col-lg-5">
@@ -9,7 +5,7 @@
             <p class="lead">¿Necesita ayuda para comenzar con su negocio en la nube? Lo tenemos cubierto con diferentes planes para empresas e individuos de todos los tamaños.</p>
         </div>
         <div class="col-12 col-md-6 ml-md-auto mt-4 mt-md-0">
-            <img alt="Imágen mostrando a una persona usando una laptop" class="img-fluid" src={nube}/>
+            <img alt="Imágen mostrando a una persona usando una laptop" class="img-fluid" src="/images/nube-automanejada.svg"/>
         </div>
     </div>
 </section>

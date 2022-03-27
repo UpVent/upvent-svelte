@@ -1,17 +1,10 @@
-<script>
-    const bolt = '/images/bolt.svg';
-    const brush = '/images/brush.svg';
-    const responsive = '/images/responsive.svg';
-    const ecommerce = '/images/ecommerce.svg';
-</script>
-
 <section class="container mt-5 mb-5">
     <div class="row text-right align-items-center">
         <div class="col-12 col-lg-6 col-xl-5 m-lg-auto text-left">
             <h1 class="text-center fw-bold display-3">Páginas Web</h1>
             <div class="row pt-5">
                 <div class="col-3">
-                    <img alt="Ícono de un pincel" class="img-fluid" src={brush}>
+                    <img alt="Ícono de un pincel" class="img-fluid" src="/images/brush.svg">
                 </div>
                 <div class="col-9">
                     <h2>Desarrollo Personalizado</h2>
@@ -33,13 +26,13 @@
                     </p>
                 </div>
                 <div class="col-3">
-                    <img alt="Ícono de un rayo" class="img-fluid" src={bolt}>
+                    <img alt="Ícono de un rayo" class="img-fluid" src="/images/bolt.svg">
                 </div>
             </div>
         </div>
 
         <div class="col-7 col-sm-4 m-auto pt-5 pt-md-0">
-            <img alt="Imágen mostrando una computadora" class="img-fluid" src={responsive}>
+            <img alt="Imágen mostrando una computadora" class="img-fluid" src="/images/responsive.svg">
         </div>
     </div>
 </section>
@@ -47,7 +40,7 @@
 <section class="container mt-5 mb-5">
     <div class="row align-items-center">
         <div class="col-12 col-md-6 mb-4 mb-md-0">
-            <img alt="Imágen mostrando un e-commerce en funcionamiento" class="img-fluid" src="{ecommerce}">
+            <img alt="Imágen mostrando un e-commerce en funcionamiento" class="img-fluid" src="/images/ecommerce.svg">
         </div>
         <div class="col-12 col-md-6 col-lg-5 ml-md-auto text-left">
             <h1 class="fw-bold display-3">Ecommerce</h1>

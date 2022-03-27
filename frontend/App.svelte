@@ -32,14 +32,21 @@
 
     const form_id = 'mdoblozk';
 
-    // Modal variable
+    /** Modal variable */
     let open = false;
     const toggle = () => (open = !open);
 
-    // Scroll to top after navigation
+    /** Scroll to top after navigation */
     router.subscribe(_ => window.scrollTo(0, 0));
 
 </script>
+
+<!--
+@component
+     The App component is the main component for UpVent Svelte frontend.
+     It's the root of the entire web application as it handles routes, manages
+     404's and styles the main navigation bar.
+-->
 
 <style>
     @supports (backdrop-filter: none) {

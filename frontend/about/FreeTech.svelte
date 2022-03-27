@@ -1,20 +1,13 @@
 <script>
-    // Import Icons
+    // Svelte bootstrap icons
     import Envelope from 'svelte-bootstrap-icons/lib/Envelope';
     import ArrowRight from 'svelte-bootstrap-icons/lib/ArrowRight';
-
-    const programmer = '/images/programmer.svg';
-    const desk = 'images/desk.svg';
-    const partners = 'images/partners.svg';
-    const security = 'images/security.svg';
-    const logo_grey = 'images/logo-grey.webp';
-    const app = 'images/app.svg';
 </script>
 
 <section class="container col-xxl-8 px-4 py-5">
     <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
         <div class="col-10 col-sm-8 col-lg-6">
-            <img src={programmer} class="d-block mx-lg-auto img-fluid" alt="Imágen mostrando una persona programando" width="700" height="500">
+            <img src="/images/programmer.svg" class="d-block mx-lg-auto img-fluid" alt="Imágen mostrando una persona programando" width="700" height="500">
         </div>
         <div class="col-lg-6">
             <h1 class="display-5 fw-normal lh-1 mb-3">Tecnología libre para las mentes libres</h1>
@@ -36,7 +29,7 @@
 
     <div class="row text-left align-items-center pt-5 pb-md-5">
         <div class="col-4 col-md-5">
-            <img alt="Imágen de una persona sentada en un escritorio junto a una computadora" class="img-fluid" src={desk}>
+            <img alt="Imágen de una persona sentada en un escritorio junto a una computadora" class="img-fluid" src="/images/desk.svg">
         </div>
 
     <div class="col-12 col-md-5 m-md-auto">
@@ -48,7 +41,7 @@
 
     <div class="row text-left align-items-center pt-5 pb-md-5">
         <div class="col-4 col-md-5 m-md-auto order-md-5">
-            <img alt="Imágen mostrando los logos de los aliados de UpVent" class="img-fluid" src={partners}>
+            <img alt="Imágen mostrando los logos de los aliados de UpVent" class="img-fluid" src="images/partners.svg">
         </div>
 
         <div class="col-12 col-md-5">
@@ -60,7 +53,7 @@
 
     <div class="row text-left align-items-center pt-5">
         <div class="col-4 col-md-5">
-            <img alt="Imágen mostrando una computadora y un escudo" class="img-fluid" src={security}>
+            <img alt="Imágen mostrando una computadora y un escudo" class="img-fluid" src="/images/security.svg">
         </div>
 
         <div class="col-12 col-md-5 m-md-auto">
@@ -75,13 +68,13 @@
 <section class="container mt-5 mb-5 align-items-end justify-content-center d-flex">
     <div class="row align-items-top text-left">
         <div class="col-12 col-md-6 col-lg-5">
-            <p class="mb-5 mt-5"><img alt="Logo de UpVent" height="35" width="98" src={logo_grey}></p>
+            <p class="mb-5 mt-5"><img alt="Logo de UpVent" height="35" width="98" src="/images/logo-grey.webp"></p>
             <h1>Permítanos solucionar sus problemas con software libre...</h1>
             <p class="mt-4"><a href="/services" class="btn btn-primary fw-bold">Explorar nuestras soluciones</a></p>
         </div>
 
         <div class="col-12 col-sm-4 col-md-6 col-lg-4 m-auto pt-5">
-            <img alt="Imágen mostrando una persona mirando a un teléfono" class="img-fluid rounded-0" src={app}>
+            <img alt="Imágen mostrando una persona mirando a un teléfono" class="img-fluid rounded-0" src="/images/app.svg">
         </div>
     </div>
 </section>

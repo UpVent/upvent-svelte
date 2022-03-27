@@ -28,9 +28,6 @@
             link: 'https://github.com/UpVent/orchid-EPEL',
         },
     ];
-
-    const oneplace = '/images/oneplace.webp';
-
 </script>
 
 <section class="container">
@@ -68,7 +65,7 @@
         <p class="mt-2 text-3lx text-muted">UpVent construye software eficiente desde el primer día, listo para uso empresarial y proporcionando una estabilidad sólida con actualizaciones periódicas gratuitas.</p>
     </div>
     <div class="container">
-        <img class="img-fluid" src="{oneplace}" alt=""/>
+        <img class="img-fluid" src="/images/oneplace.webp" alt=""/>
     </div>
     <p class="text-center display-5  text-glow text-primary fw-bold">¡Todo en un solo lugar!</p>
     <p class="text-center lead">Ofrecemos una variedad de servicios pagados. ¿Necesita de un CRM, un e-commerce o una solución personalizada? Para UpVent no hay obstáculos, ¡Lo tenemos cubierto en cualquier necesidad tecnológica!</p>

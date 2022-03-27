@@ -2,9 +2,6 @@
     // Svelte imports
     import { onMount } from 'svelte';
 
-    // Meta tags import
-    import { MetaTags } from 'svelte-meta-tags';
-
     // Get API blog posts
     const api_url = "https://wpapi.upvent.codes/wp-json/wp/v2/posts?_embed";
 
@@ -19,29 +16,6 @@
         posts = posts_json;
     });
 </script>
-
-<!-- Meta Tags -->
-<MetaTags
-    title="UpVent - El Blog Oficial de UpVent Technologies."
-    description="El blog oficial de UpVent. Aquí podras encontrar tutoriales y artículos de todo tipo para mantenerte siempre informado."
-    canonical="https://upvent.codes/blog"
-    openGraph={{
-        type: 'website',
-        title: 'UpVent - El Blog Oficial de UpVent Technologies.',
-        description: 'El blog oficial de UpVent. Aquí podras encontrar tutoriales y artículos de todo tipo para mantenerte siempre informado.',
-        image: 'https://upvent.codes/images/upvent-logo-new.webp'
-    }}
-    twitter={{
-        handle: '@UpVentMX',
-        site: '@UpVentMX',
-        cardType: 'summary_large_image',
-        title: 'UpVent - El Blog Oficial de UpVent Technologies.',
-        description: 'El blog oficial de UpVent. Aquí podras encontrar tutoriales y artículos de todo tipo para mantenerte siempre informado.',
-        image: 'https://upvent.codes/images/upvent-logo-new.webp',
-        imageAlt: 'Twitter image alt'
-    }}
-/>
-
 
 <section class="container">
     <h1 class="text-center">Blog</h1>
