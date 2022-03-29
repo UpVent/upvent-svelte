@@ -54,7 +54,7 @@
                 {:then}
                     {#each technologies as technology}
                         <div class="col">
-                            <a href="{technology.link_de_la_tecnologia}" target="_blank">
+                            <a href="{technology.link_de_la_tecnologia}" aria-label="{technology.link_de_la_tecnologia}" target="_blank">
                                 <Lazy height={50}>
                                     <img height="50" width="60" class="img-fluid" src="{technology.logo.guid}" alt="{technology.slug}"/>
                                 </Lazy>
