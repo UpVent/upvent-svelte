@@ -9,7 +9,6 @@
     import Lazy from 'svelte-lazy';
 
     // Component variables
-    const logo_section = 'images/upvent-logo-new.webp';
     let logo_visible = false;
 
     // Component functions
@@ -34,7 +33,7 @@
             <div class="col-12 col-md-5 col-lg-6 order-md-2	d-none d-sm-block mt-xs-0">
                 {#if logo_visible}
                     <Lazy height={270}>
-                        <img transition:slide="{{delay: 250, duration: 200, easing: sineIn }}" src={logo_section} height="270" width="270" class="img-fluid shadow rounded-circle mb-6 mb-md-0 " alt="logo">
+                        <img transition:slide="{{delay: 250, duration: 200, easing: sineIn }}" src="/images/upvent-logo-new.webp" height="270" width="270" class="img-fluid shadow rounded-circle mb-6 mb-md-0 " alt="logo">
                     </Lazy>
                 {/if}
             </div>
