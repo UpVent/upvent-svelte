@@ -6,9 +6,6 @@
         router
     } from 'tinro';
 
-    // Import lazy load component
-    import Lazy from 'svelte-lazy';
-
     // CSR MetaTags
     import { JsonLd } from 'svelte-meta-tags';
 
