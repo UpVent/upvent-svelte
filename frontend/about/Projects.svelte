@@ -51,7 +51,7 @@
         <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
             {#await onMount}
                 <p class="text-muted lead">Cargando los proyectos realizados por UpVent...</p>
-            {:then data}
+            {:then}
             <Carousel>
                 {#each projects as project}
                     <div class="col">

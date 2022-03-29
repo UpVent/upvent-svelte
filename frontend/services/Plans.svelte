@@ -13,7 +13,7 @@
                     <small class="text-wrap text-break">Nube automanejada para negocios individuales, ideal para freelancers que desean llevar su trabajo al internet con poca inversión y grandes resultados.</small>
                 </div>
                 <div class="card-body">
-                    <h1 class="card-title pricing-card-title">$200<small class="text-muted fs-6 fw-light">/mes</small></h1>
+                    <h1 class="card-title">$200<small class="text-muted fs-6 fw-light">/mes</small></h1>
                     <ul class="list-unstyled mt-3 mb-4">
                         <li class="text-wrap text-break"><CheckCircle/> 1 Servidor Individual*</li>
                         <li class="text-wrap text-break"><CheckCircle/> Herramientas de administración + Contabilidad</li>
@@ -31,7 +31,7 @@
                     <small class="text-wrap text-break">Nube automanejada, ideal para pequeños equipos de trabajo que requieran estructuras y software de control, así como cobertura para una mayor demanda en la red.</small>
                 </div>
                 <div class="card-body">
-                    <h1 class="card-title pricing-card-title">$500<small class="text-muted fs-6 fw-light">/mes</small></h1>
+                    <h1 class="card-title">$500<small class="text-muted fs-6 fw-light">/mes</small></h1>
                     <ul class="list-unstyled mt-3 mb-4">
                         <li class="text-wrap text-break"><CheckCircle/> 1 Servidor Startup*</li>
                         <li class="text-wrap text-break"><CheckCircle/> Herramientas de administración + Contabilidad + Analítica</li>
@@ -51,7 +51,7 @@
                     <small class="text-wrap text-break">Nube automanejada ideal para empresarios o empresas medianas que necesiten cubrir una alta demanda en la red. Incluyendo una alta disponibilidad y seguridad.</small>
                 </div>
                 <div class="card-body">
-                    <h1 class="card-title pricing-card-title">$2,000<small class="text-muted fs-6 fw-light">/mes</small></h1>
+                    <h1 class="card-title">$2,000<small class="text-muted fs-6 fw-light">/mes</small></h1>
                     <ul class="list-unstyled mt-3 mb-4">
                         <li class="text-wrap text-break"><CheckCircle/> 2 Servidores Individuales* ó 1 Servidor Enterprise</li>
                         <li class="text-wrap text-break"><CheckCircle/> Herramientas de administración de los paquetes anteriores + Panel de marketing automático</li>

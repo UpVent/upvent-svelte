@@ -81,7 +81,7 @@
         </div>
 
         <div class="col-12 col-sm-4 col-md-6 col-lg-4 m-auto pt-5">
-            <img alt="Imágen mostrando una persona mirando a un teléfono" class="img-fluid rounded-0" src="/images/app.svg">
+            <img alt="Imágen mostrando una persona mirando a un teléfono" class="img-fluid" src="/images/app.svg">
         </div>
     </div>
 </section>
