@@ -1,7 +1,4 @@
 <script>
-    // Meta tags import
-    import { MetaTags } from 'svelte-meta-tags';
-
     import IndexJumbotron from './IndexJumbotron.svelte';
     import Features from './Features.svelte';
     import Libre from './Libre.svelte';

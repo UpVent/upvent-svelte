@@ -70,7 +70,7 @@
 
                 <div class="row align-items-center mb-8">
                     <div class="col-4 col-lg-5 mt-2 mb-2">
-                        <Lazy height{169}>
+                        <Lazy height={169}>
                             <img width="216" height="169" src="/images/rapido.svg" alt="..." class="mt-1 img-fluid">
                         </Lazy>
                     </div>

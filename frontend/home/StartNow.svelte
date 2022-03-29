@@ -51,7 +51,7 @@
             <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4">
                 {#await onMount}
                     <p class="text-muted lead">Cargando las tecnologías usadas por UpVent...</p>
-                {:then data}
+                {:then}
                     {#each technologies as technology}
                         <div class="col">
                             <a href="{technology.link_de_la_tecnologia}" target="_blank">
@@ -67,5 +67,4 @@
             </div>
         </div>
     </div>
-
 </section>
