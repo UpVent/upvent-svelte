@@ -1,4 +1,13 @@
 <script>
+    // Import social media icons
+    import Facebook from 'svelte-bootstrap-icons/lib/Facebook';
+    import Twitter from 'svelte-bootstrap-icons/lib/Twitter';
+    import Instagram from 'svelte-bootstrap-icons/lib/Instagram';
+    import Linkedin from 'svelte-bootstrap-icons/lib/Linkedin';
+    import Github from 'svelte-bootstrap-icons/lib/Github';
+    import PostcardHeart from 'svelte-bootstrap-icons/lib/PostcardHeart';
+
+    // Get current year
     let year = new Date().getFullYear();
 </script>
 
@@ -17,6 +26,14 @@
                         <img class="img-fluid mb-1" width="116" height="47" src="/images/logo-grey.webp" alt="UpVent Logo"/>
                     </div>
                     <p>Todos los derechos reservados © - UpVent Technologies 2020 - {year} . Todos los logos son marcas registradas de sus respectivos dueños.</p>
+                    <div class="container mt-2 mb-2">
+                        <a class="text-muted px-2" href="https://facebook.com/UpVentMX"><Facebook width={24} height={24}/></a>
+                        <a class="text-muted px-2" href="https://twitter.com/UpVentMX"><Twitter width={24} height={24}/></a>
+                        <a class="text-muted px-2" href="https://instagram.com/UpVentMX"><Instagram width={24} height={24}/></a>
+                        <a class="text-muted px-2" href="https://www.linkedin.com/company/upvent-technologies/"><Linkedin width={24} height={24}/></a>
+                        <a class="text-muted px-2" href="https://github.com/UpVent"><Github width={24} height={24}/></a>
+                        <a class="text-muted px-2" href="https://me.as-card.com/accounts/profile/UpVentMX/"><PostcardHeart width={24} height={24}/></a>
+                    </div>
                 </div>
 
                 <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
