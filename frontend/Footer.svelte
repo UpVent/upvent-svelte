@@ -27,12 +27,12 @@
                     </div>
                     <p>Todos los derechos reservados © - UpVent Technologies 2020 - {year} . Todos los logos son marcas registradas de sus respectivos dueños.</p>
                     <div class="container mt-2 mb-2">
-                        <a class="text-muted px-2" href="https://facebook.com/UpVentMX"><Facebook width={24} height={24}/></a>
-                        <a class="text-muted px-2" href="https://twitter.com/UpVentMX"><Twitter width={24} height={24}/></a>
-                        <a class="text-muted px-2" href="https://instagram.com/UpVentMX"><Instagram width={24} height={24}/></a>
-                        <a class="text-muted px-2" href="https://www.linkedin.com/company/upvent-technologies/"><Linkedin width={24} height={24}/></a>
-                        <a class="text-muted px-2" href="https://github.com/UpVent"><Github width={24} height={24}/></a>
-                        <a class="text-muted px-2" href="https://me.as-card.com/accounts/profile/UpVentMX/"><PostcardHeart width={24} height={24}/></a>
+                        <a aria-label="Facebook" class="text-muted px-2" href="https://facebook.com/UpVentMX"><Facebook width={24} height={24}/></a>
+                        <a aria-label="Twitter" class="text-muted px-2" href="https://twitter.com/UpVentMX"><Twitter width={24} height={24}/></a>
+                        <a aria-label="Instagram" class="text-muted px-2" href="https://instagram.com/UpVentMX"><Instagram width={24} height={24}/></a>
+                        <a aria-label="LinkedIn" class="text-muted px-2" href="https://www.linkedin.com/company/upvent-technologies/"><Linkedin width={24} height={24}/></a>
+                        <a aria-label="GitHub" class="text-muted px-2" href="https://github.com/UpVent"><Github width={24} height={24}/></a>
+                        <a aria-label="As-Card" class="text-muted px-2" href="https://me.as-card.com/accounts/profile/UpVentMX/"><PostcardHeart width={24} height={24}/></a>
                     </div>
                 </div>
 

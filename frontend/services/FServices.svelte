@@ -9,7 +9,7 @@
     import Download from 'svelte-bootstrap-icons/lib/Download';
 
     // Products array (Not worth saving on a database)
-    let products = [{
+    const products = [{
             name: 'Orchid',
             image: '/images/orchid.svg',
             description: 'Orchid es un script de navaja suiza de Debian/Ubuntu Server para automatizar las tareas del servidor',
