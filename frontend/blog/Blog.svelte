@@ -21,10 +21,9 @@
 </script>
 
 <section class="container">
-    <h1 class="text-center">Blog</h1>
+    <h1 class="text-center">El blog de UpVent Technologies</h1>
     <p class="text-center text-muted">Visite el blog de UpVent y aprenda algo nuevo junto a nosotros.</p>
     <hr>
-
     <div id="posts" class="container">
         {#await onMount}
             <p class="text-muted lead">Cargando publicaciones del blog...</p>
