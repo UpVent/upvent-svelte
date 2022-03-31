@@ -1,10 +1,15 @@
+<script>
+    import LightningCharge from 'svelte-bootstrap-icons/lib/LightningCharge';
+    import Brush from 'svelte-bootstrap-icons/lib/Brush';
+</script>
+
 <section class="container mt-5 mb-5">
     <div class="row text-right align-items-center">
         <div class="col-12 col-lg-6 col-xl-5 m-lg-auto text-left">
             <h1 class="text-center fw-bold display-3">Páginas Web</h1>
             <div class="row pt-5">
                 <div class="col-3">
-                    <img alt="Ícono de un pincel" class="img-fluid" src="/images/brush.svg">
+                    <Brush width={128} height={128}/>
                 </div>
                 <div class="col-9">
                     <h2>Desarrollo Personalizado</h2>
@@ -26,7 +31,7 @@
                     </p>
                 </div>
                 <div class="col-3">
-                    <img alt="Ícono de un rayo" class="img-fluid" src="/images/bolt.svg">
+                    <LightningCharge width={128} height={128}/>
                 </div>
             </div>
         </div>
