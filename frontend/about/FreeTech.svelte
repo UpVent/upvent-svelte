@@ -48,7 +48,7 @@
 
     <div class="row text-left align-items-center pt-5 pb-md-5">
         <div class="col-4 col-md-5 m-md-auto order-md-5">
-            <img alt="Imágen mostrando los logos de los aliados de UpVent" class="img-fluid" src="images/partners.svg">
+            <img alt="Imágen mostrando los logos de los aliados de UpVent" class="img-fluid" src="images/partners.webp">
         </div>
 
         <div class="col-12 col-md-5">
