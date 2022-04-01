@@ -1,3 +1,5 @@
+<svelte:options immutable={true}/>
+
 <script>
     import Lazy from 'svelte-lazy';
     import ArrowRight from 'svelte-bootstrap-icons/lib/ArrowRight';

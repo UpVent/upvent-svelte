@@ -1,3 +1,4 @@
+<svelte:options immutable={true}/>
 <section class="container">
     <h1>Política de Privacidad</h1>
     <hr>
