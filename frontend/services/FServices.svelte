@@ -1,4 +1,7 @@
 <script>
+    // Svelte imports
+    import { onMount } from 'svelte';
+
     // Import Svelte Carousel
     import Carousel from 'svelte-carousel';
 
@@ -8,26 +11,22 @@
     // Svelte Bootstrap Icons
     import Download from 'svelte-bootstrap-icons/lib/Download';
 
-    // Products array (Not worth saving on a database)
-    const products = [{
-            name: 'Orchid',
-            image: '/images/orchid.svg',
-            description: 'Orchid es un script de navaja suiza de Debian/Ubuntu Server para automatizar las tareas del servidor',
-            link: 'https://github.com/UpVent/orchid',
-        },
-        {
-            name: 'Weeping Moon',
-            image: '/images/weepingmoon.webp',
-            description: 'Pequeño script bash para fortalecer las nuevas instalaciones del servidor Ubuntu.',
-            link: 'https://github.com/UpVent/weeping-moon',
-        },
-        {
-            name: 'Orchid EPEL',
-            image: '/images/orchidepel.webp',
-            description: 'Orchid es un script de navaja suiza de Red Hat Enterprise Linux para automatizar las tareas del servidor.',
-            link: 'https://github.com/UpVent/orchid-EPEL',
-        },
-    ];
+    // Products array
+    let products = [];
+
+    // Get API products
+    const api_url = "https://wpapi.upvent.codes/wp-json/wp/v2/software_libre";
+
+    // Get projects from wordpress API
+    onMount(async () => {
+        // Projects request
+        const projects_res = await fetch(api_url);
+        const projects_json = await projects_res.json();
+        products = projects_json;
+        console.log(products)
+    });
+
+
 </script>
 
 <section class="container">
@@ -39,23 +38,34 @@
     </div>
 
     <div class="container">
-        <Carousel autoplay>
-            {#each products as product}
-                <div class="container text-center">
-                    <Card class="border border-0 mx-auto shadow-sm rounded">
-                        <img class="img-fluid p-2 mx-auto" height="200" width=200 src="{product.image}" alt="Imágen del producto de software libre">
-                        <CardBody>
-                            <p class="h5 mt-2 fw-bold">{product.name}</p>
-                            <hr>
-                            <CardText class="text-muted small text-wrap text-break">{product.description}</CardText>
-                            <div class="container">
-                                <a class="btn btn-primary" href="{product.link}">Descargar <Download/></a>
-                            </div>
-                        </CardBody>
-                    </Card>
-                </div>
-            {/each}
-        </Carousel>
+
+        {#await onMount}
+            <p class="text-muted lead">
+                Cargando los productos de software libre para usted...
+            </p>
+        {:then}
+            <Carousel autoplay>
+                {#each products as product}
+                    <div class="container text-center">
+                        <Card class="border border-0 mx-auto shadow-sm rounded">
+                            <img class="img-fluid p-2 mx-auto" height="200" width=200 src="{product.imagen.guid}" alt="Imágen del producto de software libre">
+                            <CardBody>
+                                <p class="h5 mt-2 fw-bold">{product.nombre}</p>
+                                <hr>
+                                <CardText class="text-muted small text-wrap text-break">{product.descripcion}</CardText>
+                                <div class="container">
+                                    <a class="btn btn-primary" href="{product.link}">Descargar <Download/></a>
+                                </div>
+                            </CardBody>
+                        </Card>
+                    </div>
+                {/each}
+            </Carousel>
+        {:catch error}
+            <p class="text-danger">
+                Error al obtener los productos de software libre. Si ves este mensaje reportalo por favor con el siguiente código de error: Error No55: {error}
+            </p>
+        {/await}
     </div>
 </section>
 
