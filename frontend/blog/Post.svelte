@@ -18,6 +18,10 @@
     // Post Objetct
     let post = [];
 
+    // Post properties
+    let post_title;
+    let post_description;
+
     // Post API URL
     const api_url = "https://wpapi.upvent.codes/wp-json/wp/v2/posts?slug=" + route.params.slug;
 
@@ -27,9 +31,33 @@
         const post_res = await fetch(api_url);
         const post_json = await post_res.json();
         post = post_json;
-        console.log(post);
+        post_title = post[0].title.rendered;
+        post_description = post[0].description;
     });
+
 </script>
+
+<svelte:head>
+    <!-- Primary Meta Tags -->
+    <title>UpVent - {post_title}.</title>
+    <meta name="title" content="{post_title}">
+    <meta name="description" content="{post_description}">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="twitter:site" content="@UpVentMX">
+    <meta property="twitter:creator" content="@UpVentMX">
+    <meta property="og:title" content="{post_title}">
+    <meta property="og:description" content="{post_description}">
+    <meta property="og:image" content="https://upvent.codes/images/upvent-logo-new.webp">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="@UpVentMX">
+    <meta name="twitter:title" content="{post_title}">
+    <meta name="twitter:description" content="{post_description}">
+    <meta name="twitter:image" content="https://upvent.codes/images/upvent-logo-new.webp">
+</svelte:head>
 
 <section class="container mt-5 mb-5">
     {#await onMount}
