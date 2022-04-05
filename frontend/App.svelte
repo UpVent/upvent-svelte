@@ -15,6 +15,7 @@
     import Post from './blog/Post.svelte';
     import About from './about/About.svelte';
     import Services from './services/Services.svelte';
+    import Contact from './contact/Contact.svelte';
     // Additional Pages
     import PrivacyPolicy from './home/PrivacyPolicy.svelte';
     import NotFound from './NotFound.svelte';
@@ -89,28 +90,11 @@
     </ul>
 
     <div class="text-end me-auto ms-auto mx-auto">
-        <Button size="lg" color="primary" on:click={toggle} >Contacto <Phone/></Button>
+        <a class="btn btn-primary btn-lg" href="/contact" >Contacto <Phone/></a>
     </div>
 </header>
 
-<!-- Modal de contacto -->
-<Modal id="contactform" body header="¡Gracias por contactarnos!" isOpen={open} {toggle}>
-    <form class="form" id="fs-frm" name="simple-contact-form" accept-charset="utf-8" action="https://formspree.io/f/{form_id}" method="post">
-        <fieldset id="fs-frm-inputs">
-        <label class="form-label" for="full-name">Nombre Completo</label>
-        <input class="form-control" type="text" name="name" id="full-name" placeholder="Su nombre aquí..." required="">
-        <label class="form-label" for="email-address">Correo Electronico</label>
-        <input class="form-control" type="email" name="_replyto" id="email-address" placeholder="email@dominio.com" required="">
-        <label class="form-label" for="message">Mensaje</label>
-        <textarea class="form-control" rows="5" name="message" id="message" placeholder="Aenean lacinia bibendum nulla sed consectetur. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Donec ullamcorper nulla non metus auctor fringilla nullam quis risus." required=""></textarea>
-        <input class="form-control" type="hidden" name="_subject" id="email-subject" value="Contact Form Submission">
-    </fieldset>
-    <input class="btn btn-primary mt-3 mb-3" type="submit" value="Enviar ✉️">
-    </form>
-</Modal>
-
 <!-- Home Page -->
-
 <Transition>
     <Route path="/">
         <Home/>
@@ -139,6 +123,10 @@
     <!-- Footer links -->
     <Route path="/privacy-policy">
         <PrivacyPolicy/>
+    </Route>
+
+    <Route path="/contact">
+        <Contact/>
     </Route>
 
     <Route fallback><NotFound/></Route>
