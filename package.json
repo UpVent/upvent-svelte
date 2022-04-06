@@ -8,7 +8,6 @@
     "start": "sirv public --no-clear --single --host"
   },
   "devDependencies": {
-    "@fortawesome/free-solid-svg-icons": "^5.15.4",
     "@rollup/plugin-commonjs": "^17.0.0",
     "@rollup/plugin-node-resolve": "^11.0.0",
     "bootstrap": "^5.1.3",
