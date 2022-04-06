@@ -1,4 +1,7 @@
 <script>
+    // Svelte imports
+    import { onMount } from 'svelte';
+
     // Import social media icons
     import Facebook from 'svelte-bootstrap-icons/lib/Facebook';
     import Twitter from 'svelte-bootstrap-icons/lib/Twitter';
@@ -6,9 +9,30 @@
     import Linkedin from 'svelte-bootstrap-icons/lib/Linkedin';
     import Github from 'svelte-bootstrap-icons/lib/Github';
     import PostcardHeart from 'svelte-bootstrap-icons/lib/PostcardHeart';
+    import CircleFill from 'svelte-bootstrap-icons/lib/CircleFill';
+
+    // Lazy load logo
+    import Lazy from 'svelte-lazy';
 
     // Get current year
     let year = new Date().getFullYear();
+
+    // Uptime Robot variables
+    let monitors = [];
+
+    // Get Monitor status
+    onMount(async () => {
+        const monitors_res = await fetch('https://api.uptimerobot.com/v2/getMonitors?api_key=ur1690087-9b94cc1a643f06e040d4b0a6', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            mode: 'cors'
+        });
+        const monitors_json = await monitors_res.json();
+        monitors = monitors_json;
+    });
+
 </script>
 
 <style>
@@ -23,7 +47,9 @@
             <div class="row">
                 <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
                     <div class="container">
-                        <img class="img-fluid mb-1" width="116" height="47" src="/images/logo-grey.webp" alt="UpVent Logo"/>
+                        <Lazy height={47}>
+                            <img class="img-fluid mb-1" width="116" height="47" src="/images/logo-grey.webp" alt="UpVent Logo"/>
+                        </Lazy>
                     </div>
                     <p>Todos los derechos reservados © - UpVent Technologies 2020 - {year} . Todos los logos son marcas registradas de sus respectivos dueños.</p>
                     <div class="container mt-2 mb-2">
@@ -70,6 +96,24 @@
         <p>
             El <a href="https://github.com/UpVent/upvent-svelte">código fuente</a> de esta página se encuentra bajo la <a href="https://www.gnu.org/licenses/agpl-3.0.html">Licencia Pública General de Affero (GNU) versión 3</a>. Excepto donde se indique lo <a href="https://creativecommons.org/policies#license">contrario</a>, el trabajo escrito, blogs, opiniones y parte del contenido visual se encuentra bajo la <a href="https://creativecommons.org/licenses/by-nd/3.0/deed.es">Licencia Creative Commons Atribución-SinDerivadas 3.0 No portada (CC BY-ND 3.0)</a>
         </p>
+    </section>
+
+    <section class="container">
+        {#await onMount}
+            <p class="text-muted">
+                Cargando estatus de UpVent...
+            </p>
+        {:then}
+            {#if monitors.stat == 'ok' }
+                <p class="text-muted"> Estatus de UpVent: <CircleFill class="text-success"/><a href="https://stats.uptimerobot.com/qXywYt1lg9">OK</a></p>
+            {:else}
+                <p class="text-muted"> Estatus de UpVent: <CircleFill class="text-danger"/><a href="https://stats.uptimerobot.com/qXywYt1lg9">ERROR</a></p>
+            {/if}
+        {:catch error}
+            <p class="text-danger">
+                Error al obtener el estátus de UpVent. Si ves esta pantalla, reporta el incidente con <a href="mailto:contacto@upvent.codes">el equipo de soporte de UpVent</a>
+            </p>
+        {/await}
     </section>
 
     <section class="text-center border-top p-3">
