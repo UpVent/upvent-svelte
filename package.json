@@ -24,7 +24,6 @@
     "svelte-carousel": "^1.0.17-rc4",
     "svelte-lazy": "^1.1.0",
     "sveltestrap": "^5.6.3",
-    "tinro": "^0.6.12",
-    "visualfx": "^0.6.5"
+    "tinro": "^0.6.12"
   }
 }
