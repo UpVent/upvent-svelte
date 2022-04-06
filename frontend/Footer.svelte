@@ -68,7 +68,7 @@
 
     <section class="container mt-5 mb-5 text-center-p-4">
         <p>
-            El <a href="https://github.com/UpVent/upvent.codes">código fuente</a> de esta página se encuentra bajo la <a href="https://www.gnu.org/licenses/agpl-3.0.html">Licencia Pública General de Affero (GNU) versión 3</a>. Excepto donde se indique lo <a href="https://creativecommons.org/policies#license">contrario</a>, el trabajo escrito, blogs, opiniones y parte del contenido visual se encuentra bajo la <a href="https://creativecommons.org/licenses/by-nd/3.0/deed.es">Licencia Creative Commons Atribución-SinDerivadas 3.0 No portada (CC BY-ND 3.0)</a>
+            El <a href="https://github.com/UpVent/upvent-svelte">código fuente</a> de esta página se encuentra bajo la <a href="https://www.gnu.org/licenses/agpl-3.0.html">Licencia Pública General de Affero (GNU) versión 3</a>. Excepto donde se indique lo <a href="https://creativecommons.org/policies#license">contrario</a>, el trabajo escrito, blogs, opiniones y parte del contenido visual se encuentra bajo la <a href="https://creativecommons.org/licenses/by-nd/3.0/deed.es">Licencia Creative Commons Atribución-SinDerivadas 3.0 No portada (CC BY-ND 3.0)</a>
         </p>
     </section>
 
@@ -76,6 +76,6 @@
         © 2020 - {year} Copyright:
         <a href="https://upvent.codes/">UpVent Technologies</a> -
         <a href="/privacy-policy"> Política de privacidad</a> -
-        <a href="https://github.com/UpVent/upventrs/issues/new">Reportar un problema con este sitio</a>
+        <a href="https://github.com/UpVent/upvent-svelte/issues/new">Reportar un problema con este sitio</a>
     </section>
 </footer>
