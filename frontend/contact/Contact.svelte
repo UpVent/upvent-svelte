@@ -1,5 +1,18 @@
 <script>
+    // Svelte imports
+    import { onMount } from 'svelte';
+
+    // Import hcaptcha from svelte
+    import "vanilla-hcaptcha";
+
     const form_id = 'mdoblozk';
+
+    // Handle HCaptcha on mount
+    onMount(() => {
+        const contactCaptcha = document.getElementById('contactCaptcha');
+        contactCaptcha.addEventListener('verified', (e) => {
+        });
+    });
 </script>
 
 <svelte:head>
@@ -37,6 +50,12 @@
                 <label class="form-label" for="message">Mensaje</label>
                 <textarea class="form-control" rows="5" name="message" id="message" placeholder="Aenean lacinia bibendum nulla sed consectetur. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Donec ullamcorper nulla non metus auctor fringilla nullam quis risus." required=""></textarea>
                 <input class="form-control" type="hidden" name="_subject" id="email-subject" value="Contact Form Submission">
+                <h-captcha
+                    id="contactCaptcha"
+                    site-key="44e5fa13-d8d3-4d8b-9dbf-887f16065702"
+                    size="normal"
+                    onVerified="onCaptchaVerified"
+                ></h-captcha>
             </fieldset>
             <input class="btn btn-primary mt-3 mb-3" type="submit" value="Enviar ✉">
         </form>
