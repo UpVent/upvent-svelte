@@ -27,13 +27,8 @@
     import People from 'svelte-bootstrap-icons/lib/People';
     import Phone from 'svelte-bootstrap-icons/lib/Phone';
 
-    /** Modal variable */
-    let open = false;
-    const toggle = () => (open = !open);
-
     /** Scroll to top after navigation */
     router.subscribe(_ => window.scrollTo(0, 0));
-
 </script>
 
 <!--
