@@ -5,9 +5,6 @@
     // Import Svelte Carousel
     import Carousel from 'svelte-carousel';
 
-    // Sveltestrap components
-    import { Card, CardBody, CardText } from 'sveltestrap';
-
     // Svelte Bootstrap Icons
     import Download from 'svelte-bootstrap-icons/lib/Download';
 
@@ -23,10 +20,7 @@
         const projects_res = await fetch(api_url);
         const projects_json = await projects_res.json();
         products = projects_json;
-        console.log(products)
     });
-
-
 </script>
 
 <section class="container">
@@ -47,17 +41,17 @@
             <Carousel autoplay>
                 {#each products as product}
                     <div class="container text-center">
-                        <Card class="border border-0 mx-auto shadow-sm rounded">
+                        <div class="card border border-0 mx-auto shadow-sm rounded">
                             <img class="img-fluid p-2 mx-auto" height="200" width=200 src="{product.imagen.guid}" alt="Imágen del producto de software libre">
-                            <CardBody>
+                            <div class="card-body">
                                 <p class="h5 mt-2 fw-bold">{product.nombre}</p>
                                 <hr>
-                                <CardText class="text-muted small text-wrap text-break">{product.descripcion}</CardText>
+                                <p class="card-text text-muted small text-wrap text-break">{product.descripcion}</p>
                                 <div class="container">
                                     <a class="btn btn-primary" href="{product.link}">Descargar <Download/></a>
                                 </div>
-                            </CardBody>
-                        </Card>
+                            </div>
+                        </div>
                     </div>
                 {/each}
             </Carousel>
