@@ -9,19 +9,6 @@
     import Download from 'svelte-bootstrap-icons/lib/Download';
     import XCircle from 'svelte-bootstrap-icons/lib/XCircle';
 
-    // Sveltestrap imports
-    import {
-        Button,
-        Modal,
-        ModalBody,
-        ModalFooter
-    } from 'sveltestrap';
-
-    // Modal options
-    let open = false;
-    const toggle = () => (open != open);
-
-
     // Projects array
     let projects = [];
 
@@ -62,7 +49,7 @@
                                 <p class="card-text">{@html project.descripcion_corta }</p>
                                 <div class="d-flex justify-content-center align-items-center">
                                     {#if project.es_libre == "0" }
-                                        <Button color="danger" on:click={toggle}>Código fuente no disponible <XCircle/></Button>
+                                        <a class="btn btn-primary" href="https://upvent.codes/">Código fuente no disponible <XCircle/></a>
                                     {:else}
                                         <a class="btn btn-primary" href="{project.link_de_descarga}">Descargar código fuente <Download/></a>
                                     {/if}
@@ -78,24 +65,3 @@
         </div>
     </div>
 </section>
-
-
-<Modal isOpen={open} {toggle}>
-    <ModalBody>
-        <p class="h2">¿Por qué el código fuente no está disponible?</p>
-        <p class="small text-muted">Hacemos lo posible para que nuestros clientes acepten hacer público el código fuente de los proyectos que hacemos para ellos.</p>
-        <br>
-        <p class="h2">¿Esto significa que este proyecto es privativo?</p>
-        <p class="small text-muted"><b>No</b>, esto significa que el proyecto es software libre, sin embargo el código fuente no es público, es de uso privado. Esto quiere decir que los pocos usuarios que lo utilizan tienen sus 4 libertades del software integras. Si alguna de las personas que poseen el código fuente a la mano decide hacer uso de su libertad de hacer público el código fuente se lo haremos saber pronto :)
-        </p>
-        <br>
-        <p class="small text-muted">Para más información puede consultar los siguientes enlaces:</p>
-        <ul>
-            <li><a href="https://www.gnu.org/philosophy/free-sw.es.html#selling" target="_blank">¿El software libre puede ser comercial?</a></li>
-            <li><a href="https://www.gnu.org/licenses/gpl-faq.es.html#GPLRequireSourcePostedPublic" target="_blank">¿La licencia exige que el código fuente sea publicado?</a></li>
-        </ul>
-    </ModalBody>
-    <ModalFooter>
-        <Button color="secondary" on:click={toggle}>Cerrar <XCircle/></Button>
-    </ModalFooter>
-</Modal>
