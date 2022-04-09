@@ -37,7 +37,7 @@
 
 <style>
     .bg-light-gray {
-        background-color: rgb(249, 250, 251);
+        background-color: #f9fafb;
     }
 </style>
 

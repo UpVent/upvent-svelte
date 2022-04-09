@@ -1,11 +1,10 @@
+<svelte:options immutable={true}/>
 <script>
     // Svelte imports
     import { onMount } from 'svelte';
 
     // Import hcaptcha from svelte
     import "vanilla-hcaptcha";
-
-    const form_id = 'mdoblozk';
 
     // Handle HCaptcha on mount
     onMount(() => {
@@ -41,7 +40,7 @@
     <h1>Contactános</h1>
 
     <section class="mx-auto border m-3 rounded border-1 p-3">
-        <form class="form" id="fs-frm" name="simple-contact-form" accept-charset="utf-8" action="https://formspree.io/f/{form_id}" method="post">
+        <form class="form" id="fs-frm" name="simple-contact-form" accept-charset="utf-8" action="https://formspree.io/f/mdoblozk" method="post">
             <fieldset id="fs-frm-inputs">
                 <label class="form-label" for="full-name">Nombre Completo</label>
                 <input class="form-control" type="text" name="name" id="full-name" placeholder="Su nombre aquí..." required="">
@@ -60,5 +59,4 @@
             <input class="btn btn-primary mt-3 mb-3" type="submit" value="Enviar ✉">
         </form>
     </section>
-    
 </section>

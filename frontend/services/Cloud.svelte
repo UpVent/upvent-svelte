@@ -1,3 +1,4 @@
+<svelte:options immutable={true}/>
 <section class="container mt-5 mb-5">
     <div class="row align-items-center">
         <div class="col-12 col-md-6 col-lg-5">

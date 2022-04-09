@@ -1,3 +1,4 @@
+<svelte:options immutable={true}/>
 <script>
     // Lazy load images
     import Lazy from 'svelte-lazy';

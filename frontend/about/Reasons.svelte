@@ -1,3 +1,4 @@
+<svelte:options immutable={true}/>
 <script>
     // Icon Imports
     import LightningChargeFill from 'svelte-bootstrap-icons/lib/LightningChargeFill';

@@ -1,3 +1,4 @@
+<svelte:options immutable={true}/>
 <style>
     .jumbotron {
         background-image: url('/images/core-services.webp');

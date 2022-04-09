@@ -1,3 +1,4 @@
+<svelte:options immutable={true}/>
 <script>
     // Bootstrap Icons Imports
     import CheckCircle from 'svelte-bootstrap-icons/lib/CheckCircle';

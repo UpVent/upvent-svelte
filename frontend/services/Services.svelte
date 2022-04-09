@@ -1,3 +1,4 @@
+<svelte:options immutable={true}/>
 <script>
     import ServiceJumbotron from './ServiceJumbotron.svelte';
     import Cloud from './Cloud.svelte';

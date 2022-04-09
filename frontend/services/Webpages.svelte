@@ -1,3 +1,4 @@
+<svelte:options immutable={true}/>
 <script>
     import LightningCharge from 'svelte-bootstrap-icons/lib/LightningCharge';
     import Brush from 'svelte-bootstrap-icons/lib/Brush';
