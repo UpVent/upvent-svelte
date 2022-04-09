@@ -77,6 +77,9 @@
                         <li class="m-2">
                             <a href="/services" class="text-decoration-none text-muted">Servicios</a>
                         </li>
+                        <li class="m-2">
+                            <a href="/contacto" class="text-decoration-none text-muted">Contacto</a>
+                        </li>
                     </ul>
                 </div>
 
