@@ -8,6 +8,7 @@
 
     // Third party imports
     import ArrowRight from 'svelte-bootstrap-icons/lib/ArrowRight';
+    import BagFill from 'svelte-bootstrap-icons/lib/BagFill';
     import Lazy from 'svelte-lazy';
 
     // Component variables
@@ -52,6 +53,10 @@
             <div class="text-center text-md-start">
               <a href="/about" class="btn btn-primary mx-auto my-2 btn-lg me-1">
                   Conocer más <ArrowRight/>
+              </a>
+
+              <a rel="nofollow" href="https://www.paypal.com/webapps/billing/plans/subscribe?plan_id=P-7TT42401B5144205WMKJSD3I" class="btn btn-primary mx-auto my-2 btn-lg me-1">
+                  Suscribirse a UpVent <BagFill/>
               </a>
             </div>
           </div>
