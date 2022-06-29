@@ -15,7 +15,7 @@
     import Lazy from 'svelte-lazy';
 
     // Get current year
-    let year = new Date().getFullYear();
+    const year = new Date().getFullYear();
 
     // Uptime Robot variables
     let monitors = [];

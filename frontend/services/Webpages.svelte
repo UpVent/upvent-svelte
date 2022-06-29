@@ -10,7 +10,7 @@
             <h1 class="text-center fw-bold display-3">Páginas Web</h1>
             <div class="row pt-5">
                 <div class="col-3">
-                    <Brush width={128} height={128}/>
+                    <Brush width={120} height={120}/>
                 </div>
                 <div class="col-9">
                     <h2>Desarrollo Personalizado</h2>
@@ -32,7 +32,7 @@
                     </p>
                 </div>
                 <div class="col-3">
-                    <LightningCharge width={128} height={128}/>
+                    <LightningCharge width={120} height={120}/>
                 </div>
             </div>
         </div>

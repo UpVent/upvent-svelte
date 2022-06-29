@@ -35,7 +35,6 @@
         post_title = post[0].title.rendered;
         post_description = post[0].description;
         post_image = post[0]._embedded["wp:featuredmedia"][0].source_url;
-        console.log(post)
     });
 
 </script>
