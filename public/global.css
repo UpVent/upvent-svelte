@@ -1,5 +1,0 @@
-@font-face {font-family: 'Poppins-Regular';src: url('/fonts/Poppins-Regular.ttf');font-display: swap;}
-html, body { width: auto; height: auto; }
-body { background-color: #f9fafb; font-family: 'Poppins-Regular', sans-serif !important; }
-.btn-primary { box-shadow: 1px 1px 2px 0px #007BFC; }
-.text-glow { text-shadow: 1px 1px 1px #007BFC; }
