@@ -10,7 +10,7 @@ export default defineConfig({
   plugins: [
     svelte(),
     progress({
-      format: 'Building UpVent - Tusk [:bar] :percent'
+      format: 'Building UpVent - Tusk 3.0.1 [:bar] :percent'
     })
   ]
 })
