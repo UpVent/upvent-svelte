@@ -17,7 +17,7 @@
     // Get Projects from Wordpress API
     onMount(async () => {
         // Projects request
-        const projects_res = await fetch(api_url);
+        const projects_res: Response = await fetch(api_url);
         const projects_json = await projects_res.json();
         projects = projects_json;
     });

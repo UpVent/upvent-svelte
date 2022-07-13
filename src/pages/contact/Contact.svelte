@@ -1,5 +1,5 @@
 <svelte:options immutable={true}/>
-<script>
+<script lang="ts">
     // Svelte imports
     import { onMount } from 'svelte';
 
@@ -8,7 +8,7 @@
 
     // Handle HCaptcha on mount
     onMount(() => {
-        const contactCaptcha = document.getElementById('contactCaptcha');
+        const contactCaptcha: HTMLElement = document.getElementById('contactCaptcha');
         contactCaptcha.addEventListener('verified', (e) => {
         });
     });

@@ -1,27 +1,24 @@
 <svelte:options immutable={true}/>
-<script>
+<script lang="ts">
     // Svelte imports
     import { onMount } from 'svelte';
-
-    // Svelte icons
-    import { Facebook, Twitter, Whatsapp, Envelope } from 'svelte-bootstrap-icons';
     
     // Tinro imports
-    import { meta } from 'tinro';
+    import { meta, TinroRouteMeta } from 'tinro';
 
     // Tinro meta extractor
-    const route = meta();
+    const route: TinroRouteMeta = meta();
 
     // Post Objetct
     let post = [];
 
     // Post properties
-    let post_title;
-    let post_description;
-    let post_image;
+    let post_title: string;
+    let post_description: string;
+    let post_image: string;
 
     // Post API URL
-    const api_url = "https://wpapi.upvent.codes/wp-json/wp/v2/posts?slug=" + route.params.slug + "&_embed";
+    const api_url: string = "https://wpapi.upvent.codes/wp-json/wp/v2/posts?slug=" + route.params.slug + "&_embed";
 
     // Fetch current post info
     onMount(async () => {

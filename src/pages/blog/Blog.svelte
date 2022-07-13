@@ -1,5 +1,5 @@
 <svelte:options immutable={true}/>
-<script>
+<script lang="ts">
     // Svelte imports
     import { onMount } from 'svelte';
 
@@ -7,7 +7,7 @@
     import Lazy from 'svelte-lazy';
 
     // Get API blog posts
-    const api_url = "https://wpapi.upvent.codes/wp-json/wp/v2/posts?_embed";
+    const api_url: string = "https://wpapi.upvent.codes/wp-json/wp/v2/posts?_embed";
 
     // Blog Posts array
     let posts = [];
