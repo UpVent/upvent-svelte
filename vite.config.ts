@@ -12,7 +12,7 @@ export default defineConfig({
     svelte(),
     ViteWebfontDownload(),
     progress({
-      format: 'Building UpVent - Tusk 3.2.0 [:bar] :percent'
+      format: 'Building UpVent - Tusk 3.2.1 [:bar] :percent'
     })
   ]
 })
