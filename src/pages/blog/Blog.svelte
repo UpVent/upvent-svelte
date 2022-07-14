@@ -21,29 +21,6 @@
     });
 </script>
 
-<svelte:head>
-    <!-- Primary Meta Tags -->
-    <title>UpVent - El Blog Oficial de UpVent Technologies.</title>
-    <meta name="title" content="UpVent - El Blog Oficial de UpVent Technologies.">
-    <meta name="description" content="El blog oficial de UpVent. Aquí podras encontrar tutoriales y artículos de todo tipo para mantenerte siempre informado.">
-
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://upvent.codes/blog">
-    <meta property="og:title" content="UpVent - El Blog Oficial de UpVent Technologies.">
-    <meta property="og:description" content="El blog oficial de UpVent. Aquí podras encontrar tutoriales y artículos de todo tipo para mantenerte siempre informado.">
-    <meta property="og:image" content="https://upvent.codes/images/upvent-logo-new.webp">
-
-    <!-- Twitter -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:site" content="@UpVentMX">
-    <meta name="twitter:creator" content="@UpVentMX">
-    <meta name="twitter:title" content="UpVent - El Blog Oficial de UpVent Technologies.">
-    <meta name="twitter:description" content="El blog oficial de UpVent. Aquí podras encontrar tutoriales y artículos de todo tipo para mantenerte siempre informado.">
-    <meta name="twitter:image" content="https://upvent.codes/images/upvent-logo-new.webp">
-</svelte:head>
-
-
 <section class="container">
     <h1 class="text-center">El blog de UpVent Technologies</h1>
     <p class="text-center text-muted">Visite el blog de UpVent y aprenda algo nuevo junto a nosotros.</p>
