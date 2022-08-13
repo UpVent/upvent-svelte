@@ -13,7 +13,7 @@
     import logo from '../../assets/images/upvent-logo-new.webp';
 
     // Grid logos for technology showcasing
-    let technologies = [];
+    let technologies: any[] = [];
 
     // Get API technologies
     const api_url: string = "https://wpapi.upvent.codes/wp-json/wp/v2/tecnologa/";

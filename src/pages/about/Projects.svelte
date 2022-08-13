@@ -9,7 +9,7 @@
     // Svelte Bootstrap Icons
     import { Download, XCircle } from 'svelte-bootstrap-icons';
     // Projects array
-    let projects = [];
+    let projects: any[] = [];
 
     // Get API projects
     const api_url: string = "https://wpapi.upvent.codes/wp-json/wp/v2/proyecto";

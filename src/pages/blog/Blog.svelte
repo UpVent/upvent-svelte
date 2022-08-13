@@ -10,13 +10,13 @@
     const api_url: string = "https://wpapi.upvent.codes/wp-json/wp/v2/posts?_embed";
 
     // Blog Posts array
-    let posts = [];
+    let posts: Promise<Object>[] = [];
 
     // Get blog posts on component mount
     onMount(async () => {
         // Posts request
-        const posts_res = await fetch(api_url);
-        const posts_json = await posts_res.json();
+        const posts_res: Response = await fetch(api_url);
+        const posts_json: Promise<Object>[] = await posts_res.json();
         posts = posts_json;
     });
 </script>

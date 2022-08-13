@@ -10,7 +10,7 @@
     const route: TinroRouteMeta = meta();
 
     // Post Objetct
-    let post = [];
+    let post: any[] = [];
 
     // Post properties
     let post_title: string;
@@ -23,7 +23,7 @@
     // Fetch current post info
     onMount(async () => {
         // Post request
-        const post_res = await fetch(api_url);
+        const post_res: Response = await fetch(api_url);
         const post_json = await post_res.json();
         post = post_json;
         post_title = post[0].title.rendered;
