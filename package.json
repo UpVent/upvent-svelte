@@ -12,7 +12,7 @@
   "devDependencies": {
     "@sveltejs/vite-plugin-svelte": "^1.0.0-next.30",
     "@tsconfig/svelte": "^2.0.1",
-    "bootstrap": "^5.2.0-beta1",
+    "bootstrap": "^5.2.0",
     "svelte": "^3.44.0",
     "svelte-bootstrap-icons": "^2.0.1",
     "svelte-carousel": "^1.0.19",
