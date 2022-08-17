@@ -13,8 +13,6 @@
     let post: any[] = [];
 
     // Post properties
-    let post_title: string;
-    let post_description: string;
     let post_image: string;
 
     // Post API URL
@@ -26,8 +24,6 @@
         const post_res: Response = await fetch(api_url);
         const post_json = await post_res.json();
         post = post_json;
-        post_title = post[0].title.rendered;
-        post_description = post[0].description;
         post_image = post[0]._embedded["wp:featuredmedia"][0].source_url;
     });
 
