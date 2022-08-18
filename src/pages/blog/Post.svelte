@@ -4,10 +4,10 @@
     import { onMount } from 'svelte';
     
     // Tinro imports
-    import { meta, TinroRouteMeta } from 'tinro';
+    import { meta } from 'tinro';
 
     // Tinro meta extractor
-    const route: TinroRouteMeta = meta();
+    const route: any = meta();
 
     // Post Objetct
     let post: any[] = [];
