@@ -1,6 +1,6 @@
 import progress from 'vite-plugin-progress';
 import { ViteWebfontDownload } from 'vite-plugin-webfont-dl';
-import { defineConfig, optimizeDeps } from 'vite';
+import { defineConfig } from 'vite';
 import { svelte } from '@sveltejs/vite-plugin-svelte';
 
 // https://vitejs.dev/config/
