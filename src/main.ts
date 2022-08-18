@@ -4,6 +4,6 @@ import App from './App.svelte';
 const app: App = new App({
   target: document.body,
   intro: true
-})
+});
 
-export default app
+export default app;
