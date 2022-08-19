@@ -15,6 +15,7 @@
     import Post from './pages/blog/Post.svelte';
     import About from './pages/about/About.svelte';
     import Services from './pages/services/Services.svelte';
+    import Marketplace from './pages/marketplace/Marketplace.svelte';
     import Contact from './pages/contact/Contact.svelte';
 
     // Footer components
@@ -25,7 +26,9 @@
     Laptop,
     Pen,
     People,
-    Phone } from 'svelte-bootstrap-icons';
+    Phone,
+    Bag
+    } from 'svelte-bootstrap-icons';
 
     // Import Page layouts + components
     import Footer from './pages/Footer.svelte';
@@ -61,6 +64,7 @@
         <li><a class="fs-5 nav-link px-2 text-muted" href="/blog">Blog <Pen/></a></li>
         <li><a class="fs-5 nav-link px-2 text-muted" href="/about">Nosotros <People/></a></li>
         <li><a class="fs-5 nav-link px-2 text-muted" href="/services">Servicios <Laptop/></a></li>
+        <li><a class="fs-5 nav-link px-2 text-muted" href="/marketplace">Marketplace <Bag/></a></li>
     </ul>
 
     <div class="text-end me-auto ms-auto mx-auto">
@@ -101,6 +105,10 @@
 
     <Route path="/contact">
         <Contact/>
+    </Route>
+
+    <Route path="/marketplace">
+        <Marketplace/>
     </Route>
 
     <!-- Custom 404 -->
