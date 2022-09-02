@@ -20,6 +20,13 @@ export default defineConfig({
       registerType: 'autoUpdate',
       devOptions: {
         enabled: true
+      },
+      includeAssets: ['favicon.png'],
+      manifest: {
+        name: 'UpVent Technologies',
+        short_name: 'UpVent',
+        description: 'UpVent es un proveedor experto de soluciones de código libre y empresarial para los pequeños y medianos negocios Mexicanos.',
+        theme_color: '#007FBC'
       }
     })
   ]
