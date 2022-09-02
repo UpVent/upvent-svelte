@@ -11,7 +11,12 @@ export default defineConfig({
     exclude: ['tinro']
   },
   plugins: [
-    svelte(),
+    svelte({
+      experimental: {
+        useVitePreprocess: true,
+        prebundleSvelteLibraries: true
+      }
+    }),
     ViteWebfontDownload(),
     progress({
       format: 'Building UpVent - Tusk 3.3.0 [:bar] :percent'

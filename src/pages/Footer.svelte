@@ -115,9 +115,9 @@
             </p>
         {:then}
             {#if monitors.stat == 'ok' }
-                <p class="text-muted"> Estatus de UpVent: <CircleFill class="text-success"/><a href="https://stats.uptimerobot.com/qXywYt1lg9">OK</a></p>
+                <p class="text-muted"> Estatus de UpVent: <CircleFill class="text-success"/><a href="https://stats.uptimerobot.com/qXywYt1lg9"> Todos los sistemas funcionales</a></p>
             {:else}
-                <p class="text-muted"> Estatus de UpVent: <CircleFill class="text-danger"/><a href="https://stats.uptimerobot.com/qXywYt1lg9">ERROR</a></p>
+                <p class="text-muted"> Estatus de UpVent: <CircleFill class="text-danger"/><a href="https://stats.uptimerobot.com/qXywYt1lg9"> Rendimiento degradado</a></p>
             {/if}
         {:catch error}
             <p class="text-danger">
