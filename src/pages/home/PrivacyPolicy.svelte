@@ -23,6 +23,12 @@
     });
 </script>
 
+<style>
+    * {
+        font-family: 'Poppins', sans-serif;
+    }
+</style>
+
 <section class="container">
     {#await onMount}
         <p class="lead">Cargando política de privacidad...</p>

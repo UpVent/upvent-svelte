@@ -5,6 +5,10 @@
         background-size: cover;
         height: 80%;
     }
+
+    * {
+        font-family: 'Poppins', sans-serif;
+    }
 </style>
 
 <section class="p-5 text-center jumbotron">

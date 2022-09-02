@@ -21,6 +21,12 @@
     });
 </script>
 
+<style>
+    * {
+        font-family: 'Poppins', sans-serif;
+    }
+</style>
+
 <section class="container">
     <h1 class="text-center">El blog de UpVent Technologies</h1>
     <p class="text-center text-muted">Visite el blog de UpVent y aprenda algo nuevo junto a nosotros.</p>
@@ -36,7 +42,7 @@
                             <img height="315" width="560" class="img-fluid mx-auto rounded-3" src={post._embedded['wp:featuredmedia'][0].media_details.sizes.full.source_url} alt="{post._embedded['wp:featuredmedia'][0].alt_text}">
                         </Lazy>
                         <div class="card-body border-0">
-                            <a class="fs-2 fw-bold text-primary text-decoration-none" href="/blog/post/{post.slug}">{post.title.rendered}</a>
+                            <a class="fs-2 text-primary text-decoration-none" href="/blog/post/{post.slug}">{post.title.rendered}</a>
                         </div>
                         <div class="card-footer border-top">
                             <p class="text-muted small">{@html post.excerpt.rendered}</p>

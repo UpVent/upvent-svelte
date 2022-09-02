@@ -14,6 +14,12 @@
     });
 </script>
 
+<style>
+    * {
+        font-family: 'Poppins', sans-serif;
+    }
+</style>
+
 <section class="container">
     <h1>Contactános</h1>
 

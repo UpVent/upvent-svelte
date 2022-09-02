@@ -4,7 +4,11 @@
         background-image: url('../../assets/images/core-services.webp');
         background-size: cover;
         height: 500px;
-}
+    }
+
+    * {
+        font-family: 'Poppins', sans-serif;
+    }
 </style>
 
 <section class="p-5 text-center bg-image jumbotron">

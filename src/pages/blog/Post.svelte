@@ -26,8 +26,13 @@
         post = post_json;
         post_image = post[0]._embedded["wp:featuredmedia"][0].source_url;
     });
-
 </script>
+
+<style>
+    * {
+        font-family: 'Poppins', sans-serif;
+    }
+</style>
 
 <section class="container mt-5 mb-5">
     {#await onMount}

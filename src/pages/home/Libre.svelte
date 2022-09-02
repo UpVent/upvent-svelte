@@ -7,6 +7,12 @@
     import gnu from '../../assets/images/gnu.webp';
 </script>
 
+<style>
+    * {
+        font-family: 'Poppins', sans-serif;
+    }
+</style>
+
 <section class="container mt-5 mb-5">
     <div class="container text-center">
         <Lazy height={150}>

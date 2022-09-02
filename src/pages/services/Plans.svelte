@@ -4,6 +4,12 @@
     import { CheckCircle, StarFill } from 'svelte-bootstrap-icons';
 </script>
 
+<style>
+    * {
+        font-family: 'Poppins', sans-serif;
+    }
+</style>
+
 <section class="container">
     <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
         <div class="col">

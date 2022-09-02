@@ -27,6 +27,12 @@
     });
 </script>
 
+<style>
+    * {
+        font-family: 'Poppins', sans-serif;
+    }
+</style>
+
 <section class="px-4 py-5 my-5 text-center">
     <Lazy height={100}>
         <img class="d-block mx-auto mb-4 rounded-circle shadow" src="{logo}" alt="Logo de UpVent circular" width="100" height="100"/>

@@ -38,6 +38,11 @@
 </script>
 
 <style>
+
+    * {
+        font-family: 'Poppins';
+    }
+
     @supports (backdrop-filter: none) {
         .navbar-upvent {
             backdrop-filter: blur(20px);

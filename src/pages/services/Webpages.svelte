@@ -6,6 +6,12 @@
     import ecommerce from '../../assets/images/ecommerce.svg';
 </script>
 
+<style>
+    * {
+        font-family: 'Poppins', sans-serif;
+    }
+</style>
+
 <section class="container mt-5 mb-5">
     <div class="row text-right align-items-center">
         <div class="col-12 col-lg-6 col-xl-5 m-lg-auto text-left">

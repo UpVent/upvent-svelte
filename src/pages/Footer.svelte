@@ -42,6 +42,10 @@
     .bg-light-gray {
         background-color: #f9fafb;
     }
+
+    * {
+        font-family: 'Poppins', sans-serif;
+    }
 </style>
 
 <footer class="text-center text-muted bg-light-gray">

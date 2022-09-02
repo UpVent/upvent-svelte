@@ -2,6 +2,13 @@
 <script>
     import nube from '../../assets/images/nube-automanejada.svg';
 </script>
+
+<style>
+    * {
+        font-family: 'Poppins', sans-serif;
+    }
+</style>
+
 <section class="container mt-5 mb-5">
     <div class="row align-items-center">
         <div class="col-12 col-md-6 col-lg-5">
