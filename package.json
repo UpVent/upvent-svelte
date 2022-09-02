@@ -25,6 +25,7 @@
     "vanilla-hcaptcha": "^1.0.0",
     "vite": "^3.0.8",
     "vite-plugin-progress": "^0.0.3",
+    "vite-plugin-pwa": "^0.12.4",
     "vite-plugin-webfont-dl": "^2.2.0"
   }
 }
