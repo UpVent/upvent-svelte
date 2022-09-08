@@ -19,7 +19,7 @@
     const year: number = new Date().getFullYear();
 
     // Uptime robot variables
-    let monitors: any[] = [];
+    let monitors: any = [];
 
     // Import upvent logo for footer
     import logo from '../assets/images/logo-grey.webp';

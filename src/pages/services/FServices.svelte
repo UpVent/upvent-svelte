@@ -13,7 +13,7 @@
     import oneplace from '../../assets/images/oneplace.webp';
 
     // Products array
-    let products = [];
+    let products: any = [];
 
     // Get API products
     const api_url:string = "https://wpapi.upvent.codes/wp-json/wp/v2/software_libre";
@@ -79,7 +79,7 @@
         <p class="mt-2 text-3lx text-muted">UpVent construye software eficiente desde el primer día, listo para uso empresarial y proporcionando una estabilidad sólida con actualizaciones periódicas gratuitas.</p>
     </div>
     <div class="container">
-        <img class="img-fluid" src="{oneplace}" alt=""/>
+        <img class="img-fluid" src={oneplace} alt=""/>
     </div>
     <p class="text-center display-5  text-glow text-primary fw-bold">¡Todo en un solo lugar!</p>
     <p class="text-center lead">Ofrecemos una variedad de servicios pagados. ¿Necesita de un CRM, un e-commerce o una solución personalizada? Para UpVent no hay obstáculos, ¡Lo tenemos cubierto en cualquier necesidad tecnológica!</p>
