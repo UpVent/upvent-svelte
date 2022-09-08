@@ -20,9 +20,7 @@
     onMount(async () => {
         // Projects request
         const projects_res: Response = await fetch(url);
-        const projects_json: Project[] = await projects_res.json() as Project[];
-        projects = projects_json;
-        console.log(projects)
+        projects = await projects_res.json();
     });
 </script>
 
