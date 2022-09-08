@@ -1,6 +1,7 @@
 <script lang="ts">
     // Svelte imports
     import { onMount } from 'svelte';
+    import { uptime_api } from '../stores/store';
 
     // Social Media Icons
     import { Facebook,
@@ -26,7 +27,7 @@
 
     // Get uptimerobot monitor status
     onMount(async () => {
-        const monitors_res: Response = await fetch('https://api.uptimerobot.com/v2/getMonitors?api_key=ur1690087-9b94cc1a643f06e040d4b0a6', {
+        const monitors_res: Response = await fetch(uptime_api, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

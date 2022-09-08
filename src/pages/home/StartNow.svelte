@@ -3,6 +3,7 @@
     // Svelte imports
     import { onMount } from 'svelte';    
     import { api_url } from '../../stores/store';
+    import type { Technology } from './Home';
 
     // Lazy Load Import
     import Lazy from 'svelte-lazy';
@@ -14,7 +15,7 @@
     import logo from '../../assets/images/upvent-logo-new.webp';
 
     // Grid logos for technology showcasing
-    let technologies: any[] = [];
+    let technologies: Technology[] = [];
 
     // Get API technologies
     const url: string = api_url + "tecnologa/";
@@ -22,9 +23,8 @@
     // Get Projects from Wordpress API
     onMount(async () => {
         // Projects request
-        const technologies_res: Response = await fetch(url);
-        const technologies_json = await technologies_res.json();
-        technologies = technologies_json;
+        const technologies_res = await fetch(url);
+        technologies = await technologies_res.json();
     });
 </script>
 

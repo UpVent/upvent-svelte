@@ -1,6 +1,8 @@
 <script lang="ts">
     // Svelte imports
     import { onMount } from 'svelte';
+    import { api_url } from '../../stores/store';
+    import type { Project } from './About';
 
     // Import Svelte Carousel
     import Carousel from 'svelte-carousel';
@@ -8,33 +10,16 @@
     // Svelte Bootstrap Icons
     import { Download, XCircle } from 'svelte-bootstrap-icons';
 
-    // Project interface
-    type Project = {
-        descripcion_corta: string,
-        es_libre: string,
-        imagen_del_proyecto: {
-            guid: string
-        },
-        licencia: string,
-        link: string,
-        link_de_descarga: string,
-        nombre_del_proyecto: string,
-        sigue_activo: string,
-        title: {
-            rendered: string
-        }
-    }
-
     // Projects array
     let projects: Project[] = [];
 
     // Get API projects
-    const api_url: string = "https://wpapi.upvent.codes/wp-json/wp/v2/proyecto";
+    const url: string = api_url + "proyecto";
 
     // Get Projects from Wordpress API
     onMount(async () => {
         // Projects request
-        const projects_res: Response = await fetch(api_url);
+        const projects_res: Response = await fetch(url);
         const projects_json: Project[] = await projects_res.json() as Project[];
         projects = projects_json;
         console.log(projects)
