@@ -2,22 +2,23 @@
 <script lang="ts">
     // Svelte imports
     import { onMount } from 'svelte';
+    import { api_url } from '../../stores/store';
+    import type { Posts } from './Blog';
 
     // Lazy Load post images
     import Lazy from 'svelte-lazy';
 
     // Get API blog posts
-    const api_url: string = "https://wpapi.upvent.codes/wp-json/wp/v2/posts?_embed";
+    const url: string = api_url + "posts?_embed";
 
     // Blog Posts array
-    let posts: Promise<Object>[] = [];
+    let posts: Posts[] = [];
 
     // Get blog posts on component mount
     onMount(async () => {
         // Posts request
-        const posts_res: Response = await fetch(api_url);
-        const posts_json: Promise<Object>[] = await posts_res.json();
-        posts = posts_json;
+        const posts_res: Response = await fetch(url);
+        posts = await posts_res.json();
     });
 </script>
 
