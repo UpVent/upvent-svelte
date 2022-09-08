@@ -2,29 +2,26 @@
 <script lang="ts">
     // Svelte imports
     import { onMount } from 'svelte';
+    import { api_url } from '../../stores/store';
+    import type { Post } from './Blog';
     
     // Tinro imports
-    import { meta } from 'tinro';
+    import { meta, type TinroRouteMeta } from 'tinro';
 
     // Tinro meta extractor
-    const route: any = meta();
+    const route: TinroRouteMeta = meta();
 
     // Post Objetct
-    let post: any[] = [];
-
-    // Post properties
-    let post_image: string;
-
+    let post: Post[] = [];
+    
     // Post API URL
-    const api_url: string = "https://wpapi.upvent.codes/wp-json/wp/v2/posts?slug=" + route.params.slug + "&_embed";
+    const url: string = api_url + "posts?slug=" + route.params.slug + "&_embed";
 
     // Fetch current post info
     onMount(async () => {
         // Post request
-        const post_res: Response = await fetch(api_url);
-        const post_json = await post_res.json();
-        post = post_json;
-        post_image = post[0]._embedded["wp:featuredmedia"][0].source_url;
+        const post_res: Response = await fetch(url);
+        post = await post_res.json();
     });
 </script>
 
@@ -40,7 +37,7 @@
     {:then data}
         {#each post as post}
             <div class="container mx-auto text-center">
-                <img width="560" height="315" class="img-fluid rounded" src="{post_image}" alt="Título del blog"/>
+                <img width="560" height="315" class="img-fluid rounded" src="{post._embedded["wp:featuredmedia"][0].source_url}" alt="{post._embedded["wp:featuredmedia"][0].alt_text}"/>
             </div>
             <p class="display-6">{post.title.rendered}</p>
             <hr>
