@@ -1,7 +1,8 @@
 <svelte:options immutable={true}/>
 <script lang="ts">
     // Svelte imports
-    import { onMount } from 'svelte';
+    import { onMount } from 'svelte';    
+    import { api_url } from '../../stores/store';
 
     // Lazy Load Import
     import Lazy from 'svelte-lazy';
@@ -16,12 +17,12 @@
     let technologies: any[] = [];
 
     // Get API technologies
-    const api_url: string = "https://wpapi.upvent.codes/wp-json/wp/v2/tecnologa/";
+    const url: string = api_url + "tecnologa/";
 
     // Get Projects from Wordpress API
     onMount(async () => {
         // Projects request
-        const technologies_res: Response = await fetch(api_url);
+        const technologies_res: Response = await fetch(url);
         const technologies_json = await technologies_res.json();
         technologies = technologies_json;
     });
