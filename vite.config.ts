@@ -19,7 +19,7 @@ export default defineConfig({
     }),
     ViteWebfontDownload(),
     progress({
-      format: 'Building UpVent - Tusk 3.3.0 [:bar] :percent'
+      format: 'Building UpVent - Tusk 3.8.2 [:bar] :percent'
     }),
     VitePWA({
       registerType: 'autoUpdate',
