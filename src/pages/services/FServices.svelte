@@ -2,6 +2,8 @@
 <script lang="ts">
     // Svelte imports
     import { onMount } from 'svelte';
+    import { api_url } from '../../stores/store';
+    import type { FService } from './Services';
 
     // Import Svelte Carousel
     import Carousel from 'svelte-carousel';
@@ -13,17 +15,16 @@
     import oneplace from '../../assets/images/oneplace.webp';
 
     // Products array
-    let products: any = [];
+    let products: FService[] = [];
 
     // Get API products
-    const api_url:string = "https://wpapi.upvent.codes/wp-json/wp/v2/software_libre";
+    const url: string = api_url + "software_libre";
 
     // Get projects from wordpress API
     onMount(async () => {
         // Projects request
-        const projects_res: Response = await fetch(api_url);
-        const projects_json = await projects_res.json();
-        products = projects_json;
+        const projects_res: Response = await fetch(url);
+        products = await projects_res.json();
     });
 </script>
 

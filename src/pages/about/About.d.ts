@@ -12,4 +12,4 @@ export type Project = {
     title: {
         rendered: string
     }
-}
+};
