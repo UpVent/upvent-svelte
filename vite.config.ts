@@ -1,8 +1,8 @@
 import progress from 'vite-plugin-progress';
+import { VitePWA } from 'vite-plugin-pwa';
 import { ViteWebfontDownload } from 'vite-plugin-webfont-dl';
 import { defineConfig } from 'vite';
 import { svelte } from '@sveltejs/vite-plugin-svelte';
-import { VitePWA } from 'vite-plugin-pwa';
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -26,12 +26,24 @@ export default defineConfig({
       devOptions: {
         enabled: true
       },
-      includeAssets: ['favicon.png'],
+      includeAssets: ['favicon.ico','apple-touch-icon.png','masked-icon.svg'],
       manifest: {
         name: 'UpVent Technologies',
         short_name: 'UpVent',
         description: 'UpVent es un proveedor experto de soluciones de código libre y empresarial para los pequeños y medianos negocios Mexicanos.',
-        theme_color: '#007FBC'
+        theme_color: '#007FBC',
+        icons: [
+          {
+            src: 'pwa-192x192.png',
+            sizes: '192x192',
+            type: 'image/png'
+          },
+          {
+            src: 'pwa-512x512.png',
+            sizes: '512x512',
+            type: 'image/png'
+          }
+        ]
       }
     })
   ]
