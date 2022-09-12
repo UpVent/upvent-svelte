@@ -7,9 +7,7 @@
 </script>
 
 <style>
-    * {
-        font-family: 'Poppins', sans-serif;
-    }
+    * { font-family: 'Poppins', sans-serif; }
 </style>
 
 <section class="container mt-5 mb-5">
@@ -17,9 +15,7 @@
         <div class="col-12 col-lg-6 col-xl-5 m-lg-auto text-left">
             <h1 class="text-center fw-bold display-3">Páginas Web</h1>
             <div class="row pt-5">
-                <div class="col-3">
-                    <Brush width={120} height={120}/>
-                </div>
+                <div class="col-3"> <Brush width={100} height={100}/> </div>
                 <div class="col-9">
                     <h2>Desarrollo Personalizado</h2>
                     <p class="text-muted text-wrap">
@@ -39,9 +35,7 @@
                         Gracias a la tecnología de LiteSpeed podemos ofrecerle sitios seguros y en producción casi de inmediato.
                     </p>
                 </div>
-                <div class="col-3">
-                    <LightningCharge width={120} height={120}/>
-                </div>
+                <div class="col-3"> <LightningCharge width={100} height={100}/> </div>
             </div>
         </div>
 
