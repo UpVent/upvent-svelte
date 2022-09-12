@@ -1,6 +1,7 @@
 export type Project = {
     descripcion_corta: string,
     es_libre: string,
+    sigue_activo: string,
     imagen_del_proyecto: {
         guid: string
     },
