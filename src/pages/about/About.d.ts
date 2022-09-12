@@ -4,7 +4,6 @@ export type Project = {
     imagen_del_proyecto: {
         guid: string
     },
-    licencia: string,
     link: string,
     link_de_descarga: string,
     nombre_del_proyecto: string,
