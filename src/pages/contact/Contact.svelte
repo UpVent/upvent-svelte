@@ -9,20 +9,17 @@
     // Handle HCaptcha on mount
     onMount(() => {
         const contactCaptcha: HTMLElement = document.getElementById('contactCaptcha');
-        contactCaptcha.addEventListener('verified', (e) => {
+        contactCaptcha.addEventListener('verified', (_) => {
         });
     });
 </script>
 
 <style>
-    * {
-        font-family: 'Poppins', sans-serif;
-    }
+    * { font-family: 'Poppins', sans-serif; }
 </style>
 
 <section class="container">
     <h1>Contactános</h1>
-
     <section class="mx-auto border m-3 rounded border-1 p-3">
         <form class="form" id="fs-frm" name="simple-contact-form" accept-charset="utf-8" action="https://formspree.io/f/mdoblozk" method="post">
             <fieldset id="fs-frm-inputs">
