@@ -48,9 +48,6 @@
                         <blockquote class="card-body">
                             <div class="container img-container"><img height="100" class="img-fluid m-1 shadow-sm rounded-3" src="{project.imagen_del_proyecto.guid}" alt="proyecto de UpVent"></div>
                             <p class="lead fw-bold">{project.title.rendered}</p>
-                            {#if project.sigue_activo == "1" } <span class="badge rounded-pill text-bg-success">Activo</span> {:else}
-                                <span class="badge rounded-pill text-bg-danger">Inactivo</span>
-                            {/if}
                             <p class="mb-2 text-wrap">{@html project.descripcion_corta }</p>
                             <div class="container">
                                 {#if project.es_libre == "0"} <a class="btn btn-danger" href="http://"> Código fuente no disponible <XCircle/></a> {:else}
