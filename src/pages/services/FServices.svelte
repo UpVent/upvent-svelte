@@ -17,9 +17,7 @@
     // Get API products
     const url: string = api_url + "software_libre";
 
-    // Get projects from wordpress API
     onMount(async () => {
-        // Projects request
         const projects_res: Response = await fetch(url);
         products = await projects_res.json();
     });
