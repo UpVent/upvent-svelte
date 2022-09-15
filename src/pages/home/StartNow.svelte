@@ -23,7 +23,7 @@
     const client: PocketBase = new PocketBase(fapi_url);
 
     // Grid logos for technology showcasing
-    let records: Record[];
+    let records: Record[] = [];
 
     onMount(async () => {
         const user_auth_data = await client.users.authViaEmail(api_user, api_user_pass);
