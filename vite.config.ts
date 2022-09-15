@@ -7,7 +7,6 @@ import { svelte } from '@sveltejs/vite-plugin-svelte';
 // https://vitejs.dev/config/
 export default defineConfig({
   optimizeDeps: {
-    include: ['lodash.get', 'lodash.isequal', 'lodash.clonedeep'],
     exclude: ['tinro']
   },
   plugins: [
@@ -19,7 +18,7 @@ export default defineConfig({
     }),
     ViteWebfontDownload(),
     progress({
-      format: 'Building UpVent - Tusk 3.8.2 [:bar] :percent'
+      format: 'Building UpVent - Tusk 3.9.3 [:bar] :percent'
     }),
     VitePWA({
       registerType: 'autoUpdate',
