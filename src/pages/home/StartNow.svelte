@@ -2,8 +2,9 @@
 <script lang="ts">
     // Svelte imports
     import { onMount } from 'svelte';    
-    import { api_url } from '../../stores/store';
-    import type { Technology } from './Home';
+    import { fapi_url } from '../../config';
+    import { api_user } from '../../config';
+    import { api_user_pass } from '../../config';
 
     // Lazy Load Import
     import Lazy from 'svelte-lazy';
@@ -14,24 +15,28 @@
     // Import upvent logo
     import logo from '../../assets/images/upvent-logo-new.webp';
 
+    // Database imports
+    import PocketBase from 'pocketbase';
+    import type { Record } from 'pocketbase';
+
+    // Database usage
+    const client: PocketBase = new PocketBase(fapi_url);
+
     // Grid logos for technology showcasing
-    let technologies: Technology[] = [];
+    let records: Record[] = [];
 
-    // Get API technologies
-    const url: string = api_url + "tecnologa/";
-
-    // Get Projects from Wordpress API
     onMount(async () => {
-        // Projects request
-        const technologies_res = await fetch(url);
-        technologies = await technologies_res.json();
+        const user_auth_data = await client.users.authViaEmail(api_user, api_user_pass);
+        records = await client.records.getFullList('tecnologias', 200, {
+            sort: '-created',
+        });
+
+        client.authStore.clear();
     });
 </script>
 
 <style>
-    * {
-        font-family: 'Poppins', sans-serif;
-    }
+    * { font-family: 'Poppins', sans-serif; }
 </style>
 
 <section class="px-4 py-5 my-5 text-center">
@@ -57,13 +62,13 @@
         <div class="container" id="startnowtechs">
             <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4">
                 {#await onMount}
-                    <p class="text-muted lead">Cargando las tecnologías usadas por UpVent...</p>
+                    <p class="text-muted lead">Cargando las tecnologías...</p>
                 {:then}
-                    {#each technologies as technology}
+                    {#each records as record}
                         <div class="col">
-                            <a href="{technology.link_de_la_tecnologia}" aria-label="{technology.link_de_la_tecnologia}" target="_blank">
+                            <a href="{record.enlace}" aria-label="{record.enlace}" target="_blank">
                                 <Lazy height={50}>
-                                    <img height="50" width="60" class="img-fluid" src="{technology.logo.guid}" alt="{technology.slug}"/>
+                                    <img height="50" width="60" class="img-fluid" src="{ client.records.getFileUrl(record, record.imagen_destacada) }" alt="{record.nombre}"/>
                                 </Lazy>
                             </a>
                         </div>
