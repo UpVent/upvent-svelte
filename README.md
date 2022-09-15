@@ -9,6 +9,45 @@
 ## Build Status
 [![Node.js CI](https://github.com/UpVent/upvent-svelte/actions/workflows/node.js.yml/badge.svg)](https://github.com/UpVent/upvent-svelte/actions/workflows/node.js.yml)
 
+## Build / Deploy
+
+If you wish to use this repository as a template you'll have to follow these instructions.
+
+### Prerequisites
+You'll need the following tools to build and run this PWA successfully:
+
+- Node 1.16 or higher
+- A database / API service like Supabase, Firebase or Pocketbase
+
+### 1. Clone and install dependencies
+```sh
+git clone git@github.com:UpVent/upvent-svelte.git
+cd upvent-svelte
+npm install
+```
+
+### 2. Create a .env file
+
+You'll need to create a `.env` file at project root level with the following values:
+
+```sh
+VITE_UPTIME_API_URL = "" # For Uptime Robot users, shown at Footer.svelte component
+VITE_DBASE_URL = "https://api.domain.com/" # Your API base URL
+VITE_DBASE_USER = "user@email.com" # Your DB / BaaS username for supabase, firebase or pocketbase
+VITE_DBASE_USER_PASSWORD = "UpVentRocks!" # The password for the user mentioned above
+```
+
+### 3. Build
+
+After you've made some changes now you have to build the project.
+
+```sh
+npm run build
+```
+
+### 4. Deploy
+
+Navigate to the `dist/` directory and deploy those files to your liking. We recommend you to self-host it on an Apache2 or NGINX server.
 
 ## Description
 
