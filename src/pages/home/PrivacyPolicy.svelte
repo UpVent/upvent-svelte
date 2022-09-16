@@ -20,7 +20,7 @@
     });
 
     function format_date(date: string): string {
-        return new Date(date).toLocaleDateString('en-GB');
+        return new Date(date).toLocaleDateString('es-MX');
     }
 
 </script>
