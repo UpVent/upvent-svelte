@@ -1,7 +1,7 @@
 <svelte:options immutable={true}/>
 <script lang="ts">
     // Svelte imports
-    import { onMount } from 'svelte';    
+    import { onMount } from 'svelte'; 
     import { fapi_url } from '../../config';
     import { api_user } from '../../config';
     import { api_user_pass } from '../../config';

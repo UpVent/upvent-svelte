@@ -1,42 +1,43 @@
-<svelte:options immutable={true}/>
-
 <script lang="ts">
     // Svelte imports
     import { onMount } from 'svelte';
+    import { fapi_url } from '../../config';
+    import { api_user } from '../../config';
+    import { api_user_pass } from '../../config';
 
-    // Get API pages
-    const api_url: string = "https://wpapi.upvent.codes/wp-json/wp/v2/pages/38";
+    /** Database Imports */
+    import PocketBase from 'pocketbase';
+    import type { Record } from 'pocketbase';
+ 
+    // Database usage
+    const client: PocketBase = new PocketBase(fapi_url);
+    let records: Record[] = [];
 
-    // Page properties
-    let page: any;
-    let page_title: string;
-    let page_content: string;
-
-    // Fetch current page info
     onMount(async () => {
-        // Page request
-        const page_res: Response = await fetch(api_url);
-        const page_json: Response = await page_res.json(); 
-        page = page_json;
-        page_title = page.title.rendered;
-        page_content = page.content.rendered;
+        const user_auth_data = await client.users.authViaEmail(api_user, api_user_pass);
+        records = await client.records.getFullList('politica_privacidad', 1);
+        client.authStore.clear();
     });
+
+    function format_date(date: string): string {
+        return new Date(date).toLocaleDateString('en-GB');
+    }
+
 </script>
 
-<style>
-    * {
-        font-family: 'Poppins', sans-serif;
-    }
-</style>
+<style> * { font-family: 'Poppins', sans-serif;} </style>
 
 <section class="container">
     {#await onMount}
         <p class="lead">Cargando política de privacidad...</p>
-    {:then data} 
-        <h1>{page_title}</h1>
+    {:then} 
+    {#each records as record}
+        <h1>{record.titulo}</h1>
+        <span class="badge rounded-pill text-bg-primary">Última revisión: { format_date(record.ultima_revision) }</span>
         <hr>
         <section class="container">
-            {@html page_content}
+            {@html record.contenido }
         </section>
+    {/each}
     {/await}
 </section>
