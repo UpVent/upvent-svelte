@@ -19,10 +19,7 @@
         client.authStore.clear();
     });
 
-    function format_date(date: string): string {
-        return new Date(date).toLocaleDateString('es-MX');
-    }
-
+    function format_date(date: string): string { return new Date(date).toLocaleDateString('es-MX'); }
 </script>
 
 <style> * { font-family: 'Poppins', sans-serif;} </style>

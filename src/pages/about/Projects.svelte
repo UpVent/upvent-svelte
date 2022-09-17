@@ -1,27 +1,29 @@
 <script lang="ts">
     // Svelte imports
     import { onMount } from 'svelte';
-    import { api_url } from '../../stores/store';
-    import type { Project } from './About';
+    import { api_user } from '../../config';
+    import { api_user_pass } from '../../config';
+    import { fapi_url } from '../../config';
+
+    /** Database Imports */
+    import PocketBase from 'pocketbase';
+    import type { Record } from 'pocketbase';
     
     // Svelte Bootstrap Icons
     import { Download, XCircle, StarFill } from 'svelte-bootstrap-icons';
     
-    // Projects array
-    let projects: Project[] = [];
-    
-    // Get API projects
-    const url: string = api_url + "proyecto";
-    
+    /** Database Connect */
+    const client: PocketBase = new PocketBase(fapi_url);
+    let records: Record[] = [];
+
     onMount(async () => {
-        const projects_res: Response = await fetch(url);
-        projects = await projects_res.json();
+        const user_auth_data = await client.users.authViaEmail(api_user, api_user_pass);
+        records = await client.records.getFullList('proyecto_portafolio', 10);
+        client.authStore.clear();
     });
 </script>
 
-<style>
-    * { font-family: 'Poppins', sans-serif; }
-</style>
+<style> * { font-family: 'Poppins', sans-serif; } </style>
 
 <section class="container mt-5 mb-5">
     <div class="container text-center">
@@ -36,22 +38,27 @@
             {#await onMount}
             <p class="text-muted lead">Cargando los proyectos realizados por UpVent...</p>
             {:then}
-            {#each projects as project}
+            {#each records as record}
             <div class="col">
                 <figure>
                     <div class="card h-75 position-relative border-0 shadow-sm p-2">
-                            {#if project.es_libre == "0"}
-                            <span class="btn btn-danger shadow-sm pe-none position-absolute top-0 start-0 translate-middle-y ms-4"><XCircle/></span>
+                            {#if !record.es_libre }
+                                <span class="btn btn-danger shadow-sm pe-none position-absolute top-0 start-0 translate-middle-y ms-4"><XCircle/></span>
                             {:else}
-                            <span class="btn btn-warning shadow-sm pe-none position-absolute top-0 start-0 translate-middle-y ms-4"><StarFill/></span>
+                                <span class="btn btn-warning shadow-sm pe-none position-absolute top-0 start-0 translate-middle-y ms-4"><StarFill/></span>
                             {/if}
                         <blockquote class="card-body">
-                            <div class="container img-container"><img height="100" class="img-fluid m-1 shadow-sm rounded-3" src="{project.imagen_del_proyecto.guid}" alt="proyecto de UpVent"></div>
-                            <p class="lead fw-bold">{project.title.rendered}</p>
-                            <p class="mb-2 text-wrap">{@html project.descripcion_corta }</p>
+                            <div class="container img-container"><img height="100" class="img-fluid m-1 shadow-sm rounded-3" src="{ client.records.getFileUrl(record, record.imagen_destacada) }" alt="proyecto de UpVent"></div>
+                            <p class="lead fw-bold">{record.nombre}</p>
+                            {#if !record.sigue_activo}
+                               <span class="badge rounded-pill text-bg-danger">Inactivo</span> 
+                            {:else}
+                               <span class="badge rounded-pill text-bg-success">Activo</span> 
+                            {/if}
+                            <p class="mb-2 text-wrap">{@html record.descripcion }</p>
                             <div class="container">
-                                {#if project.es_libre == "0"} <a class="btn btn-danger" href="http://"> Código fuente no disponible <XCircle/></a> {:else}
-                                <a class="btn btn-primary" href="{project.link_de_descarga}"> Descargar <Download/></a>
+                                {#if !record.es_libre } <a class="btn btn-danger" href="/"> Código fuente no disponible <XCircle/></a> {:else}
+                                <a class="btn btn-primary" href="{record.enlace_de_descarga}"> Descargar <Download/></a>
                                 {/if}
                             </div>
                         </blockquote>
