@@ -1,4 +1,3 @@
-<svelte:options immutable={true}/>
 <script lang="ts">
     // Svelte imports
     import { onMount } from 'svelte';
@@ -14,14 +13,10 @@
     });
 </script>
 
-<style>
-    * { font-family: 'Poppins', sans-serif; }
-</style>
-
 <section class="container">
     <h1>Contactános</h1>
     <section class="mx-auto border m-3 rounded border-1 p-3">
-        <form class="form" id="fs-frm" name="simple-contact-form" accept-charset="utf-8" action="https://formspree.io/f/mdoblozk" method="post">
+        <form class="form" id="fs-frm" name="simple-contact-form" action="https://formspree.io/f/mdoblozk" method="post">
             <fieldset id="fs-frm-inputs">
                 <label class="form-label" for="full-name">Nombre Completo</label>
                 <input class="form-control" type="text" name="name" id="full-name" placeholder="Su nombre aquí..." required>

@@ -21,11 +21,6 @@
 </script>
 
 <style>
-
-    * {
-        font-family: 'Poppins', sans-serif;
-    }
-
     .waves {
         background: url('../../assets/images/waves.webp');
         background-size: contain;

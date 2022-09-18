@@ -22,8 +22,6 @@
     function format_date(date: string): string { return new Date(date).toLocaleDateString('es-MX'); }
 </script>
 
-<style> * { font-family: 'Poppins', sans-serif;} </style>
-
 <section class="container">
     {#await onMount}
         <p class="lead">Cargando política de privacidad...</p>

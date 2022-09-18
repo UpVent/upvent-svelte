@@ -1,24 +1,9 @@
-<svelte:options immutable={true}/>
 <script>
-    // Icon Imports
-    import { LightningChargeFill,
-    CloudArrowUpFill,
-    PhoneFill,
-    Stack
-    } from 'svelte-bootstrap-icons';
-
-    // Import images
+    import { LightningChargeFill, CloudArrowUpFill, PhoneFill, Stack } from 'svelte-bootstrap-icons';
     import construction from '../../assets/images/construction.svg';
-
 </script>
 
-<style>
-    * {
-        font-family: 'Poppins', sans-serif;
-    }
-</style>
-
- <section class="container mt-5 mb-5">
+<section class="container mt-5 mb-5">
     <div class="container">
         <div class="row align-items-center pb-xl-5">
             <div class="col-12 col-md-7 col-xl-5">

@@ -30,14 +30,9 @@
         records = await client.records.getFullList('tecnologias', 200, {
             sort: '-created',
         });
-
         client.authStore.clear();
     });
 </script>
-
-<style>
-    * { font-family: 'Poppins', sans-serif; }
-</style>
 
 <section class="px-4 py-5 my-5 text-center">
     <Lazy height={100}>

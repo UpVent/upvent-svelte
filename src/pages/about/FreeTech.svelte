@@ -15,12 +15,6 @@
     import app from '../../assets/images/app.svg';
 </script>
 
-<style>
-    * {
-        font-family: 'Poppins', sans-serif;
-    }
-</style>
-
 <section class="container col-xxl-8 px-4 py-5">
     <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
         <div class="col-10 col-sm-8 col-lg-6">
@@ -54,7 +48,7 @@
         </div>
 
     <div class="col-12 col-md-5 m-md-auto">
-        <h2><strong>Siempre libres</strong></h2>
+        <h2><b>Siempre libres</b></h2>
             <p class="lead">UpVent mantendrá siempre la libertad en sus productos, siguiendo los lineamientos éticos que vienen desde la raíz del software libre, entregaremos productos y servicios que preserven la ética y estabilidad del software en la industria.</p>
             <p><a class="text-decoration-none" href="/services">Explorar nuestros servicios <ArrowRight/></a></p>
         </div>
@@ -66,7 +60,7 @@
         </div>
 
         <div class="col-12 col-md-5">
-            <h2><strong>Clientes beneficiados.</strong></h2>
+            <h2 class="fw-bold">Clientes beneficiados.</h2>
             <p class="lead">Nuestros clientes llevan productos al mundo todos los días utilizando la tecnología libre de UpVent. Estas organizaciones son la prueba de que el software libre y la innovación van de la mano en el mundo tecnológico.</p>
             <p><a class="text-decoration-none" href="https://www.instagram.com/UpVentMX/">Ver casos de éxito <ArrowRight/></a></p>
         </div>
@@ -78,7 +72,7 @@
         </div>
 
         <div class="col-12 col-md-5 m-md-auto">
-            <h2><strong>Líderes en Seguridad</strong></h2>
+            <h2 class="fw-bold">Expertos en Seguridad</h2>
             <p class="lead">El equipo de UpVent siempre estará al pendiente de las actualizaciones, parches y mejoras de seguridad de sus productos. Olvide el software viejo y el riesgo de ataques informáticos, nosotros le tenemos cubierto.
             </p>
             <p><a class="text-decoration-none" href="#contactform">Consultoría <ArrowRight/></a></p>

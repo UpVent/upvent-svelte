@@ -1,4 +1,3 @@
-<svelte:options immutable={true}/>
 <script>
     import Aboutjumbotron from './AboutJumbotron.svelte';
     import Tools from './Tools.svelte';

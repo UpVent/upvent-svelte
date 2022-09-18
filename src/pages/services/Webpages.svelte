@@ -1,14 +1,8 @@
-<svelte:options immutable={true}/>
 <script>
     import { LightningCharge, Brush } from 'svelte-bootstrap-icons';
-    // Images import
     import responsive from '../../assets/images/responsive.svg';
     import ecommerce from '../../assets/images/ecommerce.svg';
 </script>
-
-<style>
-    * { font-family: 'Poppins', sans-serif; }
-</style>
 
 <section class="container mt-5 mb-5">
     <div class="row text-right align-items-center">

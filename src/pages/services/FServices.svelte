@@ -1,9 +1,7 @@
-<svelte:options immutable={true}/>
 <script lang="ts">
     // Svelte imports
     import { onMount } from 'svelte';
     import { api_url } from '../../stores/store';
-    import type { FService } from './Services';
 
     // Svelte Bootstrap Icons
     import { Download } from 'svelte-bootstrap-icons';
@@ -12,7 +10,7 @@
     import oneplace from '../../assets/images/oneplace.webp';
 
     // Products array
-    let products: FService[] = [];
+    let products: any[] = [];
 
     // Get API products
     const url: string = api_url + "software_libre";
@@ -22,12 +20,6 @@
         products = await projects_res.json();
     });
 </script>
-
-<style>
-    * {
-        font-family: 'Poppins', sans-serif;
-    }
-</style>
 
 <section class="container">
     <div class="container text-center mt-5 mb-5">

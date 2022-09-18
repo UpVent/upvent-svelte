@@ -1,13 +1,4 @@
-<svelte:options immutable={true}/>
-<script>
-    import nube from '../../assets/images/nube-automanejada.svg';
-</script>
-
-<style>
-    * {
-        font-family: 'Poppins', sans-serif;
-    }
-</style>
+<script>import nube from '../../assets/images/nube-automanejada.svg';</script>
 
 <section class="container mt-5 mb-5">
     <div class="row align-items-center">

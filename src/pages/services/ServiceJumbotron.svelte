@@ -1,13 +1,8 @@
-<svelte:options immutable={true}/>
 <style>
     .jumbotron {
         background-image: url('../../assets/images/core-services.webp');
         background-size: cover;
         height: 500px;
-    }
-
-    * {
-        font-family: 'Poppins', sans-serif;
     }
 </style>
 

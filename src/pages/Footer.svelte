@@ -4,14 +4,7 @@
     import { uptime_api } from '../stores/store';
 
     // Social Media Icons
-    import { Facebook,
-        Twitter,
-        Instagram,
-        Linkedin,
-        Github,
-        PostcardHeart,
-        CircleFill
-    } from 'svelte-bootstrap-icons';
+    import { Facebook, Twitter, Instagram, Linkedin, Github, PostcardHeart, CircleFill } from 'svelte-bootstrap-icons';
 
     // Lazy loader
     import Lazy from 'svelte-lazy';
@@ -29,9 +22,7 @@
     onMount(async () => {
         const monitors_res: Response = await fetch(uptime_api, {
             method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
+            headers: { 'Content-Type': 'application/json'},
             mode: 'cors'
         });
         const monitors_json = await monitors_res.json();
@@ -40,13 +31,7 @@
 </script>
 
 <style>
-    .bg-light-gray {
-        background-color: #f9fafb;
-    }
-
-    * {
-        font-family: 'Poppins', sans-serif;
-    }
+    .bg-light-gray { background-color: #f9fafb; }
 </style>
 
 <footer class="text-center text-muted bg-light-gray">
@@ -111,9 +96,7 @@
 
     <section class="container">
         {#await onMount}
-            <p class="text-muted">
-                Cargando estatus de UpVent...
-            </p>
+            <p class="text-muted">Cargando estatus de UpVent...</p>
         {:then}
             {#if monitors.stat == 'ok' }
                 <p class="text-muted"> Estatus de UpVent: <CircleFill class="text-success"/><a href="https://stats.uptimerobot.com/qXywYt1lg9"> Todos los sistemas funcionales</a></p>

@@ -21,27 +21,17 @@
     import PrivacyPolicy from './pages/home/PrivacyPolicy.svelte';
 
     // Import navbar icons
-    import { House,
-    Laptop,
-    Pen,
-    People,
-    Phone,
-    Bag
-    } from 'svelte-bootstrap-icons';
+    import { House, Laptop, Pen, People, Phone } from 'svelte-bootstrap-icons';
 
     // Import Page layouts + components
     import Footer from './pages/Footer.svelte';
     
-
     // Scroll to top after navigation
     router.subscribe(_ => window.scrollTo(0, 0));
 </script>
 
 <style>
-
-    * {
-        font-family: 'Poppins';
-    }
+    :global(*) { font-family: 'Poppins'; }
 
     @supports (backdrop-filter: none) {
         .navbar-upvent {

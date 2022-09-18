@@ -1,4 +1,3 @@
-<svelte:options immutable={true}/>
 <script lang="ts">
     // Svelte imports
     import { onMount } from 'svelte';
@@ -24,12 +23,6 @@
         post = await post_res.json();
     });
 </script>
-
-<style>
-    * {
-        font-family: 'Poppins', sans-serif;
-    }
-</style>
 
 <section class="container mt-5 mb-5">
     {#await onMount}

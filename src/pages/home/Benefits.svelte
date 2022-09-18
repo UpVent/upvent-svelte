@@ -11,12 +11,6 @@
     import brain from '../../assets/images/brain.svg';
 </script>
 
-<style>
-    * {
-        font-family: 'Poppins', sans-serif;
-    }
-</style>
-
 <section>
     <div class="container text-center mt5 mb-5">
         <p class="h1">Beneficios</p>

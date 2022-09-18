@@ -9,12 +9,6 @@
     import rapido from '../../assets/images/rapido.svg';
 </script>
 
-<style>
-    * {
-        font-family: 'Poppins', sans-serif;
-    }
-</style>
-
 <section class="pt-8 pt-md-10">
     <div class="container mt-5 mb-5">
         <div class="row justify-content-center">

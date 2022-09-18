@@ -1,14 +1,4 @@
-<svelte:options immutable={true}/>
-<script>
-    // Bootstrap Icons Imports
-    import { CheckCircle, StarFill } from 'svelte-bootstrap-icons';
-</script>
-
-<style>
-    * {
-        font-family: 'Poppins', sans-serif;
-    }
-</style>
+<script>import { CheckCircle, StarFill } from 'svelte-bootstrap-icons';</script>
 
 <section class="container">
     <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
