@@ -1,16 +1,13 @@
 <script lang="ts">
     // Svelte imports
     import { onMount } from 'svelte';
-    import { uptime_api } from '../stores/store';
+    import { uptime_api } from '../config';
 
     // Social Media Icons
     import { Facebook, Twitter, Instagram, Linkedin, Github, PostcardHeart, CircleFill } from 'svelte-bootstrap-icons';
 
     // Lazy loader
     import Lazy from 'svelte-lazy';
-
-    // Get current year for copyright
-    const year: number = new Date().getFullYear();
 
     // Uptime robot variables
     let monitors: any = [];
@@ -44,7 +41,7 @@
                             <img class="img-fluid mb-1" width="116" height="47" src="{logo}" alt="UpVent Logo"/>
                         </Lazy>
                     </div>
-                    <p>Todos los derechos reservados © - UpVent Technologies 2020 - {year} . Todos los logos son marcas registradas de sus respectivos dueños.</p>
+                    <p>Todos los derechos reservados © - UpVent Technologies 2020 - {new Date().getFullYear()} . Todos los logos son marcas registradas de sus respectivos dueños.</p>
                     <div class="container mt-2 mb-2">
                         <a aria-label="Facebook" class="text-muted px-2" href="https://facebook.com/UpVentMX"><Facebook width={24} height={24}/></a>
                         <a aria-label="Twitter" class="text-muted px-2" href="https://twitter.com/UpVentMX"><Twitter width={24} height={24}/></a>
@@ -111,7 +108,7 @@
     </section>
 
     <section class="text-center border-top p-3">
-        © 2020 - {year} Copyright:
+        © 2020 - {new Date().getFullYear()} Copyright:
         <a href="https://upvent.codes/">UpVent Technologies</a> -
         <a href="/privacy-policy"> Política de privacidad</a> -
         <a href="https://github.com/UpVent/upvent-svelte/issues/new">Reportar un problema con este sitio</a>
