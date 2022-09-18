@@ -10,22 +10,22 @@
     "check": "svelte-check --tsconfig ./tsconfig.json"
   },
   "devDependencies": {
-    "@sveltejs/vite-plugin-svelte": "^1.0.1",
+    "@sveltejs/vite-plugin-svelte": "^1.0.6",
     "@tsconfig/svelte": "^3.0.0",
-    "bootstrap": "^5.2.0",
-    "pocketbase": "^0.7.0",
-    "svelte": "^3.49.0",
+    "bootstrap": "^5.2.1",
+    "pocketbase": "^0.7.1",
+    "svelte": "^3.50.1",
     "svelte-bootstrap-icons": "^2.2.0",
-    "svelte-check": "^2.8.0",
+    "svelte-check": "^2.9.0",
     "svelte-lazy": "^1.1.0",
     "svelte-preprocess": "^4.10.7",
     "tinro": "^0.6.12",
     "tslib": "^2.4.0",
-    "typescript": "^4.6.4",
-    "vanilla-hcaptcha": "^1.0.0",
-    "vite": "^3.0.8",
-    "vite-plugin-progress": "^0.0.3",
-    "vite-plugin-pwa": "^0.12.4",
-    "vite-plugin-webfont-dl": "^2.2.0"
+    "typescript": "^4.8.3",
+    "vanilla-hcaptcha": "^1.0.1",
+    "vite": "^3.1.2",
+    "vite-plugin-progress": "^0.0.4",
+    "vite-plugin-pwa": "^0.12.8",
+    "vite-plugin-webfont-dl": "^3.1.1"
   }
 }
