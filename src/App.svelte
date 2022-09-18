@@ -41,9 +41,7 @@
     }
 
     @supports not (backdrop-filter: none) {
-        .navbar-upvent {
-            background-color: #FAFAFA;
-        }
+        .navbar-upvent { background-color: #FAFAFA; }
     }
 </style>
 
@@ -67,38 +65,20 @@
 
 <!-- Main route handling -->
 <Transition>
-    <Route path="/">
-        <Home/>
-    </Route>
+    <Route path="/"><Home/></Route>
 
     <!-- Blog Routes -->
     <Route path="/blog/*">
-        <Route path="/">
-            <Blog/>
-        </Route>
-
-        <Route path="/post/:slug" let:meta>
-            <Post/>
-        </Route>
-
+        <Route path="/"><Blog/></Route>
+        <Route path="/post/:slug" let:meta><Post/></Route>
     </Route>
 
-    <Route path="/about">
-        <About/>
-    </Route>
-
-    <Route path="/services">
-        <Services/>
-    </Route>
+    <Route path="/about"><About/></Route>
+    <Route path="/services"><Services/></Route>
 
     <!-- Footer links -->
-    <Route path="/privacy-policy">
-        <PrivacyPolicy/>
-    </Route>
-
-    <Route path="/contact">
-        <Contact/>
-    </Route>
+    <Route path="/privacy-policy"><PrivacyPolicy/></Route>
+    <Route path="/contact"><Contact/></Route>
 
     <!-- Custom 404 -->
     <Route fallback><NotFound/></Route>
