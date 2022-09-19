@@ -1,23 +1,26 @@
 <script lang="ts">
     // Svelte imports
     import { onMount } from 'svelte';
-    import { api_url } from '../../stores/store';
+    import { fapi_url, api_user, api_user_pass } from '../../config';
+
+    /** Database Imports */
+    import PocketBase from 'pocketbase';
+    import type { Record } from 'pocketbase';
 
     // Svelte Bootstrap Icons
     import { Download } from 'svelte-bootstrap-icons';
 
+    /** Database Connect */
+    const client: PocketBase = new PocketBase(fapi_url);
+    let records: Record[] = [];
+
     // Image imports
     import oneplace from '../../assets/images/oneplace.webp';
 
-    // Products array
-    let products: any[] = [];
-
-    // Get API products
-    const url: string = api_url + "software_libre";
-
     onMount(async () => {
-        const projects_res: Response = await fetch(url);
-        products = await projects_res.json();
+        const user_auth_data = await client.users.authViaEmail(api_user, api_user_pass);
+        records = await client.records.getFullList('proyectos_libres', 10);
+        client.authStore.clear();
     });
 </script>
 
@@ -31,17 +34,17 @@
         {#await onMount}
             <p class="text-muted lead">Cargando los productos de software libre para usted...</p>
         {:then}
-            {#each products as product}
+            {#each records as record}
                 <div class="col">
                     <figure>
                         <div class="card h-75 position-relative border-0 shadow-sm p-2">
-                            <img height="100" width="100" class="img-fluid m-1 shadow-md rounded-circle" src={product.imagen.guid} alt="Imagen del producto de software libre">
-                            <p class="lead fw-bold">{product.nombre}</p>
+                            <img height="100" width="100" class="img-fluid m-1 shadow-md rounded-circle" src="{client.records.getFileUrl(record, record.imagen)}" alt="Producto de software libre">
+                            <p class="lead fw-bold">{record.nombre}</p>
                         </div>
                         <blockquote>
                             <div class="container">
-                                <p class="card-text text-muted text-wrap">{product.descripcion}</p>
-                                <a class="btn btn-primary" href="{product.link}">Descargar <Download/></a>
+                                <p class="card-text text-muted text-wrap">{record.descripcion}</p>
+                                <a class="btn btn-primary" href="{record.enlace}">Descargar <Download/></a>
                             </div>
                         </blockquote>
                     </figure>
