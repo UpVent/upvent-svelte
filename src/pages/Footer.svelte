@@ -86,9 +86,7 @@
     </div>
 
     <section class="container mt-5 mb-5 text-center-p-4">
-        <p>
-            El <a href="https://github.com/UpVent/upvent-svelte">código fuente</a> de esta página se encuentra bajo la <a href="https://www.gnu.org/licenses/agpl-3.0.html">Licencia Pública General de Affero (GNU) versión 3</a>. Excepto donde se indique lo <a href="https://creativecommons.org/policies#license">contrario</a>, el trabajo escrito, blogs, opiniones y parte del contenido visual se encuentra bajo la <a href="https://creativecommons.org/licenses/by-nd/3.0/deed.es">Licencia Creative Commons Atribución-SinDerivadas 3.0 No portada (CC BY-ND 3.0)</a>
-        </p>
+        <p>El <a href="https://github.com/UpVent/upvent-svelte">código fuente</a> de esta página se encuentra bajo la <a href="https://www.gnu.org/licenses/agpl-3.0.html">Licencia Pública General de Affero (GNU) versión 3</a>. Excepto donde se indique lo <a href="https://creativecommons.org/policies#license">contrario</a>, el trabajo escrito, blogs, opiniones y parte del contenido visual se encuentra bajo la <a href="https://creativecommons.org/licenses/by-nd/3.0/deed.es">Licencia Creative Commons Atribución-SinDerivadas 3.0 No portada (CC BY-ND 3.0)</a></p>
     </section>
 
     <section class="container">
@@ -100,10 +98,8 @@
             {:else}
                 <p class="text-muted"> Estatus de UpVent: <CircleFill class="text-danger"/><a href="https://stats.uptimerobot.com/qXywYt1lg9"> Rendimiento degradado</a></p>
             {/if}
-        {:catch error}
-            <p class="text-danger">
-                Error al obtener el estátus de UpVent. Si ves esta pantalla, reporta el incidente con <a href="mailto:contacto@upvent.codes">el equipo de soporte de UpVent</a>
-            </p>
+        {:catch _}
+            <p class="text-danger">Error al obtener el estátus de UpVent. Si ves esta pantalla, reporta el incidente con <a href="mailto:contacto@upvent.codes">el equipo de soporte de UpVent</a></p>
         {/await}
     </section>
 
