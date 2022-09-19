@@ -25,9 +25,7 @@
     });
 </script>
 
-<style>
-    .bg-light-gray { background-color: #f9fafb; }
-</style>
+<style>.bg-light-gray { background-color: #f9fafb; }</style>
 
 <footer class="text-center text-muted bg-light-gray">
     <div class="container p-4">
