@@ -19,11 +19,9 @@
     onMount(async () => {
         const monitors_res: Response = await fetch(uptime_api, {
             method: 'POST',
-            headers: { 'Content-Type': 'application/json'},
             mode: 'cors'
         });
-        const monitors_json = await monitors_res.json();
-        monitors = monitors_json;
+        monitors = await monitors_res.json();
     });
 </script>
 
