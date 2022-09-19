@@ -2,9 +2,7 @@
 <script lang="ts">
     // Svelte imports
     import { onMount } from 'svelte'; 
-    import { fapi_url } from '../../config';
-    import { api_user } from '../../config';
-    import { api_user_pass } from '../../config';
+    import { fapi_url, api_user, api_user_pass } from '../../config';
 
     // Lazy Load Import
     import Lazy from 'svelte-lazy';
