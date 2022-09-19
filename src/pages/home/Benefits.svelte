@@ -1,5 +1,3 @@
-<svelte:options immutable={true}/>
-
 <script>
     // import lazy loading component
     import Lazy from 'svelte-lazy';

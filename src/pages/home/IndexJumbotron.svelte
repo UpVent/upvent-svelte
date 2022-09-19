@@ -1,5 +1,3 @@
-<svelte:options immutable={true}/>
-
 <script lang="ts">
     // Svelte imports
     import { onMount } from 'svelte';
@@ -27,9 +25,7 @@
         background-repeat: repeat-x;
     }
 
-    .text-glow-white {
-        text-shadow: 1px 1px 1px #010101;
-    }
+    .text-glow-white { text-shadow: 1px 1px 1px #010101; }
 </style>
 
 <section class="pt-4 mb-4 pt-md-11 waves">

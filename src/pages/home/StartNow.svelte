@@ -1,4 +1,3 @@
-<svelte:options immutable={true}/>
 <script lang="ts">
     // Svelte imports
     import { onMount } from 'svelte'; 

@@ -6,7 +6,6 @@
     import FreeTech from './FreeTech.svelte';
 </script>
 
-<!-- Jumbotron About -->
 <Aboutjumbotron/>
 <Tools/>
 <Reasons/>

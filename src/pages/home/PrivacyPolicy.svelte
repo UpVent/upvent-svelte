@@ -1,9 +1,7 @@
 <script lang="ts">
     // Svelte imports
     import { onMount } from 'svelte';
-    import { fapi_url } from '../../config';
-    import { api_user } from '../../config';
-    import { api_user_pass } from '../../config';
+    import { fapi_url, api_user, api_user_pass } from '../../config';
 
     /** Database Imports */
     import PocketBase from 'pocketbase';
@@ -30,9 +28,7 @@
         <h1>{record.titulo}</h1>
         <span class="badge rounded-pill text-bg-primary">Última revisión: { format_date(record.ultima_revision) }</span>
         <hr>
-        <section class="container">
-            {@html record.contenido }
-        </section>
+        <section class="container"> {@html record.contenido } </section>
     {/each}
     {/await}
 </section>
