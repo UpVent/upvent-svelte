@@ -2,15 +2,13 @@
     // Svelte imports
     import { onMount } from 'svelte';
 
-    // Import hcaptcha from svelte
-    import "vanilla-hcaptcha";
-
-    // Handle HCaptcha on mount
     onMount(() => {
         const contactCaptcha: HTMLElement = document.getElementById('contactCaptcha');
         contactCaptcha.addEventListener('verified', (_) => {
         });
     });
+
+    function handle_submit(): void { document.getElementById("fs-frm").reset(); }
 </script>
 
 <section class="container">
@@ -32,7 +30,7 @@
                     onVerified="onCaptchaVerified"
                 ></h-captcha>
             </fieldset>
-            <input class="btn btn-primary mt-3 mb-3" type="submit" value="Enviar ✉">
+            <input class="btn btn-primary mt-3 mb-3" type="submit" on:submit={handle_submit} value="Enviar ✉">
         </form>
     </section>
 </section>
