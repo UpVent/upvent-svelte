@@ -13,8 +13,7 @@
                 <div class="col-9">
                     <h2>Desarrollo Personalizado</h2>
                     <p class="text-muted text-wrap">
-                        Desarrollamos su sitio web de acuerdo a sus necesidades, sea una pequeña empresa, freelancer o una corporación.
-                        <br/>
+                        Desarrollamos su sitio web de acuerdo a sus necesidades, sea una pequeña empresa, freelancer o una corporación.<br/>
                         UpVent estará ahí para ofrecerle una solución única.
                     </p>
                 </div>
@@ -24,15 +23,13 @@
                 <div class="col-9 text-right">
                     <h2>Velocidad y Seguridad</h2>
                     <p class="text-muted text-wrap">
-                        Creamos páginas web veloces utilizando una mezcla de tecnologías propias y tecnologías libres.
-                        <br />
+                        Creamos páginas web veloces utilizando una mezcla de tecnologías propias y tecnologías libres.<br />
                         Gracias a la tecnología de LiteSpeed podemos ofrecerle sitios seguros y en producción casi de inmediato.
                     </p>
                 </div>
                 <div class="col-3"><LightningCharge width={90} height={90}/></div>
             </div>
         </div>
-
         <div class="col-7 col-sm-4 m-auto pt-5 pt-md-0">
             <img alt="Imágen mostrando una computadora" class="img-fluid" src="{responsive}">
         </div>
