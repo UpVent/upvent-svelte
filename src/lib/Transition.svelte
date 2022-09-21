@@ -3,6 +3,4 @@
     import { fade } from 'svelte/transition';
 </script>
 
-{#key $router.path}
-    <div in:fade="{{ duration: 700 }}"><slot></slot></div>
-{/key}
+{#key $router.path}<div in:fade="{{ duration: 700 }}"><slot></slot></div>{/key}

@@ -33,9 +33,7 @@
             <div class="row">
                 <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
                     <div class="container">
-                        <Lazy height={47}>
-                            <img class="img-fluid mb-1" width="116" height="47" src="{logo}" alt="UpVent Logo"/>
-                        </Lazy>
+                        <Lazy height={47}><img class="img-fluid mb-1" width="116" height="47" src="{logo}" alt="UpVent Logo"/></Lazy>
                     </div>
                     <p>Todos los derechos reservados © - UpVent Technologies 2020 - {new Date().getFullYear()} . Todos los logos son marcas registradas de sus respectivos dueños.</p>
                     <div class="container mt-2 mb-2">
@@ -73,7 +71,7 @@
                     <p class="h4 text-uppercase">Enlaces Importantes</p>
                     <ul class="list-unstyled mb-0">
                         <li class="m-2">
-                            <a rel="nofollow" href="https://github.com/UpVent" class="text-decoration-none text-muted">Repositorio de Código Libre en GitHub <i class="bi bi-github"></i></a>
+                            <a rel="nofollow" href="https://github.com/UpVent" class="text-decoration-none text-muted">Repositorio de Código Libre en GitHub</a>
                         </li>
                     </ul>
                 </div>
