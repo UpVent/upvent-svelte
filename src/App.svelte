@@ -70,7 +70,7 @@
     <!-- Blog Routes -->
     <Route path="/blog/*">
         <Route path="/"><Blog/></Route>
-        <Route path="/post/:slug" let:meta><Post/></Route>
+        <Route path="/post/:id" let:meta><Post/></Route>
     </Route>
 
     <Route path="/about"><About/></Route>

@@ -42,7 +42,7 @@
                             <img height="315" width="560" class="img-fluid mx-auto rounded-3" src={client.records.getFileUrl(record, record.imagen_destacada)} alt="Imágen de blog">
                         </Lazy>
                         <div class="card-body border-0">
-                            <a class="fs-2 text-primary text-decoration-none" href="/blog/post/{record.slug}">{record.titulo}</a>
+                            <a class="fs-2 text-primary text-decoration-none" href="/blog/post/{record.id}">{record.titulo}</a>
                         </div>
                         <div class="card-footer border-top">
                             <p class="text-muted small">{truncate_str(record.extracto, 150)}</p>
