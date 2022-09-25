@@ -1,6 +1,7 @@
 <script lang="ts">
     // Svelte imports
     import { onMount } from 'svelte';
+    import "vanilla-hcaptcha";
 
     onMount(() => {
         const contactCaptcha: HTMLElement = document.getElementById('contactCaptcha');
