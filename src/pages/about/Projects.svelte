@@ -8,7 +8,9 @@
     import type { Record } from 'pocketbase';
     
     // Svelte Bootstrap Icons
-    import { Download, XCircle, StarFill } from 'svelte-bootstrap-icons';
+    import Download from 'svelte-bootstrap-icons/lib/Download.svelte';
+    import XCircle from 'svelte-bootstrap-icons/lib/XCircle.svelte';
+    import StarFill from 'svelte-bootstrap-icons/lib/StarFill.svelte';
     
     /** Database Connect */
     const client: PocketBase = new PocketBase(fapi_url);

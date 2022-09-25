@@ -15,9 +15,12 @@
     import Post from './pages/blog/Post.svelte';
 
     // Import navbar icons
-    import { House, Laptop, Pen, People, Phone } from 'svelte-bootstrap-icons';
+    import House from 'svelte-bootstrap-icons/lib/House.svelte';
+    import Laptop from 'svelte-bootstrap-icons/lib/Laptop.svelte';
+    import Pen from 'svelte-bootstrap-icons/lib/Pen.svelte';
+    import People from 'svelte-bootstrap-icons/lib/People.svelte';
+    import Phone from 'svelte-bootstrap-icons/lib/Phone.svelte';
 
-    // Import Page layouts + components
     import Footer from './pages/Footer.svelte';
     
     // Scroll to top after navigation

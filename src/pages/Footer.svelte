@@ -4,7 +4,13 @@
     import { uptime_api } from '../config';
 
     // Social Media Icons
-    import { Facebook, Twitter, Instagram, Linkedin, Github, PostcardHeart, CircleFill } from 'svelte-bootstrap-icons';
+    import Facebook from 'svelte-bootstrap-icons/lib/Facebook.svelte';
+    import Twitter from 'svelte-bootstrap-icons/lib/Twitter.svelte';
+    import Instagram from 'svelte-bootstrap-icons/lib/Instagram.svelte';
+    import Linkedin from 'svelte-bootstrap-icons/lib/Linkedin.svelte';
+    import Github from 'svelte-bootstrap-icons/lib/Github.svelte';
+    import PostcardHeart from 'svelte-bootstrap-icons/lib/PostcardHeart.svelte';
+    import CircleFill from 'svelte-bootstrap-icons/lib/CircleFill.svelte';
 
     // Lazy loader
     import Lazy from 'svelte-lazy';

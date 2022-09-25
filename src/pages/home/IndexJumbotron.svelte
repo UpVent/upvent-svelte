@@ -5,7 +5,8 @@
     import { sineIn } from 'svelte/easing';
 
     // Third party imports
-    import { ArrowRight, BagFill } from 'svelte-bootstrap-icons';
+    import BagFill from 'svelte-bootstrap-icons/lib/BagFill.svelte';
+    import ArrowRight from 'svelte-bootstrap-icons/lib/ArrowRight.svelte';
     import Lazy from 'svelte-lazy';
 
     // UpVent Logo
@@ -50,6 +51,9 @@
                 </p>
             <div class="text-center text-md-start">
               <a href="/about" class="btn btn-primary mx-auto my-2 btn-lg me-1">
+                  Comprar ahora <BagFill/>
+              </a>
+              <a href="/about" class="btn btn-outline-primary mx-auto my-2 btn-lg me-1">
                   Conocer más <ArrowRight/>
               </a>
             </div>

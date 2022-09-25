@@ -7,7 +7,9 @@
     import Lazy from 'svelte-lazy';
 
     // Svelte Icons import
-    import { Laptop, Book, WrenchAdjustableCircle } from 'svelte-bootstrap-icons';
+    import Laptop from 'svelte-bootstrap-icons/lib/Laptop.svelte';
+    import Book from 'svelte-bootstrap-icons/lib/Book.svelte';
+    import WrenchAdjustableCircle from 'svelte-bootstrap-icons/lib/WrenchAdjustableCircle.svelte';
 
     // Import upvent logo
     import logo from '../../assets/images/upvent-logo-new.webp';

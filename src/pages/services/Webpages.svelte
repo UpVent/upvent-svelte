@@ -1,5 +1,7 @@
 <script>
-    import { LightningCharge, Brush } from 'svelte-bootstrap-icons';
+    import LightningCharge from 'svelte-bootstrap-icons/lib/LightningCharge.svelte';
+    import Brush from 'svelte-bootstrap-icons/lib/Brush.svelte';
+
     import responsive from '../../assets/images/responsive.svg';
     import ecommerce from '../../assets/images/ecommerce.svg';
 </script>

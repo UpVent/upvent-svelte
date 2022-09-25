@@ -1,4 +1,7 @@
-<script>import { CheckCircle, StarFill } from 'svelte-bootstrap-icons';</script>
+<script>
+    import CheckCircle from 'svelte-bootstrap-icons/lib/CheckCircle.svelte';
+    import StarFill from 'svelte-bootstrap-icons/lib/StarFill.svelte';
+</script>
 
 <section class="container">
     <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">

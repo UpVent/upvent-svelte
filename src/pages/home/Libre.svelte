@@ -1,6 +1,6 @@
 <script>
     import Lazy from 'svelte-lazy';
-    import { ArrowRight } from 'svelte-bootstrap-icons';
+    import ArrowRight from 'svelte-bootstrap-icons/lib/ArrowRight.svelte';
     // Import gnu logo
     import gnu from '../../assets/images/gnu.webp';
 </script>

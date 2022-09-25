@@ -3,7 +3,8 @@
     import Lazy from 'svelte-lazy';
 
     // Svelte bootstrap icons
-    import { Envelope, ArrowRight } from 'svelte-bootstrap-icons';
+    import Envelope from 'svelte-bootstrap-icons/lib/Envelope.svelte';
+    import ArrowRight from 'svelte-bootstrap-icons/lib/ArrowRight.svelte';
 
     // Include page images
     import programmer from '../../assets/images/programmer.svg';

@@ -1,5 +1,8 @@
 <script>
-    import { LightningChargeFill, CloudArrowUpFill, PhoneFill, Stack } from 'svelte-bootstrap-icons';
+    import LightningChargeFill from 'svelte-bootstrap-icons/lib/LightningChargeFill.svelte';
+    import CloudArrowUpFill from 'svelte-bootstrap-icons/lib/CloudArrowUpFill.svelte';
+    import PhoneFill from 'svelte-bootstrap-icons/lib/PhoneFill.svelte';
+    import Stack from 'svelte-bootstrap-icons/lib/Stack.svelte';
     import construction from '../../assets/images/construction.svg';
 </script>
 
