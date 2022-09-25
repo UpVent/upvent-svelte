@@ -20,7 +20,7 @@
 
     // Get blog posts on component mount
     onMount(async () => {
-        const user_auth_data = await client.users.authViaEmail(api_user, api_user_pass);
+        client.users.authViaEmail(api_user, api_user_pass);
         records = await client.records.getFullList('blog_post', 200, { sort: '-created' });
         records.forEach(e => delete e.contenido) 
         client.authStore.clear();
@@ -34,6 +34,22 @@
     <div id="posts" class="container">
         {#await onMount}
             <p class="text-muted lead">Cargando publicaciones del blog...</p>
+            <div class="container">
+                <div class="card border-0 rounded-3 mt-5 mb-5">
+                    <div class="card-body">
+                        <p class="h5 card-title placeholder-glow">
+                            <span class="placeholder col-6"></span>
+                        </p>
+                        <p class="card-text placeholder-glow">
+                            <span class="placeholder col-7"></span>
+                            <span class="placeholder col-4"></span>
+                            <span class="placeholder col-4"></span>
+                            <span class="placeholder col-6"></span>
+                            <span class="placeholder col-8"></span>
+                        </p>
+                    </div>
+                </div>
+            </div>
         {:then}
             {#each records as record}
                 <div class="container">

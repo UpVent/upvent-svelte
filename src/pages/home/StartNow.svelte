@@ -25,7 +25,7 @@
     let records: Record[] = [];
 
     onMount(async () => {
-        const user_auth_data = await client.users.authViaEmail(api_user, api_user_pass);
+        client.users.authViaEmail(api_user, api_user_pass);
         records = await client.records.getFullList('tecnologias', 200, {
             sort: '-created',
         });

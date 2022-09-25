@@ -17,7 +17,7 @@
     let records: Record[] = [];
 
     onMount(async () => {
-        const user_auth_data = await client.users.authViaEmail(api_user, api_user_pass);
+        client.users.authViaEmail(api_user, api_user_pass);
         records = await client.records.getFullList('proyecto_portafolio', 10);
         client.authStore.clear();
     });

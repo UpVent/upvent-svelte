@@ -18,7 +18,7 @@
     import oneplace from '../../assets/images/oneplace.webp';
 
     onMount(async () => {
-        const user_auth_data = await client.users.authViaEmail(api_user, api_user_pass);
+        client.users.authViaEmail(api_user, api_user_pass);
         records = await client.records.getFullList('proyectos_libres', 10);
         client.authStore.clear();
     });
