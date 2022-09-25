@@ -1,4 +1,3 @@
-import progress from 'vite-plugin-progress';
 import { VitePWA } from 'vite-plugin-pwa';
 import { ViteWebfontDownload } from 'vite-plugin-webfont-dl';
 import { defineConfig } from 'vite';
@@ -17,9 +16,6 @@ export default defineConfig({
       }
     }),
     ViteWebfontDownload(),
-    progress({
-      format: 'Building UpVent - Tusk 3.9.3 [:bar] :percent | :elapsed seconds'
-    }),
     VitePWA({
       registerType: 'autoUpdate',
       devOptions: {
