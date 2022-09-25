@@ -4,7 +4,7 @@
 
     // Import lib components
     import Transition from './lib/Transition.svelte';
-    import NotFound from './lib/NotFound.svelte';
+    import LL from './lib/LL.svelte';
 
     // Navbar logo
     import logo from './assets/images/logo-grey.webp';
@@ -13,12 +13,6 @@
     import Home from './pages/home/Home.svelte';
     import Blog from './pages/blog/Blog.svelte';
     import Post from './pages/blog/Post.svelte';
-    import About from './pages/about/About.svelte';
-    import Services from './pages/services/Services.svelte';
-    import Contact from './pages/contact/Contact.svelte';
-
-    // Footer components
-    import PrivacyPolicy from './pages/home/PrivacyPolicy.svelte';
 
     // Import navbar icons
     import { House, Laptop, Pen, People, Phone } from 'svelte-bootstrap-icons';
@@ -35,8 +29,8 @@
 
     @supports (backdrop-filter: none) {
         .navbar-upvent {
-            backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
+            backdrop-filter: blur(20px);
         }
     }
 
@@ -73,15 +67,26 @@
         <Route path="/post/:id" let:meta><Post/></Route>
     </Route>
 
-    <Route path="/about"><About/></Route>
-    <Route path="/services"><Services/></Route>
+    <Route path="/about">
+        <LL component={() => import('./pages/about/About.svelte')} />
+    </Route>
+
+    <Route path="/services">
+        <LL component={() => import('./pages/services/Services.svelte')} />
+    </Route>
 
     <!-- Footer links -->
-    <Route path="/privacy-policy"><PrivacyPolicy/></Route>
-    <Route path="/contact"><Contact/></Route>
+    <Route path="/privacy-policy">
+        <LL component={() => import('./pages/home/PrivacyPolicy.svelte')} />
+    </Route>
+    <Route path="/contact">
+        <LL component={() => import('./pages/contact/Contact.svelte')} />
+    </Route>
 
     <!-- Custom 404 -->
-    <Route fallback><NotFound/></Route>
+    <Route fallback>
+        <LL component={() => import('./lib/NotFound.svelte')} />
+    </Route>
 </Transition>
 
 <!-- Always show the Footer component -->
