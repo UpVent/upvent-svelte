@@ -20,6 +20,7 @@
     import Pen from 'svelte-bootstrap-icons/lib/Pen.svelte';
     import People from 'svelte-bootstrap-icons/lib/People.svelte';
     import Phone from 'svelte-bootstrap-icons/lib/Phone.svelte';
+    import Bag from 'svelte-bootstrap-icons/lib/Bag.svelte';
 
     import Footer from './pages/Footer.svelte';
     
@@ -32,6 +33,7 @@
 
     @supports (backdrop-filter: none) {
         .navbar-upvent {
+            background-color:rgba(254, 245, 254, 0.6);
             -webkit-backdrop-filter: blur(20px);
             backdrop-filter: blur(20px);
         }
@@ -53,6 +55,7 @@
         <li><a class="fs-5 nav-link px-2 text-muted" href="/blog">Blog <Pen/></a></li>
         <li><a class="fs-5 nav-link px-2 text-muted" href="/about">Nosotros <People/></a></li>
         <li><a class="fs-5 nav-link px-2 text-muted" href="/services">Servicios <Laptop/></a></li>
+        <li><a class="fs-5 nav-link px-2 text-muted" href="/pwa">PWA Store <Bag/></a></li>
     </ul>
 
     <div class="text-end me-auto ms-auto mx-auto">
@@ -76,6 +79,10 @@
 
     <Route path="/services">
         <LL component={() => import('./pages/services/Services.svelte')} />
+    </Route>
+
+    <Route path="/pwa">
+        <LL component={() => import('./pages/pwa/PWA.svelte')} />
     </Route>
 
     <!-- Footer links -->

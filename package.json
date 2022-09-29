@@ -14,6 +14,7 @@
     "@tsconfig/svelte": "^3.0.0",
     "bootstrap": "^5.2.1",
     "pocketbase": "^0.7.1",
+    "stripe": "^10.11.0",
     "svelte": "^3.50.1",
     "svelte-bootstrap-icons": "^2.2.0",
     "svelte-check": "^2.9.0",
