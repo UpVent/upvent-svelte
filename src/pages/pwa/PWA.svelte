@@ -1,12 +1,49 @@
 <script lang="ts">
+    // Svelte imports
+    import { onMount } from 'svelte'; 
+    import { fapi_url, api_user, api_user_pass } from '../../config';
+    
+    // Lazy Load Import
+    import Lazy from 'svelte-lazy';
+
     // Database imports
-    import { onMount } from "svelte";
+    import PocketBase from 'pocketbase';
+    import { Record } from 'pocketbase';
 
     // External imports
     import BagFill from 'svelte-bootstrap-icons/lib/BagFill.svelte';
     import StarFill from 'svelte-bootstrap-icons/lib/StarFill.svelte';
+    import CartFill from 'svelte-bootstrap-icons/lib/CartFill.svelte';
+    import QrCode from 'svelte-bootstrap-icons/lib/QrCode.svelte';
 
+    // Database usage
+    const client: PocketBase = new PocketBase(fapi_url);
+
+    // Grid logos for technology showcasing
+    let records: Record[] = [];
+
+    let visible: boolean = false;
+
+    function toggleVisible() {
+        visible = !visible;
+    }
+
+    onMount(async () => {
+        client.users.authViaEmail(api_user, api_user_pass);
+        records = await client.records.getFullList('productos', 10, {
+            sort: '+created',
+        });
+        console.log(records)
+        client.authStore.clear();
+    });
 </script>
+
+<style>
+    .btn-stripe {
+        background-color: #5433ff;
+        border-color: #5433ff;
+    }
+</style>
 
 <section class="container mb-5">
     <div class="bg-light d-lg-flex justify-content-between align-items-center py-6 py-lg-3 px-8 rounded-3 text-center text-lg-start">
@@ -20,14 +57,46 @@
             </div>
         </div>
         <div class="mt-3 mt-lg-0">
-            <button class="btn btn-primary">Solicitar PWA <BagFill/></button>
+            <a href="#estelare" class="btn btn-primary">Solicitar PWA <BagFill/></a>
         </div>
     </div>
 </section>
 
 <section class="container-fluid bg-primary text-light p-2 mt-2">
     <div class="container">
-        <p class="h1 fw-bold">DISEÑADOR PWA <StarFill height={24} width={24} class="text-warning"/></p>
+        <p class="h1 fw-bold">Productos Estelares <StarFill height={24} width={24} class="text-warning"/></p>
         <p class="text-light">Construya el sitio de su negocio a su gusto. Aumente sus ventas, mejore la retención de clientes y mucho más...!</p>
     </div>
+</section>
+
+<section id="estelare" class="container mt-3">
+    <div class="row row-cols-sm-1 row-cols-md-3">
+        {#await onMount}
+           <p>Cargando productos...</p> 
+        {:then}
+        {#each records as record}
+            <div class="col">
+                <div class="card border-0 shadow-sm">
+                    <Lazy>
+                        <img class="img-fluid rounded-3" src="{ client.records.getFileUrl(record, record.imagen_destacada) }" alt="">
+                    </Lazy>
+                    <div class="card-header text-break border-0">
+                        {record.nombre}
+                    </div>
+                    <div class="card-body">
+                        <p class="rounded-pill m-2 bg-light fw-bold shadow-sm text-center  p-1">{(record.precio).toLocaleString('es-MX', { style: 'currency', currency: 'MXN' })}</p>
+                        <br>
+                        <div class="d-grid gap-2">
+                            <a href="{record.stripe_payment_link} MXN" class="btn btn-primary m-0">Comprar <CartFill/> </a>
+                            <button on:click={toggleVisible} class="btn btn-stripe btn-secondary">Pagar con QR <QrCode/></button>
+                        </div>
+                        {#if visible}
+                            <img height="200" width="200" class="m-2 shadow-sm rounded-3 img-fluid" src={client.records.getFileUrl(record, record.qr_de_producto)} alt={record.nombre}>
+                        {/if}
+                    </div>
+                </div>
+            </div>
+        {/each}
+        {/await}
+    </div> 
 </section>
