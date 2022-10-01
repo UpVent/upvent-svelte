@@ -28,13 +28,21 @@ npm install
 
 ### 2. Create a .env file
 
-You'll need to create a `.env` file at project root level with the following values:
+You'll need to modify the `.env-example` file, rename it to `.env` and fill in the details yourself, alternativeley you can create a `.env` file yourself at project root level with the following values:
 
 ```sh
 VITE_UPTIME_API_URL = "" # For Uptime Robot users, shown at Footer.svelte component
 VITE_DBASE_URL = "https://api.domain.com/" # Your API base URL
 VITE_DBASE_USER = "user@email.com" # Your DB / BaaS username for supabase, firebase or pocketbase
 VITE_DBASE_USER_PASSWORD = "UpVentRocks!" # The password for the user mentioned above
+# Social media links
+VITE_FACEBOOK_LINK = ""
+VITE_TWITTER_LINK = ""
+VITE_INSTAGRAM_LINK = ""
+VITE_LINKEDIN_LINK = ""
+VITE_GITHUB_LINK = ""
+VITE_ASCARD_LINK = ""
+VITE_WHATSAPP_LINK = ""
 ```
 
 ### 3. Build

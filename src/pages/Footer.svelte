@@ -1,7 +1,9 @@
 <script lang="ts">
     // Svelte imports
     import { onMount } from 'svelte';
-    import { uptime_api } from '../config';
+    import { uptime_api, whatsapp_link,
+         facebook_link, twitter_link, instagram_link, linkedin_link, github_link,
+          ascard_link } from '../config';
 
     // Social Media Icons
     import Facebook from 'svelte-bootstrap-icons/lib/Facebook.svelte';
@@ -11,6 +13,7 @@
     import Github from 'svelte-bootstrap-icons/lib/Github.svelte';
     import PostcardHeart from 'svelte-bootstrap-icons/lib/PostcardHeart.svelte';
     import CircleFill from 'svelte-bootstrap-icons/lib/CircleFill.svelte';
+    import Whatsapp from 'svelte-bootstrap-icons/lib/Whatsapp.svelte';
 
     // Lazy loader
     import Lazy from 'svelte-lazy';
@@ -43,12 +46,13 @@
                     </div>
                     <p>Todos los derechos reservados © - UpVent Technologies 2020 - {new Date().getFullYear()} . Todos los logos son marcas registradas de sus respectivos dueños.</p>
                     <div class="container mt-2 mb-2">
-                        <a aria-label="Facebook" class="text-muted px-2" href="https://facebook.com/UpVentMX"><Facebook width={24} height={24}/></a>
-                        <a aria-label="Twitter" class="text-muted px-2" href="https://twitter.com/UpVentMX"><Twitter width={24} height={24}/></a>
-                        <a aria-label="Instagram" class="text-muted px-2" href="https://instagram.com/UpVentMX"><Instagram width={24} height={24}/></a>
-                        <a aria-label="LinkedIn" class="text-muted px-2" href="https://www.linkedin.com/company/upvent-technologies/"><Linkedin width={24} height={24}/></a>
-                        <a aria-label="GitHub" class="text-muted px-2" href="https://github.com/UpVent"><Github width={24} height={24}/></a>
-                        <a aria-label="As-Card" class="text-muted px-2" href="https://me.as-card.com/accounts/profile/UpVentMX/"><PostcardHeart width={24} height={24}/></a>
+                        <a aria-label="Facebook" class="text-muted px-2" href="{facebook_link}"><Facebook width={24} height={24}/></a>
+                        <a aria-label="Twitter" class="text-muted px-2" href="{twitter_link}"><Twitter width={24} height={24}/></a>
+                        <a aria-label="Instagram" class="text-muted px-2" href="{instagram_link}"><Instagram width={24} height={24}/></a>
+                        <a aria-label="LinkedIn" class="text-muted px-2" href="{linkedin_link}"><Linkedin width={24} height={24}/></a>
+                        <a aria-label="GitHub" class="text-muted px-2" href="{github_link}"><Github width={24} height={24}/></a>
+                        <a aria-label="As-Card" class="text-muted px-2" href="{ascard_link}"><PostcardHeart width={24} height={24}/></a>
+                        <a aria-label="Whatsapp" class="text-muted px-2" href="{whatsapp_link}"><Whatsapp width={24} height={24}/></a>
                     </div>
                 </div>
 
