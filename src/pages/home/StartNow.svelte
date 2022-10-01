@@ -60,7 +60,7 @@
                 {:then}
                     {#each records as record}
                         <div class="col">
-                            <a href="{record.enlace}" aria-label="{record.enlace}" target="_blank">
+                            <a rel="noopener, nofollow" href="{record.enlace}" aria-label="{record.enlace}" target="_blank">
                                 <Lazy height={50}>
                                     <img height="50" width="60" class="img-fluid" src="{ client.records.getFileUrl(record, record.imagen_destacada) }" alt="{record.nombre}"/>
                                 </Lazy>
