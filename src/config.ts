@@ -16,3 +16,4 @@ export const linkedin_link = import.meta.env.VITE_LINKEDIN_LINK;
 export const github_link = import.meta.env.VITE_GITHUB_LINK;
 export const ascard_link = import.meta.env.VITE_ASCARD_LINK;
 export const whatsapp_link = import.meta.env.VITE_WHATSAPP_LINK;
+export const email_link = import.meta.env.VITE_EMAIL_LINK;

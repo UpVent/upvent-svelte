@@ -3,7 +3,7 @@
     import { onMount } from 'svelte';
     import { uptime_api, whatsapp_link,
          facebook_link, twitter_link, instagram_link, linkedin_link, github_link,
-          ascard_link } from '../config';
+          ascard_link, email_link } from '../config';
 
     // Social Media Icons
     import Facebook from 'svelte-bootstrap-icons/lib/Facebook.svelte';
@@ -14,6 +14,7 @@
     import PostcardHeart from 'svelte-bootstrap-icons/lib/PostcardHeart.svelte';
     import CircleFill from 'svelte-bootstrap-icons/lib/CircleFill.svelte';
     import Whatsapp from 'svelte-bootstrap-icons/lib/Whatsapp.svelte';
+    import Envelope from 'svelte-bootstrap-icons/lib/Envelope.svelte';
 
     // Lazy loader
     import Lazy from 'svelte-lazy';
@@ -53,6 +54,7 @@
                         <a aria-label="GitHub" class="text-muted px-2" href="{github_link}"><Github width={24} height={24}/></a>
                         <a aria-label="As-Card" class="text-muted px-2" href="{ascard_link}"><PostcardHeart width={24} height={24}/></a>
                         <a aria-label="Whatsapp" class="text-muted px-2" href="{whatsapp_link}"><Whatsapp width={24} height={24}/></a>
+                        <a aria-label="Mail" class="text-muted px-2" href="{email_link}"><Envelope width={24} height={24}/></a>
                     </div>
                 </div>
 
@@ -73,6 +75,9 @@
                         </li>
                         <li class="m-2">
                             <a href="/contacto" class="text-decoration-none text-muted">Contacto</a>
+                        </li>
+                        <li class="m-2">
+                            <a href="/pwa" class="text-decoration-none text-muted">PWA Store</a>
                         </li>
                     </ul>
                 </div>
@@ -102,7 +107,7 @@
             {:else}
                 <p class="text-muted"> Estatus de UpVent: <CircleFill class="text-danger"/><a href="https://stats.uptimerobot.com/qXywYt1lg9"> Rendimiento degradado</a></p>
             {/if}
-        {:catch _}
+        {:catch}
             <p class="text-danger">Error al obtener el estátus de UpVent. Si ves esta pantalla, reporta el incidente con <a href="mailto:contacto@upvent.codes">el equipo de soporte de UpVent</a></p>
         {/await}
     </section>
