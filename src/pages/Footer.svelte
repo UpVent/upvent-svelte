@@ -100,6 +100,9 @@
                         <li class="m-2">
                             <a rel="nofollow" href="https://github.com/UpVent" class="text-decoration-none text-muted">Repositorio de Código Libre en GitHub</a>
                         </li>
+                        <li class="m-2">
+                            <a rel="nofollow" href="/privacy-policy" class="text-decoration-none text-muted">Términos y Condiciones</a>
+                        </li>
                     </ul>
                 </div>
             </div>
