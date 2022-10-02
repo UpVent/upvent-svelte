@@ -1,11 +1,11 @@
 <script lang="ts">
     // Svelte imports
-    import { onMount } from 'svelte';
+    import { onMount, onDestroy } from 'svelte';
     import { api_user, api_user_pass, fapi_url } from '../../config';
+    import { api_result } from '../../stores/store';
 
     /** Database Imports */
     import PocketBase from 'pocketbase';
-    import type { Record } from 'pocketbase';
     
     // Svelte Bootstrap Icons
     import Download from 'svelte-bootstrap-icons/lib/Download.svelte';
@@ -14,13 +14,14 @@
     
     /** Database Connect */
     const client: PocketBase = new PocketBase(fapi_url);
-    let records: Record[] = [];
 
     onMount(async () => {
         client.users.authViaEmail(api_user, api_user_pass);
-        records = await client.records.getFullList('proyecto_portafolio', 10);
+        $api_result = await client.records.getFullList('proyecto_portafolio', 10);
         client.authStore.clear();
     });
+
+    onDestroy(() => { $api_result.length = 0; });
 </script>
 
 <section class="container mt-5 mb-5">
@@ -36,7 +37,7 @@
             {#await onMount}
             <p class="text-muted lead">Cargando los proyectos realizados por UpVent...</p>
             {:then}
-            {#each records as record}
+            {#each $api_result as record}
             <div class="col">
                 <figure>
                     <div class="card h-75 position-relative border-0 shadow-sm p-2">

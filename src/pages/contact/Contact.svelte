@@ -1,5 +1,4 @@
 <script lang="ts">
-    // Svelte imports
     import { onMount } from 'svelte';
     import "vanilla-hcaptcha";
 
@@ -9,7 +8,7 @@
         });
     });
 
-    function handle_submit(): void { document.getElementById("fs-frm").reset(); }
+    function handle_submit(): void { (document.getElementById("fs-frm") as HTMLFormElement).reset(); }
 </script>
 
 <section class="container">
@@ -24,12 +23,7 @@
                 <label class="form-label" for="message">Mensaje</label>
                 <textarea class="form-control" rows="5" name="message" id="message" placeholder="Aenean lacinia bibendum nulla sed consectetur. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Donec ullamcorper nulla non metus auctor fringilla nullam quis risus." required></textarea>
                 <input class="form-control" type="hidden" name="_subject" id="email-subject" value="Contact Form Submission">
-                <h-captcha
-                    id="contactCaptcha"
-                    site-key="44e5fa13-d8d3-4d8b-9dbf-887f16065702"
-                    size="normal"
-                    onVerified="onCaptchaVerified"
-                ></h-captcha>
+                <h-captcha id="contactCaptcha" site-key="44e5fa13-d8d3-4d8b-9dbf-887f16065702" size="normal" onVerified="onCaptchaVerified"></h-captcha>
             </fieldset>
             <input class="btn btn-primary mt-3 mb-3" type="submit" on:submit={handle_submit} value="Enviar ✉">
         </form>

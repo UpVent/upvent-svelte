@@ -1,7 +1,8 @@
 <script lang="ts">
     // Svelte imports
-    import { onMount } from 'svelte'; 
+    import { onMount, onDestroy } from 'svelte'; 
     import { fapi_url, api_user, api_user_pass } from '../../config';
+    import { api_result } from '../../stores/store';
 
     // Lazy Load Import
     import Lazy from 'svelte-lazy';
@@ -16,21 +17,19 @@
 
     // Database imports
     import PocketBase from 'pocketbase';
-    import type { Record } from 'pocketbase';
-
+    
     // Database usage
     const client: PocketBase = new PocketBase(fapi_url);
 
-    // Grid logos for technology showcasing
-    let records: Record[] = [];
-
     onMount(async () => {
         client.users.authViaEmail(api_user, api_user_pass);
-        records = await client.records.getFullList('tecnologias', 200, {
+        $api_result = await client.records.getFullList('tecnologias', 200, {
             sort: '-created',
         });
         client.authStore.clear();
     });
+
+    onDestroy(() => { $api_result.length = 0; });
 </script>
 
 <section class="px-4 py-5 my-5 text-center">
@@ -58,7 +57,7 @@
                 {#await onMount}
                     <p class="text-muted lead">Cargando las tecnologías...</p>
                 {:then}
-                    {#each records as record}
+                    {#each $api_result as record}
                         <div class="col">
                             <a rel="noopener, nofollow" href="{record.enlace}" aria-label="{record.enlace}" target="_blank">
                                 <Lazy height={50}>

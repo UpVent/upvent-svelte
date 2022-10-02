@@ -1,30 +1,27 @@
-<svelte:options immutable={true}/>
 <script lang="ts">
     // Svelte imports
-    import { onMount } from 'svelte';
+    import { onMount, onDestroy } from 'svelte';
     import { fapi_url, api_user, api_user_pass } from '../../config';
-    import { truncate_str } from '../../stores/store';
+    import { truncate_str, api_result } from '../../stores/store';
 
     // Lazy Load post images
     import Lazy from 'svelte-lazy';
 
     // Database imports
     import PocketBase from 'pocketbase';
-    import type { Record } from 'pocketbase';
 
     // Database usage
     const client: PocketBase = new PocketBase(fapi_url);
 
-    // Grid logos for blog showcasing
-    let records: Record[] = [];
-
     // Get blog posts on component mount
     onMount(async () => {
         client.users.authViaEmail(api_user, api_user_pass);
-        records = await client.records.getFullList('blog_post', 200, { sort: '-created' });
-        records.forEach(e => delete e.contenido) 
+        $api_result = await client.records.getFullList('blog_post', 200, { sort: '-created' });
+        $api_result.forEach(e => delete e.contenido) 
         client.authStore.clear();
     });
+
+    onDestroy(() => { $api_result.length = 0; });
 </script>
 
 <section class="container">
@@ -51,7 +48,7 @@
                 </div>
             </div>
         {:then}
-            {#each records as record}
+            {#each $api_result as record}
                 <div class="container">
                     <div class="card border-0 rounded-3 mt-5 mb-5 text-center">
                         <Lazy height={315}>

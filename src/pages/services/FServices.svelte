@@ -1,27 +1,28 @@
 <script lang="ts">
     // Svelte imports
-    import { onMount } from 'svelte';
+    import { onMount, onDestroy } from 'svelte';
     import { fapi_url, api_user, api_user_pass } from '../../config';
+    import { api_result } from '../../stores/store';
 
     /** Database Imports */
     import PocketBase from 'pocketbase';
-    import type { Record } from 'pocketbase';
 
     // Svelte Bootstrap Icons
     import Download from 'svelte-bootstrap-icons/lib/Download.svelte';
 
     /** Database Connect */
     const client: PocketBase = new PocketBase(fapi_url);
-    let records: Record[] = [];
 
     // Image imports
     import oneplace from '../../assets/images/oneplace.webp';
 
     onMount(async () => {
         client.users.authViaEmail(api_user, api_user_pass);
-        records = await client.records.getFullList('proyectos_libres', 10);
+        $api_result = await client.records.getFullList('proyectos_libres', 10);
         client.authStore.clear();
     });
+
+    onDestroy(() => { $api_result.length = 0; });
 </script>
 
 <section class="container">
@@ -34,7 +35,7 @@
         {#await onMount}
             <p class="text-muted lead">Cargando los productos de software libre para usted...</p>
         {:then}
-            {#each records as record}
+            {#each $api_result as record}
                 <div class="col">
                     <figure>
                         <div class="card h-75 position-relative border-0 shadow-sm p-2">
@@ -63,5 +64,5 @@
     </div>
     <div class="container"><img class="img-fluid" src={oneplace} alt=""/></div>
     <p class="text-center display-5  text-glow text-primary fw-bold">¡Todo en un solo lugar!</p>
-    <p class="text-center lead">Ofrecemos una variedad de servicios pagados. ¿Necesita de un CRM, un e-commerce o una solución personalizada? Para UpVent no hay obstáculos, ¡Lo tenemos cubierto en cualquier necesidad tecnológica!</p>
+    <p class="text-center lead">Ofrecemos una variedad de servicios y software pre-hecho. ¿Necesita de un CRM, un e-commerce o una solución personalizada? Para UpVent no hay obstáculos, ¡Lo tenemos cubierto en cualquier necesidad tecnológica!</p>
 </section>
