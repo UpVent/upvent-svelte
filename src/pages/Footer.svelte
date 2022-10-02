@@ -15,6 +15,7 @@
     import CircleFill from 'svelte-bootstrap-icons/lib/CircleFill.svelte';
     import Whatsapp from 'svelte-bootstrap-icons/lib/Whatsapp.svelte';
     import Envelope from 'svelte-bootstrap-icons/lib/Envelope.svelte';
+    import Share from 'svelte-bootstrap-icons/lib/Share.svelte';
 
     // Lazy loader
     import Lazy from 'svelte-lazy';
@@ -33,6 +34,16 @@
         });
         monitors = await monitors_res.json();
     });
+
+    async function shar() {
+        if (navigator.canShare) {
+            navigator.share({
+                title: 'UpVent Technologies',
+                text: '¡Visita UpVent!',
+                url: 'https://upvent.codes/'
+            });
+        }
+    }
 </script>
 
 <style>.bg-light-gray { background-color: #f9fafb; }</style>
@@ -55,6 +66,7 @@
                         <a aria-label="As-Card" class="text-muted px-2" href="{ascard_link}"><PostcardHeart width={24} height={24}/></a>
                         <a aria-label="Whatsapp" class="text-muted px-2" href="{whatsapp_link}"><Whatsapp width={24} height={24}/></a>
                         <a aria-label="Mail" class="text-muted px-2" href="{email_link}"><Envelope width={24} height={24}/></a>
+                        <button on:click={shar} class="btn text-muted px-2"><Share/></button>
                     </div>
                 </div>
 
