@@ -1,8 +1,6 @@
 <script>
     // import lazy loading component
     import Lazy from 'svelte-lazy';
-    import ArrowRight from 'svelte-bootstrap-icons/lib/ArrowRight.svelte';
-
     // Import images
     import coins from '../../assets/images/coins.svg';
     import education from '../../assets/images/education.svg';
