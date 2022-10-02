@@ -27,6 +27,8 @@ export default defineConfig({
         short_name: 'UpVent',
         description: 'UpVent es un proveedor experto de soluciones de código libre y empresarial para los pequeños y medianos negocios Mexicanos.',
         theme_color: '#007FBC',
+        orientation: 'any',
+        lang: 'es',
         icons: [
           {
             src: 'pwa-192x192.png',
