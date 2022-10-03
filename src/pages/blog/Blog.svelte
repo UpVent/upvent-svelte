@@ -2,7 +2,7 @@
     // Svelte imports
     import { onMount, onDestroy } from 'svelte';
     import { fapi_url, api_user, api_user_pass } from '../../config';
-    import { truncate_str, api_result } from '../../stores/store';
+    import { api_result } from '../../stores/store';
 
     // Lazy Load post images
     import Lazy from 'svelte-lazy';
@@ -58,7 +58,7 @@
                             <a class="fs-2 text-primary text-decoration-none" href="/blog/post/{record.id}">{record.titulo}</a>
                         </div>
                         <div class="card-footer border-top">
-                            <p class="text-muted small">{truncate_str(record.extracto, 150)}</p>
+                            <p class="text-muted small">{record.extracto}</p>
                         </div>
                     </div>
                 </div>
