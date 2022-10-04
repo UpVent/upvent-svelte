@@ -66,7 +66,7 @@
                         <a aria-label="As-Card" class="text-muted px-2" href="{ascard_link}"><PostcardHeart width={24} height={24}/></a>
                         <a aria-label="Whatsapp" class="text-muted px-2" href="{whatsapp_link}"><Whatsapp width={24} height={24}/></a>
                         <a aria-label="Mail" class="text-muted px-2" href="{email_link}"><Envelope width={24} height={24}/></a>
-                        <button on:click={shar} class="btn text-muted px-2"><Share/></button>
+                        <button aria-label="Compartir" on:click={shar} class="btn text-muted px-2"><Share/></button>
                     </div>
                 </div>
 
@@ -121,9 +121,9 @@
             <p class="text-muted">Cargando estatus de UpVent...</p>
         {:then}
             {#if monitors.stat == 'ok' }
-                <p class="text-dark"> Estatus de UpVent: <CircleFill class="text-success"/><a href="https://stats.uptimerobot.com/qXywYt1lg9"> Todos los sistemas funcionales</a></p>
+                <p class="text-dark"> Estatus de UpVent: <CircleFill class="text-success"/><a class="link-dark" href="https://stats.uptimerobot.com/qXywYt1lg9"> Todos los sistemas funcionales</a></p>
             {:else}
-                <p class="text-dark"> Estatus de UpVent: <CircleFill class="text-danger"/><a href="https://stats.uptimerobot.com/qXywYt1lg9"> Rendimiento degradado</a></p>
+                <p class="text-dark"> Estatus de UpVent: <CircleFill class="text-danger"/><a class="link-dark" href="https://stats.uptimerobot.com/qXywYt1lg9"> Rendimiento degradado</a></p>
             {/if}
         {:catch}
             <p class="text-danger">Error al obtener el estátus de UpVent. Si ves esta pantalla, reporta el incidente con <a href="mailto:contacto@upvent.codes">el equipo de soporte de UpVent</a></p>
@@ -144,10 +144,10 @@
         </p>
     </section>
 
-    <section class="text-center border-top p-3">
+    <section class="text-center text-dark border-top p-3">
         © 2020 - {new Date().getFullYear()} Copyright:
         <a href="https://upvent.codes/">UpVent Technologies</a> -
         <a href="/privacy-policy"> Política de privacidad</a> -
-        <a  rel="nofollow" href="https://github.com/UpVent/upvent-svelte/issues/new">Reportar un problema con este sitio</a>
+        <a rel="nofollow" href="https://github.com/UpVent/upvent-svelte/issues/new">Reportar un problema con este sitio</a>
     </section>
 </footer>
