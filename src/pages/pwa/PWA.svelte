@@ -66,9 +66,6 @@
 
 <section id="estelare" class="container mt-3">
     <div class="row row-cols-sm-1 row-cols-md-3">
-        {#await onMount}
-           <p>Cargando productos...</p> 
-        {:then}
         {#each $api_result as record}
             <div class="col">
                 <div class="card border-0 shadow-sm">
@@ -92,6 +89,5 @@
                 </div>
             </div>
         {/each}
-        {/await}
     </div> 
 </section>

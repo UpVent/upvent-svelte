@@ -34,9 +34,6 @@
 <section class="album py-5 bg-light">
     <div id="projects" class="container">
         <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-            {#await onMount}
-            <p class="text-muted lead">Cargando los proyectos realizados por UpVent...</p>
-            {:then}
             {#each $api_result as record}
             <div class="col">
                 <figure>
@@ -65,9 +62,6 @@
                 </figure>
             </div> 
             {/each}                
-            {:catch error}
-            <p class="text-danger">Error al obtener los proyectos. Si ves este mensaje reportalo por favor con el siguiente código de error: Error No55: {error}</p>
-            {/await}
         </div>
     </div>
 </section>

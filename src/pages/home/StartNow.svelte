@@ -52,21 +52,15 @@
     <div class="container mt-3 mb-2">
         <div class="container" id="startnowtechs">
             <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4">
-                {#await onMount}
-                    <p class="text-muted lead">Cargando las tecnologías...</p>
-                {:then}
-                    {#each $api_result as record}
-                        <div class="col">
-                            <a rel="noopener, nofollow" href="{record.enlace}" aria-label="{record.enlace}" target="_blank">
-                                <Lazy height={50}>
-                                    <img height="50" width="60" class="img-fluid" src="{ client.records.getFileUrl(record, record.imagen_destacada) }" alt="{record.nombre}"/>
-                                </Lazy>
-                            </a>
-                        </div>
-                    {/each}
-                {:catch error}
-                    <p class="text-danger">Error al obtener las tecnoologias usadas. Si ves este mensaje reportalo por favor con el siguiente código de error: Error No55: {error}</p>
-                {/await}
+                {#each $api_result as record}
+                    <div class="col">
+                        <a rel="noopener, nofollow" href="{record.enlace}" aria-label="{record.enlace}" target="_blank">
+                            <Lazy height={50}>
+                                <img height="50" width="60" class="img-fluid" src="{ client.records.getFileUrl(record, record.imagen_destacada) }" alt="{record.nombre}"/>
+                            </Lazy>
+                        </a>
+                    </div>
+                {/each}
             </div>
         </div>
     </div>

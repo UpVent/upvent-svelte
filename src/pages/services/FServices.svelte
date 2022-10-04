@@ -32,9 +32,6 @@
     </div>
     <div class="container">
         <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-        {#await onMount}
-            <p class="text-muted lead">Cargando los productos de software libre para usted...</p>
-        {:then}
             {#each $api_result as record}
                 <div class="col">
                     <figure>
@@ -51,9 +48,6 @@
                     </figure>
                 </div>
             {/each}
-        {:catch error}
-            <p class="text-danger">Error al obtener los productos de software libre. Si ves este mensaje reportalo por favor con el siguiente código de error: Error No55: {error}</p>
-        {/await}
     </div>
 </section>
 
