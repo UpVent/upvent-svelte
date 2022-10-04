@@ -56,7 +56,7 @@
                             {/if}
                             <p class="mb-2 text-wrap">{@html record.descripcion }</p>
                             <div class="container">
-                                {#if !record.es_libre } <a class="btn btn-danger" href="/"> Código fuente no disponible <XCircle/></a> {:else}
+                                {#if !record.es_libre } <button class="btn btn-danger"> Código fuente no disponible <XCircle/></button> {:else}
                                 <a class="btn btn-primary" href="{record.enlace_de_descarga}"> Descargar <Download/></a>
                                 {/if}
                             </div>

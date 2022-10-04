@@ -8,8 +8,6 @@
     import Lazy from 'svelte-lazy';
 
     // Svelte Icons import
-    import Laptop from 'svelte-bootstrap-icons/lib/Laptop.svelte';
-    import Book from 'svelte-bootstrap-icons/lib/Book.svelte';
     import WrenchAdjustableCircle from 'svelte-bootstrap-icons/lib/WrenchAdjustableCircle.svelte';
 
     // Import upvent logo
@@ -38,10 +36,10 @@
     </Lazy>
     <p class="h1 display-5 fw-bold">Comenzar a trabajar con <span class="h1 display-5 fw-bold text-primary text-glow">UpVent.</span></p>
     <div class="col-lg-6 mx-auto">
-        <p class="lead mb-4">Visite nuestra página de servicios para explorar nuestras ofertas prediseñadas para su empresa o contacte directo con ventas.</p>
+        <p class="lead mb-4">Potencie su negocio ahora mismo, mire nuestro portafolio de trabajo o visite nuestra tienda de servicios para comenzar hoy mismo.</p>
         <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
-            <a href="/services" class="btn btn-primary btn-lg px-4 me-sm-3">Ir a Servicios <Laptop/></a>
-            <a href="/blog" class="btn btn-outline-primary btn-lg px-4">Leer nuestro blog <Book/></a>
+            <a href="/services" class="btn btn-primary btn-lg px-4 me-sm-3">Comprar Ahora</a>
+            <a href="/blog" class="btn btn-outline-primary btn-lg px-4">Ver Portafolio</a>
         </div>
     </div>
 </section>

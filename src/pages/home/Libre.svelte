@@ -1,6 +1,5 @@
 <script>
     import Lazy from 'svelte-lazy';
-    import ArrowRight from 'svelte-bootstrap-icons/lib/ArrowRight.svelte';
     // Import gnu logo
     import gnu from '../../assets/images/gnu.webp';
 </script>
@@ -16,6 +15,5 @@
                 libre y se basa en múltiples principios éticos y prácticos para su conveniencia como empresa.<br />
             Además, colaboramos de manera activa con el ecosistema de software libre en México para mejorar dichas tecnologías para todos.
         </p>
-        <a href="#startnowtechs">Explore las tecnologías usadas en UpVent <ArrowRight/></a>
     </div>
 </section>

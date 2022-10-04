@@ -7,7 +7,7 @@
 </script>
 
 <Aboutjumbotron/>
+<Projects/>
 <Tools/>
 <Reasons/>
-<Projects/>
 <FreeTech/>

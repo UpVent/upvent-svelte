@@ -44,8 +44,10 @@
             <img alt="Imágen mostrando un e-commerce en funcionamiento" class="img-fluid" src="{ecommerce}">
         </div>
         <div class="col-12 col-md-6 col-lg-5 ml-md-auto text-left">
-            <h1 class="fw-bold display-3">Ecommerce</h1>
-            <p class="lead">Si necesita iniciar su negocio en línea tenemos la solución ideal para usted. Con UpVent podrá elegir entre múltiples opciones de e-commerce como <i>Prestashop</i> o <i>WooCommerce</i>.</p>
+            <h1 class="fw-bold display-3">Mejora de sitios</h1>
+            <p class="lead">Si ya tiene un sitio web y desea mejorarlo tenemos la solución ideal para usted.
+                <br>
+                Con UpVent podrá elegir entre convertirlo a una PWA o aumentar su velocidad hasta 20* veces más.</p>
         </div>
     </div>
 </section>
