@@ -2,9 +2,6 @@
     // Lazy load images
     import Lazy from 'svelte-lazy';
 
-    // Svelte bootstrap icons
-    import Envelope from 'svelte-bootstrap-icons/lib/Envelope.svelte';
-
     // Include page images
     import programmer from '../../assets/images/programmer.svg';
     import desk from '../../assets/images/desk.svg';
