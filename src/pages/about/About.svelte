@@ -1,13 +1,5 @@
-<script>
-    import Aboutjumbotron from './AboutJumbotron.svelte';
-    import Tools from './Tools.svelte';
-    import Reasons from './Reasons.svelte';
-    import Projects from './Projects.svelte';
-    import FreeTech from './FreeTech.svelte';
-</script>
-
-<Aboutjumbotron/>
-<Projects/>
-<Tools/>
-<Reasons/>
-<FreeTech/>
+{#await import("./AboutJumbotron.svelte") then AboutJumbotron}<AboutJumbotron.default/>{/await}
+{#await import("./Projects.svelte") then Projects}<Projects.default/>{/await}
+{#await import("./Tools.svelte") then Tools}<Tools.default/>{/await}
+{#await import("./Reasons.svelte") then Reasons}<Reasons.default/>{/await}
+{#await import("./FreeTech.svelte") then FreeTech}<FreeTech.default/>{/await}

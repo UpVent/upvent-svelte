@@ -1,9 +1,3 @@
-<script>
-    import ServiceJumbotron from './ServiceJumbotron.svelte';
-    import Webpages from './Webpages.svelte';
-    import FServices from './FServices.svelte';
-</script>
-
-<ServiceJumbotron/>
-<Webpages/>
-<FServices/>
+{#await import("./ServiceJumbotron.svelte") then ServiceJumbotron}<ServiceJumbotron.default/>{/await}
+{#await import("./Webpages.svelte") then Webpages}<Webpages.default/>{/await}
+{#await import("./FServices.svelte") then FServices}<FServices.default/>{/await}
