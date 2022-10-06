@@ -36,13 +36,7 @@
     });
 
     async function shar() {
-        if (navigator.canShare) {
-            navigator.share({
-                title: 'UpVent Technologies',
-                text: '¡Visita UpVent!',
-                url: 'https://upvent.codes/'
-            });
-        }
+        if (navigator.canShare) { navigator.share({ title: 'UpVent Technologies', text: '¡Visita UpVent!', url: 'https://upvent.codes/' }); }
     }
 </script>
 
