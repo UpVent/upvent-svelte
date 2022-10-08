@@ -3,7 +3,7 @@
 </script>
 
 {#await component.then ? component : component()}
-    <span class="placeholder col-7"></span><span class="placeholder col-7"></span><span class="placeholder col-4"></span><span class="placeholder col-8"></span>
+    <p>Cargando...</p>
 {:then Cmp}
    <svelte:component this={Cmp.default} />
 {/await}
