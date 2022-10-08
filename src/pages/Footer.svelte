@@ -17,9 +17,6 @@
     import Envelope from 'svelte-bootstrap-icons/lib/Envelope.svelte';
     import Share from 'svelte-bootstrap-icons/lib/Share.svelte';
 
-    // Lazy loader
-    import Lazy from 'svelte-lazy';
-
     // Uptime robot variables
     let monitors: any = [];
 
@@ -48,7 +45,7 @@
             <div class="row">
                 <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
                     <div class="container">
-                        <Lazy height={47}><img class="img-fluid mb-1" width="116" height="47" src="{logo}" alt="UpVent Logo"/></Lazy>
+                        <img class="img-fluid mb-1" width="116" height="47" src="{logo}" alt="UpVent Logo" loading="lazy"/>
                     </div>
                     <p class="text-dark">Todos los derechos reservados © - UpVent Technologies 2020 - {new Date().getFullYear()} . Todos los logos son marcas registradas de sus respectivos dueños.</p>
                     <div class="container mt-2 mb-2">

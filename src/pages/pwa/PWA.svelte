@@ -4,9 +4,6 @@
     import { fapi_url, api_user, api_user_pass } from '../../config';
     import { api_result } from '../../stores/store';
     
-    // Lazy Load Import
-    import Lazy from 'svelte-lazy';
-
     // Database imports
     import PocketBase from 'pocketbase';
 
@@ -69,9 +66,7 @@
         {#each $api_result as record}
             <div class="col">
                 <div class="card border-0 shadow-sm">
-                    <Lazy>
-                        <img class="img-fluid rounded-3" src="{ client.records.getFileUrl(record, record.imagen_destacada) }" alt="">
-                    </Lazy>
+                        <img class="img-fluid rounded-3" src="{ client.records.getFileUrl(record, record.imagen_destacada) }" alt="" loading="lazy">
                     <div class="card-header text-break border-0">
                         {record.nombre}
                     </div>
@@ -83,7 +78,7 @@
                             <button on:click={toggleVisible} class="btn btn-stripe btn-secondary">Pagar con QR <QrCode/></button>
                         </div>
                         {#if visible}
-                            <img height="200" width="200" class="m-2 shadow-sm rounded-3 img-fluid" src={client.records.getFileUrl(record, record.qr_de_producto)} alt={record.nombre}>
+                            <img height="200" width="200" class="m-2 shadow-sm rounded-3 img-fluid" src={client.records.getFileUrl(record, record.qr_de_producto)} alt={record.nombre} loading="lazy">
                         {/if}
                     </div>
                 </div>
