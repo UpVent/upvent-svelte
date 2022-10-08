@@ -17,7 +17,6 @@
     "svelte": "^3.50.1",
     "svelte-bootstrap-icons": "^2.2.0",
     "svelte-check": "^2.9.0",
-    "svelte-lazy": "^1.1.0",
     "svelte-preprocess": "^4.10.7",
     "tinro": "^0.6.12",
     "tslib": "^2.4.0",
