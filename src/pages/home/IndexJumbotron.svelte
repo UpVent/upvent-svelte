@@ -7,7 +7,6 @@
     // Third party imports
     import BagFill from 'svelte-bootstrap-icons/lib/BagFill.svelte';
     import ArrowRight from 'svelte-bootstrap-icons/lib/ArrowRight.svelte';
-    import Lazy from 'svelte-lazy';
 
     // UpVent Logo
     import logo from '../../assets/images/upvent-main.webp';
@@ -43,9 +42,7 @@
         <div class="row">
             <div class="col-12 col-md-5 col-lg-6 order-md-2 d-none d-sm-block mt-xs-0">
                 {#if logo_visible}
-                    <Lazy height={270}>
-                        <img transition:slide="{{delay: 250, duration: 200, easing: sineIn }}" src="{logo}" height="270" width="270" class="shadow rounded-circle mb-6 mb-md-0 " alt="logo">
-                    </Lazy>
+                    <img transition:slide="{{delay: 250, duration: 200, easing: sineIn }}" src="{logo}" height="270" width="270" class="shadow rounded-circle mb-6 mb-md-0 " alt="logo" loading="lazy">
                 {/if}
             </div>
             <div class="col-12 col-md-7 col-lg-6 upvent-description order-md-1">
@@ -60,12 +57,8 @@
                 </p>
                 
             <div class="text-center text-md-start">
-              <a href="/pwa" class="btn btn-primary mx-auto my-2 btn-lg me-1">
-                  Comprar ahora <BagFill/>
-              </a>
-              <a href="/about" class="btn btn-outline-primary mx-auto my-2 btn-lg me-1">
-                  Portafolio de Trabajo <ArrowRight/>
-              </a>
+              <a href="/pwa" class="btn btn-primary mx-auto my-2 btn-lg me-1">Comprar ahora <BagFill/></a>
+              <a href="/about" class="btn btn-outline-primary mx-auto my-2 btn-lg me-1">Portafolio de Trabajo <ArrowRight/></a>
             </div>
           </div>
         </div>

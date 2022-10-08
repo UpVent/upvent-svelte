@@ -1,17 +1,12 @@
 <script>
-    // import lazy loading component
-    import Lazy from 'svelte-lazy';
-    // Import images
     import coins from '../../assets/images/coins.svg';
     import education from '../../assets/images/education.svg';
     import brain from '../../assets/images/brain.svg';
 </script>
 
-<section>
-    <div class="container text-center mt5 mb-5">
+<section class="container text-center mt-5 mb-5">
         <p class="h1">Beneficios</p>
         <p class="lead text-muted small">Conozca los beneficios que UpVent tiene para usted y su empresa</p>
-    </div>
 </section>
 
 <section class="container mt-5 mb-5">
@@ -25,9 +20,7 @@
             </p>
         </div>
         <div class="col-md-5">
-            <Lazy height={202}>
-                <img width="276" height="202" class="img-fluid" src="{coins}" alt="Foto mostrando unas monedas y un bolígrafo">
-            </Lazy>
+            <img width="276" height="202" class="img-fluid" src="{coins}" alt="Foto mostrando unas monedas y un bolígrafo" loading="lazy">
         </div>
     </div>
 
@@ -39,9 +32,7 @@
             <p class="lead">UpVent se fundó con la visión de compartir el conocimiento. Tenemos la promesa de educar de forma abierta y gratuita, llevando el conocimiento de nuestro equipo a todos los individuos que podamos.</p>
         </div>
         <div class="col-md-5 order-md-1">
-            <Lazy height={193}>
-                <img width="276" height="193" class="img-fluid" src="{education}" alt="Imágen mostrando a una persona leyendo un libro, sentada debajo de un árbol">
-            </Lazy>
+            <img width="276" height="193" class="img-fluid" src="{education}" alt="Imágen mostrando a una persona leyendo un libro, sentada debajo de un árbol" loading="lazy">
         </div>
     </div>
 
@@ -54,9 +45,7 @@
             </p>
         </div>
         <div class="col-md-5">
-            <Lazy height={182}>
-                <img width="276" height="182" class="img-fluid" src="{brain}" alt="Imágen mostrando un cerebro y una bombilla de fondo">
-            </Lazy>
+            <img width="276" height="182" class="img-fluid" src="{brain}" alt="Imágen mostrando un cerebro y una bombilla de fondo" loading="lazy">
         </div>
     </div>
 </section>
