@@ -4,9 +4,6 @@
     import { fapi_url, api_user, api_user_pass } from '../../config';
     import { api_result } from '../../stores/store';
 
-    // Lazy Load Import
-    import Lazy from 'svelte-lazy';
-
     // Svelte Icons import
     import WrenchAdjustableCircle from 'svelte-bootstrap-icons/lib/WrenchAdjustableCircle.svelte';
 
@@ -21,7 +18,7 @@
 
     onMount(async () => {
         client.users.authViaEmail(api_user, api_user_pass);
-        $api_result = await client.records.getFullList('tecnologias', 200, {
+        $api_result = await client.records.getFullList('tecnologias', 4, {
             sort: '-created',
         });
         client.authStore.clear();
@@ -31,9 +28,7 @@
 </script>
 
 <section class="px-4 py-5 my-5 text-center">
-    <Lazy height={100}>
-        <img class="d-block mx-auto mb-4 rounded-circle shadow" src="{logo}" alt="Logo de UpVent circular" width="100" height="100"/>
-    </Lazy>
+        <img class="d-block mx-auto mb-4 rounded-circle shadow" src="{logo}" alt="Logo de UpVent circular" width="100" height="100" loading="lazy"/>
     <p class="h1 display-5 fw-bold">Comenzar a trabajar con <span class="h1 display-5 fw-bold text-primary text-glow">UpVent.</span></p>
     <div class="col-lg-6 mx-auto">
         <p class="lead mb-4">Potencie su negocio ahora mismo, mire nuestro portafolio de trabajo o visite nuestra tienda de servicios para comenzar hoy mismo.</p>
@@ -55,9 +50,7 @@
                 {#each $api_result as record}
                     <div class="col">
                         <a rel="noopener" href="{record.enlace}" aria-label="{record.enlace}" target="_blank">
-                            <Lazy height={50}>
-                                <img height="50" width="60" class="img-fluid" src="{ client.records.getFileUrl(record, record.imagen_destacada) }" alt="{record.nombre}"/>
-                            </Lazy>
+                            <img height="50" width="60" class="img-fluid" src="{ client.records.getFileUrl(record, record.imagen_destacada) }" alt="{record.nombre}" loading="lazy"/>
                         </a>
                     </div>
                 {/each}
