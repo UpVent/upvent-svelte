@@ -11,7 +11,7 @@
     import WrenchAdjustableCircle from 'svelte-bootstrap-icons/lib/WrenchAdjustableCircle.svelte';
 
     // Import upvent logo
-    import logo from '../../assets/images/upvent-logo-new.webp';
+    import logo from '../../assets/images/upvent-main.webp';
 
     // Database imports
     import PocketBase from 'pocketbase';
@@ -38,8 +38,8 @@
     <div class="col-lg-6 mx-auto">
         <p class="lead mb-4">Potencie su negocio ahora mismo, mire nuestro portafolio de trabajo o visite nuestra tienda de servicios para comenzar hoy mismo.</p>
         <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
-            <a href="/services" class="btn btn-primary btn-lg px-4 me-sm-3">Comprar Ahora</a>
-            <a href="/blog" class="btn btn-outline-primary btn-lg px-4">Ver Portafolio</a>
+            <a href="/pwa" class="btn btn-primary btn-lg px-4 me-sm-3">Comprar Ahora</a>
+            <a href="/about" class="btn btn-outline-primary fw-bold btn-lg px-4">Ver Portafolio</a>
         </div>
     </div>
 </section>
@@ -54,7 +54,7 @@
             <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4">
                 {#each $api_result as record}
                     <div class="col">
-                        <a rel="noopener, nofollow" href="{record.enlace}" aria-label="{record.enlace}" target="_blank">
+                        <a rel="noopener" href="{record.enlace}" aria-label="{record.enlace}" target="_blank">
                             <Lazy height={50}>
                                 <img height="50" width="60" class="img-fluid" src="{ client.records.getFileUrl(record, record.imagen_destacada) }" alt="{record.nombre}"/>
                             </Lazy>

@@ -36,8 +36,7 @@
     }
 
     #nav-upvent a:global(.active-nav) {
-        color: #FAFAFA !important; 
-        background-color: #007BFC;
+        border-bottom:  0.3rem solid #007BFC;
     }
 </style>
 
