@@ -1,34 +1,31 @@
 <script lang="ts">
     // Svelte imports
-    import { onMount } from 'svelte';
+    import { onMount, onDestroy } from 'svelte';
     import { fapi_url, api_user, api_user_pass } from '../../config';
+    import { api_result } from '../../stores/store';
 
     /** Database Imports */
     import PocketBase from 'pocketbase';
-    import type { Record } from 'pocketbase';
- 
+
     // Database usage
     const client: PocketBase = new PocketBase(fapi_url);
-    let records: Record[] = [];
 
     onMount(async () => {
-        const user_auth_data = await client.users.authViaEmail(api_user, api_user_pass);
-        records = await client.records.getFullList('politica_privacidad', 1);
+        client.users.authViaEmail(api_user, api_user_pass);
+        $api_result = await client.records.getFullList('politica_privacidad', 1);
         client.authStore.clear();
     });
+
+    onDestroy(() => { $api_result.length = 0; });
 
     function format_date(date: string): string { return new Date(date).toLocaleDateString('es-MX'); }
 </script>
 
 <section class="container">
-    {#await onMount}
-        <p class="lead">Cargando política de privacidad...</p>
-    {:then} 
-    {#each records as record}
+    {#each $api_result as record}
         <h1>{record.titulo}</h1>
         <span class="badge rounded-pill text-bg-primary">Última revisión: { format_date(record.ultima_revision) }</span>
         <hr>
         <section class="container"> {@html record.contenido } </section>
     {/each}
-    {/await}
 </section>
