@@ -23,9 +23,7 @@
             <img width="276" height="202" class="img-fluid" src="{coins}" alt="Foto mostrando unas monedas y un bolígrafo" loading="lazy">
         </div>
     </div>
-
     <hr>
-
     <div class="row">
         <div class="col-md-7 order-md-2">
             <p class="h2">¡A favor de la educación! <span class="text-muted">Aprenda con nosotros</span></p>
@@ -35,9 +33,7 @@
             <img width="276" height="193" class="img-fluid" src="{education}" alt="Imágen mostrando a una persona leyendo un libro, sentada debajo de un árbol" loading="lazy">
         </div>
     </div>
-
     <hr>
-
     <div class="row">
         <div class="col-md-7">
             <p class="h2">La estabilidad primero. <span class="text-muted">Puede confiar en UpVent</span></p>

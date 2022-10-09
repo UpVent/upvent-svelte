@@ -11,9 +11,6 @@
 
     // Import page components
     import Home from './pages/home/Home.svelte';
-    import Blog from './pages/blog/Blog.svelte';
-    import Post from './pages/blog/Post.svelte';
-
     import Footer from './pages/Footer.svelte';
     
     // Scroll to top after navigation
@@ -48,7 +45,6 @@
 
     <ul id="nav-upvent" class="nav nav-pills col-12 mx-auto col-md-auto mb-2 justify-content-center mb-md-0">
         <li><a class="fs-5 nav-link px-2 link-dark" href="/" use:active active-class="active-nav" exact>Inicio</a></li>
-        <li><a class="fs-5 nav-link px-2 link-dark" href="/blog" use:active active-class="active-nav">Blog</a></li>
         <li><a class="fs-5 nav-link px-2 link-dark" href="/about" use:active active-class="active-nav">Nosotros</a></li>
         <li><a class="fs-5 nav-link px-2 link-dark" href="/services" use:active active-class="active-nav">Servicios</a></li>
         <li><a class="fs-5 nav-link px-2 link-dark" href="/pwa" use:active active-class="active-nav">Store</a></li>
@@ -63,35 +59,29 @@
 <Transition>
     <Route path="/"><Home/></Route>
 
-    <!-- Blog Routes -->
-    <Route path="/blog/*">
-        <Route path="/"><Blog/></Route>
-        <Route path="/post/:id" let:meta><Post/></Route>
-    </Route>
-
     <Route path="/about">
-        <LL component={() => import('./pages/about/About.svelte')} />
+        <LL component={async () => import('./pages/about/About.svelte')} />
     </Route>
 
     <Route path="/services">
-        <LL component={() => import('./pages/services/Services.svelte')} />
+        <LL component={async () => import('./pages/services/Services.svelte')} />
     </Route>
 
     <Route path="/pwa">
-        <LL component={() => import('./pages/pwa/PWA.svelte')} />
+        <LL component={async () => import('./pages/pwa/PWA.svelte')} />
     </Route>
 
     <!-- Footer links -->
     <Route path="/privacy-policy">
-        <LL component={() => import('./pages/home/PrivacyPolicy.svelte')} />
+        <LL component={async () => import('./pages/home/PrivacyPolicy.svelte')} />
     </Route>
     <Route path="/contact">
-        <LL component={() => import('./pages/contact/Contact.svelte')} />
+        <LL component={async () => import('./pages/contact/Contact.svelte')} />
     </Route>
 
     <!-- Custom 404 -->
     <Route fallback>
-        <LL component={() => import('./lib/NotFound.svelte')} />
+        <LL component={async () => import('./lib/NotFound.svelte')} />
     </Route>
 </Transition>
 

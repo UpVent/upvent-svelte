@@ -23,6 +23,7 @@
         background: url('../../assets/images/waves.webp');
         background-size: contain;
         background-repeat: repeat-x;
+        height: 500px;
     }
 
     .text-glow-white { text-shadow: 1px 1px 1px #010101; }
