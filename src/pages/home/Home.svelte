@@ -1,5 +1,12 @@
-{#await import("./IndexJumbotron.svelte") then IndexJumbotron }<IndexJumbotron.default/>{/await}
-{#await import("./Features.svelte") then Features }<Features.default/>{/await}
-{#await import("./Libre.svelte") then Libre}<Libre.default/>{/await}
-{#await import("./Benefits.svelte") then Benefits}<Benefits.default/>{/await}
-{#await import("./StartNow.svelte") then StartNow}<StartNow.default/>{/await}
+<script>
+    import Benefits from "./Benefits.svelte";
+    import Features from "./Features.svelte";
+    import IndexJumbotron from "./IndexJumbotron.svelte";
+    import Libre from "./Libre.svelte";
+    import StartNow from "./StartNow.svelte";
+</script>
+<IndexJumbotron/>
+<Features/>
+<Libre/>
+<Benefits/>
+<StartNow/>
