@@ -23,7 +23,7 @@
                 <label class="form-label mt-2 mb-1" for="message">Mensaje</label>
                 <textarea class="form-control" rows="5" name="message" id="message" placeholder="Aenean lacinia bibendum nulla sed consectetur. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor." required></textarea>
                 <input class="form-control" type="hidden" name="_subject" id="email-subject" value="Contact Form Submission">
-                <h-captcha class="form-control m-2 p-2" id="contactCaptcha" site-key="44e5fa13-d8d3-4d8b-9dbf-887f16065702" size="normal" onVerified="onCaptchaVerified"></h-captcha>
+                <h-captcha class="form-control border-0 m-2 p-2" id="contactCaptcha" site-key="44e5fa13-d8d3-4d8b-9dbf-887f16065702" size="normal" onVerified="onCaptchaVerified"></h-captcha>
             </fieldset>
             <input class="btn btn-primary mt-3 mb-3" type="submit" on:submit={handle_submit} value="Enviar">
         </form>

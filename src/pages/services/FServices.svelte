@@ -27,7 +27,7 @@
 
 <section class="container">
     <div class="container text-center mt-5 mb-5">
-        <h2 class="fw-bold display-3">Software <span class="text-primary text-glow">libre</span> al alcance de su mano.</h2>
+        <h2 class="fw-bold display-3">Software <span class="text-primary">libre</span> al alcance de su mano.</h2>
         <p class="text-muted"> Conozca los proyectos de Software Libre que UpVent ha preparado para ustedy su empresa.</p>
     </div>
     <div class="container">
@@ -57,6 +57,17 @@
         <p class="mt-2 text-3lx text-muted">UpVent construye software eficiente desde el primer día, listo para uso empresarial y proporcionando una estabilidad sólida con actualizaciones periódicas gratuitas.</p>
     </div>
     <div class="container"><img class="img-fluid" src={oneplace} alt=""/></div>
-    <p class="text-center display-5  text-glow text-primary fw-bold">¡Todo en un solo lugar!</p>
+    <p class="text-center display-5 text-primary fw-bold">¡Todo en un solo lugar!</p>
     <p class="text-center lead">Ofrecemos una variedad de servicios y software pre-hecho. ¿Necesita de un CRM, un e-commerce o una solución personalizada? Para UpVent no hay obstáculos, ¡Lo tenemos cubierto en cualquier necesidad tecnológica!</p>
+</section>
+
+<section class="container mt-3">
+    <div class="container">
+        <p class="h3 lead">Otros de nuestros servicios</p>
+        <ul>
+            <li>Desarrollo de tiendas online (e-commerce)</li>
+            <li>Alojamiento Web (Hosting)</li>
+            <li>Consultoría de seguridad de servidores web</li>
+        </ul>
+    </div>
 </section>

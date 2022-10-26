@@ -29,7 +29,7 @@
 
 <section class="px-4 py-5 my-5 text-center">
         <img class="d-block mx-auto mb-4 rounded-circle shadow" src="{logo}" alt="Logo de UpVent circular" width="100" height="100" loading="lazy"/>
-    <p class="h1 display-5 fw-bold">Comenzar a trabajar con <span class="h1 display-5 fw-bold text-primary text-glow">UpVent.</span></p>
+    <p class="h1 display-5 fw-bold">Comenzar a trabajar con <span class="h1 display-5 fw-bold text-primary">UpVent.</span></p>
     <div class="col-lg-6 mx-auto">
         <p class="lead mb-4">Potencie su negocio ahora mismo, mire nuestro portafolio de trabajo o visite nuestra tienda de servicios para comenzar hoy mismo.</p>
         <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">

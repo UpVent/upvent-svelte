@@ -9,7 +9,7 @@
     <div class="container mt-5 mb-5">
         <div class="row justify-content-center">
             <div class="col-12 col-md-10 col-lg-8 text-center">
-                <h2 class="fw-bold"> Soluciones en la nube <span class="text-primary text-glow">para todo tipo de negocios</span>.</h2>
+                <h2 class="fw-bold"> Soluciones en la nube <span class="text-primary">para todo tipo de negocios</span>.</h2>
                 <p class="fs-5 text-muted mb-9">
                     UpVent es una empresa de soluciones creadas con software libre para
                     su proyecto, empresa o equipo de trabajo. Soluciones, Infraestructura. ¡Lo tenemos cubierto!

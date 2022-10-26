@@ -8,7 +8,7 @@
           </div>
           <div class="col-12 col-md-6">
             <h1 class="display-1 fw-bold">
-                <div>Trabajo <span class="text-glow text-primary">Inteligente</span></div>
+                <div>Trabajo <span class="text-primary">Inteligente</span></div>
             </h1>
             <p class="fs-4 text-muted mb-0">
                 Las herramientas de productividad pueden ayudarlo o entorpecer su trabajo.
