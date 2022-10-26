@@ -71,10 +71,10 @@
                         {record.nombre}
                     </div>
                     <div class="card-body">
-                        <p class="rounded-pill m-2 bg-light fw-bold shadow-sm text-center  p-1">{(record.precio).toLocaleString('es-MX', { style: 'currency', currency: 'MXN' })}</p>
+                        <p class="rounded-pill m-2 bg-light fw-bold shadow-sm text-center p-1">${(record.precio)} MXN</p>
                         <br>
                         <div class="d-grid gap-2">
-                            <a href="{record.stripe_payment_link} MXN" class="btn btn-primary m-0">Comprar <CartFill/> </a>
+                            <a target="_blank" rel="noopener, noreferrer" href="{record.stripe_payment_link}" class="btn btn-primary m-0">Comprar <CartFill/> </a>
                             <button on:click={toggleVisible} class="btn btn-stripe btn-secondary">Pagar con QR <QrCode/></button>
                         </div>
                         {#if visible}

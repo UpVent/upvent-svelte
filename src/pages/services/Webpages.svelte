@@ -3,7 +3,18 @@
     import Brush from 'svelte-bootstrap-icons/lib/Brush.svelte';
     import responsive from '../../assets/images/responsive.svg';
     import ecommerce from '../../assets/images/ecommerce.svg';
+
+    import PersonHearts from 'svelte-bootstrap-icons/lib/PersonHearts.svelte';
+    import Laptop from 'svelte-bootstrap-icons/lib/Laptop.svelte';
+    import CodeSlash from 'svelte-bootstrap-icons/lib/CodeSlash.svelte';
+    import Award from 'svelte-bootstrap-icons/lib/Award.svelte';
 </script>
+
+<style>
+    .upvent-background {
+        background-color: #007BFC;
+    }
+</style>
 
 <section class="container mt-5 mb-5">
     <div class="row text-right align-items-center">
@@ -48,6 +59,50 @@
             <p class="lead">Si ya tiene un sitio web y desea mejorarlo tenemos la solución ideal para usted.
                 <br>
                 Con UpVent podrá elegir entre convertirlo a una PWA o aumentar su velocidad hasta 20* veces más.</p>
+        </div>
+    </div>
+</section>
+
+<section class="container-fluid upvent-background text-light p-4 mt-2 mb-2">
+    <div class="container">
+        <div class="row">
+            <div class="col text-center">
+                <div class="container p-2">
+                    <PersonHearts height={48} width={48}/>
+                    <p class="h2 fw-bold">+20</p>
+                    <hr>
+                    Clientes Satisfechos.
+                </div>
+            </div>
+
+
+            <div class="col text-center">
+                <div class="container p-2">
+                    <Laptop height={48} width={48}/>
+                    <p class="h2 fw-bold">+10</p>
+                    <hr>
+                    Páginas Web Realizadas.
+                </div>
+            </div>
+
+            <div class="col text-center">
+                <div class="container p-2">
+                    <CodeSlash height={48} width={48}/>
+                    <p class="h2 fw-bold">+1,000,000</p>
+                    <hr>
+                    De líneas de código libre.
+                </div>
+            </div>
+
+            <div class="col text-center">
+                <div class="container p-2">
+                    <Award height={48} width={48}/>
+                    <p class="h2 fw-bold">+4</p>
+                    <hr>
+                    Casos de éxito en México.
+                </div>
+            </div>
+
         </div>
     </div>
 </section>
