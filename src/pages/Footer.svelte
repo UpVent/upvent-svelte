@@ -16,7 +16,7 @@
     // Import upvent logo for footer
     import logo from '../assets/images/logo-grey.webp';
 
-    async function shar() {
+    async function shar(): void {
         if (navigator.canShare) { navigator.share({ title: 'UpVent Technologies', text: '¡Visita UpVent!', url: 'https://upvent.codes/' }); }
     }
 </script>

@@ -8,9 +8,6 @@ export default defineConfig({
   optimizeDeps: {
     exclude: ['tinro']
   },
-  server: {
-    hmr: false
-  },
   plugins: [
     svelte({
       experimental: {

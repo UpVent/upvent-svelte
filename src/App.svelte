@@ -33,7 +33,7 @@
     }
 
     #nav-upvent a:global(.active-nav) {
-        border-bottom:  0.3rem solid #007BFC;
+        border-bottom:  0.2rem solid #007BFC;
     }
 </style>
 
