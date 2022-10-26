@@ -49,7 +49,7 @@
             <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4">
                 {#each $api_result as record}
                     <div class="col">
-                        <a rel="noopener" href="{record.enlace}" aria-label="{record.enlace}" target="_blank">
+                        <a rel="noopener, noreferrer" href="{record.enlace}" aria-label="{record.enlace}" target="_blank">
                             <img height="50" width="60" class="img-fluid" src="{ client.records.getFileUrl(record, record.imagen_destacada) }" alt="{record.nombre}" loading="lazy"/>
                         </a>
                     </div>
