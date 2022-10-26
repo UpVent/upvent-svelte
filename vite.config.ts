@@ -10,9 +10,9 @@ export default defineConfig({
   },
   plugins: [
     svelte({
+      prebundleSvelteLibraries: true,
       experimental: {
         useVitePreprocess: true,
-        prebundleSvelteLibraries: true
       }
     }),
     ViteWebfontDownload(),
