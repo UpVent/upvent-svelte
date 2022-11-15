@@ -4,7 +4,7 @@
       <div class="container">
         <div class="row align-items-center text-center text-md-left">
           <div class="col-12 col-md-6">
-            <img src="{work}" alt="..." class="img-fluid mw-130 float-right mb-6 mb-md-0">
+            <img src="{work}" alt="..." class="img-fluid float-right mb-md-0">
           </div>
           <div class="col-12 col-md-6">
             <h1 class="display-1 fw-bold">

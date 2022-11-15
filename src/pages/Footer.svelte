@@ -16,7 +16,7 @@
     // Import upvent logo for footer
     import logo from '../assets/images/logo-grey.webp';
 
-    async function shar(): void {
+    async function shar(): Promise<void> {
         if (navigator.canShare) { navigator.share({ title: 'UpVent Technologies', text: '¡Visita UpVent!', url: 'https://upvent.codes/' }); }
     }
 </script>
@@ -25,8 +25,7 @@
 
 <footer class="text-center text-muted bg-light-gray">
     <div class="container p-4">
-        <section class="mt-5">
-            <div class="row">
+            <div class="row mt-5">
                 <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
                     <div class="container">
                         <img class="img-fluid mb-1" width="116" height="47" src="{logo}" alt="UpVent Logo" loading="lazy"/>
@@ -81,10 +80,9 @@
                     </ul>
                 </div>
             </div>
-        </section>
     </div>
 
-    <section class="container mt-5 mb-5 text-center-p-4 text-dark">
+    <section class="container mt-5 mb-5 text-center-p-4 text-dark small">
         <p>El código fuente de esta página se encuentra bajo la <a class="text-decoration-none link-dark" href="https://www.gnu.org/licenses/agpl-3.0.html">Licencia Pública General de Affero (GNU) versión 3</a>. Excepto donde se indique lo contrario, el trabajo escrito, blogs, opiniones y parte del contenido visual se encuentra bajo la <a class="text-decoration-none link-dark" href="https://creativecommons.org/licenses/by-nd/3.0/deed.es">Licencia Creative Commons Atribución-SinDerivadas 3.0 No portada (CC BY-ND 3.0)</a></p>
     </section>
 

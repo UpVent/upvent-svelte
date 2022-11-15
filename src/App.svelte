@@ -23,7 +23,6 @@
     @supports (backdrop-filter: none) {
         .navbar-upvent {
             background-color:rgba(254, 245, 254, 0.6);
-            -webkit-backdrop-filter: blur(20px);
             backdrop-filter: blur(20px);
         }
     }
@@ -34,16 +33,17 @@
 
     #nav-upvent a:global(.active-nav) {
         border-bottom:  0.2rem solid #007BFC;
+        border-radius: 0;
     }
 </style>
 
 <!-- Navbar component -->
 <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-2 mb-0 sticky-md-top navbar-upvent">
-    <a href="/" class="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none navbar-brand">
+    <a href="/" class="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark navbar-brand">
         <img class="mx-auto" width="148" height="51" src="{logo}" alt="UpVent Logo" loading="lazy">
     </a>
 
-    <ul id="nav-upvent" class="nav nav-pills col-12 mx-auto col-md-auto mb-2 justify-content-center mb-md-0">
+    <ul id="nav-upvent" class="nav col-12 mx-auto col-md-auto mb-2 justify-content-center mb-md-0">
         <li><a class="fs-5 nav-link px-2 link-dark" href="/" use:active active-class="active-nav" exact>Inicio</a></li>
         <li><a class="fs-5 nav-link px-2 link-dark" href="/about" use:active active-class="active-nav">Nosotros</a></li>
         <li><a class="fs-5 nav-link px-2 link-dark" href="/services" use:active active-class="active-nav">Servicios</a></li>
