@@ -37,7 +37,6 @@
     }
 </style>
 
-<!-- Navbar component -->
 <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-2 mb-0 sticky-md-top navbar-upvent">
     <a href="/" class="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark navbar-brand">
         <img class="mx-auto" width="148" height="51" src="{logo}" alt="UpVent Logo" loading="lazy">
@@ -55,7 +54,6 @@
     </div>
 </header>
 
-<!-- Main route handling -->
 <Transition>
     <Route path="/"><Home/></Route>
 
@@ -71,19 +69,16 @@
         <LL component={async () => import('./pages/pwa/PWA.svelte')} />
     </Route>
 
-    <!-- Footer links -->
     <Route path="/privacy-policy">
         <LL component={async () => import('./pages/home/PrivacyPolicy.svelte')} />
     </Route>
     <Route path="/contact">
         <LL component={async () => import('./pages/contact/Contact.svelte')} />
     </Route>
-
-    <!-- Custom 404 -->
+    
     <Route fallback>
         <LL component={async () => import('./lib/NotFound.svelte')} />
     </Route>
 </Transition>
 
-<!-- Always show the Footer component -->
 <Footer/>
