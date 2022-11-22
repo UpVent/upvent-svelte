@@ -11,20 +11,17 @@
     import logo from '../../assets/images/upvent-main.webp';
 
     // Database imports
-    import PocketBase from 'pocketbase';
+    import PocketBase from 'pocketbase'; 
     
     // Database usage
-    const client: PocketBase = new PocketBase(fapi_url);
-
+    const pb: PocketBase = new PocketBase(fapi_url);
     onMount(async () => {
-        client.users.authViaEmail(api_user, api_user_pass);
-        $api_result = await client.records.getFullList('tecnologias', 4, {
+        pb.collection('users').authWithPassword(api_user, api_user_pass);
+        $api_result = await pb.collection('tecnologias').getFullList(4, {
             sort: '-created',
         });
-        client.authStore.clear();
+        pb.authStore.clear();
     });
-
-    onDestroy(() => { $api_result.length = 0; });
 </script>
 
 <section class="px-4 py-5 my-5 text-center">
@@ -50,7 +47,7 @@
                 {#each $api_result as record}
                     <div class="col">
                         <a rel="noopener noreferrer" href="{record.enlace}" aria-label="{record.enlace}" target="_blank">
-                            <img height="50" width="60" class="img-fluid" src="{ client.records.getFileUrl(record, record.imagen_destacada) }" alt="{record.nombre}" loading="lazy"/>
+                            <img height="50" width="60" class="img-fluid" src="{ pb.getFileUrl(record, record.imagen_destacada) }" alt="{record.nombre}" loading="lazy"/>
                         </a>
                     </div>
                 {/each}

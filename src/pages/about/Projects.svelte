@@ -13,12 +13,12 @@
     import StarFill from 'svelte-bootstrap-icons/lib/StarFill.svelte';
     
     /** Database Connect */
-    const client: PocketBase = new PocketBase(fapi_url);
+    const pb: PocketBase = new PocketBase(fapi_url);
 
     onMount(async () => {
-        client.users.authViaEmail(api_user, api_user_pass);
-        $api_result = await client.records.getFullList('proyecto_portafolio', 10);
-        client.authStore.clear();
+        pb.collection('users').authWithPassword(api_user, api_user_pass);
+        $api_result = await pb.collection('proyecto_portafolio').getFullList(10);
+        pb.authStore.clear();
     });
 
     onDestroy(() => { $api_result.length = 0; });
@@ -44,7 +44,7 @@
                                 <span class="btn btn-warning shadow-sm pe-none position-absolute top-0 start-0 translate-middle-y ms-4"><StarFill/></span>
                             {/if}
                         <blockquote class="card-body">
-                            <div class="container img-container"><img height="100" class="img-fluid m-1 shadow-sm rounded-3" src="{ client.records.getFileUrl(record, record.imagen_destacada) }" alt="proyecto de UpVent"></div>
+                            <div class="container img-container"><img height="100" class="img-fluid m-1 shadow-sm rounded-3" src="{ pb.getFileUrl(record, record.imagen_destacada) }" alt="proyecto de UpVent"></div>
                             <p class="lead fw-bold">{record.nombre}</p>
                             {#if !record.sigue_activo}
                                <span class="badge rounded-pill text-bg-danger">Inactivo</span> 

@@ -14,7 +14,7 @@
     "@tsconfig/svelte": "^3.0.0",
     "@vitest/coverage-c8": "^0.25.2",
     "bootstrap": "^5.2.2",
-    "pocketbase": "^0.7.1",
+    "pocketbase": "^0.8.0",
     "svelte": "^3.52.0",
     "svelte-bootstrap-icons": "^2.2.0",
     "svelte-check": "^2.9.2",

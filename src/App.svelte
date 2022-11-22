@@ -20,20 +20,18 @@
 <style>
     :global(*) { font-family: 'Poppins'; }
 
+    .navbar-upvent { background-color: #FAFAFA; }
+
+    #nav-upvent a:global(.active-nav) {
+        border-bottom:  0.2rem solid #007BFC;
+        border-radius: 0;
+    }
+
     @supports (backdrop-filter: none) {
         .navbar-upvent {
             background-color:rgba(254, 245, 254, 0.6);
             backdrop-filter: blur(20px);
         }
-    }
-
-    @supports not (backdrop-filter: none) {
-        .navbar-upvent { background-color: #FAFAFA; }
-    }
-
-    #nav-upvent a:global(.active-nav) {
-        border-bottom:  0.2rem solid #007BFC;
-        border-radius: 0;
     }
 </style>
 

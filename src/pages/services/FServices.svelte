@@ -11,15 +11,15 @@
     import Download from 'svelte-bootstrap-icons/lib/Download.svelte';
 
     /** Database Connect */
-    const client: PocketBase = new PocketBase(fapi_url);
+    const pb: PocketBase = new PocketBase(fapi_url);
 
     // Image imports
     import oneplace from '../../assets/images/oneplace.webp';
 
     onMount(async () => {
-        client.users.authViaEmail(api_user, api_user_pass);
-        $api_result = await client.records.getFullList('proyectos_libres', 10);
-        client.authStore.clear();
+        pb.collection('users').authWithPassword(api_user, api_user_pass);
+        $api_result = await pb.collection('proyectos_libres').getFullList(10);
+        pb.authStore.clear();
     });
 
     onDestroy(() => { $api_result.length = 0; });
@@ -36,7 +36,7 @@
                 <div class="col">
                     <figure>
                         <div class="card h-75 position-relative border-0 shadow-sm p-2">
-                            <img height="100" width="100" class="img-fluid m-1 shadow-md rounded-circle" src="{client.records.getFileUrl(record, record.imagen)}" alt="Producto de software libre">
+                            <img height="100" width="100" class="img-fluid m-1 shadow-md rounded-circle" src="{pb.getFileUrl(record, record.imagen)}" alt="Producto de software libre">
                             <p class="lead fw-bold">{record.nombre}</p>
                         </div>
                         <blockquote>

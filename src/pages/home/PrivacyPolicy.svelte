@@ -8,12 +8,12 @@
     import PocketBase from 'pocketbase';
 
     // Database usage
-    const client: PocketBase = new PocketBase(fapi_url);
+    const pb: PocketBase = new PocketBase(fapi_url);
 
     onMount(async () => {
-        client.users.authViaEmail(api_user, api_user_pass);
-        $api_result = await client.records.getFullList('politica_privacidad', 1);
-        client.authStore.clear();
+        pb.collection('users').authWithPassword(api_user, api_user_pass);
+        $api_result = await pb.collection('politica_privacidad').getFullList(1);
+        pb.authStore.clear();
     });
 
     onDestroy(() => { $api_result.length = 0; });

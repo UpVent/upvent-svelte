@@ -14,18 +14,18 @@
     import QrCode from 'svelte-bootstrap-icons/lib/QrCode.svelte';
 
     // Database usage
-    const client: PocketBase = new PocketBase(fapi_url);
+    const pb: PocketBase = new PocketBase(fapi_url);
 
     let visible: boolean = false;
 
     function toggleVisible() { visible = !visible; }
 
     onMount(async () => {
-        client.users.authViaEmail(api_user, api_user_pass);
-        $api_result = await client.records.getFullList('productos', 10, {
+        pb.collection('users').authWithPassword(api_user, api_user_pass);
+        $api_result = await pb.collection('productos').getFullList(10, {
             sort: '+created',
         });
-        client.authStore.clear();
+        pb.authStore.clear();
     });
 
     onDestroy(() => { $api_result.length = 0; });
@@ -66,7 +66,7 @@
         {#each $api_result as record}
             <div class="col">
                 <div class="card border-0 shadow-sm">
-                        <img class="img-fluid rounded-3" src="{ client.records.getFileUrl(record, record.imagen_destacada) }" alt="" loading="lazy">
+                        <img class="img-fluid rounded-3" src="{ pb.getFileUrl(record, record.imagen_destacada) }" alt="" loading="lazy">
                     <div class="card-header text-break border-0">
                         {record.nombre}
                     </div>
@@ -78,7 +78,7 @@
                             <button on:click={toggleVisible} class="btn btn-stripe btn-secondary">Pagar con QR <QrCode/></button>
                         </div>
                         {#if visible}
-                            <img height="200" width="200" class="m-2 shadow-sm rounded-3 img-fluid" src={client.records.getFileUrl(record, record.qr_de_producto)} alt={record.nombre} loading="lazy">
+                            <img height="200" width="200" class="m-2 shadow-sm rounded-3 img-fluid" src={pb.getFileUrl(record, record.qr_de_producto)} alt={record.nombre} loading="lazy">
                         {/if}
                     </div>
                 </div>
