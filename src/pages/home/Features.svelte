@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
     import universal from '../../assets/images/universal.svg';
     import secure from '../../assets/images/secure.svg';
     import escalable from '../../assets/images/escalable.svg';

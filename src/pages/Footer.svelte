@@ -30,7 +30,7 @@
                     <div class="container">
                         <img class="img-fluid mb-1" width="116" height="47" src="{logo}" alt="UpVent Logo" loading="lazy"/>
                     </div>
-                    <p class="text-dark">Todos los derechos reservados © - UpVent Technologies 2020 - {new Date().getFullYear()} . Todos los logos son marcas registradas de sus respectivos dueños.</p>
+                    <p class="link-dark">Todos los derechos reservados © - UpVent Technologies 2020 - {new Date().getFullYear()} . Todos los logos son marcas registradas de sus respectivos dueños.</p>
                     <div class="container mt-2 mb-2">
                         <a aria-label="Facebook" class="text-muted px-2" href="{facebook_link}"><Facebook width={24} height={24}/></a>
                         <a aria-label="Twitter" class="text-muted px-2" href="{twitter_link}"><Twitter width={24} height={24}/></a>
@@ -45,7 +45,7 @@
                 </div>
 
                 <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-                    <p class="h4 text-uppercase text-dark">Enlaces Rápidos</p>
+                    <p class="h4 text-uppercase link-dark">Enlaces Rápidos</p>
                     <ul class="list-unstyled mb-0">
                         <li class="m-2">
                             <a href="/" class="text-decoration-none link-dark">Inicio</a>
@@ -66,7 +66,7 @@
                 </div>
 
                 <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-                    <p class="h4 text-uppercase text-dark">Enlaces Importantes</p>
+                    <p class="h4 text-uppercase link-dark">Enlaces Importantes</p>
                     <ul class="list-unstyled mb-0">
                         <li class="m-2">
                             <a rel="nofollow" href="https://github.com/UpVent" class="text-decoration-none link-dark">Repositorio de Código Libre en GitHub</a>
@@ -82,11 +82,11 @@
             </div>
     </div>
 
-    <section class="container mt-5 mb-5 text-center-p-4 text-dark small">
+    <section class="container mt-5 mb-5 text-center-p-4 link-dark small">
         <p>El código fuente de esta página se encuentra bajo la <a class="text-decoration-none link-dark" href="https://www.gnu.org/licenses/agpl-3.0.html">Licencia Pública General de Affero (GNU) versión 3</a>. Excepto donde se indique lo contrario, el trabajo escrito, blogs, opiniones y parte del contenido visual se encuentra bajo la <a class="text-decoration-none link-dark" href="https://creativecommons.org/licenses/by-nd/3.0/deed.es">Licencia Creative Commons Atribución-SinDerivadas 3.0 No portada (CC BY-ND 3.0)</a></p>
     </section>
 
-    <section class="text-center text-dark border-top p-3">
+    <section class="text-center link-dark border-top p-3">
         © 2020 - {new Date().getFullYear()} Copyright:
         <a class="link-dark" href="https://upvent.codes/">UpVent Technologies</a> -
         <a class="link-dark" href="/privacy-policy"> Política de privacidad</a> -

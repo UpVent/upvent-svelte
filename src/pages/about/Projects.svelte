@@ -16,7 +16,7 @@
     const pb: PocketBase = new PocketBase(fapi_url);
 
     onMount(async () => {
-        pb.collection('users').authWithPassword(api_user, api_user_pass);
+        await pb.collection('users').authWithPassword(api_user, api_user_pass);
         $api_result = await pb.collection('proyecto_portafolio').getFullList(10);
         pb.authStore.clear();
     });

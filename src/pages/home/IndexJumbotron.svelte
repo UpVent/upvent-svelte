@@ -53,8 +53,8 @@
                     Para negocios inteligentes.
                 </h1>
 
-                <p class="text-dark text-center text-md-start mb-6 mb-lg-8">
-                    Impulse la innovación en su negocio con soluciones sencillas, accesibles y éticas de software libre. Conozca por que las pequeñas y medianas empresas Mexicanas confían en UpVent.
+                <p class="link-dark text-center text-md-start mb-6 mb-lg-8">
+                    Impulse la innovación en su negocio con soluciones sencillas y éticas de software libre. Conozca por que las pequeñas y medianas empresas Mexicanas confían en UpVent.
                 </p>
                 
             <div class="text-center text-md-start">

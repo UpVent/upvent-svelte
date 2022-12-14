@@ -17,7 +17,7 @@
     import oneplace from '../../assets/images/oneplace.webp';
 
     onMount(async () => {
-        pb.collection('users').authWithPassword(api_user, api_user_pass);
+        await pb.collection('users').authWithPassword(api_user, api_user_pass);
         $api_result = await pb.collection('proyectos_libres').getFullList(10);
         pb.authStore.clear();
     });

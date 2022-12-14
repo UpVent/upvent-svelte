@@ -21,7 +21,7 @@
     function toggleVisible() { visible = !visible; }
 
     onMount(async () => {
-        pb.collection('users').authWithPassword(api_user, api_user_pass);
+        await pb.collection('users').authWithPassword(api_user, api_user_pass);
         $api_result = await pb.collection('productos').getFullList(10, {
             sort: '+created',
         });

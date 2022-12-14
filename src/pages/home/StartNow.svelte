@@ -16,12 +16,12 @@
     // Database usage
     const pb: PocketBase = new PocketBase(fapi_url);
     onMount(async () => {
-        pb.collection('users').authWithPassword(api_user, api_user_pass);
-        $api_result = await pb.collection('tecnologias').getFullList(4, {
-            sort: '-created',
-        });
+        await pb.collection('users').authWithPassword(api_user, api_user_pass);
+        $api_result = await pb.collection('tecnologias').getFullList(4);
         pb.authStore.clear();
     });
+
+    onDestroy(async () => { $api_result.length = 0; });
 </script>
 
 <section class="px-4 py-5 my-5 text-center">
