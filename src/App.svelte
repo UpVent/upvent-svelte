@@ -18,8 +18,6 @@
 </script>
 
 <style>
-    :global(*) { font-family: 'Poppins'; }
-
     .navbar-upvent { background-color: #FAFAFA; }
 
     #nav-upvent a:global(.active-nav) {
