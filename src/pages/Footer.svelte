@@ -15,10 +15,7 @@
 
     // Import upvent logo for footer
     import logo from '../assets/images/logo-grey.webp';
-
-    async function shar(): Promise<void> {
-        if (navigator.canShare) { navigator.share({ title: 'UpVent Technologies', text: '¡Visita UpVent!', url: 'https://upvent.codes/' }); }
-    }
+    import { share } from '../helpers/share';
 </script>
 
 <style>.bg-light-gray { background-color: #f9fafb; }</style>
@@ -40,12 +37,12 @@
                         <a aria-label="As-Card" class="text-muted px-2" href="{ascard_link}"><PostcardHeart width={24} height={24}/></a>
                         <a aria-label="Whatsapp" class="text-muted px-2" href="{whatsapp_link}"><Whatsapp width={24} height={24}/></a>
                         <a aria-label="Mail" class="text-muted px-2" href="{email_link}"><Envelope width={24} height={24}/></a>
-                        <button aria-label="Compartir" on:click={shar} class="btn text-muted px-2"><Share/></button>
+                        <button aria-label="Compartir" on:click={share} class="btn text-muted px-2"><Share/></button>
                     </div>
                 </div>
 
                 <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-                    <p class="h4 text-uppercase link-dark">Enlaces Rápidos</p>
+                    <p class="h4 link-dark">ENLACES RÁPIDOS</p>
                     <ul class="list-unstyled mb-0">
                         <li class="m-2">
                             <a href="/" class="text-decoration-none link-dark">Inicio</a>
@@ -66,7 +63,7 @@
                 </div>
 
                 <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-                    <p class="h4 text-uppercase link-dark">Enlaces Importantes</p>
+                    <p class="h4 link-dark">ENLACES IMPORTANTES</p>
                     <ul class="list-unstyled mb-0">
                         <li class="m-2">
                             <a rel="nofollow" href="https://github.com/UpVent" class="text-decoration-none link-dark">Repositorio de Código Libre en GitHub</a>
@@ -83,7 +80,7 @@
     </div>
 
     <section class="container mt-5 mb-5 text-center-p-4 link-dark small">
-        <p>El código fuente de esta página se encuentra bajo la <a class="text-decoration-none link-dark" href="https://www.gnu.org/licenses/agpl-3.0.html">Licencia Pública General de Affero (GNU) versión 3</a>. Excepto donde se indique lo contrario, el trabajo escrito, blogs, opiniones y parte del contenido visual se encuentra bajo la <a class="text-decoration-none link-dark" href="https://creativecommons.org/licenses/by-nd/3.0/deed.es">Licencia Creative Commons Atribución-SinDerivadas 3.0 No portada (CC BY-ND 3.0)</a></p>
+        <p>El código fuente de esta página se encuentra bajo la Licencia Pública General de Affero (GNU) versión 3. Excepto donde se indique lo contrario, el trabajo escrito, blogs, opiniones y parte del contenido visual se encuentra bajo la Licencia Creative Commons Atribución-SinDerivadas 3.0 No portada (CC BY-ND 3.0)</p>
     </section>
 
     <section class="text-center link-dark border-top p-3">
