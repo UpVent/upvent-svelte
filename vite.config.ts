@@ -1,5 +1,4 @@
 import { VitePWA } from 'vite-plugin-pwa';
-import { ViteWebfontDownload } from 'vite-plugin-webfont-dl';
 import { defineConfig } from 'vite';
 import { svelte } from '@sveltejs/vite-plugin-svelte';
 
@@ -12,7 +11,6 @@ export default defineConfig({
     svelte({
       prebundleSvelteLibraries: true,
     }),
-    ViteWebfontDownload(),
     VitePWA({
       registerType: 'autoUpdate',
       devOptions: {

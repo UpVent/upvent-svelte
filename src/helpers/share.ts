@@ -1,8 +1,8 @@
-export async function share(): Promise<void> {
+export async function share(shareText: string): Promise<void> {
     if (navigator.canShare) {
         navigator.share({ 
             title: 'UpVent Technologies',
-            text: '¡Visita UpVent!',
+            text: shareText,
             url: 'https://upvent.codes/'
         }); 
     } else {

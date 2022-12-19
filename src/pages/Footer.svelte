@@ -37,7 +37,7 @@
                         <a aria-label="As-Card" class="text-muted px-2" href="{ascard_link}"><PostcardHeart width={24} height={24}/></a>
                         <a aria-label="Whatsapp" class="text-muted px-2" href="{whatsapp_link}"><Whatsapp width={24} height={24}/></a>
                         <a aria-label="Mail" class="text-muted px-2" href="{email_link}"><Envelope width={24} height={24}/></a>
-                        <button aria-label="Compartir" on:click={share} class="btn text-muted px-2"><Share/></button>
+                        <button aria-label="Compartir" on:click={() => share('¡Visita UpVent en su sitio web!')} class="btn text-muted px-2"><Share/></button>
                     </div>
                 </div>
 
@@ -58,21 +58,6 @@
                         </li>
                         <li class="m-2">
                             <a href="/pwa" class="text-decoration-none link-dark">PWA Store</a>
-                        </li>
-                    </ul>
-                </div>
-
-                <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-                    <p class="h4 link-dark">ENLACES IMPORTANTES</p>
-                    <ul class="list-unstyled mb-0">
-                        <li class="m-2">
-                            <a rel="nofollow" href="https://github.com/UpVent" class="text-decoration-none link-dark">Repositorio de Código Libre en GitHub</a>
-                        </li>
-                        <li class="m-2">
-                            <a rel="nofollow" href="/privacy-policy" class="text-decoration-none link-dark">Términos y Condiciones</a>
-                        </li>
-                        <li class="m-2">
-                            <a rel="nofollow" href="/" class="text-decoration-none link-dark">Recompensas <span class="badge rounded-pill text-bg-warning">¡Próximamente!</span> </a>
                         </li>
                     </ul>
                 </div>
