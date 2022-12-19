@@ -5,8 +5,8 @@
     import rapido from '../../assets/images/rapido.svg';
 </script>
 
-<section class="pt-8 pt-md-10">
-    <div class="container mt-5 mb-5">
+<section>
+    <div class="container mt-2 mb-4">
         <div class="row justify-content-center">
             <div class="col-12 col-md-10 col-lg-8 text-center">
                 <h2 class="fw-bold"> Soluciones en la nube <span class="text-primary">para todo tipo de negocios</span>.</h2>

@@ -65,20 +65,20 @@
     <div class="row row-cols-sm-1 row-cols-md-3">
         {#each $api_result as record}
             <div class="col">
-                <div class="card border-0 shadow-sm">
+                <div class="card border-0 shadow-sm-sm">
                         <img class="img-fluid rounded-3" src="{ pb.getFileUrl(record, record.imagen_destacada) }" alt="" loading="lazy">
                     <div class="card-header text-break border-0">
                         {record.nombre}
                     </div>
                     <div class="card-body">
-                        <p class="rounded-pill m-2 bg-light fw-bold shadow-sm text-center p-1">${(record.precio)} MXN</p>
+                        <p class="rounded-pill m-2 bg-light fw-bold shadow-sm-sm text-center p-1">${(record.precio)} MXN</p>
                         <br>
                         <div class="d-grid gap-2">
                             <a target="_blank" rel="noopener, noreferrer" href="{record.stripe_payment_link}" class="btn btn-primary m-0">Comprar <CartFill/> </a>
                             <button on:click={toggleVisible} class="btn btn-stripe btn-secondary">Pagar con QR <QrCode/></button>
                         </div>
                         {#if visible}
-                            <img height="200" width="200" class="m-2 shadow-sm rounded-3 img-fluid" src={pb.getFileUrl(record, record.qr_de_producto)} alt={record.nombre} loading="lazy">
+                            <img height="200" width="200" class="m-2 shadow-sm-sm rounded-3 img-fluid" src={pb.getFileUrl(record, record.qr_de_producto)} alt={record.nombre} loading="lazy">
                         {/if}
                     </div>
                 </div>

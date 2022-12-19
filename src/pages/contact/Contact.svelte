@@ -21,7 +21,7 @@
 
 <section class="container">
     <h1>Contactános</h1>
-    <section class="mx-auto border-0 shadow-sm m-3 rounded border-1 p-3">
+    <section class="mx-auto border-0 shadow-sm-sm m-3 rounded border-1 p-3">
         <form class="form" method="post">
             <fieldset id="fs-frm-inputs">
                 <label class="form-label" for="full-name">Nombre Completo</label>

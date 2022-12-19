@@ -35,8 +35,8 @@
             {#each $api_result as record}
                 <div class="col">
                     <figure>
-                        <div class="card h-75 position-relative border-0 shadow-sm p-2">
-                            <img height="100" width="100" class="img-fluid m-1 shadow-md rounded-circle" src="{pb.getFileUrl(record, record.imagen)}" alt="Producto de software libre">
+                        <div class="card h-75 position-relative border-0 shadow-sm-sm p-2">
+                            <img height="100" width="100" class="img-fluid m-1 shadow-sm-md rounded-circle" src="{pb.getFileUrl(record, record.imagen)}" alt="Producto de software libre">
                             <p class="lead fw-bold">{record.nombre}</p>
                         </div>
                         <blockquote>

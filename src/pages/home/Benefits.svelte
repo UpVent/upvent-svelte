@@ -6,7 +6,7 @@
 
 <section class="container text-center mt-5 mb-5">
         <p class="h1">Beneficios</p>
-        <p class="lead text-muted small">Conozca los beneficios que UpVent tiene para usted y su empresa</p>
+        <p class="lead text-muted">Conozca los beneficios que UpVent tiene para usted y su empresa</p>
 </section>
 
 <section class="container mt-5 mb-5">
@@ -27,7 +27,7 @@
     <div class="row">
         <div class="col-md-7 order-md-2">
             <p class="h2">¡A favor de la educación! <span class="text-muted">Aprenda con nosotros</span></p>
-            <p class="lead">UpVent se fundó con la visión de compartir el conocimiento. Tenemos la promesa de educar de forma abierta y gratuita, llevando el conocimiento de nuestro equipo a todos los individuos que podamos.</p>
+            <p class="lead">UpVent se fundó con la visión de compartir el conocimiento. Tenemos la promesa de educar de forma abierta y gratuita, llevando nuestro conocimiento a todos los individuos que podamos.</p>
         </div>
         <div class="col-md-5 order-md-1">
             <img width="276" height="193" class="img-fluid" src="{education}" alt="Imágen mostrando a una persona leyendo un libro, sentada debajo de un árbol" loading="lazy">
@@ -37,8 +37,7 @@
     <div class="row">
         <div class="col-md-7">
             <p class="h2">La estabilidad primero. <span class="text-muted">Puede confiar en UpVent</span></p>
-            <p class="lead">UpVent mejorará constantemente sus tecnologías actuales, siempre procurando la estabilidad por encima de cualquier otra cualidad que podamos ofrecer, esto se hace con el objetivo de fortalecer su relación con los individuos que lo conforman.
-            </p>
+            <p class="lead">UpVent mejorará constantemente sus tecnologías actuales, siempre procurando la estabilidad por encima de cualquier otra cualidad que podamos ofrecer.</p>
         </div>
         <div class="col-md-5">
             <img width="276" height="182" class="img-fluid" src="{brain}" alt="Imágen mostrando un cerebro y una bombilla de fondo" loading="lazy">

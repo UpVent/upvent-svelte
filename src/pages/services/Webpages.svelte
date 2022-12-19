@@ -56,9 +56,7 @@
         </div>
         <div class="col-12 col-md-6 col-lg-5 ml-md-auto text-left">
             <h1 class="fw-bold display-3">Mejora de sitios</h1>
-            <p class="lead">Si ya tiene un sitio web y desea mejorarlo tenemos la solución ideal para usted.
-                <br>
-                Con UpVent podrá elegir entre convertirlo a una PWA o aumentar su velocidad hasta 20* veces más.</p>
+            <p class="lead">Si ya tiene un sitio web y desea mejorarlo tenemos la solución ideal para usted. Con UpVent podrá elegir entre convertirlo a una PWA o aumentar la velocidad de su sitio.</p>
         </div>
     </div>
 </section>
@@ -69,17 +67,16 @@
             <div class="col text-center">
                 <div class="container p-2">
                     <PersonHearts height={48} width={48}/>
-                    <p class="h2 fw-bold">+20</p>
+                    <p class="h2 fw-bold">+21</p>
                     <hr>
                     Clientes Satisfechos.
                 </div>
             </div>
 
-
             <div class="col text-center">
                 <div class="container p-2">
                     <Laptop height={48} width={48}/>
-                    <p class="h2 fw-bold">+10</p>
+                    <p class="h2 fw-bold">+11</p>
                     <hr>
                     Páginas Web Realizadas.
                 </div>
@@ -88,7 +85,7 @@
             <div class="col text-center">
                 <div class="container p-2">
                     <CodeSlash height={48} width={48}/>
-                    <p class="h2 fw-bold">+1,000,000</p>
+                    <p class="h2 fw-bold">+1,023,215</p>
                     <hr>
                     De líneas de código libre.
                 </div>
@@ -97,12 +94,11 @@
             <div class="col text-center">
                 <div class="container p-2">
                     <Award height={48} width={48}/>
-                    <p class="h2 fw-bold">+4</p>
+                    <p class="h2 fw-bold">+5</p>
                     <hr>
                     Casos de éxito en México.
                 </div>
             </div>
-
         </div>
     </div>
 </section>

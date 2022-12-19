@@ -11,6 +11,5 @@ export const twitter_link: string = import.meta.env.VITE_TWITTER_LINK;
 export const instagram_link: string = import.meta.env.VITE_INSTAGRAM_LINK;
 export const linkedin_link: string = import.meta.env.VITE_LINKEDIN_LINK;
 export const github_link: string = import.meta.env.VITE_GITHUB_LINK;
-export const ascard_link: string = import.meta.env.VITE_ASCARD_LINK;
 export const whatsapp_link: string = import.meta.env.VITE_WHATSAPP_LINK;
 export const email_link: string = import.meta.env.VITE_EMAIL_LINK;

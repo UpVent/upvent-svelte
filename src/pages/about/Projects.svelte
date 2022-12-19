@@ -37,14 +37,14 @@
             {#each $api_result as record}
             <div class="col">
                 <figure>
-                    <div class="card h-75 position-relative border-0 shadow-sm p-2">
+                    <div class="card h-75 position-relative border-0 shadow-sm-sm p-2">
                             {#if !record.es_libre }
-                                <span class="btn btn-danger shadow-sm pe-none position-absolute top-0 start-0 translate-middle-y ms-4"><XCircle/></span>
+                                <span class="btn btn-danger shadow-sm-sm pe-none position-absolute top-0 start-0 translate-middle-y ms-4"><XCircle/></span>
                             {:else}
-                                <span class="btn btn-warning shadow-sm pe-none position-absolute top-0 start-0 translate-middle-y ms-4"><StarFill/></span>
+                                <span class="btn btn-warning shadow-sm-sm pe-none position-absolute top-0 start-0 translate-middle-y ms-4"><StarFill/></span>
                             {/if}
                         <blockquote class="card-body">
-                            <div class="container img-container"><img height="100" class="img-fluid m-1 shadow-sm rounded-3" src="{ pb.getFileUrl(record, record.imagen_destacada) }" alt="proyecto de UpVent"></div>
+                            <div class="container img-container"><img height="100" class="img-fluid m-1 shadow-sm-sm rounded-3" src="{ pb.getFileUrl(record, record.imagen_destacada) }" alt="proyecto de UpVent"></div>
                             <p class="lead fw-bold">{record.nombre}</p>
                             {#if !record.sigue_activo}
                                <span class="badge rounded-pill text-bg-danger">Inactivo</span> 
