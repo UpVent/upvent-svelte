@@ -1,6 +1,7 @@
 <script lang="ts">
     // Svelte imports
     import { fapi_url } from '../../config';
+    import { getTables } from '../../helpers/pbwrap';
 
     // Svelte Icons import
     import WrenchAdjustableCircle from 'svelte-bootstrap-icons/lib/WrenchAdjustableCircle.svelte';
@@ -13,12 +14,7 @@
     import type { Record } from 'pocketbase';
 
     const pb: PocketBase = new PocketBase(fapi_url);
-
-    async function getTechnologies() {
-        return await pb.collection('tecnologias').getFullList(4);
-    }
-
-    const records: Promise<Record[]> = getTechnologies();
+    const records: Promise<Record[]> = getTables(pb, 'tecnologias');
 </script>
 
 <section class="px-4 py-5 my-5 text-center">
