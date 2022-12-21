@@ -1,8 +1,6 @@
 <script lang="ts">
     // Svelte imports
-    import { onMount, onDestroy } from 'svelte'; 
-    import { fapi_url, api_user, api_user_pass } from '../../config';
-    import { api_result } from '../../stores/store';
+    import { fapi_url } from '../../config';
 
     // Svelte Icons import
     import WrenchAdjustableCircle from 'svelte-bootstrap-icons/lib/WrenchAdjustableCircle.svelte';
@@ -12,16 +10,15 @@
 
     // Database imports
     import PocketBase from 'pocketbase'; 
-    
-    // Database usage
-    const pb: PocketBase = new PocketBase(fapi_url);
-    onMount(async () => {
-        await pb.collection('users').authWithPassword(api_user, api_user_pass);
-        $api_result = await pb.collection('tecnologias').getFullList(4);
-        pb.authStore.clear();
-    });
+    import type { Record } from 'pocketbase';
 
-    onDestroy(async () => { $api_result.length = 0; });
+    const pb: PocketBase = new PocketBase(fapi_url);
+
+    async function getTechnologies() {
+        return await pb.collection('tecnologias').getFullList(4);
+    }
+
+    const records: Promise<Record[]> = getTechnologies();
 </script>
 
 <section class="px-4 py-5 my-5 text-center">
@@ -42,13 +39,18 @@
     <div class="container mt-3 mb-2">
         <div class="container" id="startnowtechs">
             <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4">
-                {#each $api_result as record}
+
+                {#await records}
+                    <p>Cargando tecnologías...</p>
+                {:then data}     
+                {#each data as record}
                     <div class="col">
                         <a rel="noopener noreferrer" href="{record.enlace}" aria-label="{record.enlace}" target="_blank">
                             <img height="50" width="60" class="img-fluid" src="{ pb.getFileUrl(record, record.imagen_destacada) }" alt="{record.nombre}" loading="lazy"/>
                         </a>
                     </div>
                 {/each}
+                {/await}
             </div>
         </div>
     </div>

@@ -1,9 +1,4 @@
 <script lang="ts">
-    // Svelte imports
-    import { onMount } from 'svelte';
-    import { slide } from 'svelte/transition';
-    import { sineIn } from 'svelte/easing';
-
     // Third party imports
     import ArrowRight from 'svelte-bootstrap-icons/lib/ArrowRight.svelte';
 
@@ -43,11 +38,9 @@
                     <br>
                     Para negocios inteligentes.
                 </h1>
-
                 <p class="link-dark text-center text-md-start mb-6 mb-lg-8">
                     Impulse la innovación en su negocio con soluciones sencillas y éticas de software libre. Conozca por que las pequeñas y medianas empresas Mexicanas confían en UpVent.
                 </p>
-                
             <div class="text-center text-md-start">
               <a href="/about" class="btn btn-primary mx-auto my-2 btn-lg me-1">Portafolio de Trabajo <ArrowRight/></a>
             </div>

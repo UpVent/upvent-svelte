@@ -1,4 +1,8 @@
 <script lang="ts">
+    // Svelte imports
+    import { onMount, onDestroy } from 'svelte';
+    import { fapi_url, api_user, api_user_pass } from './config';
+
     // Import router
     import { Route, router, active } from 'tinro';
 
@@ -15,6 +19,23 @@
     
     // Scroll to top after navigation
     router.subscribe(_ => window.scrollTo(0, 0));
+
+
+    // Database imports
+    import PocketBase from 'pocketbase'; 
+    
+    // Database usage
+    const pb: PocketBase = new PocketBase(fapi_url);
+    onMount(async () => {
+        await pb.collection('users').authWithPassword(api_user, api_user_pass);
+
+        console.log("Estado de la autenticación del App: ", pb.authStore.isValid);
+    });
+
+    onDestroy(() => {
+        console.log("El app component valió verga :(")
+        pb.authStore.clear();
+    });
 </script>
 
 <style>
