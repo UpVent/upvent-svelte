@@ -13,11 +13,11 @@
     /** Database Connect */
     const pb: PocketBase = new PocketBase(fapi_url);
     
-    async function getTechnologies() {
-        return await pb.collection('proyecto_portafolio').getFullList(4);
+    async function getProjects() {
+        return await pb.collection('proyecto_portafolio').getFullList(200);
     }
     
-    const records: Promise<Record[]> = getTechnologies();
+    const records: Promise<Record[]> = getProjects();
 </script>
 
 <section class="container mt-5 mb-5">

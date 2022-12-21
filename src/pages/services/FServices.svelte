@@ -1,11 +1,13 @@
 <script lang="ts">
     // Svelte imports
-    import { onMount, onDestroy } from 'svelte';
-    import { fapi_url, api_user, api_user_pass } from '../../config';
-    import { api_result } from '../../stores/store';
+    import { fapi_url } from '../../config';
+
+    // Image imports
+    import oneplace from '../../assets/images/oneplace.webp';
 
     /** Database Imports */
     import PocketBase from 'pocketbase';
+    import type { Record } from 'pocketbase';
 
     // Svelte Bootstrap Icons
     import Download from 'svelte-bootstrap-icons/lib/Download.svelte';
@@ -13,16 +15,11 @@
     /** Database Connect */
     const pb: PocketBase = new PocketBase(fapi_url);
 
-    // Image imports
-    import oneplace from '../../assets/images/oneplace.webp';
+    async function getFServices() {
+        return await pb.collection('proyectos_libres').getFullList(10);
+    }
 
-    onMount(async () => {
-        await pb.collection('users').authWithPassword(api_user, api_user_pass);
-        $api_result = await pb.collection('proyectos_libres').getFullList(10);
-        pb.authStore.clear();
-    });
-
-    onDestroy(() => { $api_result.length = 0; });
+    const records: Promise<Record[]> = getFServices();
 </script>
 
 <section class="container">
@@ -32,7 +29,10 @@
     </div>
     <div class="container">
         <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-            {#each $api_result as record}
+            {#await records}
+                <p>Cargando proyectos libres...</p>
+            {:then data}     
+            {#each data as record}
                 <div class="col">
                     <figure>
                         <div class="card h-75 position-relative border-0 shadow-sm-sm p-2">
@@ -48,6 +48,7 @@
                     </figure>
                 </div>
             {/each}
+            {/await}
     </div>
 </section>
 
@@ -59,15 +60,4 @@
     <div class="container"><img class="img-fluid" src={oneplace} alt=""/></div>
     <p class="text-center display-5 text-primary fw-bold">¡Todo en un solo lugar!</p>
     <p class="text-center lead">Ofrecemos una variedad de servicios y software pre-hecho. ¿Necesita de un CRM, un e-commerce o una solución personalizada? Para UpVent no hay obstáculos, ¡Lo tenemos cubierto en cualquier necesidad tecnológica!</p>
-</section>
-
-<section class="container mt-3">
-    <div class="container">
-        <p class="h3 lead">Otros de nuestros servicios</p>
-        <ul>
-            <li>Desarrollo de tiendas online (e-commerce)</li>
-            <li>Alojamiento Web (Hosting)</li>
-            <li>Consultoría de seguridad de servidores web</li>
-        </ul>
-    </div>
 </section>
