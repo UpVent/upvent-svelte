@@ -26,6 +26,7 @@
     
     // Database usage
     const pb: PocketBase = new PocketBase(fapi_url);
+
     onMount(async () => {
         await pb.collection('users').authWithPassword(api_user, api_user_pass);
 
@@ -55,7 +56,7 @@
 </style>
 
 <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-2 mb-0 sticky-md-top navbar-upvent">
-    <a href="/" class="d-flex align-items-center col-md-3 mb-2 mb-md-0 link-dark navbar-brand">
+    <a href="/" class="d-flex align-items-center col-md-3 mb-2 mb-md-0 link-dark">
         <img class="mx-auto" width="148" height="51" src="{logo}" alt="UpVent Logo" loading="lazy">
     </a>
 

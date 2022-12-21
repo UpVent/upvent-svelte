@@ -39,7 +39,6 @@
     <div class="container mt-3 mb-2">
         <div class="container" id="startnowtechs">
             <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4">
-
                 {#await records}
                     <p>Cargando tecnologías...</p>
                 {:then data}     
