@@ -29,7 +29,6 @@
 
     onMount(async () => {
         await pb.collection('users').authWithPassword(api_user, api_user_pass);
-
         console.log("Estado de la autenticación del App: ", pb.authStore.isValid);
     });
 

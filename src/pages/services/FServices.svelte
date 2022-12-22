@@ -1,6 +1,7 @@
 <script lang="ts">
     // Svelte imports
     import { fapi_url } from '../../config';
+    import { getTables } from '../../helpers/pbwrap';
 
     // Image imports
     import oneplace from '../../assets/images/oneplace.webp';
@@ -14,12 +15,7 @@
 
     /** Database Connect */
     const pb: PocketBase = new PocketBase(fapi_url);
-
-    async function getFServices() {
-        return await pb.collection('proyectos_libres').getFullList(10);
-    }
-
-    const records: Promise<Record[]> = getFServices();
+    const records: Promise<Record[]> = getTables(pb, 'proyectos_libres');
 </script>
 
 <section class="container">

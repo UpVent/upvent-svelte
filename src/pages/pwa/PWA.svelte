@@ -1,42 +1,7 @@
 <script lang="ts">
-    // Svelte imports
-    import { onMount, onDestroy } from 'svelte'; 
-    import { fapi_url, api_user, api_user_pass } from '../../config';
-    import { api_result } from '../../stores/store';
-    
-    // Database imports
-    import PocketBase from 'pocketbase';
-
     // External imports
     import BagFill from 'svelte-bootstrap-icons/lib/BagFill.svelte';
-    import StarFill from 'svelte-bootstrap-icons/lib/StarFill.svelte';
-    import CartFill from 'svelte-bootstrap-icons/lib/CartFill.svelte';
-    import QrCode from 'svelte-bootstrap-icons/lib/QrCode.svelte';
-
-    // Database usage
-    const pb: PocketBase = new PocketBase(fapi_url);
-
-    let visible: boolean = false;
-
-    function toggleVisible() { visible = !visible; }
-
-    onMount(async () => {
-        await pb.collection('users').authWithPassword(api_user, api_user_pass);
-        $api_result = await pb.collection('productos').getFullList(10, {
-            sort: '+created',
-        });
-        pb.authStore.clear();
-    });
-
-    onDestroy(() => { $api_result.length = 0; });
 </script>
-
-<style>
-    .btn-stripe {
-        background-color: #5433ff;
-        border-color: #5433ff;
-    }
-</style>
 
 <section class="container mb-5">
     <div class="bg-light d-lg-flex justify-content-between align-items-center py-6 py-lg-3 px-8 rounded-3 text-center text-lg-start">
@@ -45,44 +10,14 @@
             <div class="ms-lg-4">
                 <h1 class="fs-2 mb-1">Bienvenido a la tienda de UpVent</h1>
                 <span>Encuentre la solución que busca con nosotros a un solo click.</span>
-
             </div>
         </div>
         <div class="mt-3 mt-lg-0">
-            <a href="#estelare" class="btn btn-primary">Solicitar PWA <BagFill/></a>
+            <a href="/contact" class="btn btn-primary">Solicitar PWA <BagFill/></a>
         </div>
     </div>
 </section>
 
-<section class="container-fluid bg-primary text-light p-2 mt-2">
-    <div class="container">
-        <p class="h1 fw-bold">Productos Estelares <StarFill height={24} width={24} class="text-warning"/></p>
-        <p class="text-light">Construya el sitio de su negocio a su gusto. Aumente sus ventas, mejore la retención de clientes y mucho más...!</p>
-    </div>
-</section>
-
-<section id="estelare" class="container mt-3">
-    <div class="row row-cols-sm-1 row-cols-md-3">
-        {#each $api_result as record}
-            <div class="col">
-                <div class="card border-0 shadow-sm-sm">
-                        <img class="img-fluid rounded-3" src="{ pb.getFileUrl(record, record.imagen_destacada) }" alt="" loading="lazy">
-                    <div class="card-header text-break border-0">
-                        {record.nombre}
-                    </div>
-                    <div class="card-body">
-                        <p class="rounded-pill m-2 bg-light fw-bold shadow-sm-sm text-center p-1">${(record.precio)} MXN</p>
-                        <br>
-                        <div class="d-grid gap-2">
-                            <a target="_blank" rel="noopener, noreferrer" href="{record.stripe_payment_link}" class="btn btn-primary m-0">Comprar <CartFill/> </a>
-                            <button on:click={toggleVisible} class="btn btn-stripe btn-secondary">Pagar con QR <QrCode/></button>
-                        </div>
-                        {#if visible}
-                            <img height="200" width="200" class="m-2 shadow-sm-sm rounded-3 img-fluid" src={pb.getFileUrl(record, record.qr_de_producto)} alt={record.nombre} loading="lazy">
-                        {/if}
-                    </div>
-                </div>
-            </div>
-        {/each}
-    </div> 
+<section class="container-fluid bg-primary text-center text-light">
+    <h2>¡Estamos remodelando nuestra tienda, espéranos pronto!</h2>
 </section>

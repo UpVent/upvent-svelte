@@ -1,6 +1,7 @@
 <script lang="ts">
     // Svelte imports
     import { fapi_url } from '../../config';
+    import { getTables } from '../..//helpers/pbwrap';
     
     /** Database Imports */
     import PocketBase from 'pocketbase';
@@ -12,12 +13,7 @@
     
     /** Database Connect */
     const pb: PocketBase = new PocketBase(fapi_url);
-    
-    async function getProjects() {
-        return await pb.collection('proyecto_portafolio').getFullList(200);
-    }
-    
-    const records: Promise<Record[]> = getProjects();
+    const records: Promise<Record[]> = getTables(pb, 'proyecto_portafolio');
 </script>
 
 <section class="container mt-5 mb-5">
