@@ -21,10 +21,21 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: Use Node.js ${{ matrix.node-version }}
+    - name: Build dist using Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v2
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
-    - run: npm ci
+    - run: mkdir dist
     - run: npm run build --if-present
+    - run: npm ci --prod
+
+    - name: Add artifacts to bundle
+      run: |
+        cp -r build package.json node_modules dist/
+
+    - name: Use Upload Artifact GitHub Action
+      uses: actions/upload-artifact@v2
+      with:
+        name: sveltekit-build
+        path: dist
