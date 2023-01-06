@@ -50,12 +50,16 @@ VITE_WHATSAPP_LINK = ""
 After you've made some changes now you have to build the project.
 
 ```sh
-npm run build
+npm run build && npm ci --prod
 ```
 
 ### 4. Deploy
 
-Navigate to the `dist/` directory and deploy those files to your liking. We recommend you to self-host it on an Apache2 or NGINX server.
+Deployment with the `adapter-node` **WILL** cause trouble for you if you decide to deploy outside a PaaS / Docker container. Deploy at your own liking. If you wish to deploy behind a reverse proxy you'll need to upload the following files and directories:
+
+- `package.json`
+- `build/`
+- `node_modules/` (Only the ones generated after running `npm ci --prod`)
 
 ## Description
 
@@ -70,10 +74,10 @@ Development occurs on the master branch and new branches are only opened when ad
 2- There's dummy content in master branch, if you cannot afford to have experimental features in production, please use the release tags.
 
 ## Development Stack
-- Svelte powered frontend.
+- Sveltekit powered frontend.
 
 ## Philosophies
-- **TRY TO KEEP IT SIMPLE**, we are already using two frameworks. As much as these technologies are useful, we don't want to contribute to the bloated web, keep things simple, secure and easy to maintain.
+- **TRY TO KEEP IT SIMPLE**, we are already using THREE frameworks. As much as these technologies are useful, we don't want to contribute to the bloated web, keep things simple, secure and easy to maintain.
 - Very tiny landing page, not full blown with features.
 - Keep breaking changes to a minimum. Take more time if needed.
 
@@ -93,7 +97,7 @@ We strongly encourage you to give them a Follow or :star: their repositories to 
 
 - [DaiBW](https://github.com/Dai-BW)
 - [sandyCortes](https://github.com/sandyCortes)
-
+- [LastDragon](https://lastdragon.net/)
 
 ## Copyright
 The source code for this page is licensed under the Affero General Public License (GNU) version 3. Except where otherwise noted, written work, blogs, opinions, and some visual content is licensed under the Creative Commons Attribution-NonCommercial-NoDerivatives License. 4.0 International (CC BY-NC-ND 4.0)
