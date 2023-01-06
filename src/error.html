@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/x-icon" href="%sveltekit.assets%/favicon.ico" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css" type="text/css" media="screen"/>
+	</head>
+	<body>
+        <section class="container">
+            <div class="mx-auto">
+                <h1 class="fw-bold display-1">¡Oops!</h1>
+                <h2 class="lead">Ocurrió un error :(</h2>
+                <p class="fw-bold">
+                    %sveltekit.status%
+                </p>
+                <p class="text-muted">
+                    %sveltekit.error.message%
+                </p>
+            </div>
+        </section>
+	</body>
+</html>
