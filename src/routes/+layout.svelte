@@ -108,10 +108,10 @@ import Share from 'svelte-bootstrap-icons/lib/Share.svelte';
                             <a href="/services" class="text-decoration-none link-dark">Servicios</a>
                         </li>
                         <li class="m-2">
-                            <a href="/contacto" class="text-decoration-none link-dark">Contacto</a>
+                            <a href="/contact" class="text-decoration-none link-dark">Contacto</a>
                         </li>
                         <li class="m-2">
-                            <a href="/pwa" class="text-decoration-none link-dark">PWA Store</a>
+                            <a href="/store" class="text-decoration-none link-dark">PWA Store</a>
                         </li>
                     </ul>
                 </div>
