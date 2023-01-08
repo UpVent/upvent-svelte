@@ -75,7 +75,7 @@ import Share from 'svelte-bootstrap-icons/lib/Share.svelte';
 <!-- Page content -->
 <slot></slot>
 
-<footer class="text-center text-muted bg-light-gray">
+<footer class="text-center text-muted">
     <div class="container p-4">
             <div class="row mt-5">
                 <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
