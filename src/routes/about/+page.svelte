@@ -1,8 +1,4 @@
 <script lang="ts">
- /* Svelte / Internal imports */
- import { fapi_url } from "$lib/common/settings";
- import { getTables } from "$lib/common/pbwrap";
-
  /* Asset imports */
  import work from "$lib/assets/work.svg";
  import construction from "$lib/assets/construction.svg";
@@ -44,7 +40,7 @@
     <div class="text-center">
         <h1>Portafolio de Trabajo</h1>
         <p class="lead text-muted"> Conozca los trabajos de UpVent y la conformidad de sus clientes con los mismos. Además, también podrá ver nuestros proyectos de código libre en favor de la comunidad. </p>
-        <a class="btn btn-primary btn-lg" href="">Ver Portafolio <BuildingCheck height={24} width={24}/></a>
+        <a class="btn btn-primary btn-lg" href="/about/portfolio">Ver Portafolio <BuildingCheck height={24} width={24}/></a>
     </div>
 </section>
 
