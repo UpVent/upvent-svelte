@@ -1,4 +1,4 @@
-import PocketBase from "pocketbase";
+import type PocketBase from "pocketbase";
 import type { Record } from "pocketbase";
 
 /**

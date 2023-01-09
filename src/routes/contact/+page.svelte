@@ -1,16 +1,9 @@
 <script lang="ts">
-    import { onMount } from 'svelte';
-    import "vanilla-hcaptcha";
+ import SEO from '$lib/SEO.svelte';
 
     let nombre: string = "",
     correo: string = "",
     mensaje: string = "";
-
-    onMount(async () => {
-        const contactCaptcha: HTMLElement = document.getElementById('contactCaptcha');
-        contactCaptcha.addEventListener('verified', (_) => {
-        });
-    });
 
     function handle_submit(): void {
         const url: string = `https://api.whatsapp.com/send?phone=7295542482&text=Hola, mi nombre es ${nombre} quiero contactarme con ustedes con el mensaje de: ${mensaje}. Mi correo electrónico de contacto es ${correo}`;
@@ -18,6 +11,12 @@
         (document.getElementById("fs-frm") as HTMLFormElement).reset();
     }
 </script>
+
+<SEO
+    title="Contacto | UpVent - Soluciones en la nube para tu negocio. Low cost, siempre listas."
+    description="¿Necesitas contactarnos? Envíanos un mensaje por WhatsApp y solicita la cotización de tu proyecto."
+    canonical = "https://upvent.codes/contact"
+/>
 
 <section class="container">
     <h1>Contactános</h1>
@@ -33,7 +32,7 @@
                 <input bind:value={mensaje} class="form-control" type="hidden" name="_subject">
                 <h-captcha class="form-control border-0 m-2 p-2" id="contactCaptcha" site-key="44e5fa13-d8d3-4d8b-9dbf-887f16065702" size="normal" onVerified="onCaptchaVerified"></h-captcha>
             </fieldset>
-            <input class="btn btn-primary mt-3 mb-3" type="submit" on:submit={handle_submit} value="Enviar">
+            <input class="btn btn-primary" type="submit" on:submit={handle_submit} value="Enviar">
         </form>
     </section>
 </section>

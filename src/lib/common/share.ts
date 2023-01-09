@@ -7,7 +7,7 @@
  * @return {*}  {Promise<void>}
  */
 export async function share(shareText: string): Promise<void> {
-    if (navigator.canShare) {
+    if (typeof navigator.canShare !== 'undefined') {
         navigator.share({
             title: 'UpVent Technologies',
             text: shareText,
