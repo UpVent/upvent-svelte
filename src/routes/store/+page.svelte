@@ -1,6 +1,13 @@
 <script lang="ts">
-    import BagFill from 'svelte-bootstrap-icons/lib/BagFill.svelte';
+ import SEO from '$lib/SEO.svelte';
+ import BagFill from 'svelte-bootstrap-icons/lib/BagFill.svelte';
 </script>
+
+<SEO
+    title="Tienda | UpVent - Soluciones en la nube para tu negocio. Low cost, siempre listas."
+    description="¿Deseas solicitar un servicio o producto de nosotros? Todas las soluciones de UpVent al alcance de tu mano."
+    canonical = "https://upvent.codes/store"
+/>
 
 <section class="container mb-5">
     <div class="bg-light d-lg-flex justify-content-between align-items-center py-6 py-lg-3 px-8 rounded-3 text-center text-lg-start">

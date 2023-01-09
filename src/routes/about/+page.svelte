@@ -1,4 +1,7 @@
 <script lang="ts">
+ /* Svelte/Internal imports */
+ import SEO from '$lib/SEO.svelte';
+
  /* Asset imports */
  import work from "$lib/assets/work.svg";
  import construction from "$lib/assets/construction.svg";
@@ -24,6 +27,12 @@
         height: 80%;
     }
 </style>
+
+<SEO
+    title="Acerca De | UpVent - Soluciones en la nube para tu negocio. Low cost, siempre listas."
+    description="Conoce a detalle la escencia de UpVent. ¿Qué esperas para llevar tu empresa a las nubes?."
+    canonical = "https://upvent.codes/about"
+/>
 
 <section class="p-5 text-center jumbotron">
     <div class="d-flex justify-content-center align-items-center m-5 h-100">

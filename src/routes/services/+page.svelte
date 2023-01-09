@@ -2,6 +2,7 @@
  /* Svelte / Internal imports */
  import { fapi_url } from '$lib/common/settings';
  import { getTables } from '$lib/common/pbwrap';
+ import SEO from '$lib/SEO.svelte';
 
  /* Asset imports */
  import responsive from '$lib/assets/responsive.svg';
@@ -34,6 +35,12 @@
 
     .upvent-background { background-color: #007BFC; }
 </style>
+
+<SEO
+    title="Servicios | UpVent - Soluciones en la nube para tu negocio. Low cost, siempre listas."
+    description="Conoce nuestras soluciones de código libre para tu negocio."
+    canonical = "https://upvent.codes/services"
+/>
 
 <section class="p-5 text-center bg-image jumbotron">
     <div class="d-flex justify-content-center align-items-center m-5 h-100">
