@@ -30,6 +30,11 @@
         <img class="img-fluid rounded-4 shadow" src="{pb.getFileUrl(record, record.imagen_destacada)}" alt="{record.imagen_destacada}" loading="lazy"/>
         <div class="container my-2">
             <h1 class="fw-bold">{record.nombre}</h1>
+            {#if record.sigue_activo}
+                <span class="text-success fs-5">◉ Activo</span>
+	        {:else}
+                <span class="text-danger fs-5">◉ Inactivo</span>
+            {/if}
             <hr>
             <p>{@html record.descripcion}</p>
             <hr>
