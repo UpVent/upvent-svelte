@@ -44,8 +44,12 @@
                     <div class="container">
                         <img height="100" class="img-fluid m-1 p-1 shadow-sm rounded-3" src="{ pb.getFileUrl(record, record.imagen_destacada) }" alt="proyecto de UpVent">
                         <p class="fw-bold">{record.nombre}</p>
-                        <p class="small">{@html record.descripcion}</p>
-                        <a class="btn btn-primary" href="/about/portfolio/{record.id}">Ver proyecto</a>
+                        <p class="small">
+                            {@html record.descripcion}
+                        </p>
+                        <div class="d-grid">
+                            <a class="btn btn-primary" href="/about/portfolio/{record.id}">Ver proyecto</a>
+                        </div>
                     <hr />
                     </div>
                 </div>
