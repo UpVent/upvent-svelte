@@ -40,10 +40,14 @@
             </div>
         {:then records}
             {#each records as record}
-                <div class="col">
-                    <img height="100" class="img-fluid m-1 p-1 shadow-sm rounded-3" src="{ pb.getFileUrl(record, record.imagen_destacada) }" alt="proyecto de UpVent">
-                    <p class="fw-bold">{record.nombre}</p>
-                    <p class="small">{@html record.descripcion}</p>
+                <div class="col px-2 gy-3">
+                    <div class="container">
+                        <img height="100" class="img-fluid m-1 p-1 shadow-sm rounded-3" src="{ pb.getFileUrl(record, record.imagen_destacada) }" alt="proyecto de UpVent">
+                        <p class="fw-bold">{record.nombre}</p>
+                        <p class="small">{@html record.descripcion}</p>
+                        <a class="btn btn-primary" href="/about/portfolio/{record.id}">Ver proyecto</a>
+                    <hr />
+                    </div>
                 </div>
             {/each}
         {/await}
