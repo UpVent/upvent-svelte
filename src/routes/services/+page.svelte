@@ -1,7 +1,5 @@
 <script lang="ts">
  /* Svelte / Internal imports */
- import { fapi_url } from '$lib/common/settings';
- import { getTables } from '$lib/common/pbwrap';
  import SEO from '$lib/SEO.svelte';
 
  /* Asset imports */
@@ -16,14 +14,6 @@
  import Laptop from 'svelte-bootstrap-icons/lib/Laptop.svelte';
  import CodeSlash from 'svelte-bootstrap-icons/lib/CodeSlash.svelte';
  import Award from 'svelte-bootstrap-icons/lib/Award.svelte';
- import Download from 'svelte-bootstrap-icons/lib/Download.svelte';
-
- import PocketBase from "pocketbase";
- import type { Record } from "pocketbase";
- /* Logic */
-
- const pb: PocketBase = new PocketBase(fapi_url);
- const records: Promise<Record[]> = getTables(pb, 'proyectos_libres');
 </script>
 
 <style>
@@ -135,35 +125,6 @@
                 </div>
             </div>
         </div>
-    </div>
-</section>
-<section class="container">
-    <div class="container text-center mt-5 mb-5">
-        <h2 class="fw-bold display-3">Software <span class="text-primary">libre</span> al alcance de su mano.</h2>
-        <p class="text-muted"> Conozca los proyectos de Software Libre que UpVent ha preparado para ustedy su empresa.</p>
-    </div>
-    <div class="container">
-        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-            {#await records}
-                <p>Cargando proyectos libres...</p>
-            {:then data}
-            {#each data as record}
-                <div class="col">
-                    <figure>
-                        <div class="card h-75 position-relative border-0 shadow-sm-sm p-2">
-                            <img height="100" width="100" class="img-fluid m-1 shadow-sm-md rounded-circle" src="{pb.getFileUrl(record, record.imagen)}" alt="Producto de software libre">
-                            <p class="lead fw-bold">{record.nombre}</p>
-                        </div>
-                        <blockquote>
-                            <div class="container">
-                                <p class="card-text text-muted text-wrap">{record.descripcion}</p>
-                                <a class="btn btn-primary" href="{record.enlace}">Descargar <Download/></a>
-                            </div>
-                        </blockquote>
-                    </figure>
-                </div>
-            {/each}
-            {/await}
     </div>
 </section>
 

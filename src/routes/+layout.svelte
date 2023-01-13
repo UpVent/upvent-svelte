@@ -6,12 +6,8 @@
  export const prerender = true;
 
  /* Svelte / Project Imports */
- import { onMount, onDestroy } from "svelte";
  import { share } from "$lib/common/share";
- import { fapi_url,
-        api_user,
-        api_user_pass,
-        facebook_link,
+ import { facebook_link,
         whatsapp_link,
         twitter_link,
         instagram_link,
@@ -23,7 +19,6 @@
  import logo from '$lib/assets/logo-grey.webp';
 
 /* External imports */
-import PocketBase from "pocketbase";
 import Facebook from 'svelte-bootstrap-icons/lib/Facebook.svelte';
 import Twitter from 'svelte-bootstrap-icons/lib/Twitter.svelte';
 import Instagram from 'svelte-bootstrap-icons/lib/Instagram.svelte';
@@ -34,14 +29,7 @@ import Envelope from 'svelte-bootstrap-icons/lib/Envelope.svelte';
 import Share from 'svelte-bootstrap-icons/lib/Share.svelte';
 
  /* Logic */
- const pb: PocketBase = new PocketBase(fapi_url);
  const fecha: number = new Date().getFullYear();
-
- onMount(async () => {
-     await pb.collection('users').authWithPassword(api_user, api_user_pass);
- });
-
- onDestroy(() => { pb.authStore.clear(); });
 </script>
 
 <style>
