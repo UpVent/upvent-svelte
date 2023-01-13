@@ -7,13 +7,7 @@
 
  /* Svelte / Project Imports */
  import { share } from "$lib/common/share";
- import { facebook_link,
-        whatsapp_link,
-        twitter_link,
-        instagram_link,
-        linkedin_link,
-        github_link,
-        email_link } from "$lib/common/settings";
+ import { facebook_link, whatsapp_link, twitter_link, instagram_link, linkedin_link, github_link, email_link } from "$lib/common/settings";
 
  /* Assets */
  import logo from '$lib/assets/logo-grey.webp';
