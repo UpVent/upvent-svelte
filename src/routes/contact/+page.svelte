@@ -1,12 +1,12 @@
 <script lang="ts">
  import SEO from '$lib/SEO.svelte';
 
-    let nombre: string = "",
-    correo: string = "",
-    mensaje: string = "";
+    let nombre = "",
+    correo = "",
+    mensaje = "";
 
     function handle_submit(): void {
-        const url: string = `https://api.whatsapp.com/send?phone=7295542482&text=Hola, mi nombre es ${nombre} quiero contactarme con ustedes con el mensaje de: ${mensaje}. Mi correo electrónico de contacto es ${correo}`;
+        const url = `https://api.whatsapp.com/send?phone=7295542482&text=Hola, mi nombre es ${nombre} quiero contactarme con ustedes con el mensaje de: ${mensaje}. Mi correo electrónico de contacto es ${correo}`;
         window.open(url);
         (document.getElementById("fs-frm") as HTMLFormElement).reset();
     }

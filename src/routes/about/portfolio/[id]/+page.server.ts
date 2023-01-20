@@ -4,8 +4,9 @@ import { env } from '$env/dynamic/private';
 import PocketBase from "pocketbase";
 import type { Record } from "pocketbase";
 
-//TODO: Fix the godamn "any" here.
-export const load = ( async ({ params }: any) => {
+import type { PageServerLoad } from './$types';
+
+export const load = ( async ({ params }) => {
     const pb: PocketBase = new PocketBase(env.VITE_DBASE_URL);
 
     await pb.collection('users').authWithPassword(env.VITE_DBASE_USER, env.VITE_DBASE_USER_PASSWORD);
@@ -18,4 +19,4 @@ export const load = ( async ({ params }: any) => {
     return {
         records: JSON.parse(JSON.stringify(records))
     };
-})
+}) satisfies PageServerLoad;

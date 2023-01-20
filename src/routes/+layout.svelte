@@ -2,9 +2,6 @@
  /* Top level imports */
  import "bootstrap/dist/css/bootstrap.min.css";
 
- /* Sveltekit options */
- export const prerender = true;
-
  /* Svelte / Project Imports */
  import { share } from "$lib/common/share";
  import { facebook_link, whatsapp_link, twitter_link, instagram_link, linkedin_link, github_link, email_link } from "$lib/common/settings";
