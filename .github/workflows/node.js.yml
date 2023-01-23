@@ -38,5 +38,5 @@ jobs:
     - name: Use Upload Artifact GitHub Action
       uses: actions/upload-artifact@v2
       with:
-        name: sveltekit-build
+        name: upvent-build
         path: dist
