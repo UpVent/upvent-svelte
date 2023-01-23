@@ -55,11 +55,26 @@ npm run build && npm ci --prod
 
 ### 4. Deploy
 
-Deployment with the `adapter-node` **WILL** cause trouble for you if you decide to deploy outside a PaaS / Docker container. Deploy at your own liking. If you wish to deploy behind a reverse proxy you'll need to upload the following files and directories:
+Deployment with the `adapter-node` **WILL** cause trouble for you if you decide to deploy outside a PaaS / Docker container. 
+
+Deploy at your own liking we currently know 3 ways to deploy your SvelteKit app behind an NGINX reverse-proxy:
+
+1. Use our `deploy.sh` and act as your own CI/CD.
+2. Use Ansible (WIP).
+3. Follow a [blog post](https://ventgrey.github.io/posts/sveltekit-nginx/) in spanish we cannot link to because it contains strong language.
+
+If you wish to deploy behind a reverse proxy you'll need to upload the following files and directories:
 
 - `package.json`
 - `build/`
 - `node_modules/` (Only the ones generated after running `npm ci --prod`)
+- `.env` (if applicable)
+
+For simple cases we are providing a `deploy.sh` script to deploy your Sveltekit app to NGINX without much hassle (it does need some script configuration).
+
+If you have any doubts please run `deploy.sh --help` or `deploy.sh -h` and read the full help message. If you are still in need of help feel free to open an issue or a discussion using the proper GitHub tabs up there.
+
+We do not encourage the usage of this script, if you have a CI/CD service at your disposal use it. If not, this should suffice to be your own CI/CD. We might provide an Ansible playbook for this in the future.
 
 ## Description
 
