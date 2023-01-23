@@ -19,4 +19,5 @@ export const load = ( async ({ params }) => {
     return {
         records: JSON.parse(JSON.stringify(records))
     };
+
 }) satisfies PageServerLoad;
